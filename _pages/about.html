@@ -1,0 +1,28 @@
+---
+layout: post
+title: About
+permalink: /about/
+---
+<style type="text/css">
+    .page-container {
+        position: static;
+    }
+    .main-cover .page-container {
+        background: url("{{ '/assets/img/bg-index.jpg' | prepend: site.baseurl}}") no-repeat;
+        background-size: cover;
+    }
+</style>
+    <div class="main-cover">
+<div class="page-container">
+        <div class="login-content">
+            Welcome to Doriri Site
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.page-container').css('min-height', $(document).height());
+    $('html').resize(function() {
+        $('.page-container').css('min-height', $(document).height());
+    });
+</script>

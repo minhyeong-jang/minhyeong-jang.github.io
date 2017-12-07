@@ -1,0 +1,21 @@
+<div id="header">
+    <div class="container">
+    <div class="gnb">
+        <div class="logo">
+            <a href="{{ '/' | prepend: site.baseurl}}">
+                <img src="{{ '/assets/img/logo.png' | prepend: site.baseurl}}" alt="logo">
+            </a>
+        </div>
+        <ul>
+            <li class="{% if page.title == 'About' %} active {% endif %}">
+                <a href="{{ '/about/' | prepend: site.baseurl}}">ABOUT</a>
+            </li>
+            <li class="{% if page.title == 'History' %} active {% endif %}">
+                <a href="{{ '/history/' | prepend: site.baseurl}}">HISTORY</a>
+            </li>
+            <li class="{% if page.title == 'Contact' %} active {% endif %}">
+                <a href="{{ '/contact/' | prepend: site.baseurl}}">CONTACT</a>
+            </li>
+        </ul>
+    </div></div>
+</div>
