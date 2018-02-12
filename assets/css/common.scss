@@ -54,24 +54,3 @@ html,body{
   background-color: #12787a;
   height: 300px;
 }
-
-/* footer */
-#footer {
-  color: $color-gray;
-
-  a {
-    color: #ffffff;
-  }
-  /* introduce */
-
-  /* copyright */
-  .copyright {
-    height: 100px;
-    line-height: 100px;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    background: rgb(47, 49, 53);
-  }
-
-}

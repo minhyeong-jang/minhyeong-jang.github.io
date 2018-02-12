@@ -1,0 +1,173 @@
+---
+---
+
+/* media size */
+$break-mobile-s: 320px;
+$break-mobile-m: 375px;
+$break-mobile-l: 425px;
+$break-tablet: 768px;
+$break-laptop: 1080px;
+
+.content-wrap {
+    position: relative;
+    background: #fff;
+    margin: -60px 30px 0;
+    border-radius: 6px 6px;
+    -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    .panel {
+        padding: 50px 15px;
+    }
+}
+.banner-wrap {
+    position: relative;
+    background-size: cover;
+    height: 400px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    &.History {
+        background-image: url("{{ '/assets/img/bg-history.png' | prepend: site.baseurl}}");
+    }
+    &::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .banner-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: none;
+        font-size: 50px;
+        color: white;
+        font-weight: bold;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+    }
+}
+.contect-bar {
+    margin: 0px auto 50px;
+    text-align: center;
+    
+    li {
+        display: inline-block;
+        text-align: center;
+        overflow: hidden;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 5px;
+        min-width: 90px;
+        box-shadow: none;
+        font-size: 15px;
+        color: white;
+        margin-right: 10px;
+        -webkit-transition: background 0.3s; /* For Safari 3.1 to 6.0 */
+        transition: background 0.3s;
+        
+        &.contect-github {
+            background: #24292e;
+            &:hover {
+                background: #0f1114;
+            }
+        }
+        &.contect-facebook {
+            background: #3B5998;
+            &:hover {
+                background: rgb(34, 50, 87);
+            }
+        }
+        &.contect-google {
+            background: #DB4437;
+            &:hover {
+                background: rgb(134, 42, 33);
+            }
+        }
+        &.contect-linkedin {
+            background: #1178b3;
+            &:hover {
+                background: #094161;
+            }
+        }
+    }
+}
+
+.company-name {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 50px 0px 15px;
+}
+.history {
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+}
+.year {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 22px !important;
+}
+.career-history {
+    line-height: 25px;
+}
+ul.company-history {
+    list-style: none;
+    padding-left: 100px;
+    margin: 0px;
+
+    li {
+        margin: 15px 0px;
+        font-size: 14px;
+
+        * {
+            display: inline-block;
+        }
+        .date {
+            width: 30px;
+            margin:0px 50px 0px 0px;
+        }
+        .platform {
+            float: right;
+        }
+        a {
+            width: 100%;
+            &:hover {
+                color:#33a854 !important;
+            }
+        }
+    }
+}
+.container .section {
+    padding-top: 40px !important;
+}
+
+
+@media screen and (max-width: $break-tablet) {
+    ul.company-history li .platform{
+        display:none !important;
+    }
+}
+@media screen and (max-width: $break-mobile-l) {
+    ul.company-history {
+        padding:25px 0px 0px 0px !important;
+        li {
+            .date {
+                margin:0px 20px 0px 0px !important;
+            }
+        }
+    }
+    .company-name {
+        font-size: 20px;
+        margin: 30px 0px 15px;
+    }
+    ul.company-history li, .company-info, .career-history {
+        font-size: 12px;
+    }
+}

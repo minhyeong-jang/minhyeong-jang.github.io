@@ -1,0 +1,31 @@
+---
+layout: master
+---
+<div class="banner-wrap {{page.title}}">
+    <div class="banner-title">{{page.title}}{{page.url.params.page_no}}</div>
+</div>
+<div class="content-wrap">
+    <div class="container panel">
+        <div class="col-md-10 col-md-offset-1">
+            <ul>
+                test
+                    {% for portfolio in site.data.portfolios %}
+                    test
+                    {{ site.data.portfolios[0].name }}
+                    {{ portfolio.name }}
+                    {{ portfolio.date }}
+                    {{ portfolio.desc }}
+                      <li>
+                        <a href="https://github.com/{{ portfolio.date }}">
+                          {{ portfolio.name }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                    
+            
+            {{ page.content }}
+        </div>
+    </div>
+    
+</div>

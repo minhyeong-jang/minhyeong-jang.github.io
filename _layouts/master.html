@@ -12,8 +12,9 @@
   <!-- css -->
   <link rel="stylesheet" href="{{ '/node_modules/bootstrap/dist/css/bootstrap.min.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ '/assets/css/fonts.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/assets/css/header.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/assets/css/layouts.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ '/assets/css/common.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/assets/css/post.css' | prepend: site.baseurl }}">
   <!-- end:css -->
 
   <!-- js -->
@@ -25,5 +26,13 @@
 <body>
   {% include header.html %}
   {{content}}
+  {% include footer.html %}
 </body>
+
+<script type="text/javascript">
+  $('.page-container').css('min-height', $(document).height());
+  $('html').resize(function() {
+      $('.page-container').css('min-height', $(document).height());
+  });
+</script>
 </html>
