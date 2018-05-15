@@ -2,7 +2,7 @@
 <html lang="kr">
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon" type="image/png" href="{{ '/assets/img/favicon/page_logo.ico' | prepend: site.baseurl }}"/>
+  <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/favicon/page_logo.ico' | prepend: site.baseurl }}"/>
 	<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>
 	<meta name="description" content="{{ page.description }}">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -28,11 +28,4 @@
   {{content}}
   {% include footer.html %}
 </body>
-
-<script type="text/javascript">
-  $('.page-container').css('min-height', $(document).height());
-  $('html').resize(function() {
-      $('.page-container').css('min-height', $(document).height());
-  });
-</script>
 </html>

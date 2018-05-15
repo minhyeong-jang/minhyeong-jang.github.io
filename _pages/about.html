@@ -1,19 +1,19 @@
 ---
-layout: post
+layout: page
 title: About
-permalink: /about/
+permalink: /about
 ---
 <style type="text/css">
     .page-container {
         position: static;
     }
     .main-cover .page-container {
-        background: url("{{ '/assets/img/bg-index.jpg' | prepend: site.baseurl}}") no-repeat;
+        background: url("{{ '/assets/images/bg-index.jpg' | prepend: site.baseurl}}") no-repeat;
         background-size: cover;
     }
 </style>
     <div class="main-cover">
-<div class="page-container">
+    <div class="page-container">
         <div class="login-content">
             Welcome to Doriri Site
             웹 에이전시 업체에서 근무하면서 협업 프로젝트를 진행하였으며<br/>
@@ -28,6 +28,7 @@ permalink: /about/
 <script type="text/javascript">
     $('.page-container').css('min-height', $(document).height());
     $('html').resize(function() {
+        console.log('tt');
         $('.page-container').css('min-height', $(document).height());
     });
 </script>

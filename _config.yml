@@ -1,17 +1,18 @@
 # Profile information
 name: doriri
-title: Doriri - Pages
-description: > # this means to ignore newlines until "baseurl:"
-  Doriri First Page
+title: Front-end & Back-end Developer
+description: |
+   Minhyeong-jang
 permalink: ':title/'
 baseurl: "/doriri-pages" # the subpath of your site, e.g. /blog
 url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+image: '/assets/images/default_cover.png'
 
 # Social
 facebook: #Add your Facebook
 twitter: #Add your Twitter
 google-plus: #Add your Google+
-github: #Add your Github
+github: https://github.com/minhyeong-jang
 
 # Contact form
 email: #your-email@domain.com

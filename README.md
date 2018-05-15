@@ -1,5 +1,6 @@
-Fresh is a free blog template for Jekyll
+Minhyeong-jang
 =============================
+
 
 ![](assets/img/fresh.jpg)
 

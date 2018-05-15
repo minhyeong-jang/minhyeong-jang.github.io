@@ -26,7 +26,7 @@ $break-laptop: 1080px;
     background-position: 50%;
     background-repeat: no-repeat;
     &.History {
-        background-image: url("{{ '/assets/img/bg-history.png' | prepend: site.baseurl}}");
+        background-image: url("{{ '/assets/images/bg-history.png' | prepend: site.baseurl}}");
     }
     &::after {
         display: block;
