@@ -22,6 +22,35 @@ html,body{
   @media screen and (max-width: $break-tablet){min-width:inherit}
 }
 
+
+.page-container {
+  background-size: cover;
+  background-position: 90% 50%;
+
+  video {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+    z-index: 99;
+    color: white;
+    h3 {
+      margin-top: 100px;
+    }
+  }
+}
+
 /* container */
 #container {
 

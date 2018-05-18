@@ -2,7 +2,7 @@
 <html lang="kr">
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/favicon/page_logo.ico' | prepend: site.baseurl }}"/>
+  <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/favicon/page_logo.ico' }}"/>
 	<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>
 	<meta name="description" content="{{ page.description }}">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -10,21 +10,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- css -->
-  <link rel="stylesheet" href="{{ '/node_modules/bootstrap/dist/css/bootstrap.min.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/assets/css/fonts.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/assets/css/layouts.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/assets/css/common.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/assets/css/post.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/node_modules/bootstrap/dist/css/bootstrap.min.css' }}">
+	<link rel="stylesheet" href="{{ '/assets/css/fonts.css' }}">
+	<link rel="stylesheet" href="{{ '/assets/css/layouts.css' }}">
+	<link rel="stylesheet" href="{{ '/assets/css/common.css' }}">
+	<link rel="stylesheet" href="{{ '/assets/css/post.css' }}">
   <!-- end:css -->
 
   <!-- js -->
-  <script type="text/javascript" src="{{ '/node_modules/jquery/dist/jquery.min.js' | prepend: site.baseurl }}"></script>
-  <script type="text/javascript" src="{{ '/node_modules/bootstrap/dist/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+  <script type="text/javascript" src="{{ '/node_modules/jquery/dist/jquery.min.js' }}"></script>
+  <script type="text/javascript" src="{{ '/node_modules/bootstrap/dist/js/bootstrap.min.js' }}"></script>
   <!-- end:js-->
 </head>
 
 <body>
-  {% include header.html %}
+  {% include sidebar.html %}
   {{content}}
   {% include footer.html %}
 </body>

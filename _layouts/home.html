@@ -1,12 +1,20 @@
 ---
 layout: default
 ---
-<div class="page-container" style="background-image: url({{site.cover}});">
-  <div>{{ site.title }}</div>
+<div class="page-container">
+  <video autoplay muted loop>
+    <source src="/assets/movies/star.mp4">
+  </video>
+  <div>
+    <h1>{{ site.title }}</h1>
+    <h3>{{ site.description }}</h3>
+  </div>
+  <h1>{{ site.title }}</h1>
 
 </div>
 <div class="content" style="margin-top: 300px">
   <form class="form" action="https://formspree.io/{{site.email}}" method="POST">
+      <input type="text" name="_gotcha" style="display:none" />
     <div class="form-item">
       <label class="contact-label" for="name">Name:</label>
       <input type="text" placeholder="Your name" id="name" class="form-control" name="name" tabindex="1" required/>
@@ -29,7 +37,7 @@ layout: default
   // Calculate min height
   function containerHeight() {
     var availableHeight = $(window).height() - $('.page-container').offset().top;
-    $('.page-container').attr('style', 'min-height:' + availableHeight + 'px');
+    $('.page-container').css('min-height', availableHeight + 'px');
   }
   // Initialize
   containerHeight();

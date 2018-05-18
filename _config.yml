@@ -1,12 +1,11 @@
 # Profile information
 name: doriri
 title: Front-end & Back-end Developer
-description: |
-   Minhyeong-jang
+description: Minhyeong-jang
 permalink: ':title/'
-baseurl: "/doriri-pages" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-image: '/assets/images/default_cover.png'
+cover: '/assets/images/default_cover.png'
 
 # Social
 facebook: #Add your Facebook
@@ -15,7 +14,8 @@ google-plus: #Add your Google+
 github: https://github.com/minhyeong-jang
 
 # Contact form
-email: #your-email@domain.com
+email: savedream75@gmail.com
+asset_url: /assets
 
 # Comments
 discus-identifier: # Add your Disqus identifier
