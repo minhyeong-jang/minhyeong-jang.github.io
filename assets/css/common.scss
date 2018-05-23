@@ -35,14 +35,12 @@ html,body{
     left: 0;
     right: 0;
   }
-  
+
   div {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    text-align: center;
+    left: 150px;
+    transform: translate(0%, -50%);
     z-index: 99;
     color: white;
     h3 {

@@ -1,23 +1,26 @@
-<div id="sidebar">
+<div id="navbar">
   <div class="logo">
     <a href="/">
       <img src="/assets/images/logo_small.png" alt="logo">
-      <h3>Doriri</h3>
+      <h3>Minhyeong</h3>
     </a>
   </div>
 
-  <ul class="lnb">
-    <li class="{% if page.title == 'About' %} active {% endif %}">
-      <a title="About Minhyeong Jang - Front-end & Back-end Developer" href="{{ '/about/' }}">ABOUT</a>
+  <ul class="gnb">
+    <li class="active">
+      <span class="icon icon-home"></span>
     </li>
-    <li class="{% if page.title == 'History' %} active {% endif %}">
-      <a href="{{ '/history/' }}">HISTORY</a>
+    <li class="">
+      <span class="icon icon-user"></span>
     </li>
-    <li class="{% if page.title == 'Portfolio' %} active {% endif %}">
-      <a title="Portfolio of Front-end & Back-end Development Project" href="{{ '/portfolio/' }}">PORTFOLIO</a>
+    <li class="">
+      <span class="icon icon-cog"></span>
+    </li>
+    <li class="">
+      <span class="icon icon-git"></span>
     </li>
     <li class="{% if page.title == 'Contact' %} active {% endif %}">
-      <a href="{{ '/contact/' }}">CONTACT</a>
+      <span class="icon icon-mail2"></span>
     </li>
   </ul>
 
@@ -39,7 +42,7 @@
     </li>
     <li>
       <a href="{{ '/contact/' | prepend: site.baseurl}}">
-        <span class="icon icon-mail4"></span>
+        <span class="icon icon-mail3"></span>
       </a>
     </li>
   </ul>

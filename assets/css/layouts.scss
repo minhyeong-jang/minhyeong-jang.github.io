@@ -119,22 +119,19 @@ $hover-mint: #08fdd8;
   }
 }
 
-/* sidebar */
-
-#sidebar {
+/* navbar */
+#navbar {
   position: fixed;
   left: 0px;
   height: 100%;
-  width: 50px;
+  width: 60px;
   z-index: 10;
   background-color: #181818;
   text-align: center;
   color: #6b6b6d;
-
   .logo {
     padding: 20px 0px 10px;
     background-color: #070707;
-
     img {
       width: 35px;
     }
@@ -145,31 +142,71 @@ $hover-mint: #08fdd8;
       margin-top: 10px;
     }
   }
-  /* common */
-  a {
-    -webkit-transition: color 0.5s;
-    /* For Safari 3.1 to 6.0 */
-    transition: color 0.5s;
-    &:hover {
-      color: $hover-mint !important;
-    }
-  }
-  ul.lnb {
-    margin-top: 150px;
+  ul.gnb {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 100%;
     li {
-      
+      position: relative;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s;
+      padding: 12px 0px;
+      cursor: pointer;
+      .icon {
+        font-size: 25px;
+      }
+      &:hover {
+        color: $hover-mint !important;
+        span {
+          opacity: 0;
+        }
+        &:after{
+          opacity: 1;
+        }
+      }
+      &:nth-child(1):after {
+        content: "HOME";
+      }
+      &:nth-child(2):after {
+        content: "ABOUT";
+      }
+      &:nth-child(3):after {
+        content: "SKILLS";
+      }
+      &:nth-child(4):after {
+        content: "PROJECT";
+      }
+      &:nth-child(5):after {
+        content: "CONTACT";
+      }
+      &:after {
+        content: '';
+        font-size: 9px;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 17px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+      }
     }
   }
   ul.contact {
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-
     li {
       margin-bottom: 10px;
       a {
-        font-size: 22px;
+        font-size: 16px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        &:hover {
+          color: $hover-mint !important;
+        }
       }
     }
   }
