@@ -1,0 +1,22 @@
+
+<div class="content" style="margin-top: 300px">
+  <form class="form" action="https://formspree.io/{{site.email}}" method="POST">
+      <input type="text" name="_gotcha" style="display:none" />
+    <div class="form-item">
+      <label class="contact-label" for="name">Name:</label>
+      <input type="text" placeholder="Your name" id="name" class="form-control" name="name" tabindex="1" required/>
+    </div>
+    <div class="form-item">
+      <label class="contact-label" for="email">Email:</label>
+      <input type="email" placeholder="Your email" id="email" class="form-control" name="_replyto" tabindex="2" required/>
+    </div>
+    <div class="form-item">
+      <label class="contact-label" for="message">Message:</label>
+      <textarea class="contact-textarea" placeholder="Your message" class="form-control" rows="4" id="message" name="message" tabindex="3"
+        required></textarea>
+    </div>
+    <div class="form-item">
+      <button type="submit" value="Send" class="form-btn">Send</button>
+    </div>
+  </form>
+</div>

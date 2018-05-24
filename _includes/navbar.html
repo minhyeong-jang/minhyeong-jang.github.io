@@ -1,0 +1,40 @@
+<div id="navbar">
+  <div class="logo">
+    <a href="/">
+      <img src="/assets/images/logo_small.png" alt="logo">
+      <h3>Minhyeong</h3>
+    </a>
+  </div>
+  <div class="gnb">
+    <a class="active" href="/">
+      <span class="icon icon-home"></span>
+    </a>
+    <a class="{% if page.title == 'Contact' %} active {% endif %}" href="/about/">
+      <span class="icon icon-user"></span>
+    </a>
+    <a href="/skill/">
+      <span class="icon icon-cog"></span>
+    </a>
+    <a href="/project/">
+      <span class="icon icon-git"></span>
+    </a>
+    <a href="/about/">
+      <span class="icon icon-mail2"></span>
+    </a>
+  </div>
+
+  <div class="contact">        
+    <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+      <span class="icon icon-facebook2"></span>
+    </a>
+    <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+      <span class="icon icon-linkedin"></span>
+    </a>
+    <a href="//github.com/minhyeong-jang" target="_blank">
+      <span class="icon icon-github"></span>
+    </a>
+    <a href="{{ '/contact/' | prepend: site.baseurl}}">
+      <span class="icon icon-mail3"></span>
+    </a>
+  </div>
+</div>
