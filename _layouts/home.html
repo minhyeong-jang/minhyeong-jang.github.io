@@ -1,48 +1,6 @@
 ---
-layout: default
 ---
-<div class="page-container">
-  <video autoplay muted loop>
-    <source src="/assets/movies/star.mp4" type="video/mp4">
-  </video>
-  <div>
+<div>
     <h1>Web Developer</h1>
     <h4>Front end / Back end</h4>
   </div>
-</div>
-
-<div style="    position: fixed;
-left: 50px;
-width: 70%;
-background: #252627;
-height: 100%;
-top: 0px;
-opacity: 0.9;"
-></div>
-
-<script type="text/javascript">
-  // Calculate min height
-  $(document).ready(function(){
-    containerHeight();
-
-    // Initialize
-    setTimeout(function(){
-      containerWidth();
-    }, 200);
-  });
-  function containerWidth() {
-    var availableWidth = $('.page-container').width() - $('.page-container video').width();
-    $('.page-container video').css('left', availableWidth + 'px');
-  }
-  function containerHeight() {
-    var availableHeight = $(window).height() - $('.page-container').offset().top;
-    $('.page-container').css('min-height', availableHeight + 'px');
-  }
-
-  $(window).on('resize', function () {
-    setTimeout(function () {
-      containerWidth();
-      containerHeight();
-    });
-  });
-</script>

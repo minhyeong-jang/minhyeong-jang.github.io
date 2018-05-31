@@ -8,73 +8,47 @@ app.ui = {
       preloaderanimHide:null
   },
   navMenu:function(){
+    $('#navbar .gnb a[href="'+$(location).attr('pathname')+'"]').addClass('active');
 
+    $('#navbar .gnb a').click(function(e){
+      e.preventDefault();
+        if(!$(this).hasClass('active')){
+          // if(app.ui.pageLoad($(this).attr('href'),$(this).attr('rel'))){
+            $('#navbar .gnb a.active').removeClass('active');
+            $(this).addClass('active');
 
-      $('a').click(function(e){
-
-          e.preventDefault();
-          
-          if(!$(this).hasClass('active')){
-
-              if(app.ui.pageLoad($(this).attr('href'),$(this).attr('rel'))){
-
-                  $('#nav_bar nav a.active').removeClass('active');
-                  $(this).addClass('active');
-
-                  window.history.pushState("", "", $(this).attr('href'));
-              }
-
-
-          }
-
-          $('a.logo').removeClass('active');
-
-
-          return false;
-      });
+            // 페이지 URL 변경
+            window.history.pushState("", "", $(this).attr('href'));
+          // }
+      }
+      return false;
+    });
 
 
 
   },
   // pageLoad:function(url,rel){
+  //   if (app.ajax !== null) {
+  //     return false;
+  //   }else {
+  //     app.ui.preloader.preloaderInit(rel);
+  //     app.ajax = $.ajax({
+  //       type: 'GET', url: url+'?ajax=true'
+  //     });
 
+  //     app.ajax.done(function( msg ) {
 
-  //     if (app.ajax !== null) {
+  //       var cont = $(msg).filter("#page");
+  //       app.ui.contents = cont.contents();
+        
+  //       app.ajax = null;
+  //     });
 
-  //         return false;
-
-  //     }else {
-
-
-  //         app.ui.preloader.preloaderInit(rel);
-
-         
-
-  //   app.ajax = $.ajax({
-  //     type: 'GET', url: url+'?ajax=true'
-  //   });
-
-  //   app.ajax.done(function( msg ) {
-
-  //     var cont = $(msg).filter("#page");
-  //     app.ui.contents = cont.contents();
-       
-  //     app.ajax = null;
-  //   });
-
-  //   app.ajax.fail(function( jqXHR, textStatus ) {
-
-  //     $("#page").html(errmsg);
-
-  //   });
-
-         
-
-  //         return true;
-
-  //     }
-
-
+  //     app.ajax.fail(function( jqXHR, textStatus ) {
+  //       $("#page").html(errmsg);
+  //     });
+  //     return true;
+  //   }
   // },
   // pageInit:function(rel){
 
