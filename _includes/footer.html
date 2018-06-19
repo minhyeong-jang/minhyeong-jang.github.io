@@ -1,60 +1,19 @@
 <div id="footer">
-    <div class="introduce">
-        <div class="about">
-            <div class="title">About</div>
-            <div>
-                <img src="{{ '/assets/images/my.jpg' | prepend: site.baseurl }}">
-                <div>
-                    <h4><span>Minheyong Jang</span></h4>
-                    Front-end & Back-end Developer<br/><br/>
-                    AngularJS, Bootstrap, jQuery<br/>
-                    PHP, Laravel, Node.js etc.<br/><br/>
-                    <span>Invest in my abilities and values.</span>
-                </div>
-            </div>
-        </div>
-        <div class="link">
-            <div style="width: fit-content; margin: auto;">
-                <div class="title">Contact</div>
-                <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
-                    <span class="icon icon-facebook2"></span>
-                    Facebook
-                </a>
-                <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
-                    <span class="icon icon-linkedin"></span>
-                    LinkedIn
-                </a>
-                <a href="//github.com/minhyeong-jang" target="_blank">
-                    <span class="icon icon-github"></span>
-                    Github
-                </a>
-                <a href="{{ '/contact/' | prepend: site.baseurl}}">
-                    <span class="icon icon-mail4"></span>
-                    Mail
-                </a>
-            </div>
-        </div>
-        <div class="nav">
-            <div class="title">Navigation</div>
-            <a href="{{ '/about/' | prepend: site.baseurl}}" class="{% if page.title == 'About' %} active {% endif %}">
-                <span>About</span>
-                Introduce myself
-            </a>
-            <a href="{{ '/history/' | prepend: site.baseurl}}" class="{% if page.title == 'History' %} active {% endif %}">
-                <span>History</span>
-                Career & Development
-            </a>
-            <a href="{{ '/portfolio/' | prepend: site.baseurl}}" class="{% if page.title == 'Portfolio' %} active {% endif %}">
-                <span>Portfolio</span>
-                Development Project
-            </a>
-            <a href="{{ '/contact/' | prepend: site.baseurl}}" class="{% if page.title == 'Contact' %} active {% endif %}">
-                <span>Contact</span>
-                Send to Mail
-            </a>
-        </div>
-    </div>
-    <div class="copyright">
-            Copyright(c) Minhyeong Jang All Rights Reserved.
-    </div>
+      <div id="link">
+        <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+            <span class="icon icon-facebook2"></span>
+        </a>
+        <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+            <span class="icon icon-linkedin"></span>
+        </a>
+        <a href="//github.com/minhyeong-jang" target="_blank">
+            <span class="icon icon-github"></span>
+        </a>
+        <a href="{{ '/contact/' | prepend: site.baseurl}}">
+            <span class="icon icon-mail4"></span>
+        </a>
+      </div>
+  <div class="copyright">
+      Copyright(c) Minhyeong Jang All Rights Reserved.
+  </div>
 </div>

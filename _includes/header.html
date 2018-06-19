@@ -1,25 +1,11 @@
 <div id="header">
-  <div class="container">
-    <div class="gnb">
-      <div class="logo">
-        <a href="{{ '/' }}">
-          <img src="{{ '/assets/images/logo.png' }}" alt="logo">
-        </a>
-      </div>
-      <ul>
-        <li class="{% if page.title == 'About' %} active {% endif %}">
-          <a title="About Minhyeong Jang - Front-end & Back-end Developer" href="{{ '/about/' }}">ABOUT</a>
-        </li>
-        <li class="{% if page.title == 'History' %} active {% endif %}">
-          <a href="{{ '/history/' }}">HISTORY.</a>
-        </li>
-        <li class="{% if page.title == 'Portfolio' %} active {% endif %}">
-          <a title="Portfolio of Front-end & Back-end Development Project" href="{{ '/portfolio/' }}">PORTFOLIO</a>
-        </li>
-        <li class="{% if page.title == 'Contact' %} active {% endif %}">
-          <a href="{{ '/contact/' }}">CONTACT</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <a id="logo" href="/">Minhyeong</a>
+  <ul id="menu">
+    <li class="{% if page.url != '/contact/' %} active {% endif %}">
+      <a href="/">소개</a>
+    </li>
+    <li class="{% if page.title == 'Contact' %} active {% endif %}">
+      <a href="/contact/">블로그</a>
+    </li>
+  </ul>
 </div>

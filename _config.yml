@@ -1,10 +1,11 @@
 # Profile information
 name: doriri
 title: Front-end & Back-end Developer
+description: 소비자의 관점, 소비자 중심으로 생각하는 개발자 장민형입니다.
 permalink: ':title/'
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-cover: '/assets/images/default_cover.png'
+image: '/assets/images/default_cover.png'
 
 # Social
 facebook: #Add your Facebook

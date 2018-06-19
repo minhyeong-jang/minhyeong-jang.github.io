@@ -1,6 +1,9 @@
 ---
+layout: default
 ---
-<div>
-    <h1>Web Developer</h1>
-    <h4>Front end / Back end</h4>
+<div id="cover" {% if site.image %}style="background-image:url({{ site.image }});"{% endif %}>
+  <div>
+    <h3>{{ site.title }}</h3>
+    <h5>{{ site.description | newline_to_br}}</h5>
   </div>
+</div>
