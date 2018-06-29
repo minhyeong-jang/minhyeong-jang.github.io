@@ -1,27 +1,40 @@
-Minhyeong-jang
-=============================
+Minhyeong-jang / doriri.biz
+===========================
 
+> 해당 블로그는 [jekyll](https://jekyllrb.com/)를 사용하였습니다.
 
-![](assets/img/fresh.jpg)
+### 설치
 
-# Demo
+1. ruby 설치
+2. jekyll 설치
+3. git fetch or pull or clone
 
-![GIF](assets/img/fresh.gif)
+### Ruby 설치
 
-View this jekyll theme in action [here](http://artemsheludko.pw/fresh/)
+```console
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ brew install ruby
+$ gem install jekyll
+```
 
-Integrations
-  - [Google Fonts](https://fonts.google.com/)
-  - [Disqus](https://disqus.com/)
-  - [Font Awesome](http://fontawesome.io/)
-  - Social media links
+### Git Clone
 
-# How to Use
+```console
+$ git clone https://github.com/minhyeong-jang/doriri.git
+$ cd doriri
+$ bundle install
+```
 
-  For those unfamiliar with how Jekyll works, check out [jekyllrb.com](https://jekyllrb.com/) for all the details,
-  or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/),
-  and [creating pages](https://jekyllrb.com/docs/pages/).
+### 실행
 
-## License
+```
+$ bundle exec jekyll serve
+$ open http://localhost:4000
+```
 
-GNU General Public License v3.0
+### 배포(발행)
+
+```
+$ git commit -m '...'
+$ git push origin master
+````
