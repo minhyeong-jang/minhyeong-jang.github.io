@@ -38,6 +38,9 @@ $ open http://localhost:4000
 $ git commit -m '...'
 $ git push origin master
 ```
+### 파일 형식
+글 : `{year}-{month}-{day}-{title}.md // 2018-07-01-wordpress.md`<br/>
+이미지 : `{title}-{num} // wordpree-1.png`<br/>
 
 ### 블로그 마크업
 대메뉴 : `h1`<br/>
@@ -47,8 +50,9 @@ $ git push origin master
 이미지 : `![wordpress.com](/files/wordpress-info-1.png)`<br/>
 이미지 설명 : `<img-info></img-info>`<br/>
 글 개행 : `<br/>`<br/>
-강조 : ````<br/>
+강조 : ` `` `<br/>
 코드 : ` ``` code ``` `
+
 ## License
 
 This software is licensed under the [Apache 2 license](LICENSE.txt), quoted below.
