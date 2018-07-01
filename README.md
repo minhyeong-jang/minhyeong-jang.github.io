@@ -40,14 +40,15 @@ $ git push origin master
 ```
 
 ### 블로그 마크업
-대메뉴 : h1
-대메뉴 설명 : h2
-중메뉴 : h3
-소메뉴 : h4
-이미지 : `![wordpress.com](/files/wordpress-info-1.png)`
-이미지 설명 : `<img-info></img-info>`
-글 개행 : `<br/>`
-
+대메뉴 : `h1`<br/>
+대메뉴 설명 : `h2`<br/>
+중메뉴 : `h3`<br/>
+소메뉴 : `h4`<br/>
+이미지 : `![wordpress.com](/files/wordpress-info-1.png)`<br/>
+이미지 설명 : `<img-info></img-info>`<br/>
+글 개행 : `<br/>`<br/>
+강조 : ````<br/>
+코드 : ` ``` code ``` `
 ## License
 
 This software is licensed under the [Apache 2 license](LICENSE.txt), quoted below.
