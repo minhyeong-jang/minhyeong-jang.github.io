@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div id="cover" {% if site.image %}style="background-image:url({{ page.image }});"{% endif %}>
+  <div>
+    <h3>{{ page.title }}</h3>
+    <h5>{{ page.description | newline_to_br}}</h5>
+  </div>
+</div>
+
+<!-- <div id="navbar" class="container">
+  Blog Posts
+</div> -->
+<div id="content" class="container">
+  <ul id="post-list">
+    {% for post in site.posts %}
+      {% include item.html %}
+    {% endfor %}
+  </ul>
+  {% include pagination.html %}
+</div>

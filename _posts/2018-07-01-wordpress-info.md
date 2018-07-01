@@ -4,7 +4,7 @@ title: '[Wordpress] 가입형 / 설치형'
 author: minhyeong.jang
 date: 2018-06-20 16:56
 tags: [wordpress]
-image: /files/covers/googleadsense.jpg
+image: /files/covers/wordpress.png
 ---
 ### 들어가며
 `WordPress 란 일반 사용자들도 웹사이트를 구축하고 관리할 수 있도록 도와주는 도구`입니다.
@@ -50,7 +50,6 @@ image: /files/covers/googleadsense.jpg
 #### - 단점
  - `서버 호스팅 및 설치`해야하는 불편함이 있습니다.
  - `서버비용`이 지출됩니다.
-
 
 ### 주관적 생각
 `번거롭더라도 설치형으로 진행하시는 것을 추천합니다.`

@@ -7,3 +7,9 @@ layout: default
     <h5>{{ site.description | newline_to_br}}</h5>
   </div>
 </div>
+
+<ul id="post-list">
+    {% for post in paginator.posts %}
+        {% include item.html %}
+    {% endfor %}
+</ul>
