@@ -54,10 +54,11 @@ image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq1I4SxovhaMoLrsvg
     <div>SECONDS</div>
   </li>
 </ul>
-<audio controls autoplay loop style="    position: absolute;
-top: -99999px;">
+<iframe src="files/check.mp3" style="position: absolute; top:-99999px;" allow="autoplay">
+</iframe>
+<!-- <audio controls autoplay>
     <source src="files/check.mp3" type="audio/mpeg">
-</audio>
+</audio> -->
 
 <script>
   $(document).ready(function() {
@@ -65,6 +66,7 @@ top: -99999px;">
     setInterval(function() {
       ddays();
     }, 1000);
+    $('audio').play();
   });
   function ddays() {
     const startdt = moment();
