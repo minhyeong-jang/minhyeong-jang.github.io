@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div id="cover" {% if site.image %}style="background-image:url({{ page.image }});"{% endif %}>
+<div id="cover" class="blog" {% if site.image %}style="background-image:url({{ page.image }});"{% endif %}>
   <div>
     <h3>{{ page.title }}</h3>
     <h5>{{ page.description | newline_to_br}}</h5>

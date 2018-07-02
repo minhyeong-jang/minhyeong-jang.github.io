@@ -55,3 +55,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
 include: [_pages, _]
+# sass:
+#   style: compressed

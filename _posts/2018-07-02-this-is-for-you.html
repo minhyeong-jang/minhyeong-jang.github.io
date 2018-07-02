@@ -1,0 +1,83 @@
+---
+layout: test
+title: 'This is for you'
+author: minhyeong.jang
+date: 2018-07-02 14:30
+tags: [Choi Young Jun]
+image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq1I4SxovhaMoLrsvgYWpbfRAsN31lDQ0kOpZOKybeT1liiNk5'
+---
+<style>
+  .test-cover::after {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+  .dday-wrap {
+    margin: 0 !important;
+    text-align: center;
+    background-color: #f3f8ef;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: 50% 92%;
+    padding-top: 75px;
+    background-size: 600px;
+    line-height: 242px;
+  }
+  .dday-wrap li {
+      display: inline-block;
+      width: 75px;
+      text-align: center;
+  }
+  .dday-wrap li div:nth-child(1){
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .dday-wrap li div:nth-child(2){
+    color: #ff5a58;
+    font-size: 12px;
+    font-weight: bold;
+  }
+</style>
+<ul class="dday-wrap">
+  <li>
+    <div id="day"></div>
+    <div>DAYS</div>
+  </li>
+  <li>
+    <div id="hour"></div>
+    <div>HOURS</div>
+  </li>
+  <li>
+    <div id="minute"></div>
+    <div>MINUTES</div>
+  </li>
+  <li>
+    <div id="second"></div>
+    <div>SECONDS</div>
+  </li>
+</ul>
+<audio controls autoplay loop style="    position: absolute;
+top: -99999px;">
+    <source src="files/check.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  $(document).ready(function() {
+    ddays();
+    setInterval(function() {
+      ddays();
+    }, 1000);
+  });
+  function ddays() {
+    const startdt = moment();
+    const enddt = moment('2018-07-03T00:00:00');
+
+    const daysDiff = enddt.diff(startdt, 'days'); // 일
+    const hourDiff = enddt.diff(startdt, 'hours') % 24; //시간
+    const minuteDiff = enddt.diff(startdt, 'minutes') % 60; // 분
+    const secondDiff = enddt.diff(startdt, 'seconds') % 60; // 초
+
+    $('#day').text(daysDiff);
+    $('#hour').text(hourDiff);
+    $('#minute').text(minuteDiff);
+    $('#second').text(secondDiff);
+  }
+</script>
