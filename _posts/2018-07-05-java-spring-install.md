@@ -1,23 +1,37 @@
 ---
 layout: post
-title: 'Wordpress 가입형 / 설치형'
+title: 'Intellij + gradle 프로젝트 불러오기'
 author: minhyeong.jang
 date: 2018-06-20 16:56
-tags: [wordpress]
+tags: [java, gradle, spring]
 image: /files/covers/wordpress.png
 ---
 ### 들어가며
-`WordPress 란 일반 사용자들도 웹사이트를 구축하고 관리할 수 있도록 도와주는 도구`입니다.
+`IntelliJ 에서 spring + gradle 프로젝트를 import` 합니다.
 
-워드프레스를 사용하는 경우 `두가지`로 구분됩니다.<br/>
-`가입형 (` [wordpress.com](wordpress.com) `)`<br/>
-`설치형 (` [wordpress.org](wordpress.org) `)`
+[spring 설치](https://spring.io/tools/sts/all) `)`<br/>
+스프링 설치 사이트에서 dmg 파일 설치 및 STS 파일 Applications 폴더로 이동
+
+[JDK 설치](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+
+```
+cd /Applications/STS.app/Contents/Eclipse
+vi STS.ini
+-vm
+../jdk/Contents/Home/bin
+맨 아랫줄 추가
+
+자바 버전에 맞춰서 
+cp -R /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk ./jdk
+
+
+```
 
 ### 가입형 ( [wordpress.com](wordpress.com) )
 `워드프레스가 제공하는 서버 및 DB를 사용하여 웹사이트를 구축합니다.`<br/>
 무료를 포함하여 요금제에 따라 성능이 달라집니다.
 
-![wordpress.com](/files/wordpress-info-1.png "워드프레스 가입형 홈페이지")
+![wordpress.com](/files/wordpress-info-1.png)
 <img-info>wordpress 가입형 페이지</img-info>
 
 #### - 장점
@@ -33,14 +47,14 @@ image: /files/covers/wordpress.png
  - `CSS 수정에 제약`이 있습니다.
  - `위 기능을 사용하기위해 요금제를 높이는 경우 많은 요금을 부과`해야합니다.
 
-![wordpress.com](/files/wordpress-info-2.png "워드프레스 가입형 가격표")
+![wordpress.com](/files/wordpress-info-2.png)
 <img-info>wordpress 가입형 요금</img-info>
 
 ### 설치형 ( [wordpress.org](wordpress.org) )
 사용자가 `서버에 직접 워드프레스를 설치하여 웹사이트를 구축`합니다.<br/>
 웹사이트 소유자이기 때문에 제약이 없습니다.
 
-![wordpress.com](/files/wordpress-info-3.png "워드프레스 설치형 홈페이지")
+![wordpress.com](/files/wordpress-info-3.png)
 <img-info>wordpress 설치형 페이지</img-info>
 
 #### - 장점
