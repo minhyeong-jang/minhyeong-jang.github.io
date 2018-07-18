@@ -58,7 +58,7 @@ body {
 #cover {
   position: relative;
   background-size: cover;
-  height: 400px;
+  height: 300px;
   background-position: 50%;
   background-repeat: no-repeat;
   h3 {
@@ -81,7 +81,7 @@ body {
   }
   &.blog {
     & > div {
-      margin-top: -35px;
+      // margin-top: -35px;
     }
   }
   &::after {
@@ -109,22 +109,14 @@ body {
   background-color: #f4f4f4;
 }
 #content {
-  position: relative;
-  z-index: 999;
-  margin: -90px auto 0px;
-  border-radius: 6px 6px 0 0;
-  -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-  background-color: #ffffff;
+  background-color: white;
 }
 
 /* post */
-
 #post-list {
-  padding: 20px 70px;
   li {
     position: relative;
-    padding: 50px 0px;
+    padding: 20px 20px;
     border-bottom: 1px solid #dedede;
   }
   .post-title {
@@ -179,6 +171,7 @@ body {
     }
   }
 }
+
 #post-content {
   padding: 60px 100px 40px;
   ul {
@@ -247,6 +240,55 @@ body {
   }
 }
 
+#tag-list {
+  margin-left: 8%;
+  width: 22%;
+  li {
+    position: relative;
+    padding: 20px 20px;
+    border-bottom: 1px solid #dedede;
+  }
+  .title {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555555;
+  }
+  .count {
+    background: #6c65d4;
+    width: 20px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+    float: right;
+    color: white;
+    margin-top: -6px;
+  }
+}
+
+#pagination {
+
+  clear: both;
+
+}
+
+/* sidemenu */
+#side-menu {
+  position: fixed;
+  left: 0px;
+  bottom: 40px;
+  /* border: 1px solid black; */
+  width: 90px;
+  line-height: 40px;
+  text-align: center;
+  /* border-right: none; */
+  font-size: 14px;
+  border-radius: px;
+  color: white;
+  background-color: #6b64d4;
+}
 /* footer */
 
 #footer {
@@ -254,6 +296,7 @@ body {
   line-height: 30px;
   padding: 20px;
   font-size: 14px;
+  margin-top: 75px;
   background-color: white;
 }
 #link {
@@ -264,10 +307,6 @@ body {
   }
 }
 
-.container {
-  max-width: 1020px;
-  margin: 0 auto;
-}
 /*
   button {
     float: right;

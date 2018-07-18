@@ -38,3 +38,13 @@ label{margin:0px}
   background-size: cover;
   background-position: 90% 50%;
 }
+
+.container, .harf-cotainer {
+  margin: 0 auto;
+}
+.container {
+  max-width: 1020px;
+}
+.harf-cotainer {
+  max-width: 510px;
+}
