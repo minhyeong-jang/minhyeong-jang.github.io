@@ -88,7 +88,6 @@ body {
     -moz-animation:    cover-scroll 0.5s alternate infinite; /* Fx 5+ */
     -o-animation:      cover-scroll 0.5s alternate infinite; /* Opera 12+ */
     animation:         cover-scroll 0.5s alternate infinite; /* IE 10+, Fx 29+ */
-
     @-webkit-keyframes cover-scroll {
       0%   { bottom: 10px; }
       100% { bottom: 20px; }
@@ -135,11 +134,14 @@ body {
 
       &::before, &::after {
         position: absolute;
+        width: 100%;
         height: 3px;
         background-color: #dddddd;
         content: "";
-        -webkit-animation: home-cover 3s alternate infinite;
-        animation: home-cover 3s alternate infinite;
+        -webkit-animation: home-cover 3s alternate infinite; /* Safari 4+ */
+        -moz-animation:    home-cover 3s alternate infinite; /* Fx 5+ */
+        -o-animation:      home-cover 3s alternate infinite; /* Opera 12+ */
+        animation:         home-cover 3s alternate infinite; /* IE 10+, Fx 29+ */
       }
       &::before {
         top: -3px;
@@ -149,14 +151,21 @@ body {
         bottom: -3px;
         right: 0%;
       }
-      /* Safari 4.0 - 8.0 */
-      @-webkit-keyframes  home-cover {
-        from {width: 0%;}
-        to {width: 100%;}
+      @-webkit-keyframes home-cover {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
       }
-      @keyframes  home-cover {
-        from {width: 0%;}
-        to {width: 100%;}
+      @-moz-keyframes home-cover {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @-o-keyframes home-cover {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @keyframes home-cover {
+        0%   { opacity: 0; }
+        100% { opacity: 1; }
       }
     }
   }
@@ -169,6 +178,40 @@ body {
 }
 #content {
   background-color: white;
+}
+
+/* home */
+
+#introduce {
+  position: relative;
+  height: 500px;
+  background-color: #7d7373;
+  .myself {
+    display: inline-block;
+    float: left;
+    margin-top: 90px;
+    width: 20%;
+  }
+  .language {
+    display: inline-block;
+    width: 50%;
+    margin-left: 10%;
+  }
+}
+
+#portfolio {
+  position: relative;
+  height: 600px;
+  background-color:black;
+  & > ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    li {
+      margin-left: 30px;
+    }
+  }
 }
 
 /* post */
