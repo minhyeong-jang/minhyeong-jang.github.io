@@ -1,10 +1,13 @@
 ---
 layout: default
 ---
-<div id="cover" {% if site.image %}style="background-image:url({{ site.image }});"{% endif %}>
-  <div>
+<div id="cover" class="home page-container" {% if site.image %}style="background-image:url({{ site.image }});"{% endif %}>
+  <div class="text-wrap">
     <h3>{{ site.title }}</h3>
     <h5>{{ site.description | newline_to_br}}</h5>
+  </div>
+  <div class="mouse-scroll">
+    <img src="/files/design/icon-mouse-scroll.png" alt="mouse-scroll">
   </div>
 </div>
  {{ content }}
@@ -26,3 +29,19 @@ layout: default
   <div>Web Front-end & Back-end Developer</div>
   <div>Please let me know if you have any questions.</div>
 </div>
+
+<style>
+  #introduce {
+    height: 600px;
+    background-color:black;
+  }
+  #portfolio {
+    
+  }
+  #project {
+    
+  }
+  #career {
+    
+  }
+</style>

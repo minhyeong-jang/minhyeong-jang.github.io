@@ -28,5 +28,23 @@
       {{ content }}
   </div>
   {% include footer.html %}
+
+  <script type="text/javascript">
+    // Calculate min height
+    $(document).ready(function(){
+      containerHeight();
+
+      $(window).on('resize', function () {
+        setTimeout(function () {
+          containerWidth();
+          containerHeight();
+        });
+      });
+    function containerHeight() {
+      var availableHeight = $(window).height() - $('.page-container').offset().top;
+      $('.page-container').css('min-height', availableHeight + 'px');
+    }
+  });
+</script>
 </body>
 </html>
