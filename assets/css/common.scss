@@ -18,8 +18,8 @@ a,a:hover,a:visited{ outline:none; text-decoration:none; color:inherit}
 h1,h2,h3,h4,h5,h6{margin:0px}
 html,body{
   margin: 0px;
-  min-width:1080px;
-  @media screen and (max-width: $break-tablet){min-width:inherit}
+  // min-width:1080px;
+  // @media screen and (max-width: $break-tablet){min-width:inherit}
 }
 label{margin:0px}
 

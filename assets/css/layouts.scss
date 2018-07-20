@@ -134,7 +134,7 @@ body {
 
       &::before, &::after {
         position: absolute;
-        width: 100%;
+        width: 60%;
         height: 3px;
         background-color: #dddddd;
         content: "";
@@ -185,17 +185,30 @@ body {
 #introduce {
   position: relative;
   height: 500px;
-  background-color: #7d7373;
+  background-color: #ffffff;
   .myself {
-    display: inline-block;
-    float: left;
-    margin-top: 90px;
-    width: 20%;
+    text-align: center;
+    padding: 80px;
+    word-break: keep-all;
+    strong {
+      display: block;
+      font-size: 18px;
+    }
   }
   .language {
-    display: inline-block;
-    width: 50%;
-    margin-left: 10%;
+    width: 100%;
+    & > li {
+      display: inline-block;
+      width: 23%;
+      float: left;
+      margin-left: 2%;
+      vertical-align: top;
+      text-align: center;
+    }
+  }
+  strong {
+    display: block;
+    margin-bottom: 20px;
   }
 }
 

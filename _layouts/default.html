@@ -32,18 +32,20 @@
   <script type="text/javascript">
     // Calculate min height
     $(document).ready(function(){
+      // setTimeout(() => {
+        
       containerHeight();
 
+      // }, 20);
       $(window).on('resize', function () {
         setTimeout(function () {
-          containerWidth();
           containerHeight();
         });
       });
-    function containerHeight() {
-      var availableHeight = $(window).height() - $('.page-container').offset().top;
-      $('.page-container').css('min-height', availableHeight + 'px');
-    }
+      function containerHeight() {
+        var availableHeight = $(window).height() - $('.page-container').offset().top;
+        $('.page-container').css('min-height', availableHeight + 'px');
+      }
   });
 </script>
 </body>
