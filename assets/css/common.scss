@@ -12,10 +12,10 @@ $break-laptop: 1080px;
 $color-gray: #aaaaaa;
 
 /* global */
-*{font-family:'Nanum Square'}
+*{font-family:'Nanum Square'; box-sizing: border-box}
 ul,li{padding:0px; margin:0; list-style:none}
 a,a:hover,a:visited{ outline:none; text-decoration:none; color:inherit}
-h1,h2,h3,h4,h5,h6{margin:0px}
+p,h1,h2,h3,h4,h5,h6{margin:0px}
 html,body{
   margin: 0px;
   // min-width:1080px;
