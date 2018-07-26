@@ -40,8 +40,9 @@ body {
     display: inline-flex;
     font-weight: 400;
     a {
-      padding: 21px 20px;
+      padding: 0px 20px;
       font-size: 15px;
+      line-height: 60px; 
     }
     &.active, &:hover {
       font-weight: 600;
@@ -182,14 +183,17 @@ body {
 
 /* home */
 
-#introduce {
+#introduce, #career {
   position: relative;
-  background-color: #ffffff;
-  padding: 60px 0px 80px;
-  .myself {
+  .text-wrap {
     text-align: center;
     margin-bottom: 40px;
     h3 {
+      display: block;
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+    h4 {
       display: block;
       font-size: 1.15rem;
       margin-bottom: 20px;
@@ -199,6 +203,11 @@ body {
       word-break: keep-all;
     }
   }
+}
+
+#introduce {
+  background-color: #ffffff;
+  padding: 60px 0px 80px;
   .language {
     display: flex;
     border-radius: 20px;
@@ -213,7 +222,6 @@ body {
       vertical-align: top;
       text-align: center;
       padding: 60px 0px;
-
       &:last-child {
         border-right: none;
       }
@@ -252,15 +260,60 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    li {
+    & > li {
       margin-left: 30px;
+    }
+  }
+}
+
+#career {
+  background-color: #ffffff;
+  padding: 60px 0px 80px;
+  border-top: 2px solid #dedede;
+  .record {
+    & > li {
+      font-size: 0.7rem;
+      display: inline-block;
+      width: 20%;
+    }
+  }
+  .time-line {
+    & > li {
+      position: relative;
+      display: inline-block;
+      width: 20%;
+      float: left;
+      font-size: 15px;
+      font-weight: bold;
+      padding-left: 5px;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        top: -10px;
+        left: 0px;
+        height: 10px;
+        background: #000000;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        background: #000000;
+        height: 2px;
+        top: -6px;
+        left: 0px;
+      }
+      &:last-child > &::after {
+        border-right: #000000;
+      }
     }
   }
 }
 
 /* post */
 #post-list {
-  li {
+  & > li {
     position: relative;
     padding: 20px 20px;
     border-bottom: 1px solid #dedede;
