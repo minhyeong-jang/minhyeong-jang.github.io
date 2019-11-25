@@ -17,6 +17,45 @@ $color-gray: #ccc;
 body {
   background-color: #f4f4f4;
 }
+.body-wrap {
+  display: flex;
+}
+
+/**
+ * Navigation
+ */
+#navbar {
+  position: relative;
+  flex: 0 0 220px;
+  background: rgba(37, 37, 37, 1);
+
+  .info-wrap {
+    padding: 20px;
+
+    .user-name {
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 21px;
+      color: white;
+    }
+    .nick-name {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 19px;
+      font-weight: 500;
+    }
+  }
+
+  .contact {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+#content-wrap {
+  flex: 1 1 auto;
+  padding: 20px;
+}
 
 /* header */
 

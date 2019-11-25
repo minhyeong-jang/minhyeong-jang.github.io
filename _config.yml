@@ -1,6 +1,6 @@
 # Profile information
 name: doriri
-title: Front-end & Back-end Developer
+title: Doriri
 description: 소비자의 관점, 소비자 중심으로 생각하는 웹 개발자입니다.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -25,25 +25,26 @@ paginate: 5
 paginate_path: '/blog/:num/'
 
 
-# collections:
-#   authors:
-#     output: true
-#     permalink: /authors/:path/
-#   tags:
-#     output: true
-#     permalink: /tags/:path/
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
 
-# defaults:
-#   - scope:
-#       path: ''
-#       type: authors
-#     values:
-#       layout: author
-#   - scope:
-#       path: ''
-#       type: tags
-#     values:
-#       layout: tag
+defaults:
+  - scope:
+      path: ''
+      type: authors
+    values:
+      layout: author
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+
       
 # Build settings
 # markdown: kramdown

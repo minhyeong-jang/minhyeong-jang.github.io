@@ -1,26 +1,16 @@
 <div id="navbar">
-  <div class="logo">
-    <a href="/">
-      <img src="/assets/images/logo_small.png" alt="logo">
-      <h3>Minhyeong</h3>
-    </a>
+  <div class="info-wrap">
+    <p class="user-name">Minhyeong Jang</p>
+    <p class="nick-name">Doriri</p>
   </div>
-  <div class="gnb">
-    <a href="/">
-      <span class="icon icon-home"></span>
-    </a>
-    <a href="/about/">
-      <span class="icon icon-user"></span>
-    </a>
-    <a href="/skill/">
-      <span class="icon icon-cog"></span>
-    </a>
-    <a href="/project/">
-      <span class="icon icon-git"></span>
-    </a>
-    <a href="/contact/">
-      <span class="icon icon-mail2"></span>
-    </a>
+  <div class="menu-wrap">
+    <ul class="">
+      <li class="{% if page.url == '/about' %} active {% endif %}">
+        <a href="/">About</a>
+      </li>
+      <li>Javascript</li>
+      <li>Styles</li>
+    </ul>
   </div>
 
   <div class="contact">        
