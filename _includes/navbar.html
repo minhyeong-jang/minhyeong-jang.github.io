@@ -1,30 +1,47 @@
 <div id="navbar">
-  <div class="info-wrap">
-    <p class="user-name">Minhyeong Jang</p>
-    <p class="nick-name">Doriri</p>
-  </div>
-  <div class="menu-wrap">
-    <ul class="">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
       <li class="{% if page.url == '/about' %} active {% endif %}">
-        <a href="/">About</a>
+        <a href="/about">About</a>
       </li>
-      <li>Javascript</li>
-      <li>Styles</li>
+      <li data-link="cashmere">
+        <p>Dev Log</p>
+        <ul class="menu-sub">
+          <li data-link="cashmere_story"><a href="cashmere_story.html">캐시미어 이야기</a></li>
+          <li data-link="cashmere_management"><a href="cashmere_management.html">캐시미어 관리법</a></li>
+        </ul>
+      </li>
+      <li data-link="story">
+        <p>Life Log</p>
+        <ul class="menu-sub">
+          <li data-link="cashmere_story"><a href="cashmere_story.html">캐시미어 이야기</a></li>
+          <li data-link="cashmere_management"><a href="cashmere_management.html">캐시미어 관리법</a></li>
+        </ul>
+      </li>
+      <li data-link="contact">
+        <a href="contact.html">CONTACT</a>
+      </li>
     </ul>
-  </div>
 
-  <div class="contact">        
-    <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
-      <span class="icon icon-facebook2"></span>
-    </a>
-    <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
-      <span class="icon icon-linkedin"></span>
-    </a>
-    <a href="//github.com/minhyeong-jang" target="_blank">
-      <span class="icon icon-github"></span>
-    </a>
-    <a href="{{ '/contact/' | prepend: site.baseurl}}">
-      <span class="icon icon-mail3"></span>
-    </a>
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="{{ '/contact/' | prepend: site.baseurl}}">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
   </div>
 </div>

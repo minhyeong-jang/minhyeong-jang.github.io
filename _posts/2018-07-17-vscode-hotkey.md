@@ -5,6 +5,7 @@ author: minhyeong.jang
 date: 2018-06-20 16:56
 tags: [java, gradle, spring]
 image: /files/covers/wordpress.png
+permalink: /blog/
 ---
 ### 들어가며
 `IntelliJ 에서 spring + gradle 프로젝트를 import` 합니다.
