@@ -1,5 +1,6 @@
 <li>
   <a href="{{ post.url }}">
+    <div class="author-image" {% if post.image %}style="background-image:url({{ post.image }});"{% endif %}>
     <h3 class="post-title">{{ post.title }}</h3>
     <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 75 }}</p>
   </a>
@@ -9,8 +10,7 @@
     {% endfor %}
   </p>
   <div class="post-author">
-    <div class="author-image" {% if post.image %}style="background-image:url({{ post.image }});"{% endif %}>
-    </div>
+  </div>
     <p class="author-name">{{ post.author }}</p>
     <p class="post-date">{{ post.date | date: '%Y-%m-%d %H:%M' }}</p>
   </div>

@@ -3,7 +3,7 @@ layout: post
 title: 온라인 광고 용어 CPC, CPM, CPS, CPA
 author: minhyeong.jang
 date: 2018-06-20 16:56
-tags: [info]
+tags: [etc, info]
 image: /files/covers/googleadsense.jpg
 ---
 ### 들어가며

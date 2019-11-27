@@ -99,12 +99,12 @@ body {
   .menu-sub {
     padding-left: 0.9286rem;
     transition: all 0.2s;
-    height: 0px;
+    // height: 0px;
     overflow: hidden;
   }
   .menu-wrap > li:hover .menu-sub,
   .menu-wrap > li.active .menu-sub {
-    height: 66px;
+    // height: 66px;
   }
   .menu-sub li {
     position: relative;
@@ -149,13 +149,27 @@ body {
   padding: 30px 20px;
   border-radius: $border-radius;
 
+  .reponsive-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
   ul {
-    padding: 20px;
-    border-top: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
+    // border-top: 1px solid $border-color;
+    // border-bottom: 1px solid $border-color;
+    margin: 5px 0px 0px 40px;
 
     li {
-      line-height: 1.7;
+      padding: 3px;
+      list-style: outside;
+      line-height: 1.5;
+    }
+  }
+
+  ol {
+    padding-inline-start: 20px;
+    li {
+      line-height: 1.8;
     }
   }
 
@@ -164,8 +178,10 @@ body {
   }
 
   h2 {
-    font-size: 18px;
-    margin: 20px 0px 80px 0px;
+    font-size: 23px;
+    margin: 60px 0px 20px 0px;
+    padding: 5px 15px;
+    border-left: 3px solid #5fad80;
   }
 
   h3 {
@@ -189,10 +205,6 @@ body {
     display: block;
     font-size: 15px;
     font-weight: bold;
-  }
-
-  ul {
-    margin-top: 20px;
   }
 
   a {
@@ -513,10 +525,12 @@ body {
 
 /* post */
 #post-list {
-  & > li {
+  display: flex;
+
+  li {
     position: relative;
+    flex: 1 1 auto;
     padding: 20px 20px;
-    border-bottom: 1px solid #dedede;
   }
 
   .post-title {
