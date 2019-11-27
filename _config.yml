@@ -2,7 +2,7 @@
 name: doriri
 title: Doriri
 description: 소비자의 관점, 소비자 중심으로 생각하는 웹 개발자입니다.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 image: /files/covers/home.jpg
 
