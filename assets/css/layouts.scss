@@ -14,10 +14,6 @@ $color-gray: #ccc;
 $border-radius: 5px;
 $border-color: rgb(209, 202, 216);
 
-.red {
-  color: rgb(200, 75, 58);
-  font-weight: bold;
-}
 
 // color: rgb(70,111,128);
 /* main */
@@ -140,6 +136,10 @@ body {
     line-height: 22px;
     font-weight: bold;
     color: rgb(74, 62, 86);
+  }
+  .summery {
+    margin-bottom: 20px;
+    font-size: 15px;
   }
 }
 
@@ -308,68 +308,19 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translate(-50%, 0);
-    -webkit-animation: cover-scroll 0.5s alternate infinite; /* Safari 4+ */
-    -moz-animation: cover-scroll 0.5s alternate infinite; /* Fx 5+ */
-    -o-animation: cover-scroll 0.5s alternate infinite; /* Opera 12+ */
     animation: cover-scroll 0.5s alternate infinite; /* IE 10+, Fx 29+ */
-    @-webkit-keyframes cover-scroll {
-      0% {
-        bottom: 10px;
-      }
-
-      100% {
-        bottom: 20px;
-      }
+    
+    img {
+      width: 23px;
     }
-
-    @-moz-keyframes cover-scroll {
-      0% {
-        bottom: 10px;
-      }
-
-      100% {
-        bottom: 20px;
-      }
-    }
-
-    @-o-keyframes cover-scroll {
-      0% {
-        bottom: 10px;
-      }
-
-      100% {
-        bottom: 20px;
-      }
-    }
-
     @keyframes cover-scroll {
       0% {
-        bottom: 10px;
+        bottom: 15px;
       }
 
       100% {
         bottom: 20px;
       }
-    }
-  }
-
-  &::after {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  &.post-cover {
-    background-position: 50% calc(50% - 35px);
-    margin-top: 40px;
-
-    &::after {
-      background-color: rgba(0, 0, 0, 0.6);
     }
   }
 
@@ -448,16 +399,6 @@ body {
   }
 }
 
-/* content */
-
-#wrapper {
-  background-color: #f4f4f4;
-}
-
-#content {
-  background-color: white;
-}
-
 /* home */
 
 #introduce {
@@ -523,109 +464,110 @@ body {
   }
 }
 
-/* post */
+/**
+ * Posts Layout
+ */
 #post-list {
   display: flex;
+  flex-flow: wrap;
 
   li {
-    position: relative;
-    flex: 1 1 auto;
-    padding: 20px 20px;
-  }
-
-  .post-title {
-    font-size: 25px;
-    margin-right: 150px;
-  }
-
-  .post-excerpt {
-    display: -webkit-box;
-    margin-top: 30px;
-    margin-right: 200px;
-    font-size: 14px;
-    line-height: 26px;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
-  }
-
-  .post-tags {
-    a {
-      display: inline-block;
-      padding: 0 10px;
-      border: 1px solid #e6e6e6;
-      border-radius: 5px;
-      background-color: #fafafa;
-      color: #1e1e1e;
-      font-size: 12px;
-      line-height: 24px;
-    }
-  }
-
-  .post-author {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translate(0%, -50%);
-
-    .author-image {
-      width: 150px;
-      background-image: url(/files/covers/wordpress.png);
-      height: 100px;
-      background-position: 50%;
-      background-size: cover;
-      border: 50%;
-      border-radius: 20px;
-    }
-
-    .author-name, .post-date {
-      font-size: 14px;
-      margin: 10px 0px 0px 0px;
-      text-align: center;
-    }
-
-    .post-date {
-      font-size: 11px;
-    }
-  }
-}
-
-#tag-list {
-  margin-left: 8%;
-  width: 22%;
-
-  li {
-    position: relative;
-    padding: 20px 20px;
-    border-bottom: 1px solid #dedede;
-  }
-
-  .title {
     display: inline-block;
+    position: relative;
+    width: calc(33.333% - 20px);
+    margin: 10px;
+    float: left;
+    border-radius: $border-radius;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+
+    .post-image {
+      width: 100%;
+      height: 170px;
+      background-position: 50% 50%;
+      background-size: cover;
+    }
+
+    .post-info {
+      padding: 25px 15px;
+
+      .author-name {
+        font-size: 13px;
+        color: lightseagreen;
+        font-weight: bold;
+      }
+      .post-title {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+      .post-excerpt {
+        border-top: 1px solid #dedede;
+        display: -webkit-box;
+        margin-top: 30px;
+        padding-top: 25px;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #aaa;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
+      }
+      .post-date {
+        font-size: 12px;
+        margin-top: 10px;
+        color: #666;
+      }
+    }
+  }
+}
+
+/**
+ * Contact Layout
+ */
+#contact {
+
+  .form-item {
+    padding: 5px 0px;
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #dedede;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: $border-radius;
+    }
+
+    textarea {
+      min-height: 200px;
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    button {
+      background: #5fad80;
+      border: 1px solid #61a27c;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      float: right;
+      border-radius: $border-radius;
+    }
+  }
+
+  .footer {
     font-size: 14px;
-    font-weight: bold;
-    color: #555555;
-  }
+    line-height: 1.8;
 
-  .count {
-    background: #6c65d4;
-    width: 20px;
-    border-radius: 50%;
-    line-height: 20px;
-    text-align: center;
-    font-size: 10px;
-    padding: 5px;
-    float: right;
-    color: white;
-    margin-top: -6px;
+    a {
+      color: lightseagreen;
+    }
   }
 }
 
-#pagination {
-  clear: both;
-}
+
 /* footer */
 
 #footer {
@@ -660,19 +602,20 @@ body {
   background-color: #6b64d4;
 }
 
-/*
-  button {
-    float: right;
-    font-size: 32px;
-    padding: 0px;
-    line-height: 50px;
-    margin: 25px 17px 0px 0px;
-    height: 38px;
-    color: $color-gray;
-    &.collapsed {
-      color: rgb(85, 124, 231);
-    }
+
+/**
+ * Pagination Layout
+ */
+#pagination {
+  text-align: center;
+
+  li {
+    
+    padding: 5px;
+    background: red;
+  }
 }
+/*
   @media screen and (max-width: $break-tablet) {
     .logo {
       margin-left: 20px;

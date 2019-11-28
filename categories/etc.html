@@ -1,14 +1,14 @@
 ---
 layout: blog
 title: Blog
-permalink: /blog
+permalink: /categories/etc
 author: minhyeong.jang
-date: 2019-11-26 19:44
 ---
 <ul id="post-list">
-  {{ paginator }}
   {% for post in paginator.posts %}
-    {% include item.html %}
+    {% if post.tags contains page.name %}
+        {% include item.html %}
+    {% endif %}
   {% endfor %}
 </ul>
 {% include pagination.html %}

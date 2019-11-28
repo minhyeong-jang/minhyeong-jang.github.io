@@ -1,40 +1,20 @@
 ---
 layout: default
 ---
-<div id="cover" class="container post-cover"
-  {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
-  <div>
-    <h1>{{ page.title }}</h1>
-    <p>
-      {% for tag in page.tags %}
-        <a href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
-        {% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    </p>
+<div id="cover"
+  {% if page.image %}
+    style="background-image: url({{ page.image }})"
+  {% endif %}>
+  <div class="mouse-scroll">
+    <img src="/files/design/icon-mouse-scroll.png" alt="mouse-scroll">
   </div>
 </div>
 
-<div id="content" class="container post">
-    <div id="post-content">{{ content }}</div>
-    <div id="post-footer">
-      {{ page.author}}
-      {% for author in site.authors %}
-      {{ author.name }}
-      {% endfor %}
-        {% assign author = site.authors | where: 'name', page.author | first %}
-        <a id="post-author" href="{{ author.url }}">
-            <div id="author-image" style="background-image:url({{ author.image | default: '' }});">
-                <span class="sr-only">{{ author.name }}'s profile image</span>
-            </div>
-            <p id="author-name">{{ author.name }}</p>
-        </a>
-        <p id="post-date">{{ page.date | date: '%Y-%m-%d %H:%M' }}</p>
-        <a id="post-more" href="{{ author.url }}">
-            <span>Read more posts by this author</span>
-        </a>
-    </div>
+<div id="post-content" style="margin-top: 30px">
+  <div class="reponsive-content">
+    <div>{{ content }}</div>
+  </div>
 </div>
-
 <div id="post-links" class="container">
     {% assign prev = page.previous %}
     {% if prev %}
@@ -56,8 +36,4 @@ layout: default
             </div>
         </div>
     {% endif %}
-</div>
-
-<div id="lightbox">
-    <div id="lightbox-image"></div>
 </div>

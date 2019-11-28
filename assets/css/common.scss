@@ -23,6 +23,22 @@ html,body{
 }
 label{margin:0px}
 
+input, button, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+button {
+  transition: opacity 0.2s linear; 
+  
+  &:hover {
+    box-shadow: 0 1px 4px rgba(0,0,0,.3);
+  }
+  &:active {
+    opacity: 0.8;
+  }
+}
+
 .pl-0{padding-left:0px !important}
 .pl-5{padding-left:5px !important}
 .pr-0{padding-right:0px !important}
@@ -34,17 +50,20 @@ label{margin:0px}
 
 .text-right{text-align:right}
 
-.page-container {
-  background-size: cover;
-  background-position: 90% 50%;
+.sr-only {
+  display: none;
 }
-
-.container, .harf-cotainer {
+.container {
   margin: 0 auto;
 }
 .container {
   max-width: 1020px;
 }
-.harf-cotainer {
-  max-width: 510px;
+
+.disabled {
+  display: none;
+}
+.red {
+  color: rgb(200, 75, 58);
+  font-weight: bold;
 }

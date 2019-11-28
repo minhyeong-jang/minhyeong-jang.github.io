@@ -1,12 +1,10 @@
 ---
-layout: blog
+layout: category
 title: Blog
-permalink: /blog
+permalink: /categories/index
 author: minhyeong.jang
-date: 2019-11-26 19:44
 ---
 <ul id="post-list">
-  {{ paginator }}
   {% for post in paginator.posts %}
     {% include item.html %}
   {% endfor %}

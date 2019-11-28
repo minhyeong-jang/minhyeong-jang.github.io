@@ -1,17 +1,15 @@
 <li>
   <a href="{{ post.url }}">
-    <div class="author-image" {% if post.image %}style="background-image:url({{ post.image }});"{% endif %}>
-    <h3 class="post-title">{{ post.title }}</h3>
-    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 75 }}</p>
+    <div class="post-image"
+      {% if post.image %}
+        style="background-image:url({{ post.image }})"
+      {% endif %}
+      ></div>
+    <div class="post-info">
+      <p class="author-name">{{ post.author }}</p>
+      <h3 class="post-title">{{ post.title }}</h3>
+      <p class="post-date">{{ post.date | date: '%Y년 %m월 %d일' }}</p>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 150 }}</p>
+    </div>
   </a>
-  <p class="post-tags">
-    {% for tag in post.tags %}
-    <a href="/tags/{{ tag }}" title="{{ tag }}">{{ tag }}</a>
-    {% endfor %}
-  </p>
-  <div class="post-author">
-  </div>
-    <p class="author-name">{{ post.author }}</p>
-    <p class="post-date">{{ post.date | date: '%Y-%m-%d %H:%M' }}</p>
-  </div>
 </li>
