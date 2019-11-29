@@ -8,7 +8,7 @@
     </div>
     <ul class="menu-wrap">
       <li class="{% if page.url == '/about' %} active {% endif %}">
-        <a href="/about">About</a>
+        <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
       </li>
       <li>
         {% for category in site.categories %}
@@ -23,7 +23,7 @@
         {% endfor %}
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href="{{ '/contact/' | prepend: site.baseurl }}">Contact</a>
       </li>
     </ul>
 
@@ -37,7 +37,7 @@
       <a href="//github.com/minhyeong-jang" target="_blank">
         <span class="icon icon-github"></span>
       </a>
-      <a href="{{ '/contact/' | prepend: site.baseurl}}">
+      <a href="{{ '/contact/' | prepend: site.baseurl }}">
         <span class="icon icon-mail3"></span>
       </a>
     </div>
