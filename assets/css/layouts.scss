@@ -95,28 +95,11 @@ body {
   .menu-sub {
     padding-left: 0.9286rem;
     transition: all 0.2s;
-    // height: 0px;
     overflow: hidden;
-  }
-  .menu-wrap > li:hover .menu-sub,
-  .menu-wrap > li.active .menu-sub {
-    // height: 66px;
   }
   .menu-sub li {
     position: relative;
-    margin-top: 0.9286rem;
   }
-  .menu-sub li.active::before {
-    position: absolute;
-    content: "";
-    // background: url(../assets/images/icon/oval.svg) no-repeat 50% 50%/5px 5px;
-    left: -10px;
-    width: 5px;
-    height: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
   .contact {
     position: absolute;
     bottom: 10px;
@@ -218,23 +201,52 @@ body {
     margin: 20px 0px 0px;
   }
 
-  .highlighter-rouge {
-    font-weight: bold;
-    color: lightseagreen !important;
-  }
-
+  
   block {
     display: block;
     padding: 20px;
   }
-
+  
   blockquote {
     margin: 28px 0;
     padding: 15px 28px;
     border-left: 3px solid #f3cf00;
-
+    
     p {
       margin: 0px;
+    }
+  }
+
+  code.highlighter-rouge {
+    font-weight: bold;
+    color: lightseagreen !important;
+  }
+
+  table {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.8125rem;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+      font-weight: 900;
+    }
+
+    th:first-child, td:first-child {
+      padding-left: 0;
+    }
+
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid hsla(0,0%,0%,0.12);
+      font-feature-settings: "tnum";
+      padding-left: 1.08333rem;
+      padding-right: 1.08333rem;
+      padding-top: 0.8125rem;
+      padding-bottom: calc(0.8125rem - 1px);
     }
   }
 }

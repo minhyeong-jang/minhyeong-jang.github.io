@@ -9,7 +9,7 @@
       <p class="author-name">{{ post.author }}</p>
       <h3 class="post-title">{{ post.title }}</h3>
       <p class="post-date">{{ post.date | date: '%Y년 %m월 %d일' }}</p>
-      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 150 }}</p>
+      <p class="post-excerpt">{{ post.content | strip_html | truncatewords: 150 }}</p>
     </div>
   </a>
 </li>

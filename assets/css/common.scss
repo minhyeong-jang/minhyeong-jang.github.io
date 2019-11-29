@@ -12,11 +12,18 @@ $break-laptop: 1080px;
 $color-gray: #aaaaaa;
 
 /* global */
-*{font-family:'Nanum Square'; box-sizing: border-box}
+* {
+  font-family: 'Nanum Square';
+  code * {
+    font-family: Fira Code,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace !important;
+  }
+  box-sizing: border-box
+}
 ul,li{padding:0px; margin:0; list-style:none}
 a,a:hover,a:visited{ outline:none; text-decoration:none; color:inherit}
 p,h1,h2,h3,h4,h5,h6{margin:0px}
 html,body{
+  font-size: 14px;
   margin: 0px;
   // min-width:1080px;
   // @media screen and (max-width: $break-tablet){min-width:inherit}
@@ -48,7 +55,9 @@ button {
 .mt-10{margin-top:10px !important}
 .ml-per-2{margin-left:2% !important}
 
-.text-right{text-align:right}
+.text-right{
+  text-align: right;
+}
 
 .sr-only {
   display: none;

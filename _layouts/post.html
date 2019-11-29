@@ -12,6 +12,10 @@ layout: default
 
 <div id="post-content" style="margin-top: 30px">
   <div class="reponsive-content">
+    <div class="post-info">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-date red">{{ page.date | date: '%Y년 %m월 %d일' }}</p>
+    </div>
     <div>{{ content }}</div>
   </div>
 </div>

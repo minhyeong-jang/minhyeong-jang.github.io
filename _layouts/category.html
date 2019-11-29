@@ -1,4 +1,11 @@
 ---
 layout: default
 ---
-{{ content }}
+<ul id="post-list">
+  {% for post in site.posts %}
+    {% if post.tags contains page.title %}
+      {% include item.html %}
+    {% endif %}
+  {% endfor %}
+</ul>
+{% include pagination.html %}
