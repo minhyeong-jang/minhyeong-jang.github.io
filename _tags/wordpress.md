@@ -1,5 +1,5 @@
 ---
-category: Dev Log
+category: dev-blog
 name: wordpress
-title: '워드프레스'
+title: 'wordpress'
 ---

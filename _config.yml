@@ -48,7 +48,7 @@ defaults:
       path: ''
       type: tags
     values:
-      layout: tag
+      layout: category
   - scope:
       path: ''
       type: categories

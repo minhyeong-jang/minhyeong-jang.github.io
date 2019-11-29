@@ -70,24 +70,24 @@ body {
       margin-bottom: 10px;
     }
     li {
-      p, a {
+      a {
         display: block;
-        color: rgb(176, 165, 188);
+        color: rgb(166, 155, 178);
         font-size: 14px;
         font-weight: 500;
         padding: 10px 0px;
-        transition: color 0.5s linear;
+        transition: color 0.2s linear;
       }
 
       &.active {
-        p, a {
+        & > a {
           color: white !important;
           font-weight: bold !important;
         }
       }
       &:hover {
-        p, a {
-          color: rgb(200, 200, 200)
+        & > a {
+          color: rgb(220, 220, 220)
         }
       }
     }

@@ -10,13 +10,15 @@
       <li class="{% if page.url == '/about' %} active {% endif %}">
         <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
       </li>
-      <li>
+      <li class="{% if page.category contains 'dev-blog' %} active {% endif %}">
         {% for category in site.categories %}
           <a href="{{ site.baseurl }}/categories/{{ category.name }}">{{ category.title }}</a>
           <ul class="menu-sub">
             {% for tag in site.tags %}
               {% if category.name == tag.category %}
-                <li><a href="{{ site.baseurl }}/categories/{{ tag.name }}">{{ tag.title }}</a></li>
+                <li class="{% if page.url contains tag.name %} active {% endif %}">
+                  <a href="{{ site.baseurl }}/tags/{{ tag.name }}">{{ tag.title }}</a>
+                </li>
               {% endif %}
             {% endfor %}
           </ul>
