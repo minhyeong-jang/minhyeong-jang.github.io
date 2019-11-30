@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div id="cover" class="home" style="background-image:url(/files/covers/home.jpg)>
+<div id="cover" class="home" style="background-image:url({{ /files/covers/home.jpg | prepend: site.asset_url }})">
   <div class="text-wrap">
     <h3>Front-end & Back-end Developer</h3>
     <h5>고객의 관점으로 개발을 진행합니다.</h5>
@@ -22,7 +22,7 @@ layout: default
     </div>
     <ul class="language">
       <li>
-        <img src="/files/design/icon-frontend.png" />
+        <img src="{{ /files/design/icon-frontend.png | prepend: site.asset_url }}" />
         <h3>Front-end</h3>
         <p>HTML</p>
         <p>CSS, SCSS, <span class="red">Styled Components</span></p>
@@ -32,7 +32,7 @@ layout: default
         <p><span class="red">React</span>, Redux, <span class="red">Nextjs</span></p>
       </li>
       <li>
-        <img src="/files/design/icon-backend.png" />
+        <img src="{{ /files/design/icon-backend.png | prepend: site.asset_url }}" />
         <h3>Back-end</h3>
         <p class="red">NodeJs</p>
         <p>PHP</p>
@@ -40,7 +40,7 @@ layout: default
         <p>Ruby</p>
       </li>
       <li>
-        <img src="/files/design/icon-server.png" />
+        <img src="{{ /files/design/icon-server.png | prepend: site.asset_url }}" />
         <h3>Server & Etc</h3>
         <p class="red">Typescript</p>
         <p>Linux, Nginx</p>
