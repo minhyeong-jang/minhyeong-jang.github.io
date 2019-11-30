@@ -1,14 +1,14 @@
 <div id="navbar">
   <div class="fixed">
     <div class="info-wrap">
-      <a href="/">
+      <a href="{{ site.baseurl }}/">
         <p class="user-name">Minhyeong Jang</p>
         <p class="nick-name">Doriri</p>
       </a>
     </div>
     <ul class="menu-wrap">
       <li class="{% if page.url == '/about' %} active {% endif %}">
-        <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
+        <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
       </li>
       <li class="{% if page.category contains 'dev-blog' %} active {% endif %}">
         {% for category in site.categories %}
@@ -25,7 +25,7 @@
         {% endfor %}
       </li>
       <li>
-        <a href="{{ '/contact/' | prepend: site.baseurl }}">Contact</a>
+        <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>
       </li>
     </ul>
 

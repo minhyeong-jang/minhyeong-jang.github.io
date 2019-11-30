@@ -1,13 +1,12 @@
 ---
 layout: default
 ---
-{{ site.baseurl }}
 <div id="cover"
   {% if page.image %}
     style="background-image: url({{ page.image | prepend: site.baseurl }})"
   {% endif %}>
   <div class="mouse-scroll">
-    <img src="{{ /files/design/icon-mouse-scroll.png | prepend: site.asset_url }}" alt="mouse-scroll">
+    <img src="{{ site.baseurl }}{{ site.asset_url }}/files/design/icon-mouse-scroll.png" alt="mouse-scroll">
   </div>
 </div>
 
