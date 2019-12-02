@@ -62,17 +62,13 @@ button {
 .sr-only {
   display: none;
 }
-.container {
-  margin: 0 auto;
-}
-.container {
-  max-width: 1020px;
-}
-
 .disabled {
   display: none;
 }
 .red {
   color: rgb(200, 75, 58);
   font-weight: bold;
+}
+.language-plaintext {
+  background: none;
 }

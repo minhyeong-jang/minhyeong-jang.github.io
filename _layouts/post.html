@@ -3,7 +3,7 @@ layout: default
 ---
 <div id="cover"
   {% if page.image %}
-    style="background-image: url({{ page.image | prepend: site.baseurl }})"
+    style="background-image: url({{ site.baseurl }}{{ site.asset_url }}{{ page.image }})"
   {% endif %}>
   <div class="mouse-scroll">
     <img src="{{ site.baseurl }}{{ site.asset_url }}/files/design/icon-mouse-scroll.png" alt="mouse-scroll">
@@ -19,7 +19,7 @@ layout: default
     <div>{{ content }}</div>
   </div>
 </div>
-<div id="post-links" class="container">
+<div id="post-links">
     {% assign prev = page.previous %}
     {% if prev %}
         <div id="post-prev"

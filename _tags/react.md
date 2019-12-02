@@ -1,5 +1,5 @@
 ---
-category: Dev Log
+category: dev-blog
 name: react
-title: '리액트'
+title: 'React'
 ---

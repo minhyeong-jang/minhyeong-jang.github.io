@@ -1,5 +1,5 @@
 ---
 category: dev-blog
 name: wordpress
-title: 'wordpress'
+title: 'Wordpress'
 ---
