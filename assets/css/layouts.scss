@@ -493,9 +493,8 @@ body {
   li {
     display: inline-block;
     position: relative;
-    width: calc(33.333% - 20px);
+    width: calc(25% - 20px);
     margin: 10px;
-    float: left;
     border-radius: $border-radius;
     overflow: hidden;
     background: white;
@@ -715,3 +714,30 @@ for large screen(>=720px):
 +-----------------------------------------------+
 
 */
+
+
+@media (max-width: $break-laptop) {
+  #post-list {
+    li {
+      width: calc(33.33% - 20px) !important;
+    }
+  }
+}
+@media (max-width: $break-tablet) {
+  #navbar {
+    display: none;
+  }
+  #post-list {
+    li {
+      width: 100% !important;
+    }
+  }
+}
+
+@media (max-width: $break-mobile-l) {
+  #post-list {
+    li {
+      width: 100% !important;
+    }
+  }
+}
