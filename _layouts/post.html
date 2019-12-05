@@ -20,24 +20,24 @@ layout: default
   </div>
 </div>
 <div id="post-links">
-    {% assign prev = page.previous %}
-    {% if prev %}
-        <div id="post-prev"
-             {% if prev.image %}style="background-image: url({{ prev.image }});"{% endif %}>
-            <div>
-                <h3><a href="{{ prev.url }}">{{ prev.title }}</a></h3>
-                <p>YOU MIGHT ENJOY</p>
-            </div>
-        </div>
-    {% endif %}
-    {% assign next = page.next %}
-    {% if next %}
-        <div id="post-next"
-             {% if next.image %}style="background-image: url({{ next.image }});"{% endif %}>
-            <div>
-                <h3><a href="{{ next.url }}">{{ next.title }}</a></h3>
-                <p>NEXT POST</p>
-            </div>
-        </div>
-    {% endif %}
+  {% assign prev = page.previous %}
+  {% if prev %}
+      <div id="post-prev"
+            {% if prev.image %}style="background-image: url({{ prev.image }});"{% endif %}>
+          <div>
+            <p>YOU MIGHT ENJOY</p>
+              <h3><a href="{{ prev.url }}">{{ prev.title }}</a></h3>
+          </div>
+      </div>
+  {% endif %}
+  {% assign next = page.next %}
+  {% if next %}
+      <div id="post-next"
+            {% if next.image %}style="background-image: url({{ next.image }});"{% endif %}>
+          <div>
+            <p>NEXT POST</p>
+              <h3><a href="{{ next.url }}">{{ next.title }}</a></h3>
+          </div>
+      </div>
+  {% endif %}
 </div>

@@ -2,11 +2,11 @@
 ---
 /* media size */
 
-// $break-mobile-s: 320px;
-// $break-mobile-m: 375px;
-// $break-mobile-l: 425px;
-// $break-tablet: 768px;
-// $break-laptop: 1080px;
+$break-mobile-s: 320px;
+$break-mobile-m: 375px;
+$break-mobile-l: 425px;
+$break-tablet: 768px;
+$break-laptop: 1080px;
 
 /* color */
 
@@ -14,8 +14,6 @@ $color-gray: #ccc;
 $border-radius: 5px;
 $border-color: rgb(209, 202, 216);
 
-
-// color: rgb(70,111,128);
 /* main */
 body {
   color: #2f2936;
@@ -61,7 +59,6 @@ body {
     }
   }
 
-  
   .menu-wrap {
     margin-top: 35px;
     padding: 0px 20px;
@@ -69,6 +66,7 @@ body {
     & > li {
       margin-bottom: 10px;
     }
+
     li {
       a {
         display: block;
@@ -85,21 +83,25 @@ body {
           font-weight: bold !important;
         }
       }
+
       &:hover {
         & > a {
-          color: rgb(220, 220, 220)
+          color: rgb(220, 220, 220);
         }
       }
     }
   }
+
   .menu-sub {
     padding-left: 0.9286rem;
     transition: all 0.2s;
     overflow: hidden;
   }
+
   .menu-sub li {
     position: relative;
   }
+
   .contact {
     position: absolute;
     bottom: 10px;
@@ -120,6 +122,7 @@ body {
     font-weight: bold;
     color: rgb(74, 62, 86);
   }
+
   .summery {
     margin-bottom: 20px;
     font-size: 15px;
@@ -151,6 +154,7 @@ body {
 
   ol {
     padding-inline-start: 20px;
+
     li {
       line-height: 1.8;
     }
@@ -201,17 +205,16 @@ body {
     margin: 20px 0px 0px;
   }
 
-  
   block {
     display: block;
     padding: 20px;
   }
-  
+
   blockquote {
     margin: 28px 0;
     padding: 15px 28px;
     border-left: 3px solid #f3cf00;
-    
+
     p {
       margin: 0px;
     }
@@ -235,13 +238,15 @@ body {
       font-weight: 900;
     }
 
-    th:first-child, td:first-child {
+    th:first-child,
+    td:first-child {
       padding-left: 0;
     }
 
-    th, td {
+    th,
+    td {
       text-align: left;
-      border-bottom: 1px solid hsla(0,0%,0%,0.12);
+      border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
       font-feature-settings: "tnum";
       padding-left: 1.08333rem;
       padding-right: 1.08333rem;
@@ -250,7 +255,6 @@ body {
     }
   }
 }
-
 
 #logo {
   position: absolute;
@@ -273,7 +277,8 @@ body {
       line-height: 60px;
     }
 
-    &.active, &:hover {
+    &.active,
+    &:hover {
       font-weight: 600;
       border-bottom: 2px solid #1e1e1e;
     }
@@ -321,10 +326,11 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
     animation: cover-scroll 0.5s alternate infinite; /* IE 10+, Fx 29+ */
-    
+
     img {
       width: 23px;
     }
+
     @keyframes cover-scroll {
       0% {
         bottom: 15px;
@@ -346,7 +352,8 @@ body {
       background: rgba(0, 0, 0, 0.3);
       padding: 40px 0px;
 
-      &::before, &::after {
+      &::before,
+      &::after {
         position: absolute;
         width: 60%;
         height: 3px;
@@ -444,8 +451,8 @@ body {
     border-radius: 20px;
     border: 2px solid #cccccc;
     width: 100%;
-    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
-    -webkit-box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
+    -webkit-box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
 
     & > li {
       display: inline-block;
@@ -492,7 +499,7 @@ body {
     border-radius: $border-radius;
     overflow: hidden;
     background: white;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
 
     .post-image {
       width: 100%;
@@ -509,10 +516,12 @@ body {
         color: lightseagreen;
         font-weight: bold;
       }
+
       .post-title {
         margin-top: 10px;
         font-size: 20px;
       }
+
       .post-excerpt {
         border-top: 1px solid #dedede;
         display: -webkit-box;
@@ -527,6 +536,7 @@ body {
         word-wrap: break-word;
         overflow: hidden;
       }
+
       .post-date {
         font-size: 12px;
         margin-top: 10px;
@@ -540,11 +550,11 @@ body {
  * Contact Layout
  */
 #contact {
-
   .form-item {
     padding: 5px 0px;
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       border: 1px solid #dedede;
       padding: 10px 20px;
@@ -578,7 +588,6 @@ body {
     }
   }
 }
-
 
 /* footer */
 
@@ -614,7 +623,6 @@ body {
   background-color: #6b64d4;
 }
 
-
 /**
  * Pagination Layout
  */
@@ -622,11 +630,11 @@ body {
   text-align: center;
 
   li {
-    
     padding: 5px;
     background: red;
   }
 }
+
 /*
   @media screen and (max-width: $break-tablet) {
     .logo {

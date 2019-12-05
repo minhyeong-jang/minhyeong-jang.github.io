@@ -11,12 +11,21 @@
         <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
       </li>
       {% for category in site.categories %}
-      <li class="{% if page.category contains category.name or page.url contains category.name %} active {% endif %}">
+      <li class="
+        {% if 
+          page.category contains category.name or 
+          page.url contains category.name or
+          page.tags contains category.name
+        %} active {% endif %}">
         <a href="{{ site.baseurl }}/categories/{{ category.name }}">{{ category.title }}</a>
         <ul class="menu-sub">
           {% for tag in site.tags %}
             {% if category.name == tag.category %}
-              <li class="{% if page.url contains tag.name %} active {% endif %}">
+              {% assign tagLink = tag.name | prepend: '/tags/' | append: '/' %}
+              <li class="{% if
+                page.url == tagLink or
+                page.tags contains tag.name
+              %} active {% endif %}">
                 <a href="{{ site.baseurl }}/tags/{{ tag.name }}">{{ tag.title }}</a>
               </li>
             {% endif %}

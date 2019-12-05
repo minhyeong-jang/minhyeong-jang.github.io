@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, algorithm]
-image: /files/covers/algorithm.jpg
+image: /files/covers/programmers.jpg
 title: programmers - 숫자게임
 author: minhyeong.jang
 date: 2019-05-29 14:32
