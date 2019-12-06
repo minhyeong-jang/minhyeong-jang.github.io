@@ -18,7 +18,7 @@
 {% assign meta_type = 'website' %}
 {% endif %}
 {% unless meta_image contains '://' %}
-{% assign meta_image = meta_image | prepend: site_url %}
+{% assign meta_image = meta_image | prepend: site.image_url | prepend: site_url %}
 {% endunless %}
 <title>{{ meta_title }}</title>
 <meta name="title" content="{{ meta_title }}" />
