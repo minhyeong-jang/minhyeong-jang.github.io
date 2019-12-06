@@ -1,5 +1,7 @@
 ---
 ---
+@import "theme";
+
 /* media size */
 
 $break-mobile-s: 320px;
@@ -542,6 +544,20 @@ body {
         color: #666;
       }
     }
+  }
+}
+
+/**
+ * Post Link
+ */
+#post-links {
+  @include post-item;
+  
+  display: flex;
+  flex-direction: row;
+
+  .prev, .next {
+    flex: 1 1 50%;
   }
 }
 

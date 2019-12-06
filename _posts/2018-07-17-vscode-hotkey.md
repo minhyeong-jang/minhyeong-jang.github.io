@@ -1,11 +1,11 @@
-<!-- ---
+---
 layout: post
 title: 'vscode'
 author: minhyeong.jang
 date: 2018-06-20 16:56
 tags: [java, gradle, spring]
-image: /files/covers/wordpress.png
---- -->
+image: /covers/wordpress.png
+---
 ### 들어가며
 `IntelliJ 에서 spring + gradle 프로젝트를 import` 합니다.
 

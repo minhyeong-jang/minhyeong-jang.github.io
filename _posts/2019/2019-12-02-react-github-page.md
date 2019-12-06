@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, react]
-image: /files/covers/react.png
+image: /covers/react.png
 title: React Github Pages 배포
 author: minhyeong.jang
 date: 2019-12-02 14:26

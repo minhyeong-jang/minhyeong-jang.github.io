@@ -9,12 +9,15 @@ image:
 facebook:
   app_id: 481301675773678
 
+# Folder Link
+asset_url: /assets
+image_url: /assets/images
+
 # Social
 github: https://github.com/minhyeong-jang
 
 # Contact form
 email: public.doriri@gmail.com
-asset_url: /assets
 
 # Comments
 discus-identifier: # Add your Disqus identifier
@@ -67,4 +70,4 @@ exclude:
 include: [_pages, _]
 sass:
   style: compressed
-  
+  sass_dir: assets/css

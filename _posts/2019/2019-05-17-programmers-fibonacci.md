@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, algorithm]
-image: /files/covers/programmers.jpg
+image: /covers/programmers.jpg
 title: programmers - 피보나치 수열 값 구하기
 author: minhyeong.jang
 date: 2019-05-17 23:02

@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, algorithm]
-image: /files/covers/programmers.jpg
+image: /covers/programmers.jpg
 title: programmers - 기지국 설치
 author: minhyeong.jang
 date: 2019-06-03 11:06

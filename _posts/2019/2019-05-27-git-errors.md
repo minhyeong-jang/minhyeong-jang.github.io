@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, dev-etc]
-image: /files/covers/algorithm.jpg
+image: /covers/algorithm.jpg
 title: git error
 author: minhyeong.jang
 date: 2019-05-27 09:05

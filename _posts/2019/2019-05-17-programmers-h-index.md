@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, algorithm]
-image: /files/covers/programmers.jpg
+image: /covers/programmers.jpg
 title: programmers - H-index 값 구하기
 author: minhyeong.jang
 date: 2019-05-17 22:05

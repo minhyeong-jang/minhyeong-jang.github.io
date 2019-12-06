@@ -47,7 +47,7 @@ $ git push origin master
 대메뉴 설명 : `h2`<br/>
 중메뉴 : `h3`<br/>
 소메뉴 : `h4`<br/>
-이미지 : `![wordpress.com](/files/wordpress-info-1.png)`<br/>
+이미지 : `![wordpress.com]({{ site.baseurl }}/wordpress-info-1.png)`<br/>
 이미지 설명 : `<img-info></img-info>`<br/>
 글 개행 : `<br/>`<br/>
 강조 : ` `` `<br/>

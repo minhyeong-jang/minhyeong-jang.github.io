@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, dev-etc]
-image: /files/covers/react.png
+image: /covers/react.png
 title: React 참고 자료
 author: minhyeong.jang
 date: 2019-12-05 14:26

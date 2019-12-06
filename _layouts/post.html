@@ -3,10 +3,10 @@ layout: default
 ---
 <div id="cover"
   {% if page.image %}
-    style="background-image: url({{ site.baseurl }}{{ site.asset_url }}{{ page.image }})"
+    style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ page.image }})"
   {% endif %}>
   <div class="mouse-scroll">
-    <img src="{{ site.baseurl }}{{ site.asset_url }}/files/design/icon-mouse-scroll.png" alt="mouse-scroll">
+    <img src="{{ site.baseurl }}{{ site.image_url }}/design/icon-mouse-scroll.png" alt="mouse-scroll">
   </div>
 </div>
 
@@ -22,22 +22,36 @@ layout: default
 <div id="post-links">
   {% assign prev = page.previous %}
   {% if prev %}
-    <div id="post-prev"
-      {% if prev.image %}style="background-image: url({{ prev.image }});"{% endif %}>
-      <div>
-        <p>이전 글</p>
-          <h3><a href="{{ prev.url }}">{{ prev.title }}</a></h3>
-      </div>
+    <div class="prev">
+      <a href="{{ prev.url }}">
+        <div class="post-image"
+        {% if prev.image %}
+          style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ prev.image }});"
+        {% endif %}></div>
+        <div class="post-info">
+          <p class="author-name">{{ prev.author }}</p>
+          <h3 class="post-title">{{ prev.title }}</h3>
+          <p class="post-date">{{ prev.date | date: '%Y년 %m월 %d일' }}</p>
+          <p class="post-excerpt">{{ prev.content | strip_html | truncatewords: 150 }}</p>
+        </div>
+      </a>
     </div>
   {% endif %}
   {% assign next = page.next %}
   {% if next %}
-    <div id="post-next"
-      {% if next.image %}style="background-image: url({{ next.image }});"{% endif %}>
-      <div>
-        <p>다음 글</p>
-          <h3><a href="{{ next.url }}">{{ next.title }}</a></h3>
-      </div>
+    <div class="next">
+      <a href="{{ next.url }}">
+        <div class="post-image"
+        {% if next.image %}
+          style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ next.image }});"
+        {% endif %}></div>
+        <div class="post-info">
+          <p class="author-name">{{ next.author }}</p>
+          <h3 class="post-title">{{ next.title }}</h3>
+          <p class="post-date">{{ next.date | date: '%Y년 %m월 %d일' }}</p>
+          <p class="post-excerpt">{{ next.content | strip_html | truncatewords: 150 }}</p>
+        </div>
+      </a>
     </div>
   {% endif %}
 </div>

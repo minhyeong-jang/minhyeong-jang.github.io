@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, algorithm]
-image: /files/covers/programmers.jpg
+image: /covers/programmers.jpg
 title: programmers - 좌표 명령어 게임
 author: minhyeong.jang
 date: 2019-05-19 23:05

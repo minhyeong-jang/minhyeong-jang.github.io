@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [dev-blog, nomadcoders]
-image: /files/covers/algorithm.jpg
+image: /covers/algorithm.jpg
 title: Typescript로 Blockchain 만들기
 author: minhyeong.jang
 date: 2019-05-24 23:33
