@@ -10,7 +10,7 @@ layout: default
   </div>
 </div>
 
-<div id="post-content" style="margin-top: 30px">
+<div id="post-content">
   <div class="reponsive-content">
     <div class="post-info">
       <h1 class="post-title">{{ page.title }}</h1>
@@ -20,10 +20,11 @@ layout: default
   </div>
 </div>
 <div id="post-links">
+  <div class="subject">이런 글은 어떠신가요?</div>
   {% assign prev = page.previous %}
   {% if prev %}
     <div class="prev">
-      <a href="{{ prev.url }}">
+      <a href="{{ site.baseurl }}{{ prev.url }}">
         <div class="post-image"
         {% if prev.image %}
           style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ prev.image }});"
@@ -40,7 +41,7 @@ layout: default
   {% assign next = page.next %}
   {% if next %}
     <div class="next">
-      <a href="{{ next.url }}">
+      <a href="{{ site.baseurl }}{{ next.url }}">
         <div class="post-image"
         {% if next.image %}
           style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ next.image }});"
