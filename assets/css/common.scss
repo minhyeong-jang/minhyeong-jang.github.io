@@ -35,16 +35,6 @@ input, button, textarea {
     outline: none;
   }
 }
-button {
-  transition: opacity 0.2s linear; 
-  
-  &:hover {
-    box-shadow: 0 1px 4px rgba(0,0,0,.3);
-  }
-  &:active {
-    opacity: 0.8;
-  }
-}
 
 .pl-0{padding-left:0px !important}
 .pl-5{padding-left:5px !important}

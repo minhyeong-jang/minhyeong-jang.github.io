@@ -1,3 +1,11 @@
+$break-mobile-s: 320px;
+$break-mobile-m: 375px;
+$break-mobile-l: 425px;
+$break-tablet: 768px;
+$break-laptop: 1080px;
+
+$github-color: #252525;
+
 @mixin post-item {
   .post-image {
     width: 100%;

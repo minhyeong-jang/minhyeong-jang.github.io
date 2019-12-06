@@ -4,12 +4,6 @@
 
 /* media size */
 
-$break-mobile-s: 320px;
-$break-mobile-m: 375px;
-$break-mobile-l: 425px;
-$break-tablet: 768px;
-$break-laptop: 1080px;
-
 /* color */
 
 $color-gray: #ccc;
@@ -130,6 +124,19 @@ body {
     font-size: 15px;
   }
 }
+@media (max-width: $break-tablet) {
+  #content-wrap {
+    padding: 10px;
+  }
+}
+
+// @media (max-width: $break-mobile-l) {
+//   #post-list {
+//     li {
+//       width: 100% !important;
+//     }
+//   }
+// }
 
 #post-content {
   background: white;
@@ -486,159 +493,6 @@ body {
 }
 
 /**
- * Posts Layout
- */
-#post-list {
-  display: flex;
-  flex-flow: wrap;
-
-  li {
-    display: inline-block;
-    position: relative;
-    width: calc(25% - 20px);
-    margin: 10px;
-    border-radius: $border-radius;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
-
-    .post-image {
-      width: 100%;
-      height: 170px;
-      background-position: 50% 50%;
-      background-size: cover;
-    }
-
-    .post-info {
-      padding: 25px 15px;
-
-      .author-name {
-        font-size: 13px;
-        color: lightseagreen;
-        font-weight: bold;
-      }
-
-      .post-title {
-        margin-top: 10px;
-        font-size: 20px;
-      }
-
-      .post-excerpt {
-        border-top: 1px solid #dedede;
-        display: -webkit-box;
-        margin-top: 30px;
-        padding-top: 25px;
-        font-size: 16px;
-        line-height: 1.7;
-        color: #aaa;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-        word-wrap: break-word;
-        overflow: hidden;
-      }
-
-      .post-date {
-        font-size: 12px;
-        margin-top: 10px;
-        color: #666;
-      }
-    }
-  }
-}
-
-/**
- * Post Link
- */
-#post-links {
-  @include post-item;
-  
-  display: flex;
-  flex-direction: row;
-
-  .prev, .next {
-    flex: 1 1 50%;
-  }
-}
-
-/**
- * Contact Layout
- */
-#contact {
-  .form-item {
-    padding: 5px 0px;
-
-    input,
-    textarea {
-      width: 100%;
-      border: 1px solid #dedede;
-      padding: 10px 20px;
-      font-size: 15px;
-      border-radius: $border-radius;
-    }
-
-    textarea {
-      min-height: 200px;
-      min-width: 100%;
-      max-width: 100%;
-    }
-
-    button {
-      background: #5fad80;
-      border: 1px solid #61a27c;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: white;
-      float: right;
-      border-radius: $border-radius;
-    }
-  }
-
-  .footer {
-    font-size: 14px;
-    line-height: 1.8;
-
-    a {
-      color: lightseagreen;
-    }
-  }
-}
-
-/* footer */
-
-#footer {
-  border-top: 2px solid #dddddd;
-  line-height: 30px;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 75px;
-  background-color: white;
-}
-
-#link {
-  float: right;
-
-  a {
-    margin-left: 10px;
-    font-size: 20px;
-  }
-}
-
-.btn-contact {
-  border: 1px solid #4b44c4;
-  padding: 10px 20px;
-
-  /* margin: 10px auto; */
-  font-size: 15px;
-
-  /* width: 100px; */
-  display: inline-block;
-  border-radius: 10px;
-  color: white;
-  background-color: #6b64d4;
-}
-
-/**
  * Pagination Layout
  */
 #pagination {
@@ -647,113 +501,5 @@ body {
   li {
     padding: 5px;
     background: red;
-  }
-}
-
-/*
-  @media screen and (max-width: $break-tablet) {
-    .logo {
-      margin-left: 20px;
-    }
-    .navbar-collapse {
-      float: left;
-      width: 100%;
-      padding: 0px;
-      border: 0;
-    }
-    .nav-list {
-      width: 100%;
-      line-height: 50px;
-      text-align: center;
-      li {
-        display: block;
-        width: 100%;
-        height: 50px !important;
-        margin: 0px !important;
-        font-weight: bold;
-        background: #222222;
-        border-bottom: 1px solid $color-gray !important;
-        color: $color-gray !important;
-        &.hover {
-          background: -webkit-radial-gradient(353535, #191919);
-          background: radial-gradient(353535, #191919);
-        }
-        &.active {
-          color: #ffffff !important;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: $break-mobile-m) {
-    height: 70px;
-    line-height: 70px;
-    .gnb {
-      .logo {
-        margin-left: 10px;
-        .icon {
-          font-size: 15px;
-          border-width: 3px;
-          padding: 4px 6px 4px 10px;
-          margin: 0px 5px 0px 0px;
-        }
-        h5 {
-          display: none;
-        }
-      }
-      button {
-        font-size: 27px;
-        margin-top: 11px;
-      }
-    }
-  }
-*/
-/*
-for large screen(>=720px):
-
-+#header----------------------------------------+
-|#logo              #menu                #search|
-+-----------------------------------------------+
-|                                               |
-+#wrapper---------------------------------------+
-|                                               |
-|+#content-------------------------------------+|
-||                                             ||
-|+---------------------------------------------+|
-|                                   #back-to-top|
-+-----------------------------------------------+
-|                                               |
-+#footer----------------------------------------+
-|#footer-menu                             #links|
-|#copyright                                     |
-+-----------------------------------------------+
-|                                               |
-+-----------------------------------------------+
-
-*/
-
-
-@media (max-width: $break-laptop) {
-  #post-list {
-    li {
-      width: calc(33.33% - 20px) !important;
-    }
-  }
-}
-@media (max-width: $break-tablet) {
-  #navbar {
-    display: none;
-  }
-  #post-list {
-    li {
-      width: 100% !important;
-    }
-  }
-}
-
-@media (max-width: $break-mobile-l) {
-  #post-list {
-    li {
-      width: 100% !important;
-    }
   }
 }

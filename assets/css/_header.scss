@@ -1,0 +1,103 @@
+@import "theme";
+
+#header {
+  position: relative;
+  display: none;
+  height: 64px;
+
+  .top {
+    position: relative;
+    padding: 0px 24px;
+    z-index: 8;
+    line-height: 64px;
+    background: $github-color;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+    a {
+      font-weight: bold;
+      font-size: 15px;
+      color: white;
+    }
+
+    .menu-btn {
+      padding: 0;
+      border: 0;
+      color: white;
+      background: $github-color url('/doriri/assets/images/design/icon-menu.svg') no-repeat 50% 50%/cover;
+      float: right;
+      width: 20px;
+      height: 16px;
+      margin-top: 24px;
+    }
+  }
+
+  &.menu-open {
+    .top .menu-btn {
+    background-image: url('/doriri/assets/images/design/icon-close.svg');
+    background-size: 20px 16px;
+    }
+
+    .menu {
+      transform: translateY(0%);
+    }
+  }
+}
+#header .menu {
+  position: relative;
+  z-index: 7;
+  padding: 8px 0px;
+  background: white;
+  margin: 0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  transition: all 0.2s;
+
+  a {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    color: #1d1c1a;
+    font-weight: 500;
+  }
+
+  & > li > a,
+  & > li > div {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 24px 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1d1c1a;
+    border-bottom: 1px solid #eee;
+  }
+
+  & > li:last-child > a,
+  & > li:last-child > div {
+    border-bottom: 0;
+  }
+}
+
+#header .menu-sub > li > a {
+  display: block;
+  width: 100%;
+  padding: 24px 54px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #1d1c1a;
+}
+#header .menu-sub {
+  padding-left: 0.9286rem;
+  transition: all 0.2s;
+  height: 0px;
+  overflow: hidden;
+}
+#header .menu > li.active .menu-sub {
+  height: 132px;
+  overflow-y: scroll;
+}
+
+@media (max-width: $break-tablet) {
+  #header {
+    display: block;
+  }
+}
