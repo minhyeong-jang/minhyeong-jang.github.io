@@ -21,38 +21,40 @@ layout: default
 </div>
 <div id="post-links">
   <div class="subject">이런 글은 어떠신가요?</div>
-  {% assign prev = page.previous %}
-  {% if prev %}
-    <div class="prev">
-      <a href="{{ site.baseurl }}{{ prev.url }}">
-        <div class="post-image"
-        {% if prev.image %}
-          style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ prev.image }});"
-        {% endif %}></div>
-        <div class="post-info">
-          <p class="author-name">{{ prev.author }}</p>
-          <h3 class="post-title">{{ prev.title }}</h3>
-          <p class="post-date">{{ prev.date | date: '%Y년 %m월 %d일' }}</p>
-          <p class="post-excerpt">{{ prev.content | strip_html | truncatewords: 150 }}</p>
-        </div>
-      </a>
-    </div>
-  {% endif %}
-  {% assign next = page.next %}
-  {% if next %}
-    <div class="next">
-      <a href="{{ site.baseurl }}{{ next.url }}">
-        <div class="post-image"
-        {% if next.image %}
-          style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ next.image }});"
-        {% endif %}></div>
-        <div class="post-info">
-          <p class="author-name">{{ next.author }}</p>
-          <h3 class="post-title">{{ next.title }}</h3>
-          <p class="post-date">{{ next.date | date: '%Y년 %m월 %d일' }}</p>
-          <p class="post-excerpt">{{ next.content | strip_html | truncatewords: 150 }}</p>
-        </div>
-      </a>
-    </div>
-  {% endif %}
+  <div class="post-items">
+    {% assign prev = page.previous %}
+    {% if prev %}
+      <div>
+        <a href="{{ site.baseurl }}{{ prev.url }}">
+          <div class="post-image"
+          {% if prev.image %}
+            style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ prev.image }});"
+          {% endif %}></div>
+          <div class="post-info">
+            <p class="author-name">{{ prev.author }}</p>
+            <h3 class="post-title">{{ prev.title }}</h3>
+            <p class="post-date">{{ prev.date | date: '%Y년 %m월 %d일' }}</p>
+            <p class="post-excerpt">{{ prev.content | strip_html | truncatewords: 150 }}</p>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+    {% assign next = page.next %}
+    {% if next %}
+      <div>
+        <a href="{{ site.baseurl }}{{ next.url }}">
+          <div class="post-image"
+          {% if next.image %}
+            style="background-image: url({{ site.baseurl }}{{ site.image_url }}{{ next.image }});"
+          {% endif %}></div>
+          <div class="post-info">
+            <p class="author-name">{{ next.author }}</p>
+            <h3 class="post-title">{{ next.title }}</h3>
+            <p class="post-date">{{ next.date | date: '%Y년 %m월 %d일' }}</p>
+            <p class="post-excerpt">{{ next.content | strip_html | truncatewords: 150 }}</p>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+  </div>
 </div>

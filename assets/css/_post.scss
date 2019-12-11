@@ -82,10 +82,14 @@
     margin: 20px 0px 15px;
   }
 
-  .prev, .next {
-    @include post-item;
-    float: left;
-    width: calc(50% - 20px) !important;
+  .post-items {
+    display: flex;
+
+    & > div {
+      @include post-item;
+      float: left;
+      width: calc(50% - 20px) !important;
+    }
   }
 
   &::after {
@@ -395,7 +399,7 @@
   #post-links {
     margin-top: 30px;
     
-    .next, .prev {
+    .post-items > div {
       width: 100% !important;
       margin: 0px 0px 10px !important;
     }
