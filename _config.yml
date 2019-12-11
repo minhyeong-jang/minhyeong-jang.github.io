@@ -12,6 +12,7 @@ facebook:
 # Folder Link
 asset_url: /assets
 image_url: /assets/images
+font_url: /assets/fonts
 
 # Social
 github: https://github.com/minhyeong-jang
