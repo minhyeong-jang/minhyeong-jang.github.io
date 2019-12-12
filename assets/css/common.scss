@@ -1,45 +1,59 @@
 ---
 ---
 
-/* color */
-$color-gray: #aaaaaa;
-
 /* global */
 * {
-  font-family: 'Nanum Square';
+  font-family: "Nanum Square";
   code * {
-    font-family: Fira Code,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace !important;
+    font-family: Fira Code, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
   }
-  box-sizing: border-box
+  box-sizing: border-box;
 }
-ul,li{padding:0px; margin:0; list-style:none}
-a,a:hover,a:visited{ outline:none; text-decoration:none; color:inherit}
-p,h1,h2,h3,h4,h5,h6{margin:0px}
-html,body{
+ul,
+li {
+  padding: 0px;
+  margin: 0;
+  list-style: none;
+}
+ol li {
+  font-weight: bold;
+  list-style-type: decimal;
+
+  p {
+    font-weight: normal;
+  }
+}
+a,
+a:hover,
+a:visited {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+html,
+body {
   font-size: 14px;
   margin: 0px;
-  // min-width:1080px;
-  // @media screen and (max-width: $break-tablet){min-width:inherit}
 }
-label{margin:0px}
+label {
+  margin: 0px;
+}
 
-input, button, textarea {
+input,
+button,
+textarea {
   &:focus {
     outline: none;
   }
-}
-
-.pl-0{padding-left:0px !important}
-.pl-5{padding-left:5px !important}
-.pr-0{padding-right:0px !important}
-.pr-5{padding-right:5px !important}
-
-.mt-5{margin-top:5px !important}
-.mt-10{margin-top:10px !important}
-.ml-per-2{margin-left:2% !important}
-
-.text-right{
-  text-align: right;
 }
 
 .sr-only {
