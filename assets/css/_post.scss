@@ -8,7 +8,7 @@
   border-radius: 5px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 6px 21px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 
   .post-image {
     width: 100%;
@@ -230,6 +230,17 @@
       padding-bottom: calc(0.8125rem - 1px);
     }
   }
+}
+
+/**
+ * Disqus
+ */
+#disqus_thread {
+  background: white;
+  border: 1px solid rgb(209, 202, 216);
+  padding: 15px 20px 5px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 
