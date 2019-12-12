@@ -410,9 +410,12 @@
   #post-links {
     margin-top: 30px;
     
-    .post-items > div {
-      width: 100% !important;
-      margin: 0px 0px 10px !important;
+    .post-items {
+      display: block;
+      & > div {
+        width: 100% !important;
+        margin: 0px 0px 10px !important;
+      }
     }
   }
 
