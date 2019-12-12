@@ -2,50 +2,67 @@
 layout: default
 ---
 
-<div id="cover" class="home"
+<div
+  id="cover"
+  class="home"
   style="background-image:url({{ site.baseurl }}{{ site.image_url }}/covers/home.jpg)"
-  >
+>
   <div class="text-wrap">
     <h3>Front-end & Back-end Developer</h3>
-    <h5>고객의 관점으로 개발을 진행합니다.</h5>
+    <h5>고객의 관점으로 개발합니다.</h5>
   </div>
 </div>
-<div id="introduce">
-  <div class="container">
-    <div class="text-wrap">
-      <h4>안녕하세요, 웹 개발자 장민형입니다 :)</h4>
-      <p>
-        어제보다 발전한 모습으로 사용자 경험(UX)을 가장 중요하게 생각합니다.<br />
-        퍼블리싱부터 프론트, 백엔드 그리고 유지보수까지 책임지고 진행하겠습니다.
-      </p>
-    </div>
-    <ul class="language">
-      <li>
-        <img src="{{ site.baseurl }}{{ site.image_url }}/design/icon-frontend.png" />
-        <h3>Front-end</h3>
-        <p>HTML</p>
-        <p>CSS, SCSS, <span class="red">Styled Components</span></p>
-        <p>Js, Jquery</p>
-        <p>Bootstrap</p>
-        <p>AngularJs</p>
-        <p><span class="red">React</span>, Redux, <span class="red">Nextjs</span></p>
-      </li>
-      <li>
-        <img src="{{ site.baseurl }}{{ site.image_url }}/design/icon-backend.png" />
-        <h3>Back-end</h3>
-        <p class="red">NodeJs</p>
-        <p>PHP</p>
-        <p>Laravel</p>
-        <p>Ruby</p>
-      </li>
-      <li>
-        <img src="{{ site.baseurl }}{{ site.image_url }}/design/icon-server.png" />
-        <h3>Server & Etc</h3>
-        <p class="red">Typescript</p>
-        <p>Linux, Nginx</p>
-        <p>AWS EC2, S3, CF</p>
-        <p>Mysql</p>
-      </li>
-    </ul>
-  </div>
+
+<div class="title">Hello World!</div>
+
+<div class="introduce-wrap">
+  <h4>안녕하세요, 웹 개발자 장민형입니다 :)</h4>
+  <p>
+    React, Typescript에 흥미가 있어서 주로 사용하고 있으며,<br />
+    안정화된 최신 기술, 애자일 방법론을 선호하고 있습니다.
+  </p>
+  <p style="margin: 20px 0px">
+    저에 대해 궁금하시다면 <a class="red" href="{{ '/about' | prepend: site.baseurl }}">About</a>,
+    연락이 필요하시면 <a class="red" href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>를
+    확인해주세요!
+  </p>
+  <p class="highlight">아래는 개발 스택이며, 주로 사용하는 언어에 색상이 있습니다.</p>
+</div>
+
+<ul class="language">
+  <li>
+    <img src="{{ site.baseurl }}{{ site.image_url }}/design/icon-frontend.png" />
+    <h3>Front-end</h3>
+    <p>HTML</p>
+    <p>CSS, SCSS, <span class="red">Styled Components</span></p>
+    <p>Js, Jquery</p>
+    <p>Bootstrap</p>
+    <p>AngularJs</p>
+    <p><span class="red">React</span>, Redux, Nextjs</p>
+  </li>
+  <li>
+    <img src="{{ site.baseurl }}{{ site.image_url }}/design/icon-backend.png" />
+    <h3>Back-end</h3>
+    <p class="red">NodeJs</p>
+    <p>PHP</p>
+    <p>Laravel</p>
+    <p>Ruby</p>
+  </li>
+  <li>
+    <img src="{{ site.baseurl }}{{ site.image_url }}/design/icon-server.png" />
+    <h3>Server & Etc</h3>
+    <p class="red">Typescript</p>
+    <p>Linux, Nginx</p>
+    <p>AWS EC2, S3, CF</p>
+    <p>Mysql</p>
+  </li>
+</ul>
+
+<div class="title">Doriri Blog</div>
+
+<div id="post-links">
+  <ul>
+    {% assign count = 0 %} {% for post in site.posts %} {% if count == 2 %} {% break %} {% endif %}
+    {% include item.html %} {% assign count = count | plus: 1 %} {% endfor %}
+  </ul>
 </div>

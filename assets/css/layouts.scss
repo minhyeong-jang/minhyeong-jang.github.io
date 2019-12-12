@@ -123,7 +123,7 @@ body {
 }
 @media (max-width: $break-tablet) {
   html, body {
-    font-size: 12px !important;
+    font-size: 13px !important;
   }
   #content-wrap {
     padding: 10px;
@@ -160,73 +160,6 @@ body {
 
     &:last-child {
       margin-right: 0px;
-    }
-  }
-}
-
-/* cover */
-
-/* home */
-
-#introduce {
-  position: relative;
-  margin: 60px 0px 80px;
-
-  .text-wrap {
-    text-align: center;
-    margin-bottom: 60px;
-
-    h3 {
-      display: block;
-      font-size: 1.7rem;
-      margin-bottom: 20px;
-    }
-
-    h4 {
-      display: block;
-      font-size: 1.15rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      line-height: 1.5;
-      word-break: keep-all;
-    }
-  }
-
-  .language {
-    display: flex;
-    border-radius: 20px;
-    border: 2px solid #cccccc;
-    width: 100%;
-    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
-    -webkit-box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
-
-    & > li {
-      display: inline-block;
-      flex: 1;
-      border-right: 2px solid #cccccc;
-      vertical-align: top;
-      text-align: center;
-      padding: 60px 0px;
-
-      &:last-child {
-        border-right: none;
-      }
-
-      h3 {
-        font-size: 1.25em;
-        margin: 10px 0px 30px;
-      }
-
-      img {
-        width: 70px;
-        height: 70px;
-      }
-
-      p {
-        margin: 8px 0px;
-      }
     }
   }
 }

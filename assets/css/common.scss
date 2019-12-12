@@ -63,8 +63,12 @@ textarea {
   display: none;
 }
 .red {
-  color: rgb(200, 75, 58);
+  color: rgb(200, 75, 58) !important;
   font-weight: bold;
+}
+.highlight {
+  font-weight: bold;
+  color: lightseagreen !important;
 }
 .language-plaintext {
   background: none !important;
