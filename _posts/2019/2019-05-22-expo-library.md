@@ -1,7 +1,7 @@
 ---
 layout: post
-tags: [dev-blog, react-native]
-image: /covers/react.png
+tags: [dev-blog, react]
+image: /covers/react-native.jpeg
 title: Expo 라이브러리 정리
 author: minhyeong.jang
 date: 2019-05-22 09:05
