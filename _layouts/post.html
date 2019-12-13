@@ -18,19 +18,24 @@ layout: default
     </div>
     <div>{{ content }}</div>
   </div>
+  <div id="post-links">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      {% assign post = page.previous %}
+      {% if post.title == null %}
+        {% assign post = page.next.next %}
+      {% endif %}
+      {% include item.html %}
+      {% assign post = page.next %}
+      {% if post.title == null %}
+        {% assign post = page.previous.previous %}
+      {% endif %}
+      {% include item.html %}
+    </ul>
+  </div>
 </div>
 
 <div id="disqus_thread"></div>
-
-<div id="post-links">
-  <div class="subject">이런 글은 어떠신가요?</div>
-  <ul>
-    {% assign post = page.previous %}
-    {% include item.html %}
-    {% assign post = page.next %}
-    {% include item.html %}
-  </ul>
-</div>
 
 <script>
   var disqus_config = function() {

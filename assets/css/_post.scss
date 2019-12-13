@@ -79,7 +79,7 @@
   .subject {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 20px 0px 15px;
+    margin: 150px 0px 15px;
   }
 
   ul {
@@ -88,7 +88,12 @@
 
     li {
       @include post-item;
-      width: calc(50% - 20px);
+      margin: 0;
+
+      &:nth-child(2) {
+        margin: 0px 0px 0px 20px;
+      }
+      width: calc(50% - 10px);
     }
   }
 }
@@ -106,7 +111,7 @@
   .reponsive-content {
     max-width: 900px;
     margin: 0 auto;
-  }
+  
 
   ul {
     margin: 5px 0px 0px 40px;
@@ -223,7 +228,7 @@
       padding-top: 0.8125rem;
       padding-bottom: calc(0.8125rem - 1px);
     }
-  }
+  }}
 }
 
 /**
