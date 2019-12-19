@@ -4,7 +4,7 @@ title: Doriri Blog
 description: 더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다.
 baseurl: "/doriri" # the subpath of your site, e.g. /blog
 url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-image: /authors/minhyeong.jang.jpg
+image: /cover/doriri.jpeg
 
 facebook:
   app_id: 481301675773678

@@ -78,7 +78,6 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <meta data-react-helmet="true" property="og:image" content="" />
-          <link rel="icon" type="image/x-icon" href="favicon.ico" />
           {this.props.styleTags}
         </Head>
         <body>
