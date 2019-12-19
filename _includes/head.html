@@ -4,7 +4,6 @@
 
 {% assign site_url = site.url | append: site.baseurl %}
 {% if page.layout == 'post' or page.layout == 'about' %}
-<meta name="test" content="{{page.layout}}" />
 {% assign meta_title = page.title %}
 {% assign meta_author = page.author | default: site.author %}
 {% assign meta_description = page.excerpt | strip_html | truncatewords: 75 %}
@@ -19,7 +18,6 @@
 {% assign meta_image = site.image %}
 {% assign meta_type = 'website' %}
 {% endif %}
-<meta name="test2" content="{{ meta_image }}" />
 {% unless meta_image contains '://' %}
 {% assign meta_image = meta_image | prepend: site.image_url | prepend: site_url %}
 {% endunless %}
