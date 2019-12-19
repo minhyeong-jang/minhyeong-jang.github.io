@@ -52,13 +52,14 @@ google_analytics_id: 추적 ID
 {{ "{% endif " }}%}
 ```
 
-마지막으로 default 페이지에서 include를 진행합니다.
+### default 페이지에서 include를 진행합니다.
 
 ```html
 <!DOCTYPE html>
 <html lang="kr">
   <head>
     {{ "{% include head.html " }}%}
+    {{ "{% include analytics.html " }}%}
   </head>
 
   <body>
@@ -69,9 +70,10 @@ google_analytics_id: 추적 ID
         {{ "{{ content "}}}}
       </div>
     </div>
-    {{ "{% include analytics.html " }}%}
   </body>
 </html>
 ```
 
-마지막으로 jekyll 배포 후, 추적 코드 탭에서 제공하는 `테스트 트래픽 전송`을 사용하여 연동이 됐는지 확인합니다.
+jekyll 배포 후, 추적 코드 탭에서 제공하는 `테스트 트래픽 전송`을 사용하여 연동이 됐는지 확인합니다.
+
+> analytics.html을 head에 import한 이유는 나중에 Google Search Console에서 홈페이지 소유권 확인 용도로 head를 인식하기 때문입니다.

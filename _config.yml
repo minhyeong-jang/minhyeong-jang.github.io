@@ -31,7 +31,6 @@ paginate_path: '/categories/:num'
 
 permalink: /:year/:month/:day/:title
 
-
 collections:
   authors:
     output: true
@@ -63,9 +62,10 @@ defaults:
       
 # Build settings
 # markdown: kramdown
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
