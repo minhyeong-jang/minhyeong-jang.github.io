@@ -37,7 +37,7 @@ console.log(item.hasOwnProperty('key')); // true
 item 객체를 출력하여 `__proto__` 프로퍼티를 열어보면 자바스크립트의 Object 객체가 부모이며,
 item 객체에서 선언하지 않은 hasOwnProperty 메소드를 상속받아 사용이 가능합니다.
 
-## **proto** ?
+## __proto__ ?
 
 위에서 생각할 수 있는 부분은 '아 `__proto__` 프로퍼티를 통하여 부모 객체에 접근할 수 있구나'라는 것을 알 수 있습니다.
 
@@ -97,7 +97,7 @@ var item2 = new item();
 console.log(item2.key); // itemKey
 ```
 
-> 자바스크립트의 모든 객체는 Object 객체의 프로토타입을 기반으로 확장되었기 때문에 모든 연결의 끝은 Object 객체의 프토로타입입니다.
+> 자바스크립트의 모든 객체는 Object 객체의 프로토타입을 기반으로 확장되었기 때문에 모든 연결의 끝은 Object 객체의 프로토타입입니다.
 
 ## 어디다가 사용하지..?
 
