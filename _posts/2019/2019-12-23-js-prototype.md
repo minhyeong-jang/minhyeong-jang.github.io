@@ -2,7 +2,7 @@
 layout: post
 tags: [dev-blog, javascript]
 image: /covers/js.png
-title: Javascript Prototype 이해하기 ( 작성중 )
+title: Javascript Prototype 이해하기
 author: minhyeong.jang
 date: 2019-12-19 17:39
 ---
