@@ -11,14 +11,14 @@ date: 2020-01-06 10:59
 
 ## CSS Module 적응 전에는..?
 
-Module을 적용하지 않는다면, 최상단 App.jsx 또는 컴포넌트에서 scss 파일을 호출한다.
+Module을 적용하지 않는다면, 최상단 App.jsx 또는 컴포넌트에서 scss 파일을 호출합니다.
 
 ```jsx
 // index.tsx or App.tsx
 import './index.scss';
 ```
 
-또한 클래스명이 기존 html처럼 class="container" 형태로 들어가기 때문에 css/scss 파일을 컴포넌트별로 생성했음에도 스타일 명이 충돌하는 불편함이 있다.
+또한 클래스명이 기존 html처럼 class="container" 형태로 들어가기 때문에 css/scss 파일을 컴포넌트별로 생성했음에도 스타일 명이 충돌하는 불편함이 있습니다.
 
 ## 그렇다면 CRA에서 CSS Module은 어떻게 적용하지?
 
