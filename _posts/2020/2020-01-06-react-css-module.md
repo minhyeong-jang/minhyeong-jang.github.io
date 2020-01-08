@@ -2,7 +2,7 @@
 layout: post
 tags: [dev-blog, react]
 image: /covers/react.png
-title: creact-react-app :: CSS Module 사용하기
+title: creact-react-app에서 CSS Module 사용하기
 author: minhyeong.jang
 date: 2020-01-06 10:59
 ---
@@ -15,7 +15,7 @@ Module을 적용하지 않는다면, 최상단 App.jsx 또는 컴포넌트에서
 
 ```jsx
 // index.tsx or App.tsx
-import './index.scss';
+import "./index.scss";
 ```
 
 또한 클래스명이 기존 html처럼 class="container" 형태로 들어가기 때문에 css/scss 파일을 컴포넌트별로 생성했음에도 스타일 명이 충돌하는 불편함이 있습니다.
@@ -45,7 +45,7 @@ scss는 기존처럼 사용하시면 되며, `id, class`의 컴파일 결과를 
 아래는 컴파일 결과의 예시입니다.
 
 ```tsx
-// components/Pages/index.module.scss 
+// components/Pages/index.module.scss
 #loginPage {
   display: block;
 }
