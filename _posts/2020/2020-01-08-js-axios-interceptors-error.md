@@ -66,10 +66,10 @@ _axios.interceptors.response.use(
 3. `origin API 정보가 들어있는 error.config`로 기존 API 재호출
 4. 결과를 return하게 되면, 기존 API 호출 부분의 Response 값으로 전달됩니다.
 
-예를 들면 아래와 같이 API를 호출했을 때 403에러가 나타나도 interceptors에서 정상적인 return 값을 부여하면 result에는 정상적인 값이 들어갑니다.
+예를 들면 아래와 같이 API를 호출했을 때 403에러가 나타나도 interceptors에서 정상적으로 값을 return하면 API 호출하는 부분에서는 정상적인 값이 들어옵니다.
 
 ```js
-const result = await _axios.get(url); // 403에러가 나타나도, interceptors의 return 값을 result에 저장
+const result = await _axios.get(url); // 403에러가 나타나도 interceptors의 return 값을 가져옴
 return result;
 ```
 

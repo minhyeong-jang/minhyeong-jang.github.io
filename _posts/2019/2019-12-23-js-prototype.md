@@ -4,7 +4,7 @@ tags: [dev-blog, javascript]
 image: /covers/js.png
 title: Javascript Prototype 이해하기
 author: minhyeong.jang
-date: 2019-12-19 17:39
+date: 2019-12-23 17:39
 ---
 
 자바스크립트는 프로토타입 기반 객체지향 언어라고 불립니다. 그리고 여러분들은 한번 쯤은 `__proto__`라는 Object를 본 적이 있을 것이고 그냥 지나치는 경우가 대다수일 것 입니다.  
@@ -21,23 +21,23 @@ var item = {
   key: 'key'
 };
 console.log(item);
-{
-  key: "key"
-  __proto__: {     // item 객체의 Prototype(부모 객체) 정보
-    constructor: ƒ Object()
-    hasOwnProperty: ƒ hasOwnProperty()
-    toString: ƒ toString()
-    valueOf: ƒ valueOf()
-    ...
-  }
-}
+// {
+//   key: "key"
+//   __proto__: {     // item 객체의 Prototype(부모 객체) 정보
+//     constructor: ƒ Object()
+//     hasOwnProperty: ƒ hasOwnProperty()
+//     toString: ƒ toString()
+//     valueOf: ƒ valueOf()
+//     ...
+//   }
+// }
 console.log(item.hasOwnProperty('key')); // true
 ```
 
 item 객체를 출력하여 `__proto__` 프로퍼티를 열어보면 자바스크립트의 Object 객체가 부모이며,
 item 객체에서 선언하지 않은 hasOwnProperty 메소드를 상속받아 사용이 가능합니다.
 
-## __proto__ ?
+## **proto** ?
 
 위에서 생각할 수 있는 부분은 '아 `__proto__` 프로퍼티를 통하여 부모 객체에 접근할 수 있구나'라는 것을 알 수 있습니다.
 
@@ -140,7 +140,7 @@ prototype은 면접다니다보면 항상 나오는 질문입니다. 그만큼 �
 
 ## 참고자료
 
-[Javascript 기초 - Object prototype 이해하기](http://insanehong.kr/post/javascript-prototype/)
-[[Javascript ] 프로토타입 이해하기](https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67)
-[[Javascript] 꼭 알아야 할 Prototype의 개념](https://velog.io/@afant/Javascript-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Prototype%EC%9D%98-%EA%B0%9C%EB%85%90-)
+[Javascript 기초 - Object prototype 이해하기](http://insanehong.kr/post/javascript-prototype/)  
+[[Javascript ] 프로토타입 이해하기](https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67)  
+[[Javascript] 꼭 알아야 할 Prototype의 개념](https://velog.io/@afant/Javascript-%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Prototype%EC%9D%98-%EA%B0%9C%EB%85%90-)  
 [프로토타입](https://poiemaweb.com/js-prototype)

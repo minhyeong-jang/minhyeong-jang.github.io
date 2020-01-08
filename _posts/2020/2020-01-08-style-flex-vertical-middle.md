@@ -29,11 +29,11 @@ HTML에서 세로 정렬은 다들 까다로워하는 부분입니다. `vertical
 
 ```scss
 .login-page {
-  display: flex;            // flex 사용
-  height: 100vh;            // 세로 높이를 화면 크기에 맞춤
-  align-items: center;      // 세로 정렬
-  justify-content: center;  // 가운데 정렬( 아래서 추가 설명 )
-  margin: 0 auto;           // 가운데 정렬
+  display: flex; // flex 사용
+  height: 100vh; // 세로 높이를 화면 크기에 맞춤
+  align-items: center; // 세로 정렬
+  justify-content: center; // 가운데 정렬( 아래서 추가 설명 )
+  margin: 0 auto; // 가운데 정렬
 }
 ```
 
