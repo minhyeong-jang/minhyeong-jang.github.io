@@ -3,9 +3,12 @@
 
 /* global */
 * {
-  font-family: "Nanum Square";
+  font-family: 'Noto Sans KR', sans-serif;
   code * {
     font-family: Fira Code, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
+  }
+  pre code[class*="language-"], pre[class*="language-"] {
+    font-size: 1rem !important;
   }
   box-sizing: border-box;
 }
@@ -16,7 +19,6 @@ li {
   list-style: none;
 }
 ol li {
-  font-weight: bold;
   list-style-type: decimal;
 
   p {

@@ -36,8 +36,7 @@ axios.interceptors.response.use(
 );
 ```
 
-위 예제처럼 `interceptors.response`를 통하여 에러를 감지할 수 있게됩니다.
-
+위 예제처럼 `interceptors.response`를 통하여 에러를 감지할 수 있게됩니다.  
 그러면 다시 response에 에러처리를 위해 코드를 작성합니다.
 
 ```js
