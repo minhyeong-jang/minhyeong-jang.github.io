@@ -59,5 +59,3 @@ return (
 
 => <div class="Pages_LoginPage__2Jrev" />
 ```
-
-감사합니다.

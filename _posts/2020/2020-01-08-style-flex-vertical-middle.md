@@ -38,5 +38,3 @@ HTML에서 세로 정렬은 다들 까다로워하는 부분입니다. `vertical
 ```
 
 > justify-content 속성은 flex-direction 속성의 `진행 축` 정렬에 영향을 받는데, `flex-direction: row | row-reverse` 인 경우 `x축 정렬`을 제어합니다. `flex-direction: column | column-reverse` 인 경우 `y축 정렬`을 제어합니다.
-
-감사합니다.
