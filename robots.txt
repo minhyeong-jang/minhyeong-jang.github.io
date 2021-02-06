@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://minhyeong-jang.github.io/doriri/sitemap.xml
+Sitemap: https://minhyeong-jang.github.io/sitemap.xml

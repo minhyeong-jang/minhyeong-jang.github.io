@@ -10,6 +10,7 @@
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 $ brew install ruby
 $ gem install jekyll
+$ bundle install
 ```
 
 [ERROR: Failed to build gem native extension.](https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby)  
@@ -18,14 +19,6 @@ Gem 또는 bundle 오류가 나는 경우 다음 명령어로 설치합니다.
 ```
 $ sudo gem install -n /usr/local/bin jekyll
 $ sudo gem install -n /usr/local/bin bundler:2.2.8
-```
-
-### Git Clone
-
-```console
-$ git clone https://github.com/minhyeong-jang/doriri.git
-$ cd doriri
-$ bundle install
 ```
 
 ## 실행 및 배포

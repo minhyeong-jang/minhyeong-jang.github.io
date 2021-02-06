@@ -39,7 +39,7 @@ plugins:
 ```
 
 > 이제 도메인 뒤에 `/sitemap.xml`를 붙여 설정된 것을 확인합니다.
-> ex) [https://minhyeong-jang.github.io/doriri/sitemap.xml](https://minhyeong-jang.github.io/doriri/sitemap.xml)
+> ex) [https://minhyeong-jang.github.io/sitemap.xml](https://minhyeong-jang.github.io/sitemap.xml)
 
 ## robots.txt 설정
 
@@ -49,7 +49,7 @@ Bot에게 현재 사이트의 sitemap과 권한 설정 등을 제공합니다.
 User-agent: *
 Allow: /
 
-Sitemap: https://minhyeong-jang.github.io/doriri/sitemap.xml
+Sitemap: https://minhyeong-jang.github.io/sitemap.xml
 ```
 
 ## Google Search Console 생성

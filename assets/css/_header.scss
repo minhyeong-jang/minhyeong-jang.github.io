@@ -23,7 +23,7 @@
       padding: 0;
       border: 0;
       color: white;
-      background: $github-color url('/doriri/assets/images/design/icon-menu.svg') no-repeat 50% 50%/cover;
+      background: $github-color url('/assets/images/design/icon-menu.svg') no-repeat 50% 50%/cover;
       float: right;
       width: 20px;
       height: 16px;
@@ -33,7 +33,7 @@
 
   &.menu-open {
     .top .menu-btn {
-    background-image: url('/doriri/assets/images/design/icon-close.svg');
+    background-image: url('/assets/images/design/icon-close.svg');
     background-size: 20px 16px;
     }
 
