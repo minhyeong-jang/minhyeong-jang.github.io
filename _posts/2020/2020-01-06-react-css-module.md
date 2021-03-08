@@ -2,7 +2,7 @@
 layout: post
 tags: [dev-blog, react]
 image: /covers/react.png
-title: creact-react-app에서 CSS Module 사용하기
+title: create-react-app에서 CSS Module 사용하기
 author: minhyeong.jang
 date: 2020-01-06 10:59
 ---
