@@ -3,12 +3,10 @@
 
 /* global */
 * {
-  font-family: 'Noto Sans KR', sans-serif;
-  code * {
-    font-family: Fira Code, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
-  }
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+  
   pre code[class*="language-"], pre[class*="language-"] {
-    font-size: 1rem !important;
+    font-size: 13px !important;
   }
   box-sizing: border-box;
 }

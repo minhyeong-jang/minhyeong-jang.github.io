@@ -22,7 +22,7 @@
 
     .author-name {
       font-size: 0.9286rem;
-      color: lightseagreen;
+      color: #5e22e8;
       font-weight: bold;
     }
 
@@ -168,16 +168,23 @@
   a {
     color: #e91e63;
     font-weight: bold;
+    text-decoration: underline;
   }
 
   p {
-    font-size: 1.2143rem;
+    font-size: 1.125rem;
     line-height: 1.8;
     margin: 20px 0px 0px;
+    color: #131518;
+    letter-spacing: -0.004em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+
   }
 
   li {
-    font-size: 1.2143rem;
+    font-size: 1.125rem;
+    color: #131518;
   }
 
   block {
@@ -197,7 +204,7 @@
 
   code.highlighter-rouge {
     font-weight: bold;
-    color: lightseagreen !important;
+    color: #5e22e8 !important;
   }
 
   table {
