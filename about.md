@@ -34,7 +34,15 @@ date: 2019-11-26 19:44
 
 ## Technical Experience
 
-**두나무** - Web Developer (2019.7 ~ current)
+**스타일쉐어** - Frontend Developer (2020.4 ~ current)
+
+- `React` : 스타일쉐어 Web / Mobile / Webview 개발
+  - 상품 선물좀요 기능 추가
+  - 상품/스타일/유저 검색 개편, 사용성 강화
+  - 아티클 뷰어 개편
+  - 스토어 페이지 랜딩 속도 개선
+
+**두나무** - Web Developer (2019.7 ~ 2020.04)
 
 - `React` : 증권방송 서비스 동영상 플레이어 및 채팅 Frontend 개발
 - `React` : 다음 금융 모바일 프론트 유지보수
