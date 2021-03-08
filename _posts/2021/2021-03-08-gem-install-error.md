@@ -22,15 +22,15 @@ gem list --remote --all jekyll-sitemap
 
 *** REMOTE GEMS ***
 
-jekyll-sitemap (1.4.0, 1.3.1, 1.3.0, 1.2.0, ...)
+jekyll-sitemap ( [versions] )
 ```
 
 #### 지원하는 버전을 설치해보자.
 
 ```bash
-sudo gem install jekyll-sitemap -v 1.2.0
+sudo gem install jekyll-sitemap -v [version]
 
-Successfully installed jekyll-sitemap-1.2.0
+Successfully installed jekyll-sitemap-[version]
 ```
 
 사용하려는 [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)은 현재 jekyll 버전에서 v1.2.0까지만 지원한다.  
