@@ -4,7 +4,7 @@ tags: [dev-blog, react]
 image: /covers/react.png
 title: Grafana Plugin With React 셋팅하기
 author: minhyeong.jang
-date: 2021-03-09 00:30
+date: 2021-03-09 01:30
 ---
 
 Grafana Plugin을 React로 개발하여 배포하는 방법을 설명한다.
@@ -45,7 +45,7 @@ cd graph-plugin
 npm install
 ```
 
-`( 생성한 프로젝트를 플러그인에 연동하는 부분은 아래 개발하기에서 진행한다. )`
+`( 프로젝트를 grafana에 연동하는 부분은 아래에서 진행한다. )`
 
 ### 실행하기
 

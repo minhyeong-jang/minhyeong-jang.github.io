@@ -1,3 +1,5 @@
+@import "theme";
+
 #cover {
   .text-wrap {
     position: absolute;
@@ -80,40 +82,46 @@
     line-height: 1.5;
     word-break: keep-all;
   }
+
+  a {
+    color: $link-color !important;
+    text-decoration: underline;
+    font-weight: bold;
+  }
 }
 
-  .language {
-    display: flex;
-    border-radius: 20px;
-    border: 2px solid #cccccc;
-    width: 100%;
-    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
-    -webkit-box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
+.language {
+  display: flex;
+  border-radius: 20px;
+  border: 2px solid #cccccc;
+  width: 100%;
+  box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
+  -webkit-box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
 
-    & > li {
-      display: inline-block;
-      flex: 1;
-      border-right: 2px solid #cccccc;
-      vertical-align: top;
-      text-align: center;
-      padding: 60px 0px;
+  & > li {
+    display: inline-block;
+    flex: 1;
+    border-right: 2px solid #cccccc;
+    vertical-align: top;
+    text-align: center;
+    padding: 60px 0px;
 
-      &:last-child {
-        border-right: none;
-      }
+    &:last-child {
+      border-right: none;
+    }
 
-      h3 {
-        font-size: 1.25em;
-        margin: 10px 0px 30px;
-      }
+    h3 {
+      font-size: 1.25em;
+      margin: 10px 0px 30px;
+    }
 
-      img {
-        width: 70px;
-        height: 70px;
-      }
+    img {
+      width: 70px;
+      height: 70px;
+    }
 
-      p {
-        margin: 8px 0px;
-      }
+    p {
+      margin: 8px 0px;
     }
   }
+}
