@@ -2,7 +2,7 @@
 layout: post
 tags: [dev-blog, dev-etc]
 image: /covers/jekyll.png
-title: ERROR: Failed to build gem native extension.
+title: "ERROR: Failed to build gem native extension."
 author: minhyeong.jang
 date: 2021-03-08 18:30
 ---
