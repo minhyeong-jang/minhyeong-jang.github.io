@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react-native]
+tags: [dev-blog22, react-native]
 image: /covers/js.png
 title: React Native - styled-components 적용하기
 author: minhyeong.jang
