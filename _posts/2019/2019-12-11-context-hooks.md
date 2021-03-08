@@ -26,17 +26,11 @@ export const AppContext = createContext();
 const App = () => {
   const [text, setText] = useState("test");
 
-  const logText = text => {
+  const logText = (text) => {
     console.log("test");
   };
   return (
-    <AppContext.Provider
-      value={{
-        text,
-        setText,
-        logText
-      }}
-    >
+    <AppContext.Provider value={{ text, setText, logText }}>
       <ViewLayout />
     </AppContext.Provider>
   );
