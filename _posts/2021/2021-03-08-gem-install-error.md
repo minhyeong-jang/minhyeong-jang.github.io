@@ -44,4 +44,8 @@ Gemfile.lock 파일을 삭제하지 않아 의존성 체크가 되었는데, 신
 lock 파일의 의존성은 알겠으나 yarn.lock 하고 좀 다르게 동작하는 느낌이다.  
 아직 gem에 대한 이해가 부족해서 나온 이슈인데, 공부가 필요할 듯하다.
 
+### 참고 자료
+
 [understanding-the-gemfile-lock-file](https://stackoverflow.com/questions/7517524/understanding-the-gemfile-lock-file)
+
+[https://stackoverflow.com/questions/4907668/removing-all-installed-gems-and-starting-over/49960935](https://stackoverflow.com/questions/4907668/removing-all-installed-gems-and-starting-over/49960935)
