@@ -4,7 +4,7 @@ tags: [dev-blog, dev-etc]
 image: /covers/github.png
 title: Github Page에 Google Adsense 등록하기
 author: minhyeong.jang
-date: 2021-03-10 19:40
+date: 2021-03-10 20:40
 ---
 
 홈페이지가 어느정도 정리되어 Google Adsense를 등록하려고 한다.  

@@ -90,11 +90,16 @@
     li {
       @include post-item;
       margin: 0;
+      flex: 1 1 auto;
 
-      &:nth-child(2) {
-        margin: 0px 0px 0px 20px;
+      &:not(:last-child) {
+        margin-right: 20px;
       }
-      width: calc(50% - 10px);
+    }
+    @media screen and (max-width: 1200px) {
+      li:last-child {
+        display: none;
+      }
     }
   }
 }
