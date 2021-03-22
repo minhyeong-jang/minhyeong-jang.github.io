@@ -1,0 +1,75 @@
+/* global */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
+  
+  pre code[class*="language-"], pre[class*="language-"] {
+    font-size: 13px !important;
+  }
+  box-sizing: border-box;
+}
+ul,
+li {
+  padding: 0px;
+  margin: 0;
+  list-style: none;
+}
+ol li {
+  list-style-type: decimal;
+
+  p {
+    font-weight: normal;
+  }
+}
+a,
+a:hover,
+a:visited {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+html,
+body {
+  font-size: 14px;
+  margin: 0px;
+}
+label {
+  margin: 0px;
+}
+
+input,
+button,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+.sr-only {
+  display: none;
+}
+.disabled {
+  display: none;
+}
+.red {
+  color: rgb(200, 75, 58) !important;
+  font-weight: bold;
+}
+.highlight {
+  font-weight: bold;
+  color: #5e22e8 !important;
+}
+.language-plaintext {
+  background: none !important;
+}
+pre[class*="language-"] {
+  margin: 20px 0px !important;
+}

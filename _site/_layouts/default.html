@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  {% include head.html %}
+</head>
+
+<body>
+  {% include header.html %}
+  <div class="body-wrap">
+    {% include navbar.html %}
+    <div id="content-wrap">
+      {{ content }}
+    </div>
+  </div>
+  {% include scripts.html %}
+</body>
+</html>

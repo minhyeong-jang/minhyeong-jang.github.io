@@ -1,0 +1,15 @@
+<li>
+  <a href="{{ site.baseurl }}{{ post.url }}">
+    <div class="post-image"
+      {% if post.image %}
+        style="background-image:url({{ site.baseurl }}{{ site.image_url }}{{ post.image }})"
+      {% endif %}
+      ></div>
+    <div class="post-info">
+      <p class="author-name">{{ post.author }}</p>
+      <h3 class="post-title">{{ post.title }}</h3>
+      <p class="post-date">{{ post.date | date: '%Y년 %m월 %d일' }}</p>
+      <p class="post-excerpt">{{ post.content | strip_html | truncatewords: 150 }}</p>
+    </div>
+  </a>
+</li>

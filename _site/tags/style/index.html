@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+
+
+
+<title>Doriri Blog</title>
+<meta name="title" content="Doriri Blog" />
+<meta name="author" content=""/>
+<meta name="description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Doriri Blog"/>
+<meta property="og:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Doriri Blog"/>
+<meta name="twitter:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content=""/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2021-03-22T20:18:31+09:00"/>
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+<!-- <link
+  href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean"
+  rel="stylesheet"
+/> -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/prism.js"></script>
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" onClick="toggleMenu()"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/about">About</a>
+    </li>
+    
+    <li>
+      <a href="/categories/dev-blog">Dev Blog</a>
+    </li>
+    
+    <li>
+      <a href="/categories/etc-blog">Etc Blog</a>
+    </li>
+    
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/about">About</a>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/categories/dev-blog">Dev Blog</a>
+        <ul class="menu-sub">
+          
+            
+              
+              <li class="">
+                <a href="/tags/algorithm">Algorithm</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/dev-etc">Etc</a>
+              </li>
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/javascript">Javascript</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/nomadcoders">Nomad Coders</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react-native">React Native</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react">React</a>
+              </li>
+            
+          
+            
+              
+              <li class=" active ">
+                <a href="/tags/style">Style ( CSS, Etc )</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/categories/etc-blog">Etc Blog</a>
+        <ul class="menu-sub">
+          
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/essay">Essay</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="/contact/">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <ul id="post-list">
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2020/01/08/style-flex-vertical-middle">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/css.jpg)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">CSS Flex 세로 정렬</h3>
+      <p class="post-date">2020년 01월 08일</p>
+      <p class="post-excerpt">HTML에서 세로 정렬은 다들 까다로워하는 부분입니다. vertical-align: middle;으로 알고 사용하지만, 특정한 환경(Table 등)이 아니라면 세로 정렬이 되지 않는 문제 때문입니다.
+이번 글에서는 CSS flex와 align-items를 사용하여 쉽게 세로정렬하는 방법을 알아봅니다.
+
+세로/가로 가운데 정렬
+
+&lt;div class="login-page"&gt;
+  &lt;div class="center"&gt;
+    &lt;h3&gt;Login&lt;/h3&gt;
+    &lt;form&gt;
+      &lt;input /&gt;
+      &lt;input /&gt;
+      &lt;input /&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+위 예제에서 로그인 페이지 내에 내용을 가로/세로 정렬을 진행합니다.
+
+.login-page {
+  display: flex; // flex 사용
+  height: 100vh; // 세로 높이를 화면 크기에 맞춤
+  align-items: center; // 세로 정렬
+  justify-content: center; // 가운데 정렬( 아래서 추가 설명 )
+  margin: 0 auto; // 가운데 정렬
+}
+
+
+
+  justify-content 속성은 flex-direction 속성의 진행 축 정렬에 영향을 받는데, flex-direction: row | row-reverse 인 경우 x축 정렬을 제어합니다. flex-direction: column | column-reverse 인 경우 y축 정렬을 제어합니다.
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/12/12/list-style-bold">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/css.jpg)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">list-style에 bold 처리하기</h3>
+      <p class="post-date">2019년 12월 12일</p>
+      <p class="post-excerpt">ol, li 태그를 사용하면 옆에 숫자가 기본적으로 나타나는데, 해당 숫자에 bold 처리하는 방법입니다. 단순 font-weight 처리 방법 기본적으로 list-style에 bold 처리를 하려면 ol 태그에 적용하면 됩니다. 이후 li 내 태그를 생성하여 normal을 적용합니다. &lt;ol&gt; &lt;li&gt; &lt;p&gt;test&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;test2&lt;/p&gt; &lt;/li&gt; &lt;li&gt;not work&lt;/li&gt; &lt;/ol&gt; &lt;style&gt; ol { font-weight: bold; } ol li p { font-weight: normal; } &lt;/style&gt; 위 방법의 문제점은 마지막 li처럼 태그 적용이 안되어있으면 같이 bold 처리가 됩니다. count-increment count-increment 방법을 사용하여 list-style을 사용하지 않고 카운터를 작성할 수 있습니다. &lt;ol&gt; &lt;li&gt; &lt;p&gt;test&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;test2&lt;/p&gt; &lt;/li&gt; &lt;li&gt;not work&lt;/li&gt; &lt;/ol&gt; &lt;style&gt; ol { margin: 0 0 1.5em; padding: 0; counter-reset: item; } ol &gt; li { margin: 0; padding: 0 0 0 2em; text-indent: -2em; list-style-type: none; counter-increment: item; } ol &gt; li:before { display: inline-block; width: 1em; padding-right: 0.5em; font-weight: bold; text-align: right; content: counter(item) "."; } &lt;/style&gt; counter를 사용하여 li:before에 숫자를 직접 작성하는 방법입니다. 단점으로는 list-style처럼 다양한 스타일이...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+</ul>
+<ul id="pagination" role="navigation">
+	
+	
+	
+</ul>
+
+    </div>
+  </div>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+<script data-ad-client="ca-pub-6988376755693780" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  // var disqus_config = function() {
+  //   this.page.url = "http://localhost:4000/tags/style/";
+  //   this.page.identifier = "/tags/style/";
+  // };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<script id="dsq-count-scr" src="//minhyeong.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

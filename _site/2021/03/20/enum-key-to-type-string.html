@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+
+
+
+<title>Typescript Enum Key to String Type</title>
+<meta name="title" content="Typescript Enum Key to String Type" />
+<meta name="author" content="minhyeong.jang"/>
+<meta name="description" content="export enum GoodsFilterMarketLabel {
+  all = "전체",
+  brand = "브랜드",
+  premium = "프리미엄",
+  soho = "쇼핑몰·마켓 상품",
+}
+export type GoodsFilterMarketType = keyof typeof GoodsFilterMarketLabel;
+
+"/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Typescript Enum Key to String Type"/>
+<meta property="og:description" content="export enum GoodsFilterMarketLabel {
+  all = "전체",
+  brand = "브랜드",
+  premium = "프리미엄",
+  soho = "쇼핑몰·마켓 상품",
+}
+export type GoodsFilterMarketType = keyof typeof GoodsFilterMarketLabel;
+
+"/>
+<meta property="og:url" content="http://localhost:4000/2021/03/20/enum-key-to-type-string"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/typescript.png"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Typescript Enum Key to String Type"/>
+<meta name="twitter:description" content="export enum GoodsFilterMarketLabel {
+  all = "전체",
+  brand = "브랜드",
+  premium = "프리미엄",
+  soho = "쇼핑몰·마켓 상품",
+}
+export type GoodsFilterMarketType = keyof typeof GoodsFilterMarketLabel;
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="minhyeong.jang"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/typescript.png"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="dev-blog,javascript"/>
+
+<meta property="article:tag" content="dev-blog"/>
+
+<meta property="article:tag" content="javascript"/>
+
+
+
+<meta property="article:published_time" content="2021-03-20T23:55:00+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/minhyeong.jang"/>
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+<!-- <link
+  href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean"
+  rel="stylesheet"
+/> -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/prism.js"></script>
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" onClick="toggleMenu()"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/about">About</a>
+    </li>
+    
+    <li>
+      <a href="/categories/dev-blog">Dev Blog</a>
+    </li>
+    
+    <li>
+      <a href="/categories/etc-blog">Etc Blog</a>
+    </li>
+    
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/about">About</a>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/categories/dev-blog">Dev Blog</a>
+        <ul class="menu-sub">
+          
+            
+              
+              <li class="">
+                <a href="/tags/algorithm">Algorithm</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/dev-etc">Etc</a>
+              </li>
+            
+          
+            
+          
+            
+              
+              <li class=" active ">
+                <a href="/tags/javascript">Javascript</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/nomadcoders">Nomad Coders</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react-native">React Native</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react">React</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/style">Style ( CSS, Etc )</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/categories/etc-blog">Etc Blog</a>
+        <ul class="menu-sub">
+          
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/essay">Essay</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="/contact/">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div id="cover"
+  
+    style="background-image: url(/assets/images/covers/typescript.png)"
+  >
+  <div class="mouse-scroll">
+    <img src="/assets/images/design/icon-mouse-scroll.png" alt="mouse-scroll">
+  </div>
+</div>
+
+<div id="post-content">
+  <div class="reponsive-content">
+    <div class="post-info">
+      <h1 class="post-title">Typescript Enum Key to String Type</h1>
+      <p class="post-date red">2021년 03월 20일</p>
+    </div>
+    <div><div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">GoodsFilterMarketLabel</span> <span class="p">{</span>
+  <span class="nx">all</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">전체</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">brand</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">브랜드</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">premium</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">프리미엄</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">soho</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">쇼핑몰·마켓 상품</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">GoodsFilterMarketType</span> <span class="o">=</span> <span class="kr">keyof</span> <span class="k">typeof</span> <span class="nx">GoodsFilterMarketLabel</span><span class="p">;</span>
+</code></pre></div></div>
+</div>
+  </div>
+
+  <!-- 
+
+<span style="color: silver;">Share on: </span>
+<div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/2021/03/20/enum-key-to-type-string');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/2021/03/20/enum-key-to-type-string');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2021/03/20/enum-key-to-type-string&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    <div class="pinterest" title="Share this on Pinterest" onclick="window.open('https://pinterest.com/pin/create/button/?url=&media=http://localhost:4000/covers/typescript.png&description=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M256 597q0-108 37.5-203.5t103.5-166.5 152-123 185-78 202-26q158 0 294 66.5t221 193.5 85 287q0 96-19 188t-60 177-100 149.5-145 103-189 38.5q-68 0-135-32t-96-88q-10 39-28 112.5t-23.5 95-20.5 71-26 71-32 62.5-46 77.5-62 86.5l-14 5-9-10q-15-157-15-188 0-92 21.5-206.5t66.5-287.5 52-203q-32-65-32-169 0-83 52-156t132-73q61 0 95 40.5t34 102.5q0 66-44 191t-44 187q0 63 45 104.5t109 41.5q55 0 102-25t78.5-68 56-95 38-110.5 20-111 6.5-99.5q0-173-109.5-269.5t-285.5-96.5q-200 0-334 129.5t-134 328.5q0 44 12.5 85t27 65 27 45.5 12.5 30.5q0 28-15 73t-37 45q-2 0-17-3-51-15-90.5-56t-61-94.5-32.5-108-11-106.5z"/></svg></div>
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/2021/03/20/enum-key-to-type-string');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/2021/03/20/enum-key-to-type-string');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div> -->
+
+  <div id="post-links">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      <!-- 다음 포스트가 없는 경우 -->
+      
+
+        
+        <li>
+  <a href="/2021/03/20/react-error-defaultprops">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Type of property 'defaultProps' circularly references itself in mapped type</h3>
+      <p class="post-date">2021년 03월 20일</p>
+      <p class="post-excerpt">styled-components를 사용하는 도중 defaultProps 타입 오류가 발생했다.  
+Props 전달에도 이상이 없었고 어떤 오류인가 싶어서 검색해봤다.
+
+```error
+Type of property 'defaultProps' circularly references itself in mapped type
+```
+
+TypeScript Github에 등록된 이슈를 확인해보니, 정확하지는 않지만 `Typescript^3.9.0` 이후 나타나며 해당 오류는 styled-components에서 5.0.1 버전대에서 fix 되었다. ( 자세한 사항은 하단 참고자료로 이동하여 확인하면 좋을 것 같다. )
+
+```bash
+yarn upgrade @types/styled-components --latest
+# or
+npm install @types/styled-components@latest
+```
+
+styled-components의 type을 업데이트하는 방법이 있으며, 어려운 경우에는 styled-components.d.ts를 생성하여 예외처리 하는 방향도 있다.
+
+### 참고자료
+
+https://github.com/microsoft/TypeScript/issues/37597#issuecomment-628149946
+</p>
+    </div>
+  </a>
+</li>
+          
+        
+        <li>
+  <a href="/2021/03/20/react-list-search">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">React 리스트 검색 스크롤 이동</h3>
+      <p class="post-date">2021년 03월 20일</p>
+      <p class="post-excerpt">asd
+</p>
+    </div>
+  </a>
+</li>
+    
+        
+        <li>
+  <a href="/2021/03/10/github-page-adsense">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/github.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Github Page에 Google Adsense 등록하기</h3>
+      <p class="post-date">2021년 03월 10일</p>
+      <p class="post-excerpt">홈페이지가 어느정도 정리되어 Google Adsense를 등록하려고 한다.
+등록하다보니 ‘어차피 광고 자동 삽입을 사용하지 않을거면 처음부터 진행할걸..’이라는 생각이 들었으나 지나간 이야기니까..
+
+다른 사람들은 처음부터 등록하고 시작하는걸 추천한다.
+
+참고로 자동광고를 사용하지 않으려는 이유는 본문 내에 광고를 넣을 경우 뜬금없이 튀어나와 본문의 가독성을 떨어트린다.
+예를들어 코드를 올리고 내용을 설명하는데, 코드와 내용 사이에 광고가 튀어나와 흐름도 끊기도 간격이 넓어져 읽기도 힘들게 된다.
+
+서론이 길었고, 아무튼 Adsense를 등록해보자.
+
+
+
+Adsense 등록하기
+
+
+  https://www.google.com/adsense/ 에 로그인한다.
+  좌측 사이트 탭으로 이동하여 사이트 추가 버튼을 클릭하여 진행한다.
+  Adsense가 제공한 스크립트 코드를 삽입한다.
+
+
+타이틀만 거창했고, 아무것도 없다.
+
+이렇게 진행하면 몇일 뒤 메일도 오고 준비됨 상태로 변경된다.
+
+준비됨으로 변경되면 ads.txt를 업로드 해달라고 하는데, Adsense에 올라온 파일을 다운로드 받거나 내용을 복사하여 루트 디렉토리 안에 추가한다.
+
+
+</p>
+    </div>
+  </a>
+</li>
+
+      <!-- 기본 -->
+      
+    </ul>
+  </div>
+</div>
+
+<div id="disqus_thread"></div>
+    </div>
+  </div>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+<script data-ad-client="ca-pub-6988376755693780" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  // var disqus_config = function() {
+  //   this.page.url = "http://localhost:4000/2021/03/20/enum-key-to-type-string";
+  //   this.page.identifier = "/2021/03/20/enum-key-to-type-string";
+  // };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<script id="dsq-count-scr" src="//minhyeong.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

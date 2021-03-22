@@ -1,0 +1,48 @@
+#contact {
+  .form-item {
+    padding: 5px 0px;
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #dedede;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 5px;
+    }
+
+    textarea {
+      min-height: 200px;
+      min-width: 100%;
+      max-width: 100%;
+    }
+
+    button {
+      background: #5fad80;
+      border: 1px solid #61a27c;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      float: right;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .footer {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #131518;
+    font-weight: bold;
+
+    a {
+      color: #e91e63;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}

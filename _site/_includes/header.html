@@ -1,0 +1,20 @@
+<div id="header">
+  <div class="top">
+    <a href="{{ site.baseurl }}/">Doriri</a>
+    <button type="button" class="menu-btn" onClick="toggleMenu()"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="{% if page.url == '/about' %} active {% endif %}">
+      <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
+    </li>
+    {% for category in site.categories %}
+    <li>
+      <a href="{{ site.baseurl }}/categories/{{ category.name }}">{{ category.title }}</a>
+    </li>
+    {% endfor %}
+    <li>
+      <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>
+    </li>
+  </ul>
+</div>

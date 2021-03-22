@@ -1,0 +1,177 @@
+@import "theme";
+
+/* media size */
+
+/* color */
+
+$color-gray: #ccc;
+$border-color: rgb(209, 202, 216);
+
+/* main */
+body {
+  color: #2f2936;
+  background-color: rgb(251, 251, 252);
+}
+
+.body-wrap {
+  display: flex;
+  min-height: 100vh;
+}
+
+/**
+ * Navigation
+ */
+#navbar {
+  position: relative;
+  flex: 0 0 220px;
+  background: rgba(37, 37, 37, 1);
+
+  .fixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+  }
+
+  .info-wrap {
+    padding: 20px;
+
+    .user-name {
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 21px;
+      color: white;
+    }
+
+    .nick-name {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 19px;
+      font-weight: 500;
+    }
+  }
+
+  .menu-wrap {
+    margin-top: 35px;
+    padding: 0px 20px;
+
+    & > li {
+      margin-bottom: 10px;
+    }
+
+    li {
+      a {
+        display: block;
+        color: rgb(166, 155, 178);
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 0px;
+        transition: color 0.2s linear;
+      }
+
+      &.active {
+        & > a {
+          color: white !important;
+          font-weight: bold !important;
+        }
+      }
+
+      &:hover {
+        & > a {
+          color: rgb(220, 220, 220);
+        }
+      }
+    }
+  }
+
+  .menu-sub {
+    padding-left: 0.9286rem;
+    transition: all 0.2s;
+    overflow: hidden;
+  }
+
+  .menu-sub li {
+    position: relative;
+  }
+
+  .contact {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+#content-wrap {
+  flex: 1 1 auto;
+  padding: 16px 30px 20px;
+  border-radius: 10px;
+  border: 1px;
+  overflow: hidden;
+
+  .header {
+    margin: 8px 0px 20px;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    color: rgb(74, 62, 86);
+  }
+
+  .summery {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+}
+@media (max-width: $break-tablet) {
+  html, body {
+    font-size: 13px !important;
+  }
+  #content-wrap {
+    padding: 10px;
+  }
+}
+
+
+#logo {
+  position: absolute;
+  left: 25px;
+  line-height: 60px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#menu {
+  display: inline-block;
+
+  li {
+    display: inline-flex;
+    font-weight: 400;
+
+    a {
+      padding: 0px 20px;
+      font-size: 15px;
+      line-height: 60px;
+    }
+
+    &.active,
+    &:hover {
+      font-weight: 600;
+      border-bottom: 2px solid #1e1e1e;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+/**
+ * Pagination Layout
+ */
+#pagination {
+  text-align: center;
+
+  li {
+    padding: 5px;
+    background: red;
+  }
+}

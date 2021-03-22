@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+
+
+
+<title>Doriri Blog</title>
+<meta name="title" content="Doriri Blog" />
+<meta name="author" content=""/>
+<meta name="description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Doriri Blog"/>
+<meta property="og:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Doriri Blog"/>
+<meta name="twitter:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content=""/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2021-03-22T20:18:31+09:00"/>
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+<!-- <link
+  href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean"
+  rel="stylesheet"
+/> -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/prism.js"></script>
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" onClick="toggleMenu()"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/about">About</a>
+    </li>
+    
+    <li>
+      <a href="/categories/dev-blog">Dev Blog</a>
+    </li>
+    
+    <li>
+      <a href="/categories/etc-blog">Etc Blog</a>
+    </li>
+    
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/about">About</a>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/categories/dev-blog">Dev Blog</a>
+        <ul class="menu-sub">
+          
+            
+              
+              <li class="">
+                <a href="/tags/algorithm">Algorithm</a>
+              </li>
+            
+          
+            
+              
+              <li class=" active ">
+                <a href="/tags/dev-etc">Etc</a>
+              </li>
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/javascript">Javascript</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/nomadcoders">Nomad Coders</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react-native">React Native</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react">React</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/style">Style ( CSS, Etc )</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/categories/etc-blog">Etc Blog</a>
+        <ul class="menu-sub">
+          
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/essay">Essay</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="/contact/">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <ul id="post-list">
+  
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2021/03/10/github-page-adsense">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/github.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Github Page에 Google Adsense 등록하기</h3>
+      <p class="post-date">2021년 03월 10일</p>
+      <p class="post-excerpt">홈페이지가 어느정도 정리되어 Google Adsense를 등록하려고 한다.
+등록하다보니 ‘어차피 광고 자동 삽입을 사용하지 않을거면 처음부터 진행할걸..’이라는 생각이 들었으나 지나간 이야기니까..
+
+다른 사람들은 처음부터 등록하고 시작하는걸 추천한다.
+
+참고로 자동광고를 사용하지 않으려는 이유는 본문 내에 광고를 넣을 경우 뜬금없이 튀어나와 본문의 가독성을 떨어트린다.
+예를들어 코드를 올리고 내용을 설명하는데, 코드와 내용 사이에 광고가 튀어나와 흐름도 끊기도 간격이 넓어져 읽기도 힘들게 된다.
+
+서론이 길었고, 아무튼 Adsense를 등록해보자.
+
+
+
+Adsense 등록하기
+
+
+  https://www.google.com/adsense/ 에 로그인한다.
+  좌측 사이트 탭으로 이동하여 사이트 추가 버튼을 클릭하여 진행한다.
+  Adsense가 제공한 스크립트 코드를 삽입한다.
+
+
+타이틀만 거창했고, 아무것도 없다.
+
+이렇게 진행하면 몇일 뒤 메일도 오고 준비됨 상태로 변경된다.
+
+준비됨으로 변경되면 ads.txt를 업로드 해달라고 하는데, Adsense에 올라온 파일을 다운로드 받거나 내용을 복사하여 루트 디렉토리 안에 추가한다.
+
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2021/03/10/git-revert">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/github.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Git revert 충돌 해결하기</h3>
+      <p class="post-date">2021년 03월 10일</p>
+      <p class="post-excerpt">작업을 스테이지에 올렸다가 릴리즈 날짜에 배포가 불가능하면 해당 기능을 잠시 스테이지에서 빼둬야한다. 이때 develop 브랜치에서 Revert를 생성하여 Merge 하는 작업을 진행한다. 여기까지는 괜찮았으나 작업중인 브랜치에서 devleop을 Pull 받으니 문제가 나타났다. develop에서는 Merge를 통하여 해당 내용들을 전부 삭제했으니 작업중인 브랜치에 있는 내용들도 전부 삭제 시켜버린다. 동일 파일을 작업하던 부분들까지 날려버리니 멘붕이 나버렸다. 여러번의 검색 끝에 간단한 해결방법을 찾았는데 결국 Revert를 Revert하자! 라는게 편한 방법이다. 해결방법 Merge, Revert한 브랜치명을 develop으로 명칭하고 진행한다. Revert Commit SHA Key를 가져오자. develop에서 git log를 확인하여 revert한 커밋 키 값을 가져온다. git checkout develop git log commit [REVERT_COMMIT_SHA_KEY] (tag: ...) Author: Doriri &lt;public.doriri@gmail.com&gt; Date: ... Revert "커밋 메시지" 여기서 REVERT_COMMIT_SHA_KEY 해당 부분을 복사해준다. New Branch &amp; Revert를 Revert 하자. 새로운 브랜치를 생성하고, Revert 커밋을 Revert 해보자. git checkout -b [new_branch] git revert [REVERT_COMMIT_SHA_KEY] 그리고 마무리로 기존 브랜치를 pull 받으면 끝이다. git pull origin [origin_branch] 커맨드 요약 git checkout develop git checkout -b feature/new-branch git revert [SHA_REVERT_COMMIT] git...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2021/03/10/disqus-error">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/404.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Disqus Email 인증 ERR_CONNECTION_REFUSED</h3>
+      <p class="post-date">2021년 03월 10일</p>
+      <p class="post-excerpt">Disqus 계정에서 이메일을 변경하면서 인증하라는 메시지가 나왔다.
+인증받기를 눌러도 메일은 한참 지나서오고 들어가보니 연결을 거부당했다.
+
+사이트에 연결할 수 없음
+disq.us에서 연결을 거부했습니다.
+
+ERR_CONNECTION_REFUSED
+
+
+어이가 없..
+
+도메인이 disq.us인게 url shoutcut으로 사용한 것 같은데, 내 네트워크 문제인지 쟤네 문제인지.. 아무튼 거부당했다.
+
+혹시나 해서 disq.us 부분만 disqus.com으로 바꿨더니 url이라는 사용자의 프로필로 이동했다.
+URL을 다시 확인해보니 결국은 disq.us에서 url을 파라미터로 받아서 리다이렉트를 하는 방식이다.
+
+해결 방법
+
+
+  disq.us/url?url= 여기서 부터 뒷부분을 전부 복사한다.
+  url을 decode 해주자. urlDecoder에서 붙여넣기 후 decode
+  decode 된 url 경로로 이동하자.
+
+
+Your email has been verified successfully!
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2021/03/08/gem-install-error">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/jekyll.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">ERROR: Failed to build gem native extension.</h3>
+      <p class="post-date">2021년 03월 08일</p>
+      <p class="post-excerpt">ERROR: Error installing jekyll-sitemap:
+      ERROR: Failed to build gem native extension.
+
+
+gem으로 jekyll 모듈을 설치하는 과정에서 다음과 같은 오류가 나타났다.
+검색해보니 xcode 관련 자료만 나오다가 해당 모듈이 사용 중인 jekyll 버전을 미지원하는 내용이 나왔다.
+
+해당 모듈의 버전 리스트를 검색한다.
+
+gem list --remote --all jekyll-sitemap
+
+*** REMOTE GEMS ***
+
+jekyll-sitemap ( [versions] )
+
+
+지원하는 버전을 설치해보자.
+
+sudo gem install jekyll-sitemap -v [version]
+
+Successfully installed jekyll-sitemap-[version]
+
+
+사용하려는 jekyll-sitemap은 현재 jekyll 버전에서 v1.2.0까지만 지원한다고 한다.
+지원 여부를 깃헙에서 확인해 봤으면 됐을 텐데, 오류만 검색하다가 시간을 많이 소모했다.
+
+
+
+이렇게 모듈을 설치하고 빌드하니 gem install을 실행하라고 한다.
+Gemfile.lock 파일을 삭제하지 않아 의존성 체크가 되었는데, 신기하게 gem install 하니 직접 설치할 때 오류 나던 jekyll-sitemap 1.4.0이 설치되었다.
+
+lock 파일의 의존성은 알겠으나 yarn.lock 하고 좀 다르게 동작하는 느낌이다.
+아직 gem에 대한 이해가 부족해서 나온 이슈인데, 공부가 필요할 듯하다.
+
+참고 자료
+
+understanding-the-gemfile-lock-file
+
+https://stackoverflow.com/questions/4907668/removing-all-installed-gems-and-starting-over/49960935
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2020/01/08/ts-use-tip">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/typescript.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">특정 모듈의 Typescript Props 정리</h3>
+      <p class="post-date">2020년 01월 08일</p>
+      <p class="post-excerpt">HTML
+
+Event
+
+키보드 관련 이벤트 ( keyup )
+
+document.addEventListener("keyup", (event: KeyboardEvent) =&gt; {
+  console.log(event.keyCode);
+});
+
+
+React
+
+React.cloneElement
+
+type ReactText = string | number;
+type ReactChild = ReactElement&lt;any&gt; | ReactText;
+
+
+return React.cloneElement(child as React.ReactElement&lt;any&gt;, {
+  width: this.props.width,
+  height: this.props.height,
+});
+
+
+react-router-dom
+
+history
+
+import { RouteComponentProps } from 'react-router-dom';
+interface Props extends RouteComponentProps&lt;any&gt; {}
+
+const Component : React.FC&lt;Props&gt; = ({ history }) =&gt; ();
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/12/19/jekyll-search-console">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/jekyll.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Jekyll + Google Search Console 연동하기</h3>
+      <p class="post-date">2019년 12월 19일</p>
+      <p class="post-excerpt">Google Search Console에서는 Google 검색에 콘텐츠를 표시하기 위한 실행 가능 보고서, 도구, 학습 리소스를 제공합니다. Link
+
+Google Search Console에서 봇이 데이터를 가져가기 위해 sitemap과 robots의 설정이 필요하며, 먼저 설명드리겠습니다.
+
+
+  작성 당시 jekyll 버전은 3.8.6 입니다.
+
+
+Jekyll Sitemap 설치
+
+gem jekyll-sitemap 설치
+
+gem install jekyll-sitemap
+
+
+Gemfile 설정
+
+# GemFile
+group :jekyll_plugins do
+  gem "jekyll-sitemap"
+
+
+_config.yml 수정
+
+# _config.yml
+plugins:
+  - jekyll-sitemap
+
+
+
+  이제 도메인 뒤에 /sitemap.xml를 붙여 설정된 것을 확인합니다.
+ex) https://minhyeong-jang.github.io/sitemap.xml
+
+
+robots.txt 설정
+
+Bot에게 현재 사이트의 sitemap과 권한 설정 등을 제공합니다.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://minhyeong-jang.github.io/sitemap.xml
+
+
+Google Search Console 생성
+
+이제 마지막으로 Google Search Console 홈페이지에서 속성을 생성합니다.
+
+도메인 / URL 접두어로 나눠져있는데, 따로 Github Pages에 도메인을 설정하지 않은 경우 URL 접두어를 선택합니다.
+선택 후에는 설명에 따라 인증을 진행합니다. ( 이전에 작성한 anlytics를 진행하신 분은 바로 인증이 가능합니다. )
+
+Sitemaps 탭으로 이동하여 새 사이트맵에 생성한 sitemap.xml URL을 입력하여 제출합니다.
+
+제출에 성공한 경우 정상적으로 완료된 것 입니다.
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2019/12/19/jekyll-analytics">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/jekyll.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Jekyll + Google Analytics 연동하기</h3>
+      <p class="post-date">2019년 12월 19일</p>
+      <p class="post-excerpt">Google에서 제공하는 Google Analytics라는 툴을 사용하여 웹 로그를 분석할 수 있습니다. Google Analytics는 앱 또는 웹의 이용자를 분석하여 통계로 제공해주고 있으며, 예로들어 방문 페이지, 이탈률, 세션 시간 등이 있습니다. 또한 Google Ads, Google Search Console 등 관련 서비스와 통합하여 확인할 수 있습니다. Google Analytics 설정 우선 Google Analytics에 접속하여서 계정을 생성합니다. 계정은 여러개 생성이 가능하며, ‘속성 및 앱’에 페이지 별로 생성이 가능합니다. 저는 Blog라는 계정 하위에 Tistory, Github Page의 링크를 별도로 등록했습니다. 등록이 완료되면 추적 코드가 나타나게 되며, 해당 페이지에서 추적 ID, 태그(js)를 제공하고 있습니다. 추적 코드 탭이 나타나지 않는다면, 좌측 하단 관리 -&gt; 속성 -&gt; 추적정보 -&gt; 추적코드로 이동합니다. Jekyll 설정 위에서 나온 js를 복붙하셔도 상관 없지만, 저같은 경우에 _config.yml에 추적 ID 값을 넣었습니다. google_analytics_id: 추적 ID 그리고 analytics 파일을 생성하여 Google Analytics에서 제공하는 js를 삽입하고 추적 ID 값을 불러옵니다. 아래 코드는 추적 ID 값을 _config에서 가져오도록 수정한 코드입니다. &lt;!-- analytics.html --&gt; {% if site.google_analytics_id %} &lt;script async src="https://www.googletagmanager.com/gtag/js?id={{...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/12/12/jekyll-disqus">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/jekyll.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Jekyll + Disqus 연동하기</h3>
+      <p class="post-date">2019년 12월 12일</p>
+      <p class="post-excerpt">Jekyll에서 Disqus를 연동하는 방법을 살펴보도록 하겠습니다.
+
+Disqus 설정
+
+
+  
+    Disqus 홈페이지에 접속해서 회원가입을 진행합니다.
+  
+  
+    로그인 후 상단에 Get Start -&gt; I want to install Disqus on my site를 선택합니다.
+  
+  
+    정보를 입력 후 확인을 누른 후 플랫폼 선택에서 jekyll를 선택합니다.
+( 만약 화면이 나타나지 않는 경우, admin -&gt; Settings -&gt; Installation )
+  
+  
+    설명 2번에 있는 Universal Embed Code 링크 클릭
+  
+  
+    홈페이지 첫 동영상 밑에 있는 1번의 Disqus to load 코드를 post Layout에 추가합니다.
+중간 주석 부분에는 Disqus thread가 중복되어 생성되는 것을 방지하기 위해 page_url, identifier를 추가하라고 적혀있습니다.
+해당 부분은 아래와 같이 site 정보를 설정해주시면 됩니다.
+
+    this.page.url = "http://localhost:4000/2019/12/12/jekyll-disqus"; // minhyeong-jang.github.com/2019/12/...
+this.page.identifier = "/2019/12/12/jekyll-disqus"; // /2019/12/...
+    
+  
+  
+    홈페이지에서 두번째 동영상 밑에 있는 count.js 스크립트를 body 맨 아래 선언하면 댓글 수가 체크됩니다.
+  
+
+
+적용 후 새로고침 하시면 로컬에서도 정상적으로 Disqus가 보이게 됩니다.
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/12/11/ts-auto-console">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/typescript.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">typescript에서 import console 이슈</h3>
+      <p class="post-date">2019년 12월 11일</p>
+      <p class="post-excerpt">typescript 환경에서 console.log를 입력하면 상단에 import console = require('console');가 자동으로 import 생성된다.
+해당 문제가 VSCode, Typescript 중 어디서 생성되는지 모르지만 해결방법은 있습니다.
+
+해결방안
+
+구글에서 해결방안 중 node_modules 내 파일을 수정하는 방안도 있었지만, 팀원들도 동일한 증상을 겪을 것 같아 declare 방법으로 진행하였습니다.
+
+프로젝트 root 디렉토리에 console.d.ts를 생성 후 아래 코드를 추가합니다. ( 기존에 사용중이신 d.ts가 있으시다면 그걸 사용하셔도 됩니다. )
+
+declare module 'console' {
+  export = typeof import("console");
+}
+
+
+
+  
+    문제가 해결되지 않으면 command + shift + p 후 TypeScript: Restart to Server를 실행해주세요.
+    tsconfig에서 baseUrl을 추가하신 경우, baseUrl의 경로가 root가 됩니다.
+  
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2019/12/09/jekyll-import-scss">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/jekyll.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Jekyll Error Reports</h3>
+      <p class="post-date">2019년 12월 09일</p>
+      <p class="post-excerpt">Jekyll을 사용하며 나타난 오류를 정리합니다. Scss Import Error + Tip Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/index.scss': File to import not found or unreadable: filename. on line 1 Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/index.scss': Invalid CSS after "": expected selector, was "---" on line 1 Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/index.scss': Invalid CSS after "@import "theme"": expected "{", was ";" on line 3 scss 파일은 빌드 후 css + minify 형태로 제공해주기 때문에 head에서는 src=”index.css” 형태로 작성하게 됩니다. 파일 수 만큼 css를 import하면 속도가 느려 index.scss 파일 하나에서 모든 scss 파일을 import 하는 방법으로 bundle 작업을 진행하는게 좋습니다. jekyll은 scss에서 상단에 아래 문구가 적혀있으면 css로 빌드 작업을 진행합니다. --- --- index.scss 파일에서만 위에 문구를 추가한 후 나머지 파일을 import 해줍니다. 만일 index.scss에서 호출하는 scss 파일들은 상단에 --- 문구가 존재하면 에러가 나타납니다. 호출하기 위한 파일을 구분하기 위해 _theme.scss 처럼 파일명 앞에 _를 붙여줍니다....</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2019/12/05/dev-reference">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">React 참고 자료</h3>
+      <p class="post-date">2019년 12월 05일</p>
+      <p class="post-excerpt">개발 참고자료 정리
+
+jekyll + react + webpack 구현하기
+https://marcoslombog.com/2019/04/07/jekyll-react-webpack.html
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/05/27/git-errors">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/github.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">git refusing to merge unrelated histories</h3>
+      <p class="post-date">2019년 05월 27일</p>
+      <p class="post-excerpt">fatal: refusing to merge unrelated histories
+
+로컬 저장소에서 Git Repo 생성 후 push 하는 경우, 프로젝트 충돌로 나타나는 오류이다.
+
+git pull origin main --allow-unrelated-histories
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/05/24/sourcemap">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Sourcemap 이란?</h3>
+      <p class="post-date">2019년 05월 24일</p>
+      <p class="post-excerpt">1. Sourcemap 이란?
+
+많은 개발 환경은 Webpack 등으로 빌드 과정을 거치고있다. 만일 빌드 후 취합되거나 변환 된 CSS, JavaScript 파일들이 오류가 발생한다면, 개발자 도구에서는 빌드 된 파일에서 오류를 출력하고 있을 것이다. 하지만 우리가 원하는 것은 빌드 전 오류난 파일 및 라인을 알고싶은 것이다.
+
+예를 들면, SCSS에 오류가 있고 Webpack으로 빌드를 진행하면 웹페이지에서 오류를 알려주는 부분은 빌드가 완료된 CSS를 출력한다. JavaScript도 마찬가지로 오류가 나면 취합하고 minify된 JS를 출력하고있다.
+
+이럴때 Soucemap을 설정하면, 코드상의 위치를 기억하고 알려주기 때문에 빌드 전 어떤 파일, 라인에서 오류가 났는지 확인할 수 있다.
+
+2. 설정
+
+2.1 Webpack
+
+Dev 환경에서만 작동하도록 설정하였다.
+
+{
+  "devtool": env.mode === "development" ? "source-map" : ""
+}
+
+
+2.2 Typescript
+
+{
+  "compilerOptions": {
+    "sourceMap": true
+  }
+}
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2018/06/20/wordpress-info">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/wordpress.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Wordpress 가입형 / 설치형</h3>
+      <p class="post-date">2018년 06월 20일</p>
+      <p class="post-excerpt">들어가며 WordPress 란 일반 사용자들도 웹사이트를 구축하고 관리할 수 있도록 도와주는 도구입니다. 워드프레스를 사용하는 경우 두가지로 구분됩니다. 가입형 ( wordpress.com ) 설치형 ( wordpress.org ) 가입형 ( wordpress.com ) 워드프레스가 제공하는 서버 및 DB를 사용하여 웹사이트를 구축합니다. 무료를 포함하여 요금제에 따라 성능이 달라집니다. wordpress 가입형 페이지 - 장점 서버 및 DB 환경이 기본적으로 제공되어 간편하게 사용이 가능합니다. 무료 사용이 가능합니다. 속도가 빠릅니다. 서버관리 및 보안에 신경쓰지 않아도 됩니다. - 단점 워드프레스 규정을 따라야합니다. 플러그인 및 테마에 제약이 있습니다. CSS 수정에 제약이 있습니다. 위 기능을 사용하기위해 요금제를 높이는 경우 많은 요금을 부과해야합니다. wordpress 가입형 요금 설치형 ( wordpress.org ) 사용자가 서버에 직접 워드프레스를 설치하여 웹사이트를 구축합니다. 웹사이트 소유자이기 때문에 제약이 없습니다. wordpress 설치형 페이지 - 장점 테마 및 플러그인을 설치하여 적용이 가능합니다. 모든 기능을 무료로 사용합니다. - 단점 서버 호스팅 및 설치해야하는 불편함이 있습니다. 서버비용이 지출됩니다. 주관적 생각 번거롭더라도 설치형으로 진행하시는 것을 추천합니다. 워드프레스로 블로그 또는 포트폴리오를 제작하는데 있어서, ‘플러그인 및...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2017/09/11/python-string-to-number">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/python.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Python - 문자열을 숫자로 변환하기 int(), float(), long()</h3>
+      <p class="post-date">2017년 09월 11일</p>
+      <p class="post-excerpt">Python 2.x, 3.x
+
+# string to int
+s = "123"
+n = int(s)
+
+
+# string to float
+s = "123.456"
+n = float(s)
+
+
+# string to long
+s = "1234567890123"
+n = long(s)
+
+
+참고사항
+
+위 게시물은 기존에 운영한 Tistory에서 가져온 자료입니다.
+시간이 흐름에 따라 오류가 발생하거나 참고사항으로 첨부한 자료가 없을 수 있습니다.
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2016/04/11/py-translate-number">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/python.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Python - 2진수, 8진수, 10진수, 16진수 변환하기</h3>
+      <p class="post-date">2016년 04월 11일</p>
+      <p class="post-excerpt">Python에서 진수 변환을 어떻게 작업하는지를 설명합니다.
+
+10진수 -&gt; 2, 8, 16 진수 변환
+
+2진수 bin( 정수 )
+8진수 oct( 정수 )
+16진수 hex( 정수 )
+
+ex) bin(12345)
+
+x진수 -&gt; 10진수 변환
+
+int( 정수, 진수 )
+
+ex) int( 12345, 7 ) -&gt; 7진수 12345를 10진수로 변환
+
+소스코드
+
+if __name__ == "__main__" :
+
+  num = 12345
+
+  print bin(num)
+  # 10진수 -&gt; 2진수 변환 : 0b11000000111001
+
+  print oct(num)
+  # 10진수 -&gt; 8진수 변환 : 030071
+
+  print hex(num)
+  # 10진수 -&gt; 16진수 변환 : 0x3039
+
+  print int(bin(num),2)
+  # 2진수 -&gt; 10진수 변환 : 12345
+
+  print int(hex(num),16)
+  # 16진수 -&gt; 10진수 변환 : 12345
+
+
+참고사항
+
+위 게시물은 기존에 운영한 Tistory에서 가져온 자료입니다.
+시간이 흐름에 따라 오류가 발생하거나 참고사항으로 첨부한 자료가 없을 수 있습니다.
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2016/02/01/py-grid-to-xy">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/python.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Python - 위도, 경도를 기상청 X, Y 좌표 변환하기</h3>
+      <p class="post-date">2016년 02월 01일</p>
+      <p class="post-excerpt">기상청 API를 사용하려면 일반적인 위도, 경도가 아닌 행정구역을 나누는 X, Y (GRID) 좌표를 사용하고 있습니다. 따라서 위도, 경도를 변환해야하는데 기상청에서 제공하는 Open API를 활용하여 변환 작업을 진행합니다. Open API http://www.kma.go.kr/weather/forecast/digital_forecast.jsp ex) http://www.kma.go.kr/weather/forecast/digital_forecast.jsp?x=60&amp;y=127 소스코드 import math def grid(v1, v2) : RE = 6371.00877 # 지구 반경(km) GRID = 5.0 # 격자 간격(km) SLAT1 = 30.0 # 투영 위도1(degree) SLAT2 = 60.0 # 투영 위도2(degree) OLON = 126.0 # 기준점 경도(degree) OLAT = 38.0 # 기준점 위도(degree) XO = 43 # 기준점 X좌표(GRID) YO = 136 # 기1준점 Y좌표(GRID) DEGRAD = math.pi / 180.0 RADDEG = 180.0 / math.pi re = RE / GRID; slat1 = SLAT1 * DEGRAD slat2 = SLAT2 * DEGRAD olon = OLON * DEGRAD olat = OLAT * DEGRAD sn = math.tan(math.pi * 0.25 + slat2 * 0.5) / math.tan(math.pi * 0.25 + slat1 * 0.5) sn = math.log(math.cos(slat1) / math.cos(slat2)) / math.log(sn) sf = math.tan(math.pi *...</p>
+    </div>
+  </a>
+</li>
+      
+    
+  
+</ul>
+<ul id="pagination" role="navigation">
+	
+	
+	
+</ul>
+
+    </div>
+  </div>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+<script data-ad-client="ca-pub-6988376755693780" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  // var disqus_config = function() {
+  //   this.page.url = "http://localhost:4000/tags/dev-etc/";
+  //   this.page.identifier = "/tags/dev-etc/";
+  // };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<script id="dsq-count-scr" src="//minhyeong.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

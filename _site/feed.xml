@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-03-22T20:18:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Doriri Blog</title><subtitle>더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다.</subtitle><entry><title type="html">Type of property ‘defaultProps’ circularly references itself in mapped type</title><link href="http://localhost:4000/2021/03/20/react-error-defaultprops" rel="alternate" type="text/html" title="Type of property ‘defaultProps’ circularly references itself in mapped type" /><published>2021-03-20T23:55:00+09:00</published><updated>2021-03-20T23:55:00+09:00</updated><id>http://localhost:4000/2021/03/20/react-error-defaultprops</id><content type="html" xml:base="http://localhost:4000/2021/03/20/react-error-defaultprops">&lt;p&gt;styled-components를 사용하는 도중 defaultProps 타입 오류가 발생했다.&lt;br /&gt;
+Props 전달에도 이상이 없었고 어떤 오류인가 싶어서 검색해봤다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-error&quot;&gt;Type of property 'defaultProps' circularly references itself in mapped type
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;TypeScript Github에 등록된 이슈를 확인해보니, 정확하지는 않지만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Typescript^3.9.0&lt;/code&gt; 이후 나타나며 해당 오류는 styled-components에서 5.0.1 버전대에서 fix 되었다. ( 자세한 사항은 하단 참고자료로 이동하여 확인하면 좋을 것 같다. )&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn upgrade @types/styled-components &lt;span class=&quot;nt&quot;&gt;--latest&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# or&lt;/span&gt;
+npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; @types/styled-components@latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;styled-components의 type을 업데이트하는 방법이 있으며, 어려운 경우에는 styled-components.d.ts를 생성하여 예외처리 하는 방향도 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고자료&quot;&gt;참고자료&lt;/h3&gt;
+
+&lt;p&gt;https://github.com/microsoft/TypeScript/issues/37597#issuecomment-628149946&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="react" /><summary type="html">styled-components를 사용하는 도중 defaultProps 타입 오류가 발생했다. Props 전달에도 이상이 없었고 어떤 오류인가 싶어서 검색해봤다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/react.png" /><media:content medium="image" url="http://localhost:4000/covers/react.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">React 리스트 검색 스크롤 이동</title><link href="http://localhost:4000/2021/03/20/react-list-search" rel="alternate" type="text/html" title="React 리스트 검색 스크롤 이동" /><published>2021-03-20T23:55:00+09:00</published><updated>2021-03-20T23:55:00+09:00</updated><id>http://localhost:4000/2021/03/20/react-list-search</id><content type="html" xml:base="http://localhost:4000/2021/03/20/react-list-search">&lt;p&gt;asd&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="react" /><summary type="html">asd</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/react.png" /><media:content medium="image" url="http://localhost:4000/covers/react.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Typescript Enum Key to String Type</title><link href="http://localhost:4000/2021/03/20/enum-key-to-type-string" rel="alternate" type="text/html" title="Typescript Enum Key to String Type" /><published>2021-03-20T23:55:00+09:00</published><updated>2021-03-20T23:55:00+09:00</updated><id>http://localhost:4000/2021/03/20/enum-key-to-type-string</id><content type="html" xml:base="http://localhost:4000/2021/03/20/enum-key-to-type-string">&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GoodsFilterMarketLabel&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;전체&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;브랜드&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;premium&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;프리미엄&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;soho&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;쇼핑몰·마켓 상품&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GoodsFilterMarketType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;keyof&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;GoodsFilterMarketLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="javascript" /><summary type="html">export enum GoodsFilterMarketLabel { all = &quot;전체&quot;, brand = &quot;브랜드&quot;, premium = &quot;프리미엄&quot;, soho = &quot;쇼핑몰·마켓 상품&quot;, } export type GoodsFilterMarketType = keyof typeof GoodsFilterMarketLabel;</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/typescript.png" /><media:content medium="image" url="http://localhost:4000/covers/typescript.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Github Page에 Google Adsense 등록하기</title><link href="http://localhost:4000/2021/03/10/github-page-adsense" rel="alternate" type="text/html" title="Github Page에 Google Adsense 등록하기" /><published>2021-03-10T20:40:00+09:00</published><updated>2021-03-10T20:40:00+09:00</updated><id>http://localhost:4000/2021/03/10/github-page-adsense</id><content type="html" xml:base="http://localhost:4000/2021/03/10/github-page-adsense">&lt;p&gt;홈페이지가 어느정도 정리되어 Google Adsense를 등록하려고 한다.&lt;br /&gt;
+등록하다보니 ‘어차피 광고 자동 삽입을 사용하지 않을거면 처음부터 진행할걸..’이라는 생각이 들었으나 지나간 이야기니까..&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다른 사람들은 처음부터 등록하고 시작하는걸 추천한다.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;참고로 자동광고를 사용하지 않으려는 이유는 본문 내에 광고를 넣을 경우 뜬금없이 튀어나와 본문의 가독성을 떨어트린다.&lt;br /&gt;
+예를들어 코드를 올리고 내용을 설명하는데, 코드와 내용 사이에 광고가 튀어나와 흐름도 끊기도 간격이 넓어져 읽기도 힘들게 된다.&lt;/p&gt;
+
+&lt;p&gt;서론이 길었고, 아무튼 Adsense를 등록해보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-6988376755693780&quot; data-ad-slot=&quot;8284609500&quot;&gt;&lt;/ins&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;adsense-등록하기&quot;&gt;Adsense 등록하기&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;https://www.google.com/adsense/ 에 로그인한다.&lt;/li&gt;
+  &lt;li&gt;좌측 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사이트 탭&lt;/code&gt;으로 이동하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사이트 추가&lt;/code&gt; 버튼을 클릭하여 진행한다.&lt;/li&gt;
+  &lt;li&gt;Adsense가 제공한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스크립트 코드&lt;/code&gt;를 삽입한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;타이틀만 거창했고, 아무것도 없다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 진행하면 몇일 뒤 메일도 오고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;준비됨&lt;/code&gt; 상태로 변경된다.&lt;/p&gt;
+
+&lt;p&gt;준비됨으로 변경되면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ads.txt&lt;/code&gt;를 업로드 해달라고 하는데, Adsense에 올라온 파일을 다운로드 받거나 내용을 복사하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;루트 디렉토리&lt;/code&gt; 안에 추가한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-6988376755693780&quot; data-ad-slot=&quot;8284609500&quot;&gt;&lt;/ins&gt;&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="dev-etc" /><summary type="html">홈페이지가 어느정도 정리되어 Google Adsense를 등록하려고 한다. 등록하다보니 ‘어차피 광고 자동 삽입을 사용하지 않을거면 처음부터 진행할걸..’이라는 생각이 들었으나 지나간 이야기니까..</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/github.png" /><media:content medium="image" url="http://localhost:4000/covers/github.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Git revert 충돌 해결하기</title><link href="http://localhost:4000/2021/03/10/git-revert" rel="alternate" type="text/html" title="Git revert 충돌 해결하기" /><published>2021-03-10T19:40:00+09:00</published><updated>2021-03-10T19:40:00+09:00</updated><id>http://localhost:4000/2021/03/10/git-revert</id><content type="html" xml:base="http://localhost:4000/2021/03/10/git-revert">&lt;p&gt;작업을 스테이지에 올렸다가 릴리즈 날짜에 배포가 불가능하면 해당 기능을 잠시 스테이지에서 빼둬야한다.&lt;br /&gt;
+이때 develop 브랜치에서 Revert를 생성하여 Merge 하는 작업을 진행한다.&lt;/p&gt;
+
+&lt;p&gt;여기까지는 괜찮았으나 작업중인 브랜치에서 devleop을 Pull 받으니 문제가 나타났다.&lt;/p&gt;
+
+&lt;p&gt;develop에서는 Merge를 통하여 해당 내용들을 전부 삭제했으니 작업중인 브랜치에 있는 내용들도 전부 삭제 시켜버린다.&lt;/p&gt;
+
+&lt;p&gt;동일 파일을 작업하던 부분들까지 날려버리니 멘붕이 나버렸다.&lt;/p&gt;
+
+&lt;p&gt;여러번의 검색 끝에 간단한 해결방법을 찾았는데 결국 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Revert를 Revert하자!&lt;/code&gt; 라는게 편한 방법이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;해결방법&quot;&gt;해결방법&lt;/h2&gt;
+
+&lt;p&gt;Merge, Revert한 브랜치명을 develop으로 명칭하고 진행한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;revert-commit-sha-key를-가져오자&quot;&gt;Revert Commit SHA Key를 가져오자.&lt;/h3&gt;
+
+&lt;p&gt;develop에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt;를 확인하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;revert한 커밋 키 값&lt;/code&gt;을 가져온다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout develop
+git log
+
+commit &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REVERT_COMMIT_SHA_KEY] &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;tag: ...&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Author: Doriri &amp;lt;public.doriri@gmail.com&amp;gt;
+Date:   ...
+
+    Revert &lt;span class=&quot;s2&quot;&gt;&quot;커밋 메시지&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;여기서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REVERT_COMMIT_SHA_KEY&lt;/code&gt; 해당 부분을 복사해준다.&lt;/p&gt;
+
+&lt;h3 id=&quot;new-branch--revert를-revert-하자&quot;&gt;New Branch &amp;amp; Revert를 Revert 하자.&lt;/h3&gt;
+
+&lt;p&gt;새로운 브랜치를 생성하고, Revert 커밋을 Revert 해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;new_branch]
+git revert &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;REVERT_COMMIT_SHA_KEY]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;그리고 마무리로 기존 브랜치를 pull 받으면 끝이다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;origin_branch]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;커맨드-요약&quot;&gt;커맨드 요약&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout develop
+git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; feature/new-branch
+git revert &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;SHA_REVERT_COMMIT]
+git pull &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;YOUR_BRANCH]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="dev-etc" /><summary type="html">작업을 스테이지에 올렸다가 릴리즈 날짜에 배포가 불가능하면 해당 기능을 잠시 스테이지에서 빼둬야한다. 이때 develop 브랜치에서 Revert를 생성하여 Merge 하는 작업을 진행한다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/github.png" /><media:content medium="image" url="http://localhost:4000/covers/github.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Disqus Email 인증 ERR_CONNECTION_REFUSED</title><link href="http://localhost:4000/2021/03/10/disqus-error" rel="alternate" type="text/html" title="Disqus Email 인증 ERR_CONNECTION_REFUSED" /><published>2021-03-10T18:20:00+09:00</published><updated>2021-03-10T18:20:00+09:00</updated><id>http://localhost:4000/2021/03/10/disqus-error</id><content type="html" xml:base="http://localhost:4000/2021/03/10/disqus-error">&lt;p&gt;Disqus 계정에서 이메일을 변경하면서 인증하라는 메시지가 나왔다.&lt;br /&gt;
+인증받기를 눌러도 메일은 한참 지나서오고 들어가보니 연결을 거부당했다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;사이트에 연결할 수 없음
+disq.us에서 연결을 거부했습니다.
+
+ERR_CONNECTION_REFUSED
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;어이가 없..&lt;/p&gt;
+
+&lt;p&gt;도메인이 disq.us인게 url shoutcut으로 사용한 것 같은데, 내 네트워크 문제인지 쟤네 문제인지.. 아무튼 거부당했다.&lt;/p&gt;
+
+&lt;p&gt;혹시나 해서 disq.us 부분만 disqus.com으로 바꿨더니 url이라는 사용자의 프로필로 이동했다.
+URL을 다시 확인해보니 결국은 disq.us에서 url을 파라미터로 받아서 리다이렉트를 하는 방식이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;해결-방법&quot;&gt;해결 방법&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;disq.us/url?url= 여기서 부터 뒷부분을 전부 복사한다.&lt;/li&gt;
+  &lt;li&gt;url을 decode 해주자. &lt;a href=&quot;https://meyerweb.com/eric/tools/dencoder/&quot;&gt;urlDecoder&lt;/a&gt;에서 붙여넣기 후 decode&lt;/li&gt;
+  &lt;li&gt;decode 된 url 경로로 이동하자.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Your email has been verified successfully!&lt;/code&gt;&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="dev-etc" /><summary type="html">Disqus 계정에서 이메일을 변경하면서 인증하라는 메시지가 나왔다. 인증받기를 눌러도 메일은 한참 지나서오고 들어가보니 연결을 거부당했다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/404.png" /><media:content medium="image" url="http://localhost:4000/covers/404.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Grafana Plugin With React 셋팅하기</title><link href="http://localhost:4000/2021/03/09/grafana-react-setting" rel="alternate" type="text/html" title="Grafana Plugin With React 셋팅하기" /><published>2021-03-09T01:30:00+09:00</published><updated>2021-03-09T01:30:00+09:00</updated><id>http://localhost:4000/2021/03/09/grafana-react-setting</id><content type="html" xml:base="http://localhost:4000/2021/03/09/grafana-react-setting">&lt;p&gt;Grafana Plugin을 React로 개발하여 배포하는 방법을 설명한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;작업환경&quot;&gt;작업환경&lt;/h4&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;OS:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;Mac&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;node:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;14.0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;grafana:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;시작하기&quot;&gt;시작하기&lt;/h2&gt;
+
+&lt;h3 id=&quot;grafana-설치하기&quot;&gt;Grafana 설치하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://grafana.com/docs/grafana/latest/installation/requirements/&quot;&gt;Grafana 설치 가이드 문서&lt;/a&gt;&lt;br /&gt;
+Ubuntu, Docker 등 OS 별 설치방법 문서가 존재한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew update
+brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;grafana
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;grafana-프로젝트-생성&quot;&gt;Grafana 프로젝트 생성&lt;/h3&gt;
+
+&lt;p&gt;프로젝트 구조는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grafana-toolkit&lt;/code&gt;를 사용한다.&lt;br /&gt;
+grafana-toolkit은 creact-react-app 처럼 초기 프로젝트를 구축하기 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLI&lt;/code&gt;이다.&lt;br /&gt;
+맨
+설치하는 과정에서 plugin, author 등은 원하는 형태에 맞춰서 작성하면 되며, 플러그인 이름은 신중하게 입력해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; @grafana/toolkit
+
+npx @grafana/toolkit plugin:create &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;project-name]
+
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;graph-plugin
+npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;( 프로젝트를 grafana에 연동하는 부분은 아래에서 진행한다. )&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;실행하기&quot;&gt;실행하기&lt;/h3&gt;
+
+&lt;p&gt;설치한 grafana 서비스를 실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew services start grafana
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;기본적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost:3000&lt;/code&gt;로 포트가 열린다. 초기 계정은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin/admin&lt;/code&gt; 이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;개발셋팅&quot;&gt;개발셋팅&lt;/h2&gt;
+
+&lt;p&gt;프로젝트를 생성했고 grafana service 가 동작한다면, 프로젝트를 플러그인에 연동해야한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;grafana-ini-설정&quot;&gt;grafana ini 설정&lt;/h3&gt;
+
+&lt;p&gt;grafana 설정파일에서 plugin path를 연결한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim /usr/local/etc/grafana/grafana.ini
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;paths]
+plugins &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Grafana Project Path]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[paths] 아래에 추가&lt;/code&gt;해야한다. 맨 상단 혹은 맨 하단에 작성 시 작동되지 않는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;실행하기-1&quot;&gt;실행하기&lt;/h3&gt;
+
+&lt;p&gt;설치한 grafana 서비스를 재실행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew services restart grafana
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;서비스를 재 실행한 이후 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost:3000/plugins&lt;/code&gt;로 이동하여 npx로 생성 당시 입력한 플러그인 이름을 검색하여 정상적으로 보이는지 확인해보자.&lt;/p&gt;
+
+&lt;h2 id=&quot;본격적인-개발은&quot;&gt;본격적인 개발은?&lt;/h2&gt;
+
+&lt;p&gt;이제 프로젝트를 생성하고 플러그인을 연동했다.&lt;br /&gt;
+yarn dev? yarn watch?? 아직 시작조차 하지 않았다.&lt;/p&gt;
+
+&lt;p&gt;다음 글에서 grafana 플러그인 개발을 시작한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;참고자료&quot;&gt;참고자료&lt;/h2&gt;
+
+&lt;p&gt;사실 엄청 많지만, 검색하다가 복붙하는걸 까먹었다..&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://grafana.com/tutorials/build-a-panel-plugin/#1&quot;&gt;https://grafana.com/tutorials/build-a-panel-plugin/#1&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://grafana.com/blog/2019/03/26/writing-react-plugins/&quot;&gt;https://grafana.com/blog/2019/03/26/writing-react-plugins/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.youtube.com/watch?v=Y31wnP_jDBY&amp;amp;feature=emb_title&quot;&gt;https://www.youtube.com/watch?v=Y31wnP_jDBY&amp;amp;feature=emb_title&lt;/a&gt;&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="react" /><summary type="html">Grafana Plugin을 React로 개발하여 배포하는 방법을 설명한다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/react.png" /><media:content medium="image" url="http://localhost:4000/covers/react.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">axios timeout 설정</title><link href="http://localhost:4000/2021/03/09/axios-timeout" rel="alternate" type="text/html" title="axios timeout 설정" /><published>2021-03-09T00:33:00+09:00</published><updated>2021-03-09T00:33:00+09:00</updated><id>http://localhost:4000/2021/03/09/axios-timeout</id><content type="html" xml:base="http://localhost:4000/2021/03/09/axios-timeout">&lt;p&gt;axios은 기본적으로 api timeout이 설정되어 있지 않다.&lt;br /&gt;
+따라서 API를 호출하면 서버에서 응답 주기 전까지는 계속 연결되어 았다.&lt;/p&gt;
+
+&lt;h2 id=&quot;axios-timeout-설정하기&quot;&gt;axios timeout 설정하기&lt;/h2&gt;
+
+&lt;p&gt;axios를 생성하여 timeout을 옵션으로 추가하고 해당 인스턴스로 api를 호출하도록 작업을 진행한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;axios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;baseApi&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;axiosResponseToData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;axiosErrorResToData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;기존에 ts로 작성되어 있던 부분들인데, 불필요해 보여 제거 후 함수만 등록하였다.&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="javascript" /><summary type="html">axios은 기본적으로 api timeout이 설정되어 있지 않다. 따라서 API를 호출하면 서버에서 응답 주기 전까지는 계속 연결되어 았다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/js.png" /><media:content medium="image" url="http://localhost:4000/covers/js.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">ERROR: Failed to build gem native extension.</title><link href="http://localhost:4000/2021/03/08/gem-install-error" rel="alternate" type="text/html" title="ERROR: Failed to build gem native extension." /><published>2021-03-08T18:30:00+09:00</published><updated>2021-03-08T18:30:00+09:00</updated><id>http://localhost:4000/2021/03/08/gem-install-error</id><content type="html" xml:base="http://localhost:4000/2021/03/08/gem-install-error">&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ERROR: Error installing jekyll-sitemap:
+      ERROR: Failed to build gem native extension.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;gem으로 jekyll 모듈을 설치하는 과정에서 다음과 같은 오류가 나타났다.&lt;br /&gt;
+검색해보니 xcode 관련 자료만 나오다가 해당 모듈이 사용 중인 jekyll 버전을 미지원하는 내용이 나왔다.&lt;/p&gt;
+
+&lt;h4 id=&quot;해당-모듈의-버전-리스트를-검색한다&quot;&gt;해당 모듈의 버전 리스트를 검색한다.&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem list &lt;span class=&quot;nt&quot;&gt;--remote&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--all&lt;/span&gt; jekyll-sitemap
+
+&lt;span class=&quot;k&quot;&gt;***&lt;/span&gt; REMOTE GEMS &lt;span class=&quot;k&quot;&gt;***&lt;/span&gt;
+
+jekyll-sitemap &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;versions] &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;지원하는-버전을-설치해보자&quot;&gt;지원하는 버전을 설치해보자.&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll-sitemap &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;version]
+
+Successfully installed jekyll-sitemap-[version]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;사용하려는 &lt;a href=&quot;https://github.com/jekyll/jekyll-sitemap&quot;&gt;jekyll-sitemap&lt;/a&gt;은 현재 jekyll 버전에서 v1.2.0까지만 지원한다고 한다.&lt;br /&gt;
+지원 여부를 깃헙에서 확인해 봤으면 됐을 텐데, 오류만 검색하다가 시간을 많이 소모했다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;이렇게 모듈을 설치하고 빌드하니 gem install을 실행하라고 한다.&lt;br /&gt;
+Gemfile.lock 파일을 삭제하지 않아 의존성 체크가 되었는데, 신기하게 gem install 하니 직접 설치할 때 오류 나던 jekyll-sitemap 1.4.0이 설치되었다.&lt;/p&gt;
+
+&lt;p&gt;lock 파일의 의존성은 알겠으나 yarn.lock 하고 좀 다르게 동작하는 느낌이다.&lt;br /&gt;
+아직 gem에 대한 이해가 부족해서 나온 이슈인데, 공부가 필요할 듯하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/7517524/understanding-the-gemfile-lock-file&quot;&gt;understanding-the-gemfile-lock-file&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/4907668/removing-all-installed-gems-and-starting-over/49960935&quot;&gt;https://stackoverflow.com/questions/4907668/removing-all-installed-gems-and-starting-over/49960935&lt;/a&gt;&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="dev-etc" /><summary type="html">ERROR: Error installing jekyll-sitemap: ERROR: Failed to build gem native extension.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/jekyll.png" /><media:content medium="image" url="http://localhost:4000/covers/jekyll.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">React Native 설치 &amp;amp; 에러</title><link href="http://localhost:4000/2021/02/04/react-native-error" rel="alternate" type="text/html" title="React Native 설치 &amp;amp; 에러" /><published>2021-02-04T17:39:00+09:00</published><updated>2021-02-04T17:39:00+09:00</updated><id>http://localhost:4000/2021/02/04/react-native-error</id><content type="html" xml:base="http://localhost:4000/2021/02/04/react-native-error">&lt;h1 id=&quot;공식문서-aosios-에뮬레이터-설치&quot;&gt;공식문서 AOS/iOS 에뮬레이터 설치&lt;/h1&gt;
+
+&lt;p&gt;https://reactnative.dev/docs/environment-setup&lt;/p&gt;
+
+&lt;h2 id=&quot;error-failed-to-install-the-app&quot;&gt;error Failed to install the app&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;error Failed to install the app. Make sure you have an Android emulator running or a &amp;gt; device connected. Run CLI with –verbose flag for more details.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bash chmod 755 android/gradlew&lt;/code&gt; 실행&lt;/li&gt;
+  &lt;li&gt;emulator -list-avds 리스트 뜨는지 확인&lt;/li&gt;
+  &lt;li&gt;~/.bash_profile 또는 ~/.zshrc 에 path 정상 등록되어있는지 확인&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Task :app:stripDebugDebugSymbols UP-TO-DATE
+Compatible side by side NDK version was not found.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Task :app:installDebug FAILED&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Android Studio -&amp;gt; Configure -&amp;gt; SDK Manager -&amp;gt; SDK Tools -&amp;gt; NDK 설치&lt;/p&gt;
+
+&lt;h2 id=&quot;failed-to-run-jetifier&quot;&gt;Failed to run jetifier&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn
+yarn add &lt;span class=&quot;nt&quot;&gt;-D&lt;/span&gt; jetifier
+npx jetify
+npx react-native run-android
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;react-native run-android &lt;span class=&quot;nt&quot;&gt;--no-jetifier&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minhyeong.jang</name></author><category term="dev-blog" /><category term="react-native" /><summary type="html">공식문서 AOS/iOS 에뮬레이터 설치</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/js.png" /><media:content medium="image" url="http://localhost:4000/covers/js.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

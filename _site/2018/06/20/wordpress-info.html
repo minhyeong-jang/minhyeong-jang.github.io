@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+
+
+
+<title>Wordpress 가입형 / 설치형</title>
+<meta name="title" content="Wordpress 가입형 / 설치형" />
+<meta name="author" content="minhyeong.jang"/>
+<meta name="description" content="들어가며
+WordPress 란 일반 사용자들도 웹사이트를 구축하고 관리할 수 있도록 도와주는 도구입니다.
+
+"/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Wordpress 가입형 / 설치형"/>
+<meta property="og:description" content="들어가며
+WordPress 란 일반 사용자들도 웹사이트를 구축하고 관리할 수 있도록 도와주는 도구입니다.
+
+"/>
+<meta property="og:url" content="http://localhost:4000/2018/06/20/wordpress-info"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/wordpress.png"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Wordpress 가입형 / 설치형"/>
+<meta name="twitter:description" content="들어가며
+WordPress 란 일반 사용자들도 웹사이트를 구축하고 관리할 수 있도록 도와주는 도구입니다.
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="minhyeong.jang"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/wordpress.png"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="dev-blog,dev-etc"/>
+
+<meta property="article:tag" content="dev-blog"/>
+
+<meta property="article:tag" content="dev-etc"/>
+
+
+
+<meta property="article:published_time" content="2018-06-20T16:56:00+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/minhyeong.jang"/>
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+<!-- <link
+  href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean"
+  rel="stylesheet"
+/> -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/prism.js"></script>
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" onClick="toggleMenu()"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/about">About</a>
+    </li>
+    
+    <li>
+      <a href="/categories/dev-blog">Dev Blog</a>
+    </li>
+    
+    <li>
+      <a href="/categories/etc-blog">Etc Blog</a>
+    </li>
+    
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/about">About</a>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/categories/dev-blog">Dev Blog</a>
+        <ul class="menu-sub">
+          
+            
+              
+              <li class="">
+                <a href="/tags/algorithm">Algorithm</a>
+              </li>
+            
+          
+            
+              
+              <li class=" active ">
+                <a href="/tags/dev-etc">Etc</a>
+              </li>
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/javascript">Javascript</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/nomadcoders">Nomad Coders</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react-native">React Native</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react">React</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/style">Style ( CSS, Etc )</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/categories/etc-blog">Etc Blog</a>
+        <ul class="menu-sub">
+          
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/essay">Essay</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="/contact/">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div id="cover"
+  
+    style="background-image: url(/assets/images/covers/wordpress.png)"
+  >
+  <div class="mouse-scroll">
+    <img src="/assets/images/design/icon-mouse-scroll.png" alt="mouse-scroll">
+  </div>
+</div>
+
+<div id="post-content">
+  <div class="reponsive-content">
+    <div class="post-info">
+      <h1 class="post-title">Wordpress 가입형 / 설치형</h1>
+      <p class="post-date red">2018년 06월 20일</p>
+    </div>
+    <div><h3 id="들어가며">들어가며</h3>
+<p><code class="language-plaintext highlighter-rouge">WordPress 란 일반 사용자들도 웹사이트를 구축하고 관리할 수 있도록 도와주는 도구</code>입니다.</p>
+
+<p>워드프레스를 사용하는 경우 <code class="language-plaintext highlighter-rouge">두가지</code>로 구분됩니다.<br />
+<code class="language-plaintext highlighter-rouge">가입형 (</code> <a href="wordpress.com">wordpress.com</a> <code class="language-plaintext highlighter-rouge">)</code><br />
+<code class="language-plaintext highlighter-rouge">설치형 (</code> <a href="wordpress.org">wordpress.org</a> <code class="language-plaintext highlighter-rouge">)</code></p>
+
+<h3 id="가입형--wordpresscom-">가입형 ( <a href="wordpress.com">wordpress.com</a> )</h3>
+<p><code class="language-plaintext highlighter-rouge">워드프레스가 제공하는 서버 및 DB를 사용하여 웹사이트를 구축합니다.</code><br />
+무료를 포함하여 요금제에 따라 성능이 달라집니다.</p>
+
+<p><img src="/assets/images/wordpress-info-1.png" alt="wordpress.com" title="워드프레스 가입형 홈페이지" />
+<img-info>wordpress 가입형 페이지</img-info></p>
+
+<h4 id="--장점">- 장점</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">서버 및 DB 환경이 기본적으로 제공</code>되어 간편하게 사용이 가능합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">무료 사용</code>이 가능합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">속도</code>가 빠릅니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">서버관리 및 보안</code>에 신경쓰지 않아도 됩니다.</li>
+</ul>
+
+<h4 id="--단점">- 단점</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">워드프레스 규정</code>을 따라야합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">플러그인 및 테마에 제약</code>이 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">CSS 수정에 제약</code>이 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">위 기능을 사용하기위해 요금제를 높이는 경우 많은 요금을 부과</code>해야합니다.</li>
+</ul>
+
+<p><img src="/assets/images/wordpress-info-2.png" alt="wordpress.com" title="워드프레스 가입형 가격표" />
+<img-info>wordpress 가입형 요금</img-info></p>
+
+<h3 id="설치형--wordpressorg-">설치형 ( <a href="wordpress.org">wordpress.org</a> )</h3>
+<p>사용자가 <code class="language-plaintext highlighter-rouge">서버에 직접 워드프레스를 설치하여 웹사이트를 구축</code>합니다.<br />
+웹사이트 소유자이기 때문에 제약이 없습니다.</p>
+
+<p><img src="/assets/images/wordpress-info-3.png" alt="wordpress.com" title="워드프레스 설치형 홈페이지" />
+<img-info>wordpress 설치형 페이지</img-info></p>
+
+<h4 id="--장점-1">- 장점</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">테마 및 플러그인을 설치하여 적용</code>이 가능합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">모든 기능을 무료</code>로 사용합니다.</li>
+</ul>
+
+<h4 id="--단점-1">- 단점</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">서버 호스팅 및 설치</code>해야하는 불편함이 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">서버비용</code>이 지출됩니다.</li>
+</ul>
+
+<h3 id="주관적-생각">주관적 생각</h3>
+<p><code class="language-plaintext highlighter-rouge">번거롭더라도 설치형으로 진행하시는 것을 추천합니다.</code></p>
+
+<p>워드프레스로 블로그 또는 포트폴리오를 제작하는데 있어서,<br />
+<code class="language-plaintext highlighter-rouge">‘플러그인 및 테마, CSS’ 수정이 불가능한건 매우 크리티컬한 이슈</code>입니다.<br />
+워드프레스의 최대 장점중 하나인 <code class="language-plaintext highlighter-rouge">수많은 플러그인과 테마</code>를 사용하지 못한다면,<br />
+다른 블로그 서비스를 이용하는 것도 나쁘지 않습니다.<br />
+<br />
+또한, <code class="language-plaintext highlighter-rouge">가입형의 요금제보다 웹호스팅을 받아 운영하는것이 몇배의 비용절감</code>이 됩니다.<br />
+<br />
+따라서 저는 현재 블로그 또한 설치형으로 운영하고 있으며,<br />
+다음 포스팅으로 워드프레스 설치하기를 업로드 할 계획입니다.</p>
+</div>
+  </div>
+
+  <!-- 
+
+<span style="color: silver;">Share on: </span>
+<div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/2018/06/20/wordpress-info');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/2018/06/20/wordpress-info');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2018/06/20/wordpress-info&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    <div class="pinterest" title="Share this on Pinterest" onclick="window.open('https://pinterest.com/pin/create/button/?url=&media=http://localhost:4000/covers/wordpress.png&description=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M256 597q0-108 37.5-203.5t103.5-166.5 152-123 185-78 202-26q158 0 294 66.5t221 193.5 85 287q0 96-19 188t-60 177-100 149.5-145 103-189 38.5q-68 0-135-32t-96-88q-10 39-28 112.5t-23.5 95-20.5 71-26 71-32 62.5-46 77.5-62 86.5l-14 5-9-10q-15-157-15-188 0-92 21.5-206.5t66.5-287.5 52-203q-32-65-32-169 0-83 52-156t132-73q61 0 95 40.5t34 102.5q0 66-44 191t-44 187q0 63 45 104.5t109 41.5q55 0 102-25t78.5-68 56-95 38-110.5 20-111 6.5-99.5q0-173-109.5-269.5t-285.5-96.5q-200 0-334 129.5t-134 328.5q0 44 12.5 85t27 65 27 45.5 12.5 30.5q0 28-15 73t-37 45q-2 0-17-3-51-15-90.5-56t-61-94.5-32.5-108-11-106.5z"/></svg></div>
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/2018/06/20/wordpress-info');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/2018/06/20/wordpress-info');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div> -->
+
+  <div id="post-links">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      <!-- 다음 포스트가 없는 경우 -->
+      
+
+        
+        <li>
+  <a href="/2019/03/22/uplus-compliment">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">일상속에 사소한 부분을 칭찬한다는 것</h3>
+      <p class="post-date">2019년 03월 22일</p>
+      <p class="post-excerpt">최근 유튜브나 방송에서 '사람들이 친절하게 행동했을 때 반응'을 몰래카메라로 방송하기도 합니다.
+대부분의 결과는 친절의 받은 사람은 보답을 하거나 감사하는 등 훈훈하게 마무리가 나타납니다.
+
+저에게도 최근 그런 일이 나타났습니다.  
+단순 핸드폰 문의였지만, 상담사분의 노력하시는 모습과 상냥함은 제게 좋은 기분으로 다가왔고 저는 그에 대한 보답으로 문의사항에 '방금 전화주신 상담사 분을 칭찬드리고 싶어 문의 남깁니다.'로 글을 남겼습니다.
+
+시간이 얼마 지나지않아 상담사분께서 연락을 주셨고, 상담을 진행하면서 처음으로 칭찬 글을 받아보셨다고 좋아하셨습니다.
+
+비록 짧은 시간이였지만 서로에게 좋은 기분을 남기고 마무리 된 이야기였습니다.
+
+상대방의 배려와 정성이 느껴진다면 최소한이라도 보답을 해야 한다고 생각합니다.  
+물질적인 것이 아니어도 간단한 메시지를 남기는 정도는 귀찮아서 안하는 것이지 누구나 할 수있는 부분입니다.
+
+그래서 언제나 상담을 진행할 때 그분의 정성이 느껴진다면 문의사항이나 칭찬페이지를 통하여 꼭 메시지를 남기고 있습니다.
+
+그런 저한테도 상담사분의 감사인사를 받은 것은 처음입니다.
+
+상담사분이 사소한 행동 하나로 다른 사람이 행복할 수 있다는 것과 그 모습에 내가 기분이 좋다는 것을 깨닫게 해주셨습니다.
+
+앞으로도 계속 상대방의 배려와 정성에 보답하려고 합니다.</p>
+    </div>
+  </a>
+</li>
+        
+        
+        <li>
+  <a href="/2018/06/20/vscode-hotkey">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/wordpress.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">vscode</h3>
+      <p class="post-date">2018년 06월 20일</p>
+      <p class="post-excerpt">### 들어가며
+`IntelliJ 에서 spring + gradle 프로젝트를 import` 합니다.
+
+[spring 설치](https://spring.io/tools/sts/all) `)`
+스프링 설치 사이트에서 dmg 파일 설치 및 STS 파일 Applications 폴더로 이동
+
+[JDK 설치](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
+
+
+
+
+
+
+command + d : drag 된 문자열 다음 커서 복사
+
+command + shift + l : drag 된 문자열 전체 커서 복사
+
+command + option + shift + 위/아래 : 커서 추가
+</p>
+    </div>
+  </a>
+</li>
+  
+        
+        <li>
+  <a href="/2018/06/20/online-adsense-word">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/googleadsense.jpg)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">온라인 광고 용어 CPC, CPM, CPS, CPA</h3>
+      <p class="post-date">2018년 06월 20일</p>
+      <p class="post-excerpt">들어가며
+
+Google Adsense를 사용하면서 주로 보고서를 많이 조회했는데,
+CPC / CPM이라는 생소한 단어와 함께 수익이 났다고 나와있어서 검색해보았습니다.
+
+온라인 광고 용어 정리
+
+여러분들이 대부분 이용하고 알고있는 광고는 CPC, CPM 입니다.
+
+
+  CPC ( Cost Per Click ) : 광고 클릭 시, 수익발생
+  CPM ( Cost Per Mile, Cost Per thousand iMpression ) : 1000번 광고 노출 시, 수익발생
+
+
+다른 사람들이 광고를 클릭했을 때나, 노출했을 때 발생하는 수익인데요.
+여기서 주의해야 하는 점은 CPM은 1000번 이상 노출이 안되는 경우 수익이 발생하지 않습니다.
+
+이 외에 CPS, CPA는 특정한 이벤트를 실행하면 수익이 발생하게 되는데요.
+
+
+  CPS ( Cost Per Sale ) : 상품판매 등 결제 시, 수익 발생
+  CPA ( Cost Per Action ) : 회원가입, 설문조사 등 이벤트 수행 시, 수익발생
+
+
+이처럼 상품판매, 설문조사 등으로 이어지는 광고로 이벤트를 수행하는 경우
+수익이 발생합니다!
+
+
+  광고로 수익을 얻으시는 분들이 궁금해하실까 4가지의 광고용어를 알려드렸습니다.
+조금이나마 궁금증이 해결되었으면 좋겠습니다.
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    </ul>
+  </div>
+</div>
+
+<div id="disqus_thread"></div>
+    </div>
+  </div>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+<script data-ad-client="ca-pub-6988376755693780" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  // var disqus_config = function() {
+  //   this.page.url = "http://localhost:4000/2018/06/20/wordpress-info";
+  //   this.page.identifier = "/2018/06/20/wordpress-info";
+  // };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<script id="dsq-count-scr" src="//minhyeong.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

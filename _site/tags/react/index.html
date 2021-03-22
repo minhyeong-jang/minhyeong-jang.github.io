@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+
+
+
+<title>Doriri Blog</title>
+<meta name="title" content="Doriri Blog" />
+<meta name="author" content=""/>
+<meta name="description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Doriri Blog"/>
+<meta property="og:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Doriri Blog"/>
+<meta name="twitter:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content=""/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2021-03-22T20:18:31+09:00"/>
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+<!-- <link
+  href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean"
+  rel="stylesheet"
+/> -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/prism.js"></script>
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" onClick="toggleMenu()"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/about">About</a>
+    </li>
+    
+    <li>
+      <a href="/categories/dev-blog">Dev Blog</a>
+    </li>
+    
+    <li>
+      <a href="/categories/etc-blog">Etc Blog</a>
+    </li>
+    
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/about">About</a>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/categories/dev-blog">Dev Blog</a>
+        <ul class="menu-sub">
+          
+            
+              
+              <li class="">
+                <a href="/tags/algorithm">Algorithm</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/dev-etc">Etc</a>
+              </li>
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/javascript">Javascript</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/nomadcoders">Nomad Coders</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react-native">React Native</a>
+              </li>
+            
+          
+            
+              
+              <li class=" active ">
+                <a href="/tags/react">React</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/style">Style ( CSS, Etc )</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/categories/etc-blog">Etc Blog</a>
+        <ul class="menu-sub">
+          
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/essay">Essay</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="/contact/">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <ul id="post-list">
+  
+    
+      
+        <li>
+  <a href="/2021/03/20/react-error-defaultprops">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Type of property 'defaultProps' circularly references itself in mapped type</h3>
+      <p class="post-date">2021년 03월 20일</p>
+      <p class="post-excerpt">styled-components를 사용하는 도중 defaultProps 타입 오류가 발생했다.
+Props 전달에도 이상이 없었고 어떤 오류인가 싶어서 검색해봤다.
+
+Type of property 'defaultProps' circularly references itself in mapped type
+
+
+TypeScript Github에 등록된 이슈를 확인해보니, 정확하지는 않지만 Typescript^3.9.0 이후 나타나며 해당 오류는 styled-components에서 5.0.1 버전대에서 fix 되었다. ( 자세한 사항은 하단 참고자료로 이동하여 확인하면 좋을 것 같다. )
+
+yarn upgrade @types/styled-components --latest
+# or
+npm install @types/styled-components@latest
+
+
+styled-components의 type을 업데이트하는 방법이 있으며, 어려운 경우에는 styled-components.d.ts를 생성하여 예외처리 하는 방향도 있다.
+
+참고자료
+
+https://github.com/microsoft/TypeScript/issues/37597#issuecomment-628149946
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2021/03/20/react-list-search">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">React 리스트 검색 스크롤 이동</h3>
+      <p class="post-date">2021년 03월 20일</p>
+      <p class="post-excerpt">asd
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2021/03/09/grafana-react-setting">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Grafana Plugin With React 셋팅하기</h3>
+      <p class="post-date">2021년 03월 09일</p>
+      <p class="post-excerpt">Grafana Plugin을 React로 개발하여 배포하는 방법을 설명한다. 작업환경 OS: Mac node: &gt;= 14.0 grafana: &gt;= 7.0 시작하기 Grafana 설치하기 Grafana 설치 가이드 문서 Ubuntu, Docker 등 OS 별 설치방법 문서가 존재한다. brew update brew install grafana Grafana 프로젝트 생성 프로젝트 구조는 grafana-toolkit를 사용한다. grafana-toolkit은 creact-react-app 처럼 초기 프로젝트를 구축하기 위한 CLI이다. 맨 설치하는 과정에서 plugin, author 등은 원하는 형태에 맞춰서 작성하면 되며, 플러그인 이름은 신중하게 입력해보자. npm install -g @grafana/toolkit npx @grafana/toolkit plugin:create [project-name] cd graph-plugin npm install ( 프로젝트를 grafana에 연동하는 부분은 아래에서 진행한다. ) 실행하기 설치한 grafana 서비스를 실행한다. brew services start grafana 기본적으로 localhost:3000로 포트가 열린다. 초기 계정은 admin/admin 이다. 개발셋팅 프로젝트를 생성했고 grafana service 가 동작한다면, 프로젝트를 플러그인에 연동해야한다. grafana ini 설정 grafana 설정파일에서 plugin path를 연결한다. vim /usr/local/etc/grafana/grafana.ini [paths] plugins = [Grafana Project Path] 이때, [paths] 아래에 추가해야한다. 맨 상단 혹은 맨 하단에 작성 시 작동되지 않는다. 실행하기 설치한 grafana 서비스를 재실행한다. brew services restart...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2020/01/17/js-scroll-bottom">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/js.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">스크롤 맨 하단으로 이동</h3>
+      <p class="post-date">2020년 01월 17일</p>
+      <p class="post-excerpt">채팅과 같이 메시지가 도착하면 최하단으로 계속 이동해야하는 경우나 단순 최하단으로 이동하고 싶을 때 구현하는 방법입니다.
+
+자바스크립트에서 스크롤 하단으로 이동
+
+엘리먼트의 height만큼 scroll 위치를 이동합니다.
+
+// overflow 스크롤이 걸려있는 엘리먼트
+const ele = document.querySelector("ul");
+
+ele.scrollTop = ele.scrollHeight;
+
+
+React에서 응용하기
+
+React에서 채팅 레이아웃에서 메시지가 들어올 때마다 최하단으로 이동하는 코드입니다.
+
+import React, { useRef, useEffect } from 'react';
+import { useMessages } from 'Hooks';
+...
+const messagesRef = useRef&lt;HTMLUListElement&gt;(null); // 메시지 엘리먼트를 저장
+const { messages } = useMessages(); // Custom Hooks : 메시지 리스트
+
+useEffect(() =&gt; {
+  messagesRef.current!.scrollTop = messagesRef.current!.scrollHeight;
+}, [messages]);
+...
+return (
+  &lt;ul className="messages" ref={messagesRef}&gt;
+    {messages.map(message =&gt; {
+      return (
+        &lt;li key={message.key}&gt;
+          ...
+        &lt;/li&gt;
+      );
+    })}
+  &lt;/ul&gt;;
+)
+
+
+firebase를 사용하고 있으며, 메시지를 구독하면 useMessages에서 messages를 내려줍니다. 이후 messages가 업데이트될 때 마다, ul 엘리먼트를 최하단으로 이동합니다.
+
+만일 특별하게 최하단으로 이동하기 싫으시다면, useEffect 내에 if문으로 조건을 설정하시면 됩니다.
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2020/01/06/react-css-module">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">create-react-app에서 CSS Module 사용하기</h3>
+      <p class="post-date">2020년 01월 06일</p>
+      <p class="post-excerpt">이전 프로젝트에서는 webpack을 eject하여 CSS module을 사용했지만, 이번 프로젝트에서는 eject 작업을 하지 않고 진행하기 때문에 방법을 찾아보았다.
+
+CSS Module 적응 전에는..?
+
+Module을 적용하지 않는다면, 최상단 App.jsx 또는 컴포넌트에서 scss 파일을 호출합니다.
+
+// index.tsx or App.tsx
+import "./index.scss";
+
+
+또한 클래스명이 기존 html처럼 class=”container” 형태로 들어가기 때문에 css/scss 파일을 컴포넌트별로 생성했음에도 스타일 명이 충돌하는 불편함이 있습니다.
+
+그렇다면 CRA에서 CSS Module은 어떻게 적용하지?
+
+css/scss 파일명을 module.css, module.scss로 변경합니다.
+예를들어 index.scss는 index.module.scss 가 됩니다.
+
+이후 컴포넌트에서는 다음과 같이 사용합니다.
+
+import React from "react";
+import styles from "./index.module.scss";
+...
+  return (
+   &lt;div id={styles.container}&gt;
+      &lt;div className={styles.messageWrap}&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+...
+
+
+scss는 기존처럼 사용하시면 되며, id, class의 컴파일 결과를 확인하시면 scss 파일의 이름 혹은 폴더 이름으로 유니크하게 생성된 것을 확인할 수 있습니다.
+
+아래는 컴파일 결과의 예시입니다.
+
+// components/Pages/index.module.scss
+#loginPage {
+  display: block;
+}
+
+// components/Pages/LoginPage.tsx
+import styles from "./index.module.scss"
+...
+return (
+  &lt;div id={styles.loginPage}&gt;
+);
+
+=&gt; &lt;div class="Pages_LoginPage__2Jrev" /&gt;
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/12/12/nextjs-sc-twinkling">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/nextjs.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Nextjs에서 styled-components 깜빡임 현상</h3>
+      <p class="post-date">2019년 12월 12일</p>
+      <p class="post-excerpt">Nextjs에서 styled-components (이하 SC) 사용하면 CSS 로딩이 늦게 되어 발생하는 깜빡임 현상이 발생합니다. 개인적인 생각으로는 HTML은 SSR로 미리 렌더링 시켜 보내지만 SC의 스타일들은 사용자가 접속 시 변환된다고 생각합니다. css를 미리 적용할 수 있을까? 참고 자료 Next.js와 SC를 검색한 결과, ServerStyleSheet라는 함수를 SC에서 제공하고 있었고 Next.js에서 샘플 코드를 제공하고 있었습니다. 해당 페이지에서 제공하는 코드는 다음과 같습니다. import Document from 'next/document' import { ServerStyleSheet } from 'styled-components' export default class MyDocument extends Document { static async getInitialProps (ctx) { const sheet = new ServerStyleSheet() const originalRenderPage = ctx.renderPage try { ctx.renderPage = () =&gt; originalRenderPage({ enhanceApp: App =&gt; props =&gt; sheet.collectStyles(&lt;App {...props} /&gt;) }) const initialProps = await Document.getInitialProps(ctx) return { ...initialProps, styles: ( &lt;&gt; {initialProps.styles} {sheet.getStyleElement()} &lt;/&gt; ) } } finally { sheet.seal() } } } _document.js 란? HTML Document를 관리하는 부분으로 이 외에도 '_app.js, _error.js' 등이 있습니다. 위 코드에서 에러가 나신다면..? 시간이 지나고 작성하는 글이라 정확하게 기억은 안나지만, 위에 코드를...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/12/11/context-hooks">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">React useContext 사용하기</h3>
+      <p class="post-date">2019년 12월 11일</p>
+      <p class="post-excerpt">2019년 초에 Redux를 사용하다가 불편함이 많아 useContext를 사용법을 찾아봤을 때 자료가 생각보다 많지 않아 헤맸던 기억이 있습니다. 늦었지만, useContext의 활용법을 공유 드립니다. createContext로 생성하자 import React, { createContext } from "react"; export const AppContext = createContext(); 우선 Context를 생성합니다. 초기화는 바로 할 필요 없으며, export하는 이유는 Redux처럼 다른 파일에서 접근하기 위해 정의합니다. context에 함수와 데이터를 저장하자 const App = () =&gt; { const [text, setText] = useState("test"); const logText = (text) =&gt; { console.log("test"); }; return ( &lt;AppContext.Provider value=&gt; &lt;ViewLayout /&gt; &lt;/AppContext.Provider&gt; ); }; export default App; Provider를 선언하게 되면, 해당 Provider의 자식들은 value에 선언된 부분들을 props로 넘겨주지 않아도 사용할 수 있습니다. ViewLayout에서 useContext를 사용하여 데이터 및 함수 실행을 진행합니다. useContext로 호출하자 import React, { useContext } from "react"; // App에 선언 된 context 호출 import { AppContext } from "./App"; const ViewLayout = () =&gt; { const { text, setText, logText } = useContext(AppContext); return ( &lt;div&gt; &lt;div&gt;{text}&lt;/div&gt; &lt;button...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        <li>
+  <a href="/2019/12/11/reponsive-video">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">동영상 비율에 맞춰 사이즈 변경하기</h3>
+      <p class="post-date">2019년 12월 11일</p>
+      <p class="post-excerpt">동영상 플레이어 중 영상의 비율을 맞춰주기 위해 영상의 세로가 긴 화면은 양쪽에 검은색 여백이, 영상의 가로가 긴 화면은 상하단에 검은색 여백이 생성되는 플레이어들이 있습니다. 검은색 여백은 video 태그에 width: 100% or height:100% 중 어떤 속성인지로 적용됩니다. 여기서 video 태그를 감싸고 있는 div보다 video 태그의 height가 높아지면 height를 100%로 고정하여 양 옆에 여백을 생성하고, width가 높아지면 width를 100%로 고정하여 상하에 여백을 생성합니다. 동영상의 비율을 수정하자 useRef를 사용해도 무방합니다. useLayoutEffect를 사용하여 화면의 resize를 감지하고 함수를 실행합니다. updateSize 함수에서 video 사이즈와 video-wrap 사이즈를 비교하고 클래스를 적용합니다. contains로 현재 클래스를 비교한 이유는 이미 적용되어있기 때문에 if문을 거쳐도 변화가 없기 때문입니다. import React, { useLayoutEffect } from "react"; const Video = () =&gt; { const updateSize = () =&gt; { const videoWrap = document.querySelector("#video-wrap"); const video = document.querySelector("#video"); if (!video.classList.contains("is-vertical") &amp;&amp; video.offsetHeight &gt; videoWrap.offsetHeight) { video.classList.add("is-vertical"); } else if (video.classList.contains("is-vertical") &amp;&amp; video.offsetWidth &gt; videoWrap.offsetWidth) { video.classList.remove("is-vertical"); } }; useLayoutEffect(() =&gt; { window.addEventListener("resize", updateSize); return ()...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/12/02/react-github-page">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">React Github Pages 배포</h3>
+      <p class="post-date">2019년 12월 02일</p>
+      <p class="post-excerpt">Github에서 리액트 앱을 공유할 때, 서버 없이 간단하게 Github Page로 공유가 가능합니다.
+
+gh-pages 모듈 설치
+
+yarn add --dev gh-pages
+
+
+package.json 수정
+
+gh-pages 모듈을 설치하면, scripts를 설정하라고 나타나는데, 아래 설정을 적용하면됩니다.
+
+{
+  ...
+  "scripts": {
+    ...
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  }
+  ...
+}
+
+
+gh-pages 배포
+
+yarn run deploy
+
+
+확인
+배포가 완료되면, gh-pages branch가 생성되어 있습니다.
+Github에서 해당 프로젝트로 이동 후 Settings -&gt; 하단 GitHub Pages 메뉴를 보시면 배포 된 깃헙 페이지 링크를 확인할 수 있습니다.
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/05/22/expo-library">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react-native.jpeg)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Expo 라이브러리 정리</h3>
+      <p class="post-date">2019년 05월 22일</p>
+      <p class="post-excerpt">
+  계속 업데이트 되는 문서입니다.
+
+
+LinearGradient
+
+배경색이 그라데이션으로 출력되는 View
+
+import { LinearGradient } from "expo";
+...
+&lt;LinearGradient colors={["red","blue"]} /&gt;
+
+
+Vector-Icons
+
+expo 에서 제공하는 여러 폰트의 아이콘 모음이다.
+아래 링크에서 아이콘 및 라이브러리를 확인하고 import하면 작동한다.
+vector-icons
+
+import { Ionicons, AntDesign } from "@expo/vector-icons";
+...
+&lt;Ionicons color="white" size={144} name="ios-rainy" /&gt;
+
+
+
+  Text 태그 내 사용 시 배경색을 투명으로 변경한다. {backgroundColor: "transparent"}
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+</ul>
+<ul id="pagination" role="navigation">
+	
+	
+	
+</ul>
+
+    </div>
+  </div>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+<script data-ad-client="ca-pub-6988376755693780" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  // var disqus_config = function() {
+  //   this.page.url = "http://localhost:4000/tags/react/";
+  //   this.page.identifier = "/tags/react/";
+  // };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<script id="dsq-count-scr" src="//minhyeong.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

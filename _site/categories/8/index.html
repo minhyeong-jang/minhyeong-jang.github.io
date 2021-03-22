@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+
+
+
+<title>Doriri Blog</title>
+<meta name="title" content="Doriri Blog" />
+<meta name="author" content=""/>
+<meta name="description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Doriri Blog"/>
+<meta property="og:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Doriri Blog"/>
+<meta name="twitter:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content=""/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+<!-- <link
+  href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean"
+  rel="stylesheet"
+/> -->
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/prism.js"></script>
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" onClick="toggleMenu()"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/about">About</a>
+    </li>
+    
+    <li>
+      <a href="/categories/dev-blog">Dev Blog</a>
+    </li>
+    
+    <li>
+      <a href="/categories/etc-blog">Etc Blog</a>
+    </li>
+    
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/about">About</a>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/categories/dev-blog">Dev Blog</a>
+        <ul class="menu-sub">
+          
+            
+              
+              <li class="">
+                <a href="/tags/algorithm">Algorithm</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/dev-etc">Etc</a>
+              </li>
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/javascript">Javascript</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/nomadcoders">Nomad Coders</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react-native">React Native</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/react">React</a>
+              </li>
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/style">Style ( CSS, Etc )</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/categories/etc-blog">Etc Blog</a>
+        <ul class="menu-sub">
+          
+            
+          
+            
+          
+            
+              
+              <li class="">
+                <a href="/tags/essay">Essay</a>
+              </li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/contact">Contact</a>
+      </li>
+    </ul>
+
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="/contact/">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div
+  id="cover"
+  class="home"
+  style="background-image:url(/assets/images/covers/home.jpg)"
+>
+  <div class="text-wrap">
+    <h3>Front-end & Back-end Developer</h3>
+    <h5>고객의 관점으로 개발합니다.</h5>
+  </div>
+</div>
+
+<div class="title">Hello World!</div>
+
+<div class="introduce-wrap">
+  <h4>안녕하세요, 웹 개발자 장민형입니다 :)</h4>
+  <p>
+    React, Typescript에 흥미가 있어서 주로 사용하고 있으며,<br />
+    안정화된 최신 기술, 애자일 방법론을 선호하고 있습니다.
+  </p>
+  <p style="margin: 20px 0px">
+    저에 대해 궁금하시다면 <a href="/about">About</a>,
+    연락이 필요하시면 <a href="/contact">Contact</a>를
+    확인해주세요!
+  </p>
+  <p class="highlight">아래는 개발 스택이며, 주로 사용하는 언어에 색상이 있습니다.</p>
+</div>
+
+<ul class="language">
+  <li>
+    <img alt="icon-frontend" src="/assets/images/design/icon-frontend.png" />
+    <h3>Front-end</h3>
+    <p>HTML</p>
+    <p>CSS, SCSS, <span class="highlight">Styled Components</span></p>
+    <p>Js, Jquery</p>
+    <p>Bootstrap</p>
+    <p>AngularJs</p>
+    <p><span class="highlight">React</span>, Redux, Nextjs</p>
+  </li>
+  <li>
+    <img alt="icon-backend" src="/assets/images/design/icon-backend.png" />
+    <h3>Back-end</h3>
+    <p class="highlight">NodeJs</p>
+    <p>PHP</p>
+    <p>Laravel</p>
+    <p>Ruby</p>
+  </li>
+  <li>
+    <img alt="icon-server" src="/assets/images/design/icon-server.png" />
+    <h3>Server & Etc</h3>
+    <p class="highlight">Typescript</p>
+    <p>Linux, Nginx</p>
+    <p>AWS EC2, S3, CF</p>
+    <p>Mysql</p>
+  </li>
+</ul>
+
+<div class="title">Doriri Blog</div>
+
+<div id="post-links">
+  <ul>
+    
+    
+      
+      <li>
+  <a href="/2021/03/20/react-error-defaultprops">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Type of property 'defaultProps' circularly references itself in mapped type</h3>
+      <p class="post-date">2021년 03월 20일</p>
+      <p class="post-excerpt">styled-components를 사용하는 도중 defaultProps 타입 오류가 발생했다.
+Props 전달에도 이상이 없었고 어떤 오류인가 싶어서 검색해봤다.
+
+Type of property 'defaultProps' circularly references itself in mapped type
+
+
+TypeScript Github에 등록된 이슈를 확인해보니, 정확하지는 않지만 Typescript^3.9.0 이후 나타나며 해당 오류는 styled-components에서 5.0.1 버전대에서 fix 되었다. ( 자세한 사항은 하단 참고자료로 이동하여 확인하면 좋을 것 같다. )
+
+yarn upgrade @types/styled-components --latest
+# or
+npm install @types/styled-components@latest
+
+
+styled-components의 type을 업데이트하는 방법이 있으며, 어려운 경우에는 styled-components.d.ts를 생성하여 예외처리 하는 방향도 있다.
+
+참고자료
+
+https://github.com/microsoft/TypeScript/issues/37597#issuecomment-628149946
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+      <li>
+  <a href="/2021/03/20/enum-key-to-type-string">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/typescript.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">Typescript Enum Key to String Type</h3>
+      <p class="post-date">2021년 03월 20일</p>
+      <p class="post-excerpt">export enum GoodsFilterMarketLabel {
+  all = "전체",
+  brand = "브랜드",
+  premium = "프리미엄",
+  soho = "쇼핑몰·마켓 상품",
+}
+export type GoodsFilterMarketType = keyof typeof GoodsFilterMarketLabel;
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+      <li>
+  <a href="/2021/03/20/react-list-search">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react.png)"
+      
+      ></div>
+    <div class="post-info">
+      <p class="author-name">minhyeong.jang</p>
+      <h3 class="post-title">React 리스트 검색 스크롤 이동</h3>
+      <p class="post-date">2021년 03월 20일</p>
+      <p class="post-excerpt">asd
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+        
+  </ul>
+</div>
+
+    </div>
+  </div>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+<script data-ad-client="ca-pub-6988376755693780" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  // var disqus_config = function() {
+  //   this.page.url = "http://localhost:4000/categories/8/";
+  //   this.page.identifier = "/categories/8/";
+  // };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<script id="dsq-count-scr" src="//minhyeong.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

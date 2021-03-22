@@ -1,0 +1,75 @@
+# Profile information
+name: doriri
+title: Doriri Blog
+description: 더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+image: /covers/doriri.jpeg
+
+facebook:
+  app_id: 481301675773678
+
+# Folder Link
+asset_url: /assets
+image_url: /assets/images
+font_url: /assets/fonts
+
+# Social
+github: https://github.com/minhyeong-jang
+
+# Contact form
+email: public.doriri@gmail.com
+google_analytics_id: UA-154757538-1
+
+# Comments
+discus-identifier: # Add your Disqus identifier
+
+# Paginate
+paginate: 5
+paginate_path: '/categories/:num'
+
+
+permalink: /:year/:month/:day/:title
+
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
+  categories:
+    output: true
+    permalink: /categories/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: authors
+    values:
+      layout: author
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: category
+  - scope:
+      path: ''
+      type: categories
+    values:
+      layout: category
+
+      
+# Build settings
+# markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
+include: [_pages, _]
+sass:
+  style: compressed
+  sass_dir: assets/css

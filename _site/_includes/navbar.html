@@ -1,0 +1,56 @@
+<div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="{{ site.baseurl }}/">
+        <p class="user-name">Minhyeong Jang</p>
+        <p class="nick-name">Doriri</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="{% if page.url == '/about' %} active {% endif %}">
+        <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
+      </li>
+      {% for category in site.categories %}
+      <li class="
+        {% if 
+          page.category contains category.name or 
+          page.url contains category.name or
+          page.tags contains category.name
+        %} active {% endif %}">
+        <a href="{{ site.baseurl }}/categories/{{ category.name }}">{{ category.title }}</a>
+        <ul class="menu-sub">
+          {% for tag in site.tags %}
+            {% if category.name == tag.category %}
+              {% assign tagLink = tag.name | prepend: '/tags/' | append: '/' %}
+              <li class="{% if
+                page.url == tagLink or
+                page.tags contains tag.name
+              %} active {% endif %}">
+                <a href="{{ site.baseurl }}/tags/{{ tag.name }}">{{ tag.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>
+      </li>
+    </ul>
+
+    <div class="contact">        
+      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank">
+        <span class="icon icon-facebook2"></span>
+      </a>
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank">
+        <span class="icon icon-linkedin"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank">
+        <span class="icon icon-github"></span>
+      </a>
+      <a href="{{ '/contact/' | prepend: site.baseurl }}">
+        <span class="icon icon-mail3"></span>
+      </a>
+    </div>
+  </div>
+</div>
