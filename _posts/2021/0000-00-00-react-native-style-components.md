@@ -5,6 +5,7 @@ image: /covers/js.png
 title: React Native - styled-components 적용하기
 author: minhyeong.jang
 date: 3333-02-06 16:00
+published: false
 ---
 
 ```bash
