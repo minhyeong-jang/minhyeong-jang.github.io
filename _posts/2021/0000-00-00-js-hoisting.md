@@ -1,10 +1,10 @@
 ---
 layout: post
-tags: [dev-blog22, javascript]
+tags: [dev-blog, javascript]
 image: /covers/js.png
 title: Javascript 호이스팅(Hoisting) 이해하기
 author: minhyeong.jang
-date: 3333-12-27 17:39
+date: 2023-02-27 17:39
 ---
 
 많은 개발자들이 `변수의 선언을 위로 끌어올린다는 것이 호이스팅이다` 정도만 알고 왜 호이스팅이 발생하는지 모르고 있다.  
