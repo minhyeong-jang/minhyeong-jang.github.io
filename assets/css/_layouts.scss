@@ -97,14 +97,29 @@ body {
 
   .contact {
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
+    color: white;
+    display: flex;
+    width: 100%;
+    padding: 15px 10px;
+    align-items: center;
+
+    a {
+      flex: 0 0 25%;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
 #content-wrap {
   flex: 1 1 auto;
-  padding: 16px 30px 20px;
-  border-radius: 10px;
+  padding: 16px;
+  border-radius: 5px;
   border: 1px;
   overflow: hidden;
 

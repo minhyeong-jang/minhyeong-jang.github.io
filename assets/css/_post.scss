@@ -75,12 +75,16 @@
  * Post Link
  */
  #post-links {
-  margin-top: 50px;
+  background: white;
+  border: 1px solid rgb(209, 202, 216);
+  padding: 30px 20px;
+  margin: 20px 0;
+  border-radius: 5px;
 
   .subject {
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 150px 0px 15px;
+    margin: 0 0 15px;
   }
 
   ul {
@@ -251,12 +255,21 @@
 /**
  * Disqus
  */
-#disqus_thread {
+#disqus_recommendations {
+  display: none;
+}
+#disqus-wrap {
   background: white;
   border: 1px solid rgb(209, 202, 216);
   padding: 30px 20px 5px;
-  margin-top: 20px;
   border-radius: 5px;
+  margin: 20px 0 0;
+  
+  #disqus_thread {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
 }
 
 /**
@@ -270,6 +283,7 @@
   background-position: 50%;
   background-repeat: no-repeat;
   border-radius: 5px;
+  border: 1px solid #d1cad8;
 
   .mouse-scroll {
     position: absolute;
