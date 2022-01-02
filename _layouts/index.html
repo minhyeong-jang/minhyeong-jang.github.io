@@ -22,26 +22,35 @@ layout: default
     안정화된 최신 기술, 애자일 방법론을 선호하고 있습니다.
   </p>
   <p style="margin: 20px 0px">
-    저에 대해 궁금하시다면 <a href="{{ '/about' | prepend: site.baseurl }}">About</a>,
-    연락이 필요하시면 <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>를
+    저에 대해 궁금하시다면
+    <a href="{{ '/about' | prepend: site.baseurl }}">About</a>, 연락이
+    필요하시면 <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>를
     확인해주세요!
   </p>
-  <p class="highlight">아래는 개발 스택이며, 주로 사용하는 언어에 색상이 있습니다.</p>
+  <p class="highlight">
+    아래는 개발 스택이며, 주로 사용하는 언어에 색상이 있습니다.
+  </p>
 </div>
 
 <ul class="language">
   <li>
-    <img alt="icon-frontend" src="{{ site.baseurl }}{{ site.image_url }}/design/icon-frontend.png" />
+    <img
+      alt="icon-frontend"
+      src="{{ site.baseurl }}{{ site.image_url }}/design/icon-frontend.png"
+    />
     <h3>Front-end</h3>
+    <p><span class="highlight">React</span>, Redux, Nextjs</p>
     <p>HTML</p>
     <p>CSS, SCSS, <span class="highlight">Styled Components</span></p>
     <p>Js, Jquery</p>
     <p>Bootstrap</p>
     <p>AngularJs</p>
-    <p><span class="highlight">React</span>, Redux, Nextjs</p>
   </li>
   <li>
-    <img alt="icon-backend" src="{{ site.baseurl }}{{ site.image_url }}/design/icon-backend.png" />
+    <img
+      alt="icon-backend"
+      src="{{ site.baseurl }}{{ site.image_url }}/design/icon-backend.png"
+    />
     <h3>Back-end</h3>
     <p class="highlight">NodeJs</p>
     <p>PHP</p>
@@ -49,11 +58,14 @@ layout: default
     <p>Ruby</p>
   </li>
   <li>
-    <img alt="icon-server" src="{{ site.baseurl }}{{ site.image_url }}/design/icon-server.png" />
+    <img
+      alt="icon-server"
+      src="{{ site.baseurl }}{{ site.image_url }}/design/icon-server.png"
+    />
     <h3>Server & Etc</h3>
     <p class="highlight">Typescript</p>
     <p>Linux, Nginx</p>
-    <p>AWS EC2, S3, CF</p>
+    <p>AWS</p>
     <p>Mysql</p>
   </li>
 </ul>
@@ -62,13 +74,8 @@ layout: default
 
 <div id="post-links">
   <ul>
-    {% assign count = 0 %}
-    {% for post in site.posts %}
-      {% if count == 3 %}
-        {% break %}
-      {% endif %}
-      {% include item.html %}
-      {% assign count = count | plus: 1 %}
-    {% endfor %}
+    {% assign count = 0 %} {% for post in site.posts %} {% if count == 3 %} {%
+    break %} {% endif %} {% include item.html %} {% assign count = count | plus:
+    1 %} {% endfor %}
   </ul>
 </div>
