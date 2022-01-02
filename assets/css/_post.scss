@@ -212,6 +212,9 @@
       font-weight: bold;
       color: $point-color !important;
     }
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+      font-weight: normal;
+    }
 
     table {
       margin: 0;
