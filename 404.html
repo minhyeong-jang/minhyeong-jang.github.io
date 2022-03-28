@@ -139,7 +139,9 @@ permalink: /404.html
 	if (window.location.pathname.includes('/doriri')) {
 		var element = document.getElementById("link-doriri")
 		element.className = 'highlight show';
-		element.querySelector('a').setAttribute('href', window.location.pathname.replace("/doriri", ""))
-		element.querySelector('a').innerHTML = window.location.href.replace("/doriri", "");
+    var pathname = window.location.pathname.replace("/doriri", "").replace(/\/\//g,'/');
+    var htmlLink = window.location.origin + pathname;
+		element.querySelector('a').setAttribute('href', pathname)
+		element.querySelector('a').innerHTML = htmlLink;
 	}
 </script>
