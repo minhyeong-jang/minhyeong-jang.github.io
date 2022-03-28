@@ -119,7 +119,7 @@ body {
 #content-wrap {
   flex: 1 1 auto;
   padding: 16px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   border: 1px;
   overflow: hidden;
 
