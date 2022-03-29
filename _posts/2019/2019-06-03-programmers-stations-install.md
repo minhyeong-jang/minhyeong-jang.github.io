@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, algorithm]
+tags: [develop, algorithm]
 image: /covers/programmers.jpg
 title: programmers - 기지국 설치
 author: minhyeong.jang

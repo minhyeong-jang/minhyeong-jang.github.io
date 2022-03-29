@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, javascript]
+tags: [develop, javascript]
 image: /covers/js.png
 title: axios - interceptors error 처리와 refreshToken
 author: minhyeong.jang
@@ -17,20 +17,20 @@ axios.interceptors 함수를 통해 request, response를 감지할 수 있습니
 ```js
 // API 호출 전 해당 함수가 먼저 실행됩니다.
 axios.interceptors.request.use(
-  config => {
+  (config) => {
     return config;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
   }
 );
 
 // API 실행 후 response를 감지하여 데이터를 return 합니다.
 axios.interceptors.response.use(
-  response => {
+  (response) => {
     return response;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
   }
 );
@@ -41,18 +41,18 @@ axios.interceptors.response.use(
 
 ```js
 const _axios = axios.create({
-  baseURL: process.env.REACT_APP_API_URL
+  baseURL: process.env.REACT_APP_API_URL,
 });
 _axios.interceptors.response.use(
-  response => response,
-  error => {
+  (response) => response,
+  (error) => {
     if (error.response && error.response.status === 403) {
       return Auth.refreshToken() // token 재발행 및 반환
-        .then(token => {
+        .then((token) => {
           originalRequest.headers["Authorization"] = token;
           return _axios.request(error.config); // error.config(origin API 정보)를 다시 요청
         })
-        .catch(error => {
+        .catch((error) => {
           window.location.href = "/login";
         });
     }

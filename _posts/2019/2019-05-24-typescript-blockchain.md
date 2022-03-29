@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, nomadcoders]
+tags: [develop, nomadcoders]
 image: /covers/nomadcoders.png
 title: Typescript로 Blockchain 만들기
 author: minhyeong.jang
@@ -101,7 +101,7 @@ const sayHi = (person: Human): string => {
 const person = {
   name: "Minhyeong",
   age: 23,
-  gender: "male"
+  gender: "male",
 };
 sayHi(person);
 

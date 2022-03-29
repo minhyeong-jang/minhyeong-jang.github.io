@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, nomadcoders]
+tags: [develop, nomadcoders]
 image: /covers/nomadcoders.png
 title: React Native로 날씨앱 만들기
 author: minhyeong.jang
@@ -22,6 +22,7 @@ date: 2019-05-22 16:05
 - Android, IOS 테스트가 가능하다.
 - 모바일에서 코드를 스캔하여 앱을 다운받고 실시간으로 수정사항 반영이 가능하다. ( Live Reload )
 - 배포 시 앱을 업데이트 하는 것이 아닌 서버에 코드를 업데이트하는 방식이다.
+
   - 따라서 앱 스토어의 승인 절차가 필요없고, 유저는 서버에서 코드를 다운받는다.
 
 - Online Coding : snack.expo.io
@@ -72,7 +73,7 @@ Expo 로컬 홈페이지가 열리면 Run simulator 또는 모바일에서 Expo 
 
 전체 소스코드 [Github](https://github.com/minhyeong-jang/react-native-weather) 참고
 
-* 미포함 코드 `PropTypes, Error handle, Loading, StyleSheet, StatusBar, Etc.`
+- 미포함 코드 `PropTypes, Error handle, Loading, StyleSheet, StatusBar, Etc.`
 
 **App.js**
 

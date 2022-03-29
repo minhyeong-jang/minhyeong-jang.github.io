@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, javascript, react]
+tags: [develop, javascript, react]
 image: /covers/js.png
 title: 스크롤 맨 하단으로 이동
 author: minhyeong.jang

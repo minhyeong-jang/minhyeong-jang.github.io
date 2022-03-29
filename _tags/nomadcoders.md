@@ -1,5 +1,5 @@
 ---
-category: dev-blog
+category: develop
 name: nomadcoders
-title: 'Nomad Coders'
+title: "Nomad Coders"
 ---

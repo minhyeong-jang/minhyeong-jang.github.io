@@ -1,5 +1,5 @@
 ---
-category: dev-blog
+category: develop
 name: javascript
-title: 'Javascript'
+title: "Javascript"
 ---

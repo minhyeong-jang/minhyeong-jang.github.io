@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/github.png
 title: git refusing to merge unrelated histories
 author: minhyeong.jang

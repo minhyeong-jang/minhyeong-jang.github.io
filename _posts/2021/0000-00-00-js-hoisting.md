@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, javascript]
+tags: [develop, javascript]
 image: /covers/js.png
 title: Javascript 호이스팅(Hoisting) 이해하기
 author: minhyeong.jang

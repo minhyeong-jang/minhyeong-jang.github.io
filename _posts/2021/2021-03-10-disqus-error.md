@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/404.png
 title: Disqus Email 인증 ERR_CONNECTION_REFUSED
 author: minhyeong.jang

@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/github.png
 title: Git revert 충돌 해결하기
 author: minhyeong.jang

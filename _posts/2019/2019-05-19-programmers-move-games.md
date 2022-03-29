@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, algorithm]
+tags: [develop, algorithm]
 image: /covers/programmers.jpg
 title: programmers - 좌표 명령어 게임
 author: minhyeong.jang
@@ -49,44 +49,44 @@ date: 2019-05-19 23:05
 
 ```js
 function moveCheck(positions, prevX, prevY, nextX = 0, nextY = 0) {
-  const prevPos = `${prevX}${prevY}`
-  const nextPos = `${nextX}${nextY}`
+  const prevPos = `${prevX}${prevY}`;
+  const nextPos = `${nextX}${nextY}`;
   if (!(positions[prevPos + nextPos] || positions[nextPos + prevPos])) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 function solution(dirs) {
-  let x = 0
-  let y = 0
-  let nextX = 0
-  let nextY = 0
-  let count = 0
-  let positions = {}
-  dirs.split('').map(dir => {
-    if (dir === 'U' && y < 5) {
-      nextY = y + 1
-    } else if (dir === 'D' && y > -5) {
-      nextY = y - 1
-    } else if (dir === 'R' && x < 5) {
-      nextX = x + 1
-    } else if (dir === 'L' && x > -5) {
-      nextX = x - 1
+  let x = 0;
+  let y = 0;
+  let nextX = 0;
+  let nextY = 0;
+  let count = 0;
+  let positions = {};
+  dirs.split("").map((dir) => {
+    if (dir === "U" && y < 5) {
+      nextY = y + 1;
+    } else if (dir === "D" && y > -5) {
+      nextY = y - 1;
+    } else if (dir === "R" && x < 5) {
+      nextX = x + 1;
+    } else if (dir === "L" && x > -5) {
+      nextX = x - 1;
     } else {
-      return
+      return;
     }
     if (moveCheck(positions, x, y, nextX, nextY)) {
-      positions[`${x}${y}${nextX}${nextY}`] = true
-      count++
+      positions[`${x}${y}${nextX}${nextY}`] = true;
+      count++;
     }
-    x = nextX
-    y = nextY
-  })
-  return count
+    x = nextX;
+    y = nextY;
+  });
+  return count;
 }
 
-solution('ULURRDLLU')
+solution("ULURRDLLU");
 ```
 
 ## 테스트 케이스

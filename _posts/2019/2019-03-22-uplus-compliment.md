@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [etc-blog, essay]
+tags: [daily, essay]
 image: /covers/algorithm.jpg
 title: 일상속에 사소한 부분을 칭찬한다는 것
 author: minhyeong.jang

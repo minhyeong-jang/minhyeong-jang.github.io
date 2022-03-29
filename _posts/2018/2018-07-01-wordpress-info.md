@@ -3,7 +3,7 @@ layout: post
 title: "Wordpress 가입형 / 설치형"
 author: minhyeong.jang
 date: 2018-06-20 16:56
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/wordpress.png
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react]
+tags: [develop, react]
 image: /covers/react.png
 title: 동영상 비율에 맞춰 사이즈 변경하기
 author: minhyeong.jang
@@ -28,9 +28,15 @@ const Video = () => {
   const updateSize = () => {
     const videoWrap = document.querySelector("#video-wrap");
     const video = document.querySelector("#video");
-    if (!video.classList.contains("is-vertical") && video.offsetHeight > videoWrap.offsetHeight) {
+    if (
+      !video.classList.contains("is-vertical") &&
+      video.offsetHeight > videoWrap.offsetHeight
+    ) {
       video.classList.add("is-vertical");
-    } else if (video.classList.contains("is-vertical") && video.offsetWidth > videoWrap.offsetWidth) {
+    } else if (
+      video.classList.contains("is-vertical") &&
+      video.offsetWidth > videoWrap.offsetWidth
+    ) {
       video.classList.remove("is-vertical");
     }
   };
@@ -41,8 +47,8 @@ const Video = () => {
   }, []);
 
   return (
-    <div id="video-wrap">
-      <video id="video" />
+    <div id='video-wrap'>
+      <video id='video' />
     </div>
   );
 };

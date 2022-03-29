@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, javascript]
+tags: [develop, javascript]
 image: /covers/js.png
 title: Javascript Prototype 이해하기
 author: minhyeong.jang
@@ -18,7 +18,7 @@ date: 2019-12-23 17:39
 
 ```js
 var item = {
-  key: 'key'
+  key: "key",
 };
 console.log(item);
 // {
@@ -31,7 +31,7 @@ console.log(item);
 //     ...
 //   }
 // }
-console.log(item.hasOwnProperty('key')); // true
+console.log(item.hasOwnProperty("key")); // true
 ```
 
 item 객체를 출력하여 `__proto__` 프로퍼티를 열어보면 자바스크립트의 Object 객체가 부모이며,

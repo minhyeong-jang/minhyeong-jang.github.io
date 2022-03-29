@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react]
+tags: [develop, react]
 image: /covers/react.png
 title: create-react-app에서 CSS Module 사용하기
 author: minhyeong.jang

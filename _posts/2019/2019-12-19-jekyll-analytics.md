@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/jekyll.png
 title: Jekyll + Google Analytics 연동하기
 author: minhyeong.jang
@@ -31,7 +31,7 @@ google_analytics_id: 추적 ID
 ```
 
 그리고 analytics 파일을 생성하여 Google Analytics에서 제공하는 js를 삽입하고 추적 ID 값을 불러옵니다.  
-아래 코드는 추적 ID 값을 _config에서 가져오도록 수정한 코드입니다.
+아래 코드는 추적 ID 값을 \_config에서 가져오도록 수정한 코드입니다.
 
 ```html
 <!-- analytics.html -->
@@ -58,17 +58,14 @@ google_analytics_id: 추적 ID
 <!DOCTYPE html>
 <html lang="kr">
   <head>
-    {{ "{% include head.html " }}%}
-    {{ "{% include analytics.html " }}%}
+    {{ "{% include head.html " }}%} {{ "{% include analytics.html " }}%}
   </head>
 
   <body>
     {{ "{{% include header.html " }}%}
     <div class="body-wrap">
       {{ "{% include navbar.html " }}%}
-      <div id="content-wrap">
-        {{ "{{ content "}}}}
-      </div>
+      <div id="content-wrap">{{ "{{ content "}}}}</div>
     </div>
   </body>
 </html>

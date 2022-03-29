@@ -1,5 +1,5 @@
 ---
-category: dev-blog
+category: develop
 name: algorithm
-title: 'Algorithm'
+title: "Algorithm"
 ---

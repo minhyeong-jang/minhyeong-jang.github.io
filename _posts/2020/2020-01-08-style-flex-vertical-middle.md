@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, style]
+tags: [develop, style]
 image: /covers/css.jpg
 title: CSS Flex 세로 정렬
 author: minhyeong.jang

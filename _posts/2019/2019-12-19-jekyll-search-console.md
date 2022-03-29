@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/jekyll.png
 title: Jekyll + Google Search Console 연동하기
 author: minhyeong.jang

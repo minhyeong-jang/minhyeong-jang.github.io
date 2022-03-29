@@ -1,5 +1,5 @@
 ---
-category: dev-blog
+category: develop
 name: react-native
 title: "React Native"
 ---

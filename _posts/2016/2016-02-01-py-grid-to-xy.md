@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/python.png
 title: Python - 위도, 경도를 기상청 X, Y 좌표 변환하기
 author: minhyeong.jang

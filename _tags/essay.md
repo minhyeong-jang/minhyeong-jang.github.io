@@ -1,5 +1,5 @@
 ---
-category: etc-blog
+category: daily
 name: essay
-title: 'Essay'
+title: "Essay"
 ---

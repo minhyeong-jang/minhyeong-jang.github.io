@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react]
+tags: [develop, react]
 image: /covers/nextjs.png
 title: Nextjs에서 styled-components 깜빡임 현상
 author: minhyeong.jang
@@ -16,26 +16,27 @@ Nextjs에서 styled-components (이하 SC) 사용하면 CSS 로딩이 늦게 되
 
 [참고 자료](https://github.com/zeit/next.js/blob/master/examples/with-styled-components/pages/_document.js)
 
-Next.js와 SC를 검색한 결과, ServerStyleSheet라는 함수를 SC에서 제공하고 있었고 Next.js에서 샘플 코드를 제공하고 있었습니다.  
+Next.js와 SC를 검색한 결과, ServerStyleSheet라는 함수를 SC에서 제공하고 있었고 Next.js에서 샘플 코드를 제공하고 있었습니다.
 
 해당 페이지에서 제공하는 코드는 다음과 같습니다.
 
 ```jsx
-import Document from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import Document from "next/document";
+import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
-  static async getInitialProps (ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+  static async getInitialProps(ctx) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
-        })
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
 
-      const initialProps = await Document.getInitialProps(ctx)
+      const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
         styles: (
@@ -43,10 +44,10 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
-      }
+        ),
+      };
     } finally {
-      sheet.seal()
+      sheet.seal();
     }
   }
 }
@@ -56,7 +57,7 @@ export default class MyDocument extends Document {
 
 ## 위 코드에서 에러가 나신다면..?
 
-시간이 지나고 작성하는 글이라 정확하게 기억은 안나지만, 위에 코드를 사용해도 깜빡임 현상이 계속 발생했던 것으로 기억납니다. 그래서 코드를 참고하여 새롭게 개발했습니다.  
+시간이 지나고 작성하는 글이라 정확하게 기억은 안나지만, 위에 코드를 사용해도 깜빡임 현상이 계속 발생했던 것으로 기억납니다. 그래서 코드를 참고하여 새롭게 개발했습니다.
 
 ```jsx
 import Document, { Head, Main, NextScript } from "next/document";
@@ -66,8 +67,8 @@ import React from "react";
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet();
-    const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />)
+    const page = renderPage(
+      (App) => (props) => sheet.collectStyles(<App {...props} />)
     );
     const styleTags = sheet.getStyleElement();
     return { ...page, styleTags };
@@ -77,7 +78,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <meta data-react-helmet="true" property="og:image" content="" />
+          <meta data-react-helmet='true' property='og:image' content='' />
           {this.props.styleTags}
         </Head>
         <body>
@@ -89,4 +90,5 @@ export default class MyDocument extends Document {
   }
 }
 ```
+
 `ServerStyleSheet를 사용하여 element로 변환 후 head 태그 안에 출력`했습니다.

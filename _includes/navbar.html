@@ -10,6 +10,9 @@
       <li class="{% if page.url == '/about' %} active {% endif %}">
         <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
       </li>
+      <li class="{% if page.url == '/project' %} active {% endif %}">
+        <a href="{{ '/project' | prepend: site.baseurl }}">Project</a>
+      </li>
       {% for category in site.categories %}
       <li class="
         {% if 

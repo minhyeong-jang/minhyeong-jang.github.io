@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, javascript]
+tags: [develop, javascript]
 image: /covers/js.png
 title: axios timeout 설정
 author: minhyeong.jang

@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, algorithm]
+tags: [develop, algorithm]
 image: /covers/programmers.jpg
 title: programmers - 피보나치 수열 값 구하기
 author: minhyeong.jang
@@ -29,15 +29,15 @@ F(n) = F(n-1) + F(n-2) 공식을 적용하여 i-1, i-2 를 더하는 공식이�
 
 ```js
 function fibonacci(num) {
-  let arr = [0, 1]
+  let arr = [0, 1];
   for (let i = 2; i <= num; i++) {
-    arr.push((arr[i - 1] + arr[i - 2]) % 1234567)
+    arr.push((arr[i - 1] + arr[i - 2]) % 1234567);
   }
-  return arr[num]
+  return arr[num];
 }
 
 function solution(n) {
-  return fibonacci(n)
+  return fibonacci(n);
 }
 ```
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react-native]
+tags: [develop, react-native]
 image: /covers/js.png
 title: React Native 설치 & 에러
 author: minhyeong.jang

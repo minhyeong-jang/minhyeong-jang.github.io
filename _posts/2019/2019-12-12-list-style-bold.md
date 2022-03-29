@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, style]
+tags: [develop, style]
 image: /covers/css.jpg
 title: list-style에 bold 처리하기
 author: minhyeong.jang
@@ -76,5 +76,6 @@ ol, li 태그를 사용하면 옆에 숫자가 기본적으로 나타나는데, 
   }
 </style>
 ```
+
 counter를 사용하여 li:before에 숫자를 직접 작성하는 방법입니다.  
 단점으로는 list-style처럼 다양한 스타일이 아닌 숫자로만 제공합니다.

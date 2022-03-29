@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, javascript]
+tags: [develop, javascript]
 image: /covers/typescript.png
 title: Typescript Enum Key to String Type
 author: minhyeong.jang

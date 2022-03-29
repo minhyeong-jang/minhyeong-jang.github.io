@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/python.png
 title: Python - 문자열을 숫자로 변환하기 int(), float(), long()
 author: minhyeong.jang

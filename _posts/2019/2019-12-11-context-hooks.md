@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react]
+tags: [develop, react]
 image: /covers/react.png
 title: React useContext 사용하기
 author: minhyeong.jang

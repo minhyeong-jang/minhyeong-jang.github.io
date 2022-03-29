@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react]
+tags: [develop, react]
 image: /covers/react.png
 title: Grafana Plugin With React 셋팅하기
 author: minhyeong.jang

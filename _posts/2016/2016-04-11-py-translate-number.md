@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/python.png
 title: Python - 2진수, 8진수, 10진수, 16진수 변환하기
 author: minhyeong.jang

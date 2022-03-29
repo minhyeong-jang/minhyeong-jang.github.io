@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/algorithm.jpg
 title: Sourcemap 이란?
 author: minhyeong.jang

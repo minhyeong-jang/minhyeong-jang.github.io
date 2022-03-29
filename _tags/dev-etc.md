@@ -1,5 +1,5 @@
 ---
-category: dev-blog
+category: develop
 name: dev-etc
-title: 'Etc'
+title: "Etc"
 ---

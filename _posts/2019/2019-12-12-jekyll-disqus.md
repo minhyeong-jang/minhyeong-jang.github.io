@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/jekyll.png
 title: Jekyll + Disqus 연동하기
 author: minhyeong.jang

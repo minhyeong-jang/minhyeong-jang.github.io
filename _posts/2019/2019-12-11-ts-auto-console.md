@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, dev-etc]
+tags: [develop, dev-etc]
 image: /covers/typescript.png
 title: typescript에서 import console 이슈
 author: minhyeong.jang

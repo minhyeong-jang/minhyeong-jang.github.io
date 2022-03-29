@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, algorithm]
+tags: [develop, algorithm]
 image: /covers/programmers.jpg
 title: programmers - 숫자게임
 author: minhyeong.jang
@@ -43,17 +43,17 @@ ex) A = [2, 3, 5, 7], B = [3, 4, 6, 9] 상황에서 B가 3으로 A의 7을 써�
 
 ```js
 function solution(A, B) {
-  var answer = 0
-  let left = 0
-  A.sort((a, b) => a - b)
-  B.sort((a, b) => a - b)
+  var answer = 0;
+  let left = 0;
+  A.sort((a, b) => a - b);
+  B.sort((a, b) => a - b);
   for (let i = 0; i < A.length; i++) {
     if (A[left] < B[i]) {
-      left++
-      answer++
+      left++;
+      answer++;
     }
   }
-  return answer
+  return answer;
 }
 ```
 

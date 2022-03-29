@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, react]
+tags: [develop, react]
 image: /covers/react.png
 title: Type of property 'defaultProps' circularly references itself in mapped type
 author: minhyeong.jang

@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, algorithm]
+tags: [develop, algorithm]
 image: /covers/programmers.jpg
 title: programmers - H-index 값 구하기
 author: minhyeong.jang
@@ -39,16 +39,16 @@ H-Index는 과학자의 생산성과 영향력을 나타내는 지표입니다. 
 
 ```js
 function solution(citations) {
-  let i
-  let citLen = citations.length
-  citations.sort((a, b) => a - b)
-  citations.reverse()
+  let i;
+  let citLen = citations.length;
+  citations.sort((a, b) => a - b);
+  citations.reverse();
   for (i = 0; i < citLen; i++) {
     if (citations[i] <= i) {
-      return i
+      return i;
     }
   }
-  return i
+  return i;
 }
 ```
 

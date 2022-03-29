@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [dev-blog, javascript]
+tags: [develop, javascript]
 image: /covers/js.png
 title: Github page 최적화하기
 author: minhyeong.jang
