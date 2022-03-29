@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [project, project]
+tags: [project]
 image: /covers/nextjs.jpg
 title: 그룹웨어 간편화 웹페이지
 author: minhyeong.jang

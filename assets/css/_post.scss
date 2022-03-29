@@ -19,17 +19,28 @@
 
   .post-info {
     border-top: 1px solid #efefef;
-    padding: 25px 15px;
+    padding: 15px 15px;
 
-    .author-name {
-      font-size: 0.9286rem;
-      color: $point-color;
-      font-weight: bold;
+    .post-header {
+      display: flex;
+
+      .author-name {
+        font-size: 12px;
+        color: $point-color;
+        font-weight: bold;
+      }
+
+      .post-date {
+        font-size: 12px;
+        color: #666;
+        flex: 1 0 auto;
+        text-align: right;
+      }
     }
 
     .post-title {
-      margin-top: 10px;
-      font-size: 1.4286rem;
+      margin-top: 12px;
+      font-size: 16px;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -38,22 +49,16 @@
     .post-excerpt {
       border-top: 1px solid #dedede;
       display: -webkit-box;
-      margin-top: 30px;
-      padding-top: 25px;
-      font-size: 1.1429rem;
-      line-height: 1.7;
+      margin-top: 12px;
+      padding-top: 12px;
+      font-size: 13px;
+      line-height: 1.6;
       color: #aaa;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
       word-wrap: break-word;
       overflow: hidden;
-    }
-
-    .post-date {
-      font-size: 0.8571rem;
-      margin-top: 10px;
-      color: #666;
     }
   }
 }

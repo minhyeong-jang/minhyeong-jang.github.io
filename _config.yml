@@ -26,7 +26,7 @@ discus-identifier: # Add your Disqus identifier
 
 # Paginate
 paginate: 5
-paginate_path: '/categories/:num'
+paginate_path: '/category/:num'
 
 
 permalink: /:year/:month/:day/:title
@@ -34,13 +34,13 @@ permalink: /:year/:month/:day/:title
 collections:
   authors:
     output: true
-    permalink: /authors/:path/
+    permalink: /authors/:path
   tags:
     output: true
-    permalink: /tags/:path/
+    permalink: /tags/:path
   categories:
     output: true
-    permalink: /categories/:path/
+    permalink: /category/:path
 
 defaults:
   - scope:

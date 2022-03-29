@@ -2,27 +2,29 @@
 layout: default
 ---
 <div class="header">Contact</div>
-<div class="summery">
-  궁금하신 점이 있다면 언제든지 연락주세요 !
-</div>
-<div id="contact">
-  <form class="form" action="https://formspree.io/f/xvoveoqg" method="POST">
-    <div class="form-item">
-      <input type="text" placeholder="Your name" id="name" name="name" tabindex="1" required/>
+<div id="post-content">
+  <div class="summery">
+    궁금하신 점이 있다면 언제든지 연락주세요 !
+  </div>
+  <div id="contact">
+    <form class="form" action="https://formspree.io/f/xvoveoqg" method="POST">
+      <div class="form-item">
+        <input type="text" placeholder="Your name" id="name" name="name" tabindex="1" required/>
+      </div>
+      <div class="form-item">
+        <input type="email" placeholder="Your email" id="email" name="_replyto" tabindex="2" required/>
+      </div>
+      <div class="form-item">
+        <textarea class="contact-textarea" placeholder="Your message" id="message" name="message" tabindex="3"
+          required></textarea>
+      </div>
+      <div class="form-item">
+        <button type="submit" value="Send" class="form-btn">Send</button>
+      </div>
+    </form>
+    <div class="footer">
+      Formspree 사용 중으로 메일 횟수에 제한이 있으며,<br/>
+      초과 되는 경우 <a href="mailto:public.doriri@gmail.com">public.doriri@gmail.com</a>로 메일 전송 바랍니다.
     </div>
-    <div class="form-item">
-      <input type="email" placeholder="Your email" id="email" name="_replyto" tabindex="2" required/>
-    </div>
-    <div class="form-item">
-      <textarea class="contact-textarea" placeholder="Your message" id="message" name="message" tabindex="3"
-        required></textarea>
-    </div>
-    <div class="form-item">
-      <button type="submit" value="Send" class="form-btn">Send</button>
-    </div>
-  </form>
-  <div class="footer">
-    Formspree 사용 중으로 메일 횟수에 제한이 있으며,<br/>
-    초과 되는 경우 <a href="mailto:public.doriri@gmail.com">public.doriri@gmail.com</a>로 메일 전송 바랍니다.
   </div>
 </div>

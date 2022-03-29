@@ -6,9 +6,11 @@
       {% endif %}
       ></div>
     <div class="post-info">
-      <p class="author-name">{{ post.author }}</p>
+      <div class="post-header">
+        <p class="author-name">{{ post.author }}</p>
+        <p class="post-date">{{ post.date | date: '%Y년 %m월 %d일' }}</p>
+      </div>
       <h3 class="post-title">{{ post.title }}</h3>
-      <p class="post-date">{{ post.date | date: '%Y년 %m월 %d일' }}</p>
       <p class="post-excerpt">{{ post.content | strip_html | truncatewords: 150 }}</p>
     </div>
   </a>

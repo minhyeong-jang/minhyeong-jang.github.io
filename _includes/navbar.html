@@ -10,29 +10,32 @@
       <li class="{% if page.url == '/about' %} active {% endif %}">
         <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
       </li>
-      <li class="{% if page.url == '/project' %} active {% endif %}">
-        <a href="{{ '/project' | prepend: site.baseurl }}">Project</a>
-      </li>
-      {% for category in site.categories %}
+      {% assign categories = "" | split: ',' %}
+      {% assign categories = categories | push: site.categories[1] %}
+      {% assign categories = categories | push: site.categories[0] %}
+      {% for category in categories %}
       <li class="
         {% if 
           page.category contains category.name or 
           page.url contains category.name or
           page.tags contains category.name
         %} active {% endif %}">
-        <a href="{{ site.baseurl }}/categories/{{ category.name }}">{{ category.title }}</a>
+        <a href="{{ site.baseurl }}/category/{{ category.name }}">{{ category.title }}</a>
         <ul class="menu-sub">
-          {% for tag in site.tags %}
-            {% if category.name == tag.category %}
-              {% assign tagLink = tag.name | prepend: '/tags/' | append: '/' %}
-              <li class="{% if
-                page.url == tagLink or
-                page.tags contains tag.name
-              %} active {% endif %}">
-                <a href="{{ site.baseurl }}/tags/{{ tag.name }}">{{ tag.title }}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
+          {% capture tags %}
+            {% for tag in site.tags %}
+              {% if category.name == tag.category %}
+                {% assign tagLink = tag.name | prepend: '/tags/' | append: '/' %}
+                  ::<li
+                    data-sort="{{ tag.sortdata | prepend: '000' | slice: -4, 4 }}"
+                    class="{% if page.url == tagLink or page.tags contains tag.name %} active {% endif %}"
+                  >
+                    <a href="{{ site.baseurl }}/tags/{{ tag.name }}">{{ tag.title }}</a>
+                  </li>
+              {% endif %}
+            {% endfor %}
+          {% endcapture %}
+          {{ tags | split: '::' | sort }}
         </ul>
       </li>
       {% endfor %}

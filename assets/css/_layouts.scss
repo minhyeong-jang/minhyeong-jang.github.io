@@ -23,7 +23,7 @@ body {
  */
 #navbar {
   position: relative;
-  flex: 0 0 220px;
+  flex: 0 0 200px;
   background: rgba(37, 37, 37, 1);
 
   .fixed {
@@ -31,7 +31,7 @@ body {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 220px;
+    width: 200px;
   }
 
   .info-wrap {
@@ -57,14 +57,14 @@ body {
     padding: 0px 20px;
 
     & > li {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     li {
       a {
         display: block;
         color: rgb(166, 155, 178);
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 500;
         padding: 10px 0px;
         transition: color 0.2s linear;
@@ -86,13 +86,20 @@ body {
   }
 
   .menu-sub {
-    padding-left: 0.9286rem;
+    padding-left: 20px;
     transition: all 0.2s;
     overflow: hidden;
-  }
 
-  .menu-sub li {
-    position: relative;
+    li {
+      position: relative;
+
+      a { 
+        font-size: 13px;
+      }
+      &:first-child {
+        margin-top: 6px;
+      }
+    }
   }
 
   .contact {
@@ -163,7 +170,7 @@ body {
 
     a {
       padding: 0px 20px;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 60px;
     }
 
