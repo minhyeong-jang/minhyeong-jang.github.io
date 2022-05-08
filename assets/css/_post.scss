@@ -168,8 +168,9 @@
     }
 
     img {
+      display: flex;
       width: 100%;
-      margin-top: 10px;
+      margin: 10px auto 0;
     }
 
     img-info {
@@ -187,7 +188,7 @@
     }
 
     p {
-      font-size: 1.125rem;
+      font-size: 15px;
       line-height: 1.6;
       margin: 12px 0;
       color: #131518;
@@ -198,7 +199,7 @@
     }
 
     li {
-      font-size: 1.125rem;
+      font-size: 15px;
       color: #131518;
     }
 

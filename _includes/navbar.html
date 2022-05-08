@@ -11,6 +11,7 @@
         <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
       </li>
       {% assign categories = "" | split: ',' %}
+      {% assign categories = categories | push: site.categories[2] %}
       {% assign categories = categories | push: site.categories[1] %}
       {% assign categories = categories | push: site.categories[0] %}
       {% for category in categories %}

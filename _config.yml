@@ -12,6 +12,7 @@ facebook:
 # Folder Link
 asset_url: /assets
 image_url: /assets/images
+image_post_url: /assets/images/posts
 font_url: /assets/fonts
 
 # Social

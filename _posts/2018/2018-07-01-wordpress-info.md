@@ -20,7 +20,7 @@ image: /covers/wordpress.png
 `워드프레스가 제공하는 서버 및 DB를 사용하여 웹사이트를 구축합니다.`<br/>
 무료를 포함하여 요금제에 따라 성능이 달라집니다.
 
-![wordpress.com]({{ site.baseurl }}{{ site.image_url }}/wordpress-info-1.png "워드프레스 가입형 홈페이지")
+![wordpress.com]({{ site.image_url }}/wordpress-info-1.png "워드프레스 가입형 홈페이지")
 <img-info>wordpress 가입형 페이지</img-info>
 
 #### - 장점
@@ -37,7 +37,7 @@ image: /covers/wordpress.png
 - `CSS 수정에 제약`이 있습니다.
 - `위 기능을 사용하기위해 요금제를 높이는 경우 많은 요금을 부과`해야합니다.
 
-![wordpress.com]({{ site.baseurl }}{{ site.image_url }}/wordpress-info-2.png "워드프레스 가입형 가격표")
+![wordpress.com]({{ site.image_url }}/wordpress-info-2.png "워드프레스 가입형 가격표")
 <img-info>wordpress 가입형 요금</img-info>
 
 ### 설치형 ( [wordpress.org](https://www.wordpress.org) )
@@ -45,7 +45,7 @@ image: /covers/wordpress.png
 사용자가 `서버에 직접 워드프레스를 설치하여 웹사이트를 구축`합니다.<br/>
 웹사이트 소유자이기 때문에 제약이 없습니다.
 
-![wordpress.com]({{ site.baseurl }}{{ site.image_url }}/wordpress-info-3.png "워드프레스 설치형 홈페이지")
+![wordpress.com]({{ site.image_url }}/wordpress-info-3.png "워드프레스 설치형 홈페이지")
 <img-info>wordpress 설치형 페이지</img-info>
 
 #### - 장점
