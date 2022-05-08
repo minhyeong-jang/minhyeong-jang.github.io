@@ -89,7 +89,7 @@ ssh-keygen -t rsa -b 4096 -C "your@email"
 cat .ssh/id_rsa.pub
 ```
 
-위에 나온 key를 https://github.com/settings/keys에 등록한다.
+위에 나온 key를 [https://github.com/settings/keys](https://github.com/settings/keys)에 등록한다.
 
 ```bash
 git clone git@github.com:project
@@ -172,7 +172,7 @@ server {
   server_name www.url.com;
 
   location / {
-    proxy_pass http://127.0.0.1:5000;
+    proxy_pass http://127.0.0.1:PORT;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -184,7 +184,7 @@ server {
   server_name api.url.com;
 
   location / {
-    proxy_pass http://127.0.0.1:5001;
+    proxy_pass http://127.0.0.1:PORT;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -257,5 +257,5 @@ server {
 
 ## 참고
 
-- 전체 설정 https://velog.io/@turret1234/AWS-Lightsail-nginx-React-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-2
-- DNS 설정 https://ddochea.tistory.com/119
+- 전체 설정 [https://velog.io/@turret1234/AWS-Lightsail-nginx-React-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-2](https://velog.io/@turret1234/AWS-Lightsail-nginx-React-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-2)
+- DNS 설정 [https://ddochea.tistory.com/119](https://ddochea.tistory.com/119)
