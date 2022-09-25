@@ -8,10 +8,10 @@ date: 2019-11-26 19:44
 
 # 장민형 ( Doriri )
 
-안녕하세요, 무신사(스타일쉐어 서비스)에서 근무하고 있는 프론트엔드 개발자 장민형입니다.
+안녕하세요, 프론트엔드 개발자 장민형입니다.
 
-프로덕트를 개발하면서 기획부터 QA까지 함께 참여하고 문제를 해결하는 팀 문화를 선호하고 있습니다.
-작업 과정에서 문제나 개선사항을 스스로 제시하고 개선하는 분들과 함께 일하고 싶습니다.
+프로덕트를 개발하면서 기획부터 QA까지 `함께 참여하고 문제를 해결하는 팀 문화`를 선호하고 있습니다.  
+오너십을 가지고 `문제나 개선사항을 스스로 제시하고 개선하는 분들`과 함께 일하고 싶습니다.
 
 회사의 성장에 보람을 느끼며 팀원들과 함께 나아가려고 합니다.
 
@@ -19,8 +19,8 @@ date: 2019-11-26 19:44
 
 **Frontend**
 
-- `React`, Redux-saga, AngularJS, jQuery
-- `Styled-components`, SCSS
+- `React`, `Nextjs`, `React Query`, Redux Saga, AngularJS, jQuery
+- `Styled Components`, `Emotion`, SCSS
 - `Antd`, Bootstrap
 
 **Backend**
@@ -37,8 +37,8 @@ date: 2019-11-26 19:44
 
 **무신사(스타일쉐어)** - Frontend Developer (2020.4 ~ current)
 
-- `React` : 스타일쉐어 Web / Mobile / Webview 개발
-  - Etc
+- `React` : 무신사 파트너 어드민 리버스 엔지니어링
+- `React / Nextjs` : 스타일쉐어 Web / Mobile / Webview 개발
   - 서비스 메인 페이지 개편
   - 내부 어드민 / 입점사 어드민 신규 개발 및 개선
   - 정산 TF, 통계 페이지 신규 개발
@@ -77,10 +77,12 @@ date: 2019-11-26 19:44
 ## Projects
 
 **Dutch Pay** (20**.** ~ current )
+
 - https://minhyeong-jang.github.io/dutch-pay/#/
 - 내용 업데이트 예정
 
 **Interv** (20**.** ~ 2021.12 )
+
 - https://interv.kr
 - 내용 업데이트 예정
 
