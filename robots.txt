@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /_*/
 Allow: /
 
 Sitemap: https://minhyeong-jang.github.io/sitemap.xml

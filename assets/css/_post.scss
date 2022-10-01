@@ -79,7 +79,7 @@
 /**
  * Post Link
  */
- #post-links {
+#post-links {
   background: white;
   border: 1px solid rgb(209, 202, 216);
   padding: 30px 20px;
@@ -126,10 +126,9 @@
   .reponsive-content {
     max-width: 900px;
     margin: 0 auto;
-  
 
     ul {
-      margin: 5px 0px 0px 40px;
+      margin: 5px 0px 0px 30px;
 
       li {
         padding: 3px;
@@ -147,24 +146,24 @@
     }
 
     h1 {
-      font-size: 2.2857rem;
+      font-size: 28px;
     }
 
     h2 {
-      font-size: 1.6429rem;
-      margin: 60px 0px 20px 0px;
+      font-size: 23px;
+      margin: 50px 0px 20px 0px;
       padding: 5px 15px;
       border-left: 3px solid #5fad80;
     }
 
     h3 {
-      margin: 40px 0 20px 0;
-      font-size: 1.5714rem;
+      margin: 30px 0 15px 0;
+      font-size: 19px;
     }
 
     h4 {
       margin-top: 30px;
-      font-size: 1.25rem;
+      font-size: 16px;
     }
 
     img {
@@ -188,18 +187,17 @@
     }
 
     p {
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.6;
       margin: 12px 0;
       color: #131518;
       letter-spacing: -0.004em;
       word-break: keep-all;
       overflow-wrap: break-word;
-
     }
 
     li {
-      font-size: 15px;
+      font-size: 14px;
       color: #131518;
     }
 
@@ -210,19 +208,21 @@
 
     blockquote {
       margin: 28px 0;
-      padding: 15px 28px;
+      padding: 15px;
       border-left: 3px solid #f3cf00;
 
       p {
         margin: 0px;
       }
     }
-    
+
     code.highlighter-rouge {
-      font-weight: bold;
+      font-weight: 700 !important;
       color: $point-color !important;
+      padding: 0;
     }
-    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+    :not(pre) > code[class*="language-"],
+    pre[class*="language-"] {
       font-weight: normal;
     }
 
@@ -249,10 +249,10 @@
         text-align: left;
         border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
         font-feature-settings: "tnum";
-        padding-left: 1.08333rem;
-        padding-right: 1.08333rem;
-        padding-top: 0.8125rem;
-        padding-bottom: calc(0.8125rem - 1px);
+        padding-left: 15px;
+        padding-right: 5px;
+        padding-top: 11px;
+        padding-bottom: calc(11px - 1px);
       }
     }
   }
@@ -270,12 +270,11 @@
   padding: 30px 20px 5px;
   border-radius: $border-radius;
   margin: 20px 0 0;
-  
+
   #disqus_thread {
     max-width: 900px;
     margin: 0 auto;
   }
-
 }
 
 /**
@@ -399,9 +398,10 @@
       h5 {
         margin-top: 15px;
       }
-      &::after, &::before {
+      &::after,
+      &::before {
         display: none;
-      }  
+      }
     }
   }
 
@@ -415,7 +415,7 @@
 
   #post-links {
     margin-top: 30px;
-    
+
     li {
       width: 100% !important;
       margin: 10px 0px !important;
