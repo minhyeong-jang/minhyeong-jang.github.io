@@ -23,12 +23,11 @@ email: public.doriri@gmail.com
 google_analytics_id: UA-154757538-1
 
 # Comments
-discus-identifier: # Add your Disqus identifier
+# discus-identifier: # Add your Disqus identifier
 
 # Paginate
-paginate: 5
-paginate_path: '/category/:num'
-
+# paginate: 5
+# paginate_path: '/category/:num'
 
 permalink: /:year/:month/:day/:title
 
@@ -42,7 +41,7 @@ collections:
   categories:
     output: true
     permalink: /category/:path
-
+    
 defaults:
   - scope:
       path: ''
@@ -50,23 +49,21 @@ defaults:
     values:
       layout: author
   - scope:
-      path: ''
+      path: '/tags'
       type: tags
     values:
       layout: category
   - scope:
-      path: ''
+      path: '/category'
       type: categories
     values:
       layout: category
 
-      
 # Build settings
-# markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap
+  # - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock

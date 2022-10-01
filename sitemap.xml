@@ -1,0 +1,28 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% assign about_path = site.url | append: "/about" %}
+    {% assign contact_path = site.url | append: "/contact" %}
+
+    {% include sitemap_item.xml url=site.url date="" %}
+    {% include sitemap_item.xml url=about_path date="" %}
+    {% include sitemap_item.xml url=contact_path date="" %}
+
+    {% for category in site.categories %}
+      {% assign category_path = site.url | append: "/category/" | append: category.name %}
+      {% include sitemap_item.xml url=category_path date="" %}
+    {% endfor %}
+
+    {% for tag in site.tags %}
+      {% assign category_path = site.url | append: "/tags/" | append: tag.name %}
+      {% include sitemap_item.xml url=category_path date="" %}
+    {% endfor %}
+
+    {% for post in site.posts %}
+      {% assign post_path = site.url | append: post.url %}
+      {% include sitemap_item.xml url=post_path date=post.date %}
+    {% endfor %}
+</urlset>

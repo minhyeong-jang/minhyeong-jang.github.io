@@ -1,0 +1,8 @@
+<url>
+  <loc>{{ include.url }}</loc>
+  {% if include.date != "" %}
+  <lastmod>{{ include.date | date_to_xmlschema }}</lastmod>
+  {% else %}
+  <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+  {% endif %}
+</url>
