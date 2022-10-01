@@ -4,7 +4,7 @@ tags: [develop, react-native]
 image: /covers/react-native.jpeg
 title: 애플리케이션의 점진적 배포, 도달율
 author: minhyeong.jang
-date: 2022-10-02 02:04
+date: 2022-10-01 14:04
 published: true
 ---
 
