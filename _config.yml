@@ -49,12 +49,12 @@ defaults:
     values:
       layout: author
   - scope:
-      path: '/tags'
+      path: ''
       type: tags
     values:
       layout: category
   - scope:
-      path: '/category'
+      path: ''
       type: categories
     values:
       layout: category
