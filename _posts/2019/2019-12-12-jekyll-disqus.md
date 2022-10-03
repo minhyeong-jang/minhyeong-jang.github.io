@@ -2,7 +2,7 @@
 layout: post
 tags: [develop, dev-etc]
 image: /covers/jekyll.png
-title: Jekyll + Disqus 연동하기
+title: Jekyll Disqus 연동하기
 author: minhyeong.jang
 date: 2019-12-12 14:52
 etc: jekyll

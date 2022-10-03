@@ -2,7 +2,7 @@
 layout: post
 tags: [develop, dev-etc]
 image: /covers/jekyll.png
-title: Jekyll + Google Search Console 연동하기
+title: Jekyll Google Search Console 연동하기
 author: minhyeong.jang
 date: 2019-12-19 17:39
 etc: jekyll
