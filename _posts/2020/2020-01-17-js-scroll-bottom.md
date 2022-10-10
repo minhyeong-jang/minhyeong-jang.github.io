@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: [develop, javascript, react]
-image: /covers/js.png
+image: /covers/typescript.png
 title: 스크롤 맨 하단으로 이동
 author: minhyeong.jang
 date: 2020-01-17 14:10

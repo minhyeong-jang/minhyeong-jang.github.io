@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [develop, algorithm]
+tags: [develop, study]
 image: /covers/algorithm.jpg
 title: 평균 점수 구하기
 author: minhyeong.jang

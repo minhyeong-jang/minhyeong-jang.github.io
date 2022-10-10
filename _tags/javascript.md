@@ -1,6 +1,6 @@
 ---
 category: develop
 name: javascript
-title: "Javascript"
+title: "Typescript"
 sortdata: 3
 ---

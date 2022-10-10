@@ -26,7 +26,7 @@
           {% capture tags %}
             {% for tag in site.tags %}
               {% if category.name == tag.category %}
-                {% assign tagLink = tag.name | prepend: '/tags/' | append: '/' %}
+                {% assign tagLink = tag.name | prepend: '/tags/' %}
                   ::<li
                     data-sort="{{ tag.sortdata | prepend: '000' | slice: -4, 4 }}"
                     class="{% if page.url == tagLink or page.tags contains tag.name %} active {% endif %}"

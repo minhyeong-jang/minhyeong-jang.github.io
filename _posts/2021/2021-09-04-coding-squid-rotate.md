@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [develop, algorithm]
+tags: [develop, study]
 image: /covers/algorithm.jpg
 title: 코딩테스트 - 2차원 배열 회전
 author: minhyeong.jang

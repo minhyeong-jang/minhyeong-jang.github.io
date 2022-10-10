@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [develop, nomadcoders]
+tags: [develop, study]
 image: /covers/nomadcoders.png
 title: Typescript로 Blockchain 만들기
 author: minhyeong.jang

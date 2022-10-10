@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [develop, algorithm]
+tags: [develop, study]
 image: /covers/programmers.jpg
 title: programmers - 피보나치 수열 값 구하기
 author: minhyeong.jang

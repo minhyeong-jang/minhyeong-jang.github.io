@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [develop, algorithm]
+tags: [develop, study]
 image: /covers/programmers.jpg
 title: programmers - 좌표 명령어 게임
 author: minhyeong.jang

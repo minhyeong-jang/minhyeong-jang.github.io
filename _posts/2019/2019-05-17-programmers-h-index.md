@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [develop, algorithm]
+tags: [develop, study]
 image: /covers/programmers.jpg
 title: programmers - H-index 값 구하기
 author: minhyeong.jang
