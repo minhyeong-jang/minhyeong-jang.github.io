@@ -5,7 +5,7 @@ description: 더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://minhyeong-jang.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 image: /covers/doriri.jpeg
-
+timezone: Asia/Seoul
 facebook:
   app_id: 481301675773678
 
