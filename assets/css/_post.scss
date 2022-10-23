@@ -119,13 +119,21 @@
 #post-content {
   background: white;
   border: 1px solid rgb(209, 202, 216);
-  padding: 50px 20px;
+  padding: 24px 20px 48px;
   margin-top: 20px;
   border-radius: $border-radius;
 
   .reponsive-content {
     max-width: 900px;
     margin: 0 auto;
+
+    .post-info {
+      margin-bottom: 20px;
+
+      .post-date {
+        margin: 0 0 8px;
+      }
+    }
 
     ul {
       margin: 5px 0px 0px 30px;
@@ -434,10 +442,6 @@
   }
 
   .post-info {
-    .post-date {
-      display: none !important;
-    }
-
     .post-excerpt {
       margin-top: 15px !important;
       padding-top: 15px !important;
