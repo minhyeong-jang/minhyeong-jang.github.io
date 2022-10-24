@@ -93,13 +93,20 @@ body {
     li {
       position: relative;
 
-      a { 
+      a {
         font-size: 13px;
       }
       &:first-child {
         margin-top: 6px;
       }
     }
+  }
+
+  .hits {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .contact {
@@ -144,14 +151,14 @@ body {
   }
 }
 @media (max-width: $break-tablet) {
-  html, body {
+  html,
+  body {
     font-size: 13px !important;
   }
   #content-wrap {
     padding: 10px;
   }
 }
-
 
 #logo {
   position: absolute;
