@@ -19,13 +19,13 @@ date: 2019-11-26 19:44
 
 **Frontend**
 
-- `React`, `Nextjs`, `React Query`, Redux Saga, AngularJS, jQuery
+- `React`, `Next.js`, `React Query`, Redux Saga, AngularJS, jQuery
 - `Styled Components`, `Emotion`, SCSS
 - `Antd`, Bootstrap
 
 **Backend**
 
-- `Nodejs`, PHP, Laravel
+- `Node.js`, PHP, Laravel
 - `MySQL`, MsSQL, Dynamodb
 
 **Etc**
@@ -38,15 +38,12 @@ date: 2019-11-26 19:44
 **무신사(스타일쉐어)** - Frontend Developer (2020.4 ~ current)
 
 - `React` : 무신사 파트너 어드민 리버스 엔지니어링
-- `React / Nextjs` : 스타일쉐어 Web / Mobile / Webview 개발
-  - 서비스 메인 페이지 개편
-  - 내부 어드민 / 입점사 어드민 신규 개발 및 개선
-  - 정산 TF, 통계 페이지 신규 개발
-  - 선물 요청하기 신규 개발
-  - 검색 웹 신규 개발
-  - 상품/스타일/유저 검색 개편, 사용성 강화
-  - 프로젝트 구조 개편
-  - 아티클 뷰어 개편
+- `React / Next.js` : 스타일쉐어 Web / Mobile / Webview
+  - 웹뷰 서비스 홈 개발
+  - 검색, 상품, 주문서, 선물 요청하기 등 커머스 B2C 개발
+  - 사내 / 파트너 어드민 B2B 개발
+  - 정산, 통계, 스타일쉐어 아카이브 TF 참여
+  - 커머스 신사업 MVP 개발
 
 **두나무** - Web Developer (2019.7 ~ 2020.04)
 
@@ -62,7 +59,7 @@ date: 2019-11-26 19:44
 - `PHP(Laravel)` : B2B 식자재 관리 솔루션 개발
 - `AngularJS, Node.js` : 쇼핑몰 관리 솔루션 Frontend / Backend 개발
 - `Node.js, Puppeteer` : 쇼핑몰 관리 자동화 엔진 개발
-- `React, Redux, AWS` : 티켓 관리 솔루션 Frontend 개발
+- `React, Redux` : 티켓 관리 솔루션 Frontend 개발
 
 **후퍼소프트** - Web Developer (2016.8 ~ 2017.6)
 
@@ -89,8 +86,7 @@ date: 2019-11-26 19:44
 **Doriri Blog** (2019.11 ~ current)
 
 1. **개요**  
-   처음에는 Tistory에서 블로그를 운영하였습니다.  
-   하지만 커스텀을 진행할 때 원하는 방향으로의 어려움이 있었고, 블로그를 직접 구축하면서 공부도 같이 하고자 다른 플랫폼으로 이동하기로 마음먹었습니다.
+   처음에는 Tistory에서 블로그를 운영하였습니다. 하지만 커스텀을 진행할 때 원하는 방향으로의 어려움이 있었고, 블로그를 직접 구축하면서 공부도 같이 하고자 다른 플랫폼으로 이동하기로 마음먹었습니다.
 
 2. **무슨 언어로?**  
    Wordpress, Jekyll, Gatsby, React / NextJs 등으로 제작해보았으며, 결과는 서버 비용이 없는 `Github Page`와 `Jekyll`을 선택했습니다.
@@ -103,5 +99,5 @@ date: 2019-11-26 19:44
 
 4. **후기**  
    시작이 반이라고 블로그를 운영하는 것 보다 구축하는게 가장 어렵습니다.
-   또한 개발자들은 저처럼 직접 구축과 커스텀 등 여러 선택지 사이에서 시작을 못하는 경우가 많습니다.
-   그런 분들을 위해 조만간 템플릿 형태로 공유 드리는게 이 프로젝트의 최종 목적지가 될 것 같습니다.
+   또한 개발자들은 저처럼 직접 구축과 커스텀 등 여러 선택지 사이에서 시작을 못하는 경우가 많습니다.  
+   그런 분들을 위해 템플릿 형태로 공유 드리는게 이 프로젝트의 최종 목적지가 될 것 같습니다.

@@ -8,8 +8,6 @@ date: 2022-05-08 21:00
 published: true
 ---
 
-## 개요
-
 Puppeteer를 사용하는 nodejs를 linux 서버에 띄었는데 작업하니 다음과 같은 오류가 났다.
 
 ```bash

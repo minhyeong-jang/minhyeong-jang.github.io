@@ -36,7 +36,7 @@ layout: default
       src="{{ site.image_url }}/design/icon-frontend.png"
     />
     <h3>Frontend</h3>
-    <p><span class="highlight">React</span>, <span class="highlight">Nextjs</span>, Redux</p>
+    <p><span class="highlight">React</span>, <span class="highlight">Next.js</span>, Redux</p>
     <p><span class="highlight">Styled Components</span>, <span class="highlight">Emotion</span>, SCSS</p>
     <p><span class="highlight">Antd</span>, Bootstrap</p>
     <p>Jquery, AngularJs</p>
@@ -47,7 +47,7 @@ layout: default
       src="{{ site.image_url }}/design/icon-backend.png"
     />
     <h3>Back-end</h3>
-    <p class="highlight">NodeJs</p>
+    <p class="highlight">Node.js</p>
     <p>PHP, Laravel</p>
   </li>
   <li>
@@ -65,8 +65,13 @@ layout: default
 
 <div id="post-links">
   <ul>
-    {% assign count = 0 %} {% for post in site.posts %} {% if count == 3 %} {%
-    break %} {% endif %} {% include item.html %} {% assign count = count | plus:
-    1 %} {% endfor %}
+    {% assign count = 0 %}
+    {% for post in site.posts %}
+      {% if count == 3 %}
+        {% break %}
+      {% endif %}
+      {% include item.html %}
+      {% assign count = count | plus: 1 %}
+    {% endfor %}
   </ul>
 </div>
