@@ -1,3 +1,3 @@
-function toggleMenu(){
-  $('#header').toggleClass("menu-open");
+function toggleMenu() {
+  document.getElementById("header").classList.toggle("menu-open");
 }

@@ -21,8 +21,8 @@ gh-pages 모듈을 설치 후 package.json에서 아래 내용을 추가해주�
 
 ```json
 {
-  "homepage": ".",
   ...
+  "homepage": "/${path}",
   "scripts": {
     ...
     "predeploy": "yarn build",
@@ -42,7 +42,7 @@ git branch로 조회해도 없는 gh-pages가 이미 존재한다는 오류는 �
 
 이럴 때는 당황한 뒤에 gh-pages 브랜치를 직접 생성한 후 push 해보자.
 
-```
+```bash
 git checkout -b gh-pages
 git push --set-upstream origin gh-pages
 yarn run deploy
