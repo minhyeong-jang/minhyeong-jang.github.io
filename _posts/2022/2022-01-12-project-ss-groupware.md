@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 tags: [project]
 image: /projects/ss-groupware/4.png
 title: 그룹웨어 간편화 웹페이지

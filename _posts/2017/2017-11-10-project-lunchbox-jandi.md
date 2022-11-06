@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 tags: [project]
 image: /projects/lunchbox/1.png
 title: 점심 메뉴 사이트

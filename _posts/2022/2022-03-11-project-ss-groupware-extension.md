@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 tags: [project]
 image: /projects/ss-groupware-extension/banner.png
 title: 그룹웨어 로그인 플러그인
