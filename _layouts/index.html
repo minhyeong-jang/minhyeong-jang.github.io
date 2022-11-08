@@ -70,8 +70,10 @@ layout: default
       {% if count == 3 %}
         {% break %}
       {% endif %}
-      {% include item.html %}
-      {% assign count = count | plus: 1 %}
+      {% if post.tags contains "project" %}
+        {% include item.html %}
+        {% assign count = count | plus: 1 %}
+      {% endif %}
     {% endfor %}
   </ul>
 </div>
