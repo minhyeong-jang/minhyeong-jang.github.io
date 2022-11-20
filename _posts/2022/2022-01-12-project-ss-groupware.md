@@ -49,7 +49,10 @@ published: true
 
 ## 결과
 
+[ss-groupware.com](https://ss-groupware.vercel.app)
+
 스타일쉐어 멤버 뿐 아니라 무신사, 29CM 직원도 사용 가능한 구조여서 `약 200명 이상`의 직원이 사용했고 현재 회사와 논의 후 서비스를 종료한 상태이다.
+
 
 <img src="{{ site.image_url }}/projects/ss-groupware/6.png" alt="모바일화면" style="width: 50%;" />
 <img-info>그룹웨어 모바일 페이지</img-info>
