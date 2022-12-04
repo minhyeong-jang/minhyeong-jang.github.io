@@ -253,7 +253,7 @@ server {
 }
 ```
 
-## 참고
+## 참고자료
 
 - 전체 설정 [https://velog.io/@turret1234/AWS-Lightsail-nginx-React-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-2](https://velog.io/@turret1234/AWS-Lightsail-nginx-React-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-2)
 - DNS 설정 [https://ddochea.tistory.com/119](https://ddochea.tistory.com/119)
