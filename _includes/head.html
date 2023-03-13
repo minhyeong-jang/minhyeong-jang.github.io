@@ -1,6 +1,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
 
 {% assign site_url = site.url | append: site.baseurl %}
 {% if page.layout == 'post' or page.layout == 'about' %}
@@ -67,12 +68,12 @@
 crossorigin="anonymous"></script>
 {% if site.google_analytics_id %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', '{{ site.google_analytics_id }}');
-</script>
+</script> -->
 {% endif %}
