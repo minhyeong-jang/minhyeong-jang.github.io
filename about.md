@@ -35,9 +35,13 @@ date: 2019-11-26 19:44
 
 ## Technical Experience
 
-**무신사(스타일쉐어)** - Frontend Developer (2020.4 ~ current)
+**커머스 업체** - Frontend Developer (current)
 
-- `React` : 무신사 파트너 어드민 리버스 엔지니어링
+- `React` : 파트너 어드민 리버스 엔지니어링
+- `React` : Recharts 기반 통계 페이지
+
+**스타일쉐어** - Frontend Developer (2020.4 ~ 2022.8)
+
 - `React / Next.js` : 스타일쉐어 Web / Mobile / Webview
   - 웹뷰 서비스 홈 개발
   - 검색, 상품, 주문서, 선물 요청하기 등 커머스 B2C 개발
