@@ -32,13 +32,26 @@ date: 2019-11-26 19:44
 
 - `Typescript`, Ruby on Rails, Python
 - `ESLint`, `Prettier`
+- `Datadog`, Sentry
+- `Amplitude`, GA
 
 ## Technical Experience
 
-**커머스 업체** - Frontend Developer (current)
+**무신사** - Frontend Developer (2022.9 ~ current)
 
-- `React` : 파트너 어드민 리버스 엔지니어링
-- `React` : Recharts 기반 통계 페이지
+- `React` : 무신사 파트너 2.0
+  - 프로젝트 설계 및 CI/CD 구성
+  - 로그인 인증 프로세스 연동
+  - GA 분석, Amplitude 이벤트 설계, 오류 인지 개선, Feature Flag 도입
+  - 품절, 재입고, 출고지연, 통계차트, 모바일 리포트 개발
+- `React Native, React` : 파트너 앱 유입 분석 및 UI/UX 개선
+- `Chrome Extension` : CS 운영효율 확장프로그램 개발
+- `Next.js` : 29CM 선물하기 개편
+- `React` : M-WMS, M-OMS 물류 서비스
+  - 물류센터 글로벌 배송 패킹 개발 및 이벤트 설계
+  - 물류센터 반품 조회 및 입고문서 개발
+  - OMS 2.0 이관 및 CI/CD 구성, 페이지 이관
+- `Electron` : 오프라인매장 POS 관리 시스템 설계 및 개발
 
 **스타일쉐어** - Frontend Developer (2020.4 ~ 2022.8)
 
