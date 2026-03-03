@@ -7,7 +7,7 @@
   margin: 10px;
   border-radius: $border-radius;
   overflow: hidden;
-  background: white;
+  background: var(--color-card-bg);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 
   .post-image {
@@ -80,8 +80,8 @@
  * Post Link
  */
 #post-links {
-  background: white;
-  border: 1px solid rgb(209, 202, 216);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
   padding: 30px 20px;
   margin: 20px 0;
   border-radius: $border-radius;
@@ -120,8 +120,8 @@
  * Post Content
  */
 #post-content {
-  background: white;
-  border: 1px solid rgb(209, 202, 216);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
   padding: 24px 20px 48px;
   margin-top: 20px;
   border-radius: $border-radius;
@@ -135,6 +135,12 @@
 
       .post-date {
         margin: 0 0 8px;
+      }
+
+      .reading-time {
+        color: #999;
+        font-weight: normal;
+        font-size: 13px;
       }
     }
 
@@ -203,7 +209,7 @@
       font-size: 15px;
       line-height: 1.7;
       margin: 12px 0;
-      color: #131518;
+      color: var(--color-text);
       letter-spacing: -0.004em;
       word-break: keep-all;
       overflow-wrap: break-word;
@@ -211,7 +217,7 @@
 
     li {
       font-size: 15px;
-      color: #131518;
+      color: var(--color-text);
     }
 
     block {
@@ -278,8 +284,8 @@
   display: none;
 }
 #disqus-wrap {
-  background: white;
-  border: 1px solid rgb(209, 202, 216);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
   padding: 30px 20px 5px;
   border-radius: $border-radius;
   margin: 20px 0 0;
@@ -301,7 +307,7 @@
   background-position: 50%;
   background-repeat: no-repeat;
   border-radius: $border-radius;
-  border: 1px solid #d1cad8;
+  border: 1px solid var(--color-border);
 
   .mouse-scroll {
     position: absolute;
@@ -457,8 +463,8 @@
 
 .adsense-wrap {
   text-align: center;
-  background: white;
-  border: 1px solid #d1cad8;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
   padding: 20px 20px;
   margin: 20px 0;
   border-radius: 5px;

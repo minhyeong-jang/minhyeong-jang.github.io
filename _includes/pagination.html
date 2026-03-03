@@ -1,6 +1,4 @@
-<ul id="pagination" role="navigation">
-	{{ page.permalink }}
-	{{ page.paginate_path | replace: ':num', p }}
+<ul id="pagination" role="navigation" aria-label="Pagination">
 	{% if paginator %}
 		{% if paginator.total_pages <= 5 %}
 			{% assign first = 1 %}

@@ -14,3 +14,27 @@ $border-radius: 5px;
 
 $space: 20px;
 $space-mobile: 12px;
+
+:root {
+  --color-bg: rgb(251, 251, 252);
+  --color-text: #2f2936;
+  --color-card-bg: white;
+  --color-border: rgb(209, 202, 216);
+  --color-navbar-bg: rgba(37, 37, 37, 1);
+  --color-point: #5e22e8;
+  --color-link: #c84b3a;
+  --color-code-bg: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a2e;
+    --color-text: #e0e0e0;
+    --color-card-bg: #16213e;
+    --color-border: #2a2a4a;
+    --color-navbar-bg: #0f0f23;
+    --color-point: #9d6aff;
+    --color-link: #e07a6c;
+    --color-code-bg: #1e1e3a;
+  }
+}

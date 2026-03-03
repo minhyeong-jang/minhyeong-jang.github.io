@@ -1,0 +1,36 @@
+<div id="post-links">
+  <div class="reponsive-content">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      {% if page.next.title == null %}
+        {% assign post = page.previous %}
+        {% include item.html %}
+        {% assign post = page.previous.previous %}
+        {% include item.html %}
+        {% assign post = page.previous.previous.previous %}
+        {% include item.html %}
+      {% elsif page.previous.title == null %}
+        {% assign post = page.next %}
+        {% include item.html %}
+        {% assign post = page.next.next %}
+        {% include item.html %}
+        {% assign post = page.next.next.next %}
+        {% include item.html %}
+      {% elsif page.next.next.title == null %}
+        {% assign post = page.next %}
+        {% include item.html %}
+        {% assign post = page.previous %}
+        {% include item.html %}
+        {% assign post = page.previous.previous %}
+        {% include item.html %}
+      {% else %}
+        {% assign post = page.next.next %}
+        {% include item.html %}
+        {% assign post = page.next %}
+        {% include item.html %}
+        {% assign post = page.previous %}
+        {% include item.html %}
+      {% endif %}
+    </ul>
+  </div>
+</div>

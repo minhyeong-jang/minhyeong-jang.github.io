@@ -20,6 +20,7 @@ github: https://github.com/minhyeong-jang
 
 # Contact form
 email: public.doriri@gmail.com
+# GA4로 마이그레이션 필요: https://analytics.google.com 에서 GA4 속성 생성 후 G-XXXXXXXXXX 형식으로 교체
 google_analytics_id: UA-154757538-1
 
 # Comments
@@ -63,7 +64,7 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  # - jekyll-sitemap
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock

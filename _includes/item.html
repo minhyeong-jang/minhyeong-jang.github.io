@@ -4,11 +4,11 @@
       {% if post.image %}
         style="background-image:url({{ site.image_url }}{{ post.image }})"
       {% endif %}
-      ></div>
+      role="img" aria-label="{{ post.title }}"></div>
     <div class="post-info">
       <div class="post-header">
         <p class="author-name">{{ post.author }}</p>
-        <p class="post-date">{{ post.date | date: '%Y년 %m월 %d일' }}</p>
+        <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y년 %m월 %d일' }}</time>
       </div>
       <h3 class="post-title">{{ post.title }}</h3>
       <p class="post-excerpt">{{ post.content | strip_html | truncatewords: 150 }}</p>

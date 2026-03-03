@@ -9,8 +9,8 @@ $border-color: rgb(209, 202, 216);
 
 /* main */
 body {
-  color: #2f2936;
-  background-color: rgb(251, 251, 252);
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 .body-wrap {
@@ -24,7 +24,7 @@ body {
 #navbar {
   position: relative;
   flex: 0 0 200px;
-  background: rgba(37, 37, 37, 1);
+  background: var(--color-navbar-bg);
 
   .fixed {
     position: fixed;
@@ -198,9 +198,21 @@ body {
  */
 #pagination {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 
   li {
-    padding: 5px;
-    background: red;
+    display: inline-block;
+    padding: 5px 10px;
+
+    &.active {
+      font-weight: bold;
+      color: $point-color;
+    }
+
+    a {
+      color: inherit;
+    }
   }
 }

@@ -1,10 +1,12 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
 <meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
 
 {% assign site_url = site.url | append: site.baseurl %}
-{% if page.layout == 'post' or page.layout == 'about' %}
+{% if page.layout == 'post' or page.layout == 'project' or page.layout == 'about' %}
 {% assign meta_title = page.title %}
 {% assign meta_author = page.author | default: site.author %}
 {% assign meta_description = page.excerpt | strip_html | truncatewords: 75 %}
@@ -37,6 +39,8 @@
 <meta property="og:image" content="{{ meta_image }}"/>
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="{{ meta_url }}" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="{{ meta_title }}"/>
 <meta name="twitter:description" content="{{ meta_description }}"/>
@@ -56,17 +60,40 @@
 {% if page.author %}
 <meta property="article:author" content="{{ site_url }}/authors/{{ page.author }}"/>
 {% endif %}
-<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
-
 <link rel="icon" type="image/x-icon" href="{{ site_url }}{{ site.image_url }}/design/favicon.ico">
 
 <link rel="stylesheet" href="{{ site_url }}{{ site.asset_url }}/css/index.css">
 <link rel="stylesheet" href="{{ site_url }}{{ site.asset_url }}/css/prism.css">
 
-<script src="{{ stie.url }}{{ site.baseurl }}{{ site.asset_url }}/js/main.js"></script>
-<script src="{{ stie.url }}{{ site.baseurl }}{{ site.asset_url }}/js/prism.js"></script>
+<script src="{{ site_url }}{{ site.asset_url }}/js/main.js"></script>
+<script src="{{ site_url }}{{ site.asset_url }}/js/prism.js" defer></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
 crossorigin="anonymous"></script>
+{% if page.layout == 'post' or page.layout == 'project' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ meta_title | jsonify }},
+  "description": {{ meta_description | jsonify }},
+  "image": "{{ meta_image }}",
+  "author": {
+    "@type": "Person",
+    "name": {{ meta_author | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site_url }}{{ site.image_url }}/design/favicon.ico"
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "url": "{{ meta_url }}"
+}
+</script>
+{% endif %}
 {% if site.google_analytics_id %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>

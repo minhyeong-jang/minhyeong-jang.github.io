@@ -17,67 +17,19 @@ layout: default
 <div id="post-content">
   <div class="reponsive-content">
     <div class="post-info">
-      <p class="post-date red">{{ page.date | date: '%Y년 %m월 %d일' }}</p>
+      <p class="post-date red">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y년 %m월 %d일' }}</time>
+        {% assign words = content | number_of_words %}
+        {% assign mins = words | divided_by: 200 %}
+        {% if mins < 1 %}{% assign mins = 1 %}{% endif %}
+        <span class="reading-time">· {{ mins }}분 읽기</span>
+      </p>
       <h1 class="post-title">{{ page.title }}</h1>
     </div>
     <div>{{ content }}</div>
   </div>
 </div>
-<div id="post-links">
-  <div class="reponsive-content">
-    <div class="subject">이런 글은 어떠신가요?</div>
-    <ul>
-      <!-- 다음 포스트가 없는 경우 -->
-      {% if page.next.title == null %}
-
-        {% assign post = page.previous %}
-        {% include item.html %}
-      
-        {% assign post = page.previous.previous %}
-        {% include item.html %}
-      
-        {% assign post = page.previous.previous.previous %}
-        {% include item.html %}
-
-      <!-- 이전 포스트가 없는 경우 -->
-      {% elsif page.previous.title == null %}
-
-        {% assign post = page.next %}
-        {% include item.html %}
-        
-        {% assign post = page.next.next %}
-        {% include item.html %}
-  
-        {% assign post = page.next.next.next %}
-        {% include item.html %}
-
-      <!-- 다다음 포스트가 없는 경우 -->
-      {% elsif page.next.next.title == null %}
-
-        {% assign post = page.next %}
-        {% include item.html %}
-          
-        {% assign post = page.previous %}
-        {% include item.html %}
-    
-        {% assign post = page.previous.previous %}
-        {% include item.html %}
-
-      <!-- 기본 -->
-      {% else %}
-
-        {% assign post = page.next.next %}
-        {% include item.html %}
-        
-        {% assign post = page.next %}
-        {% include item.html %}
-  
-        {% assign post = page.previous %}
-        {% include item.html %}
-      {% endif %}
-    </ul>
-  </div>
-</div>
+{% include related-posts.html %}
 
 <div class="adsense-wrap">
   {% include adsense.content.html format="auto" slotId="3807925718" %}

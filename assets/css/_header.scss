@@ -54,8 +54,8 @@
 
   a {
     -webkit-tap-highlight-color: transparent;
-    background-color: #fff;
-    color: #1d1c1a;
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
     font-weight: 500;
   }
 
