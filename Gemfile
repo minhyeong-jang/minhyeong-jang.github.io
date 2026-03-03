@@ -15,6 +15,7 @@ end
 gem "jekyll", "3.9.0"
 gem "csv"
 gem "bigdecimal"
+gem "webrick"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
