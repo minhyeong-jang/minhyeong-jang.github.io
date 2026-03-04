@@ -8,72 +8,13 @@ layout: default
   style="background-image:url({{ site.image_url }}/covers/home.jpg)"
 >
   <div class="text-wrap">
-    <h3>Frontend Developer</h3>
-    <h5>사용자 중심으로 개발합니다.</h5>
+    <h3>Product Developer</h3>
+    <h5>기획부터 QA까지, 프로덕트와 함께 성장합니다.</h5>
   </div>
 </div>
 
-<div class="title">Hello World!</div>
-
-<div class="introduce-wrap">
-  <h4>안녕하세요, 프론트엔드 개발자 장민형입니다 :)</h4>
-  <p>
-    프로덕트를 개발하면서 기획부터 QA까지 함께 참여하고 문제를 해결하는 팀 문화를 선호하며,<br />
-    오너십을 가지고 문제나 개선사항을 스스로 제시하고 개선하는 분들과 함께 일하고 싶습니다.
-  </p>
-  <p style="margin: 20px 0px">
-    저에 대해 궁금하시다면
-    <a href="{{ '/about' | prepend: site.baseurl }}">About</a>, 연락이
-    필요하시면 <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>를
-    확인해주세요!
-  </p>
-</div>
-
-<ul class="language">
-  <li>
-    <img
-      alt="icon-frontend"
-      src="{{ site.image_url }}/design/icon-frontend.png"
-    />
-    <h3>Frontend</h3>
-    <p><span class="highlight">React</span>, <span class="highlight">Next.js</span>, Redux</p>
-    <p><span class="highlight">Styled Components</span>, <span class="highlight">Emotion</span>, SCSS</p>
-    <p><span class="highlight">Antd</span>, Bootstrap</p>
-    <p>Jquery, AngularJs</p>
-  </li>
-  <li>
-    <img
-      alt="icon-backend"
-      src="{{ site.image_url }}/design/icon-backend.png"
-    />
-    <h3>Back-end</h3>
-    <p class="highlight">Node.js</p>
-    <p>PHP, Laravel</p>
-  </li>
-  <li>
-    <img
-      alt="icon-server"
-      src="{{ site.image_url }}/design/icon-server.png"
-    />
-    <h3>Server & Etc</h3>
-    <p class="highlight">Typescript</p>
-    <p class="highlight">AWS, Mysql</p>
-  </li>
-</ul>
-
-<div class="title">Doriri Blog</div>
-
-<div id="post-links">
-  <ul>
-    {% assign count = 0 %}
-    {% for post in site.posts %}
-      {% if count == 3 %}
-        {% break %}
-      {% endif %}
-      {% if post.tags contains "project" %}
-        {% include item.html %}
-        {% assign count = count | plus: 1 %}
-      {% endif %}
-    {% endfor %}
-  </ul>
+<div id="post-content">
+  <div class="reponsive-content">
+    {{ content }}
+  </div>
 </div>

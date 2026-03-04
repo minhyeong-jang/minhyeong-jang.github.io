@@ -9,8 +9,8 @@ $border-color: rgb(209, 202, 216);
 
 /* main */
 body {
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: #2f2936;
+  background-color: rgb(251, 251, 252);
 }
 
 .body-wrap {
@@ -24,7 +24,7 @@ body {
 #navbar {
   position: relative;
   flex: 0 0 200px;
-  background: var(--color-navbar-bg);
+  background: rgba(37, 37, 37, 1);
 
   .fixed {
     position: fixed;
@@ -102,13 +102,6 @@ body {
     }
   }
 
-  .hits {
-    position: absolute;
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .contact {
     position: absolute;
     bottom: 0px;
@@ -117,11 +110,11 @@ body {
     width: 100%;
     padding: 15px 10px;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
 
     a {
-      flex: 0 0 25%;
       font-size: 20px;
-      text-align: center;
       padding: 10px 0;
       display: flex;
       align-items: center;

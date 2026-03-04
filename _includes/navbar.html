@@ -7,8 +7,8 @@
       </a>
     </div>
     <ul class="menu-wrap">
-      <li class="{% if page.url == '/about' %} active {% endif %}">
-        <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
+      <li class="{% if page.url == '/' or page.url == '/about' %} active {% endif %}">
+        <a href="{{ '/' | prepend: site.baseurl }}">About</a>
       </li>
       {% assign categories = "" | split: ',' %}
       {% assign categories = categories | push: site.categories[2] %}
@@ -40,26 +40,16 @@
         </ul>
       </li>
       {% endfor %}
-      <li>
-        <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>
-      </li>
     </ul>
 
-    <a class="hits" href="https://hits.seeyoufarm.com">
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fminhyeong-jang.github.io&icon=react.svg&icon_color=%23FFFFFF&count_bg=%23252525&title_bg=%23252525&icon=&icon_color=%23E7E7E7&title=React&edge_flat=false" alt="Page view counter"/>
-    </a>
-
     <div class="contact">
-      <a href="//www.facebook.com/profile.php?id=100004096860602" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <span class="icon icon-facebook2" aria-hidden="true"></span>
-      </a>
       <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <span class="icon icon-linkedin" aria-hidden="true"></span>
       </a>
       <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <span class="icon icon-github" aria-hidden="true"></span>
       </a>
-      <a href="{{ '/contact' | prepend: site.baseurl }}" aria-label="Contact">
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
         <span class="icon icon-mail3" aria-hidden="true"></span>
       </a>
     </div>

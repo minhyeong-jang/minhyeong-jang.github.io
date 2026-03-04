@@ -8,32 +8,12 @@ date: 2019-11-26 19:44
 
 # 장민형 ( Doriri )
 
-안녕하세요, 프론트엔드 개발자 장민형입니다.
+안녕하세요, 프로덕트 개발자 장민형입니다.
 
 프로덕트를 개발하면서 기획부터 QA까지 `함께 참여하고 문제를 해결하는 팀 문화`를 선호하고 있습니다.  
 오너십을 가지고 `문제나 개선사항을 스스로 제시하고 개선하는 분들`과 함께 일하고 싶습니다.
 
 회사의 성장에 보람을 느끼며 팀원들과 함께 나아가려고 합니다.
-
-## Technical Skills Summary
-
-**Frontend**
-
-- `React`, `Next.js`, `React Query`, Redux Saga, AngularJS, jQuery
-- `Styled Components`, `Emotion`, SCSS
-- `Antd`, Bootstrap
-
-**Backend**
-
-- `Node.js`, PHP, Laravel
-- `MySQL`, MsSQL, Dynamodb
-
-**Etc**
-
-- `Typescript`, Ruby on Rails, Python
-- `ESLint`, `Prettier`
-- `Datadog`, Sentry
-- `Amplitude`, GA
 
 ## Technical Experience
 

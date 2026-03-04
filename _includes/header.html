@@ -5,16 +5,13 @@
   </div>
 
   <ul class="menu">
-    <li class="{% if page.url == '/about' %} active {% endif %}">
-      <a href="{{ '/about' | prepend: site.baseurl }}">About</a>
+    <li class="{% if page.url == '/' or page.url == '/about' %} active {% endif %}">
+      <a href="{{ '/' | prepend: site.baseurl }}">About</a>
     </li>
     {% for category in site.categories %}
     <li>
       <a href="{{ site.baseurl }}/category/{{ category.name }}">{{ category.title }}</a>
     </li>
     {% endfor %}
-    <li>
-      <a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a>
-    </li>
   </ul>
 </div>
