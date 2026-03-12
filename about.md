@@ -17,7 +17,35 @@ date: 2019-11-26 19:44
 
 ## Technical Experience
 
-**무신사** - Frontend Developer (2022.9 ~ current)
+**캐노피** - Product Developer (2025.04 ~ current)
+
+- `React Native` : 모바일 앱 신규 개발 및 iOS/Android 출시
+  - WebView-Native 브릿지 아키텍처 설계 (인증 토큰 주입, 페이지 전환, 로그아웃)
+  - 소셜 로그인 4종 Native SDK 연동 (Google, Kakao, Naver, Apple)
+  - FCM 푸시 알림, 디바이스 토큰 관리, 앱 캐시 전략
+  - OneSignal 푸시 알림 전체 연동 (알림 동의 화면, 유저 태그 기반 세그먼트)
+- `Next.js` : B2B/D2C 서비스, 마케팅 웹사이트, 파트너 포털, 어드민 총 5개 앱 설계 및 개발
+  - 마케팅 웹사이트 전체 구현 (섹션 애니메이션, 블로그 ISR/SSG, i18n 다국어)
+  - 파트너 포털 레이아웃, 약관동의, 계약서 PDF 다운로드
+  - 어드민 대시보드 (shadcn/ui 기반, 임금채권양도통지서 PDF/ZIP 생성)
+- `D2C` : 개인고객 서비스 전체 플로우 설계 및 론칭
+  - 온보딩 → 건강보험 비동기 2단계 인증 → CMS 자동이체 신청 → 인출 → 상환
+  - B2B/D2C 라우트 그룹 분리 및 getUserType SSOT 미들웨어 설계 (98개 라우팅 테스트)
+  - Playwright 기반 페이지 스크린샷 자동화 시스템 구축
+  - Cloudflare R2 기반 이미지 업로드, 연체 넛지 구간별 UX (1-6/7-14/15+일)
+- `B2B` : 멀티 테넌트 아키텍처 설계
+  - 업체코드 URL 기반 다중 고객사 동시 운영, HQ(본부) 접근 제어
+  - 업체별 워딩(tenant-wording) 관리 시스템
+  - 대교 파일럿 — SRP/SOC 원칙 온보딩 시스템, 사번/이메일 인증, 윙크 복지몰 WebView
+  - 임금채권양도통지서 — Notion API + React PDF + ZIP 일괄 다운로드
+- `Design System` : UI 패키지 구축 및 Storybook 문서화
+  - Tailwind + shadcn/ui + Radix 기반 컴포넌트 (Typography, Card, Button, BottomSheet)
+  - DDD 패턴 포인트 시스템 설계 (정책 API, 마일리지 잔액 역티어 지급)
+  - 홈 슬롯 시스템 — framer-motion 전환 애니메이션, SSR hydration 불일치 해결
+- `AI` : 신분증 OCR 시스템 (Tesseract.js → Claude Vision 서버 전환), GEO 최적화 (노션 FAQ 자동 생성 + JSON-LD)
+- `Data` : Amplitude·AppsFlyer 도입, 이벤트 택소노미 설계, 이벤트 스펙 자동 생성 시스템, PostHog 세션 레코딩
+
+**무신사** - Frontend Developer (2022.9 ~ 2025.03)
 
 - `React` : 무신사 파트너 2.0
   - 프로젝트 설계 및 CI/CD 구성

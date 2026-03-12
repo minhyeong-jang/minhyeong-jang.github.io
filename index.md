@@ -60,8 +60,14 @@ author: minhyeong.jang
 </div>
 <div class="flex-1 min-w-0">
 <ul class="space-y-2">
-<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">React</span>시드 스타트업 초기 멤버로 프로덕트 설계 및 개발</li>
-<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">Data</span>데이터 수집 및 문제 분석, 해결 방안 제시</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">React Native</span>모바일 앱 신규 개발 및 iOS/Android 출시, WebView-Native 브릿지 설계, 소셜 로그인 4종 SDK 연동</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">Next.js</span>B2B/D2C 서비스, 마케팅 웹사이트, 파트너 포털, 어드민 총 5개 앱 설계 및 개발</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">D2C</span>개인고객 서비스 전체 플로우 설계 및 론칭 (온보딩 → 건강보험 인증 → CMS 자동이체 → 인출 → 상환)</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">B2B</span>멀티 테넌트 아키텍처 설계, 대교 파일럿 프로젝트 온보딩/복지몰/임금채권 시스템 리드</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">Design System</span>UI 패키지 구축 (Typography, Card, BottomSheet) 및 Storybook 문서화, 홈 슬롯 시스템</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">AI</span>신분증 OCR 시스템 개발 (Claude Vision 서버 처리), GEO 최적화 (노션 FAQ 자동 생성 + JSON-LD)</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">Data</span>Amplitude·AppsFlyer 도입, 이벤트 택소노미 설계, 이벤트 스펙 자동 생성 시스템 구축</li>
+<li class="bullet text-base leading-7 text-gray-600"><span class="inline-block text-sm font-semibold text-point bg-point/10 px-2 py-0.5 rounded mr-1.5 align-baseline">Lead</span>시드 스타트업 초기 멤버로 프로덕트 설계부터 100+ 릴리즈 배포까지 전 과정 주도</li>
 </ul>
 </div>
 </div>
