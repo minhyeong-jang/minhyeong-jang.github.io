@@ -462,8 +462,10 @@ button { font-family: inherit; }
 }
 .h-anchor { color: var(--ink-4); text-decoration: none; font-family: var(--font-mono); font-weight: 400; margin-right: 4px; }
 .h-anchor:hover { color: var(--accent-ink); }
-.post-ul { margin: 0 0 22px; padding-left: 1.2em; }
-.post-ul li { margin: 6px 0; }
+.post-ul, .post-body ul, .proj-body ul { margin: 0 0 22px; padding-left: 1.2em; list-style: disc; }
+.post-ul li, .post-body ul li, .proj-body ul li { margin: 6px 0; }
+.post-body ol, .proj-body ol { margin: 0 0 22px; padding-left: 1.2em; }
+.post-body ol li, .proj-body ol li { margin: 6px 0; }
 .code {
   margin: 0 0 24px; padding: 0;
   background: var(--bg-3); border: 1px solid var(--rule); border-radius: 8px;

@@ -49,9 +49,12 @@ if (!isProject) {
   nextPost = allPosts[currentIdx - 1] || null;
   readTime = Math.max(2, Math.round(entry.body.length / 1000));
 }
+
+const postDescription = entry.body?.slice(0, 160).replace(/[#*\n\r]/g, '').trim() + '...';
+const ogImage = entry.data.image || '/covers/doriri.jpeg';
 ---
 {isProject ? (
-<BaseLayout title={entry.data.title}>
+<BaseLayout title={entry.data.title} description={postDescription} ogImage={ogImage}>
   <main class="page page-project">
     <article class="proj">
       <a class="post-back" href="/#projects">
@@ -86,7 +89,7 @@ if (!isProject) {
   </main>
 </BaseLayout>
 ) : (
-<BaseLayout title={entry.data.title}>
+<BaseLayout title={entry.data.title} description={postDescription} ogType="article" ogImage={ogImage} article={{ publishedTime: entry.data.date.toISOString(), tags: entry.data.tags }}>
   <main class="page page-post">
     <ReadingProgress client:idle />
     <article class="post">
