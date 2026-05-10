@@ -465,6 +465,28 @@ button { font-family: inherit; }
 .post-ul li, .post-body ul li, .proj-body ul li { margin: 6px 0; }
 .post-body ol, .proj-body ol { margin: 0 0 22px; padding-left: 1.2em; }
 .post-body ol li, .proj-body ol li { margin: 6px 0; }
+
+/* tables */
+.post-body table, .proj-body table {
+  width: 100%; margin: 0 0 24px; border-collapse: collapse;
+  font-size: 14.5px; line-height: 1.6;
+}
+.post-body thead, .proj-body thead {
+  border-bottom: 2px solid var(--rule-strong);
+}
+.post-body th, .proj-body th {
+  padding: 10px 14px; text-align: left;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em;
+}
+.post-body td, .proj-body td {
+  padding: 10px 14px; border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+}
+.post-body tbody tr:hover, .proj-body tbody tr:hover {
+  background: var(--bg-2);
+}
+
 .code {
   margin: 0 0 24px; padding: 0;
   background: var(--bg-3); border: 1px solid var(--rule); border-radius: 8px;
