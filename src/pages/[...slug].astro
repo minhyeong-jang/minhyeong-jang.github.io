@@ -67,7 +67,7 @@ if (!isProject) {
         <div class="proj-shot">
           <div class="proj-shot-bar">
             <span class="proj-shot-dot"></span><span class="proj-shot-dot"></span><span class="proj-shot-dot"></span>
-            <span class="proj-shot-url">{entry.id}.minhyeong.dev</span>
+            <span class="proj-shot-url">{entry.id.replace('project-', '')}.doriri.dev</span>
           </div>
           <div class="proj-shot-canvas">
             <img src={entry.data.image} alt={entry.data.title} style="width:100%;height:auto;display:block;" />
