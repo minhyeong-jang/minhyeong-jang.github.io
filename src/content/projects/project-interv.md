@@ -16,17 +16,17 @@ published: true
 
 ## 주요 화면
 
-![메인 — 우주정거장과 행성 탐험](/projects/interv/main.png)
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0 0 24px;">
+  <img src="/projects/interv/main.png" alt="메인 — 우주정거장과 행성 탐험" style="width: 100%; border-radius: 8px;" />
+  <img src="/projects/interv/write.png" alt="행성 만들기 — 감정 해시태그 선택" style="width: 100%; border-radius: 8px;" />
+  <img src="/projects/interv/detail.png" alt="행성 상세 — 감정 해시태그와 공감 이야기" style="width: 100%; border-radius: 8px;" />
+  <img src="/projects/interv/shared.png" alt="행성 공유 — SNS 공유와 이야기 복사" style="width: 100%; border-radius: 8px;" />
+</div>
 
-메인 화면에서는 우주정거장과 행성들이 보인다. "행성 탐험"을 누르면 다른 사람들이 띄운 행성들을 둘러볼 수 있고, 우측 하단의 + 버튼으로 나만의 행성을 만들 수 있다.
-
-![행성 상세 — 감정 해시태그와 공감 이야기](/projects/interv/detail.png)
-
-각 행성을 클릭하면 작성자의 이야기와 감정 해시태그(`#내가뭐하고있는지모르겠어`, `#잘먹고잘자자` 등)가 보인다. 하단에는 공감 이야기를 남길 수 있는 댓글 영역이 있다.
-
-![행성 공유 — SNS 공유와 이야기 복사](/projects/interv/shared.png)
-
-만든 행성은 트위터, 페이스북, 카카오톡, 링크 복사로 공유할 수 있다. 각 행성은 감정에 따라 색상과 텍스처가 다르게 생성된다.
+- **메인**: 우주정거장과 행성들이 보이고, "행성 탐험"으로 다른 사람의 행성을 둘러볼 수 있다
+- **행성 만들기**: 3단계 스텝으로 감정 해시태그를 선택하고 이야기를 작성하면 나만의 행성이 생성된다
+- **행성 상세**: 작성자의 이야기와 감정 해시태그, 공감 이야기(댓글)를 볼 수 있다
+- **공유**: 트위터, 페이스북, 카카오톡, 링크 복사로 내 행성을 공유. 감정에 따라 행성의 색상과 텍스처가 다르게 생성된다
 
 ## 작업 범위
 
