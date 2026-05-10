@@ -1,0 +1,24 @@
+---
+interface Props {
+  tags: [string, number][];
+  activeTag: string | null;
+  totalCount: number;
+}
+const { tags, activeTag, totalCount } = Astro.props;
+---
+<div class="blog-tags">
+  <a
+    class={"chip" + (activeTag === null ? " is-on" : "")}
+    href="/posts"
+  >
+    <span class="chip-mark">·</span> all <span class="chip-count">{totalCount}</span>
+  </a>
+  {tags.map(([name, count]) => (
+    <a
+      class={"chip" + (activeTag === name ? " is-on" : "")}
+      href={`/posts/tag/${name}`}
+    >
+      # {name} <span class="chip-count">{count}</span>
+    </a>
+  ))}
+</div>

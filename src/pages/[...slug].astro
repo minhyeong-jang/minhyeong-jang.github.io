@@ -1,0 +1,125 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TableOfContents from '../components/post/TableOfContents.tsx';
+import ReadingProgress from '../components/post/ReadingProgress.tsx';
+import PostNav from '../components/post/PostNav.astro';
+import Tag from '../components/Tag.astro';
+import { getSortedPosts, getPostUrl } from '../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => data.published !== false);
+  const projects = await getCollection('projects', ({ data }) => data.published !== false);
+
+  const postPaths = posts.map(post => {
+    const d = post.data.date;
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const slug = `${y}/${m}/${day}/${post.id}`;
+    return { params: { slug }, props: { entry: post, collection: 'posts' } };
+  });
+
+  const projectPaths = projects.map(project => {
+    const d = project.data.date;
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const slug = `${y}/${m}/${day}/${project.id}`;
+    return { params: { slug }, props: { entry: project, collection: 'projects' } };
+  });
+
+  return [...postPaths, ...projectPaths];
+}
+
+const { entry, collection } = Astro.props;
+const { Content, headings } = await render(entry);
+
+const isProject = collection === 'projects';
+
+// Get prev/next posts (only for blog posts)
+let prevPost = null;
+let nextPost = null;
+let readTime = 2;
+
+if (!isProject) {
+  const allPosts = await getSortedPosts();
+  const currentIdx = allPosts.findIndex(p => p.id === entry.id);
+  prevPost = allPosts[currentIdx + 1] || null;
+  nextPost = allPosts[currentIdx - 1] || null;
+  readTime = Math.max(2, Math.round(entry.body.length / 1000));
+}
+---
+{isProject ? (
+<BaseLayout title={entry.data.title}>
+  <main class="page page-project">
+    <article class="proj">
+      <a class="post-back" href="/#projects">
+        <span class="post-back-arrow">←</span> back to portfolio
+      </a>
+
+      <header class="proj-head">
+        <div class="proj-head-mono">// projects / {entry.id}</div>
+        <h1 class="proj-h">{entry.data.title}</h1>
+      </header>
+
+      {entry.data.image && (
+        <div class="proj-shot">
+          <div class="proj-shot-bar">
+            <span class="proj-shot-dot"></span><span class="proj-shot-dot"></span><span class="proj-shot-dot"></span>
+            <span class="proj-shot-url">{entry.id.replace('project-', '')}.doriri.dev</span>
+          </div>
+          <div class="proj-shot-canvas">
+            <img src={entry.data.image} alt={entry.data.title} style="width:100%;height:auto;display:block;" />
+          </div>
+        </div>
+      )}
+
+      <div class="proj-body post-body">
+        <Content />
+      </div>
+
+      <footer class="proj-foot">
+        <a class="proj-foot-btn" href="/#projects">← back to all projects</a>
+      </footer>
+    </article>
+  </main>
+</BaseLayout>
+) : (
+<BaseLayout title={entry.data.title}>
+  <main class="page page-post">
+    <ReadingProgress client:idle />
+    <article class="post">
+      <a class="post-back" href="/posts">
+        <span class="post-back-arrow">←</span> all posts
+      </a>
+      <header class="post-head">
+        <div class="post-head-meta">
+          <time class="post-head-date">{entry.data.date.toISOString().slice(0, 10)}</time>
+          <span class="post-head-dot">·</span>
+          <span class="post-head-read">{readTime} min read</span>
+        </div>
+        <h1 class="post-h">{entry.data.title}</h1>
+        <div class="post-head-tags">
+          {entry.data.tags.map(t => <Tag label={t} />)}
+        </div>
+      </header>
+
+      <div class="post-body">
+        <Content />
+      </div>
+
+      <footer class="post-foot">
+        <div class="post-foot-meta">
+          <span class="post-foot-mono">// end of file</span>
+        </div>
+        <PostNav prevPost={prevPost} nextPost={nextPost} />
+      </footer>
+    </article>
+
+    {headings.length > 0 && (
+      <TableOfContents headings={headings} client:idle />
+    )}
+  </main>
+</BaseLayout>
+)}

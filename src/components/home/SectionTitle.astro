@@ -1,0 +1,14 @@
+---
+interface Props {
+  index: string;
+  title: string;
+  count?: number;
+}
+const { index, title, count } = Astro.props;
+---
+<div class="sect-title">
+  <span class="sect-title-mono">{index}</span>
+  <h2 class="sect-title-h">{title}</h2>
+  {count != null && <span class="sect-title-count">[{count}]</span>}
+  <span class="sect-title-rule"></span>
+</div>

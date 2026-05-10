@@ -1,0 +1,35 @@
+---
+import ThemeToggle from './ThemeToggle.tsx';
+
+const pathname = Astro.url.pathname;
+const isBlog = pathname.startsWith('/posts') || /^\/\d{4}\//.test(pathname);
+const isProjects = pathname.startsWith('/projects');
+const isHome = pathname === '/';
+
+const items = [
+  { id: 'home', label: 'Home', path: '~/', href: '/' },
+  { id: 'projects', label: 'Projects', path: '~/projects', href: '/projects' },
+  { id: 'blog', label: 'Blog', path: '~/posts', href: '/posts' },
+];
+---
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <span class="nav-brand-mark">$</span>
+      <span class="nav-brand-name">doriri.dev</span>
+      <span class="nav-brand-cursor"></span>
+    </a>
+    <nav class="nav-items">
+      {items.map(it => (
+        <a
+          class={`nav-item${(it.id === 'home' && isHome) || (it.id === 'blog' && isBlog) || (it.id === 'projects' && isProjects) ? ' is-current' : ''}`}
+          href={it.href}
+        >
+          <span class="nav-item-mono">{it.path}</span>
+          <span class="nav-item-label">{it.label}</span>
+        </a>
+      ))}
+      <ThemeToggle client:idle />
+    </nav>
+  </div>
+</header>

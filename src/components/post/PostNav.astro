@@ -1,0 +1,22 @@
+---
+import { getPostUrl } from '../../lib/posts';
+interface Props {
+  prevPost: any | null;
+  nextPost: any | null;
+}
+const { prevPost, nextPost } = Astro.props;
+---
+<nav class="post-nav">
+  {prevPost ? (
+    <a class="post-nav-btn post-nav-prev" href={getPostUrl(prevPost)}>
+      <span class="post-nav-mono">← prev</span>
+      <span class="post-nav-title">{prevPost.data.title}</span>
+    </a>
+  ) : <span class="post-nav-empty"></span>}
+  {nextPost ? (
+    <a class="post-nav-btn post-nav-next" href={getPostUrl(nextPost)}>
+      <span class="post-nav-mono">next →</span>
+      <span class="post-nav-title">{nextPost.data.title}</span>
+    </a>
+  ) : <span class="post-nav-empty"></span>}
+</nav>

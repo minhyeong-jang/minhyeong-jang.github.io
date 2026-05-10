@@ -1,23 +1,27 @@
-*.gem
-*.swp
-*~
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
 .DS_Store
-.analysis
-.bundle/
-.byebug_history
-.jekyll-metadata
-.ruby-gemset
-.ruby-version
-.sass-cache
-/test/source/file_name.txt
-/vendor
-Gemfile.lock
-_site/
-bin/
-bbin/
-coverage
-gh-pages/
-pkg/
-site/_site/
-test/dest
-tmp/*
+
+# jetbrains setting folder
+.idea/
+
+# old Jekyll posts backup
+_posts/

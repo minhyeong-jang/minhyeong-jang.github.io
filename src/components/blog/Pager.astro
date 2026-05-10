@@ -1,0 +1,33 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  baseUrl: string;
+}
+const { currentPage, totalPages, baseUrl } = Astro.props;
+
+function pageUrl(n: number) {
+  if (n === 1) return baseUrl;
+  return `${baseUrl}/page/${n}`;
+}
+---
+<nav class="pager">
+  {currentPage > 1 ? (
+    <a class="pager-arrow" href={pageUrl(currentPage - 1)}>←</a>
+  ) : (
+    <span class="pager-arrow" aria-disabled="true">←</span>
+  )}
+  {Array.from({ length: totalPages }, (_, i) => i + 1).map(n => (
+    <a
+      class={"pager-num" + (currentPage === n ? " is-on" : "")}
+      href={pageUrl(n)}
+    >
+      {String(n).padStart(2, '0')}
+    </a>
+  ))}
+  {currentPage < totalPages ? (
+    <a class="pager-arrow" href={pageUrl(currentPage + 1)}>→</a>
+  ) : (
+    <span class="pager-arrow" aria-disabled="true">→</span>
+  )}
+</nav>
