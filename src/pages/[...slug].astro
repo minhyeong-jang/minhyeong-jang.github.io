@@ -69,12 +69,19 @@ const ogImage = entry.data.image || '/covers/doriri.jpeg';
         <h1 class="proj-h">{entry.data.title}</h1>
       </header>
 
-      {entry.data.image && (
+      {entry.data.image && projectData?.siteUrl && (
         <div class="proj-shot">
           <div class="proj-shot-bar">
             <span class="proj-shot-dot"></span><span class="proj-shot-dot"></span><span class="proj-shot-dot"></span>
-            <span class="proj-shot-url">{projectData?.siteUrl || `${entry.id.replace('project-', '')}.doriri.dev`}</span>
+            <span class="proj-shot-url">{projectData.siteUrl}</span>
           </div>
+          <div class="proj-shot-canvas">
+            <img src={entry.data.image} alt={entry.data.title} style="width:100%;height:auto;display:block;" />
+          </div>
+        </div>
+      )}
+      {entry.data.image && !projectData?.siteUrl && (
+        <div class="proj-shot proj-shot-no-bar">
           <div class="proj-shot-canvas">
             <img src={entry.data.image} alt={entry.data.title} style="width:100%;height:auto;display:block;" />
           </div>

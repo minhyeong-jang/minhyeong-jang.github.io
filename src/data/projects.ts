@@ -112,6 +112,7 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2017/11/10/project-lunchbox-jandi",
+    thumbnail: "/projects/lunchbox/thumbnail.png",
   },
 ];
 
