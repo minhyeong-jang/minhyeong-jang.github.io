@@ -85,11 +85,13 @@ export const sideProjects: Project[] = [
   {
     id: "interv",
     name: "Interv",
-    period: "2021.00",
-    desc: "면접 준비를 위한 질문 관리 및 모의 면접 서비스. 직무별 예상 질문을 정리하고 답변을 연습할 수 있는 웹 앱",
-    stack: ["React"],
+    period: "2021.12",
+    desc: "코로나 시대, 마음과 생각을 행성에 띄우는 감정 공유 서비스. 사용자의 이야기가 우주 공간의 행성이 되어 서로의 감정을 나눈다",
+    stack: ["React", "Node.js"],
     type: "side",
-    hasDetail: false,
+    hasDetail: true,
+    detailUrl: "/2021/12/01/project-interv",
+    thumbnail: "/projects/interv/main.png",
   },
   {
     id: "doriri-blog",
