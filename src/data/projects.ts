@@ -91,7 +91,7 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2021/12/01/project-interv",
-    thumbnail: "/projects/interv/main.png",
+    thumbnail: "/projects/interv/thumbnail.png",
   },
   {
     id: "doriri-blog",
