@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>한국이러닝 학습 진도율 100% 만들기</title>
+<meta name="title" content="한국이러닝 학습 진도율 100% 만들기" />
+<meta name="author" content="minhyeong.jang"/>
+<meta name="description" content="
+  강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈
+  console에 스레드에 있는 코드 입력
+  붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행
+  마지막 챕터 끝에 5초 정도 듣기
+
+
+"/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="한국이러닝 학습 진도율 100% 만들기"/>
+<meta property="og:description" content="
+  강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈
+  console에 스레드에 있는 코드 입력
+  붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행
+  마지막 챕터 끝에 5초 정도 듣기
+
+
+"/>
+<meta property="og:url" content="http://localhost:4000/2024/12/09/learning-automation"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000/2024/12/09/learning-automation" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="한국이러닝 학습 진도율 100% 만들기"/>
+<meta name="twitter:description" content="
+  강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈
+  console에 스레드에 있는 코드 입력
+  붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행
+  마지막 챕터 끝에 5초 정도 듣기
+
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="minhyeong.jang"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="develop,dev-etc"/>
+
+<meta property="article:tag" content="develop"/>
+
+<meta property="article:tag" content="dev-etc"/>
+
+
+
+<meta property="article:published_time" content="2024-12-09T15:05:00+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/minhyeong.jang"/>
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "한국이러닝 학습 진도율 100% 만들기",
+  "description": "\n  강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈\n  console에 스레드에 있는 코드 입력\n  붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행\n  마지막 챕터 끝에 5초 정도 듣기\n\n\n",
+  "image": "http://localhost:4000/assets/images/covers/algorithm.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "minhyeong.jang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doriri Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/design/favicon.ico"
+    }
+  },
+  "datePublished": "2024-12-09T15:05:00+09:00",
+  "url": "http://localhost:4000/2024/12/09/learning-automation"
+}
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+        ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=""
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=""
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=""
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=" active "
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div id="cover"
+  
+    style="background-image: url(/assets/images/covers/algorithm.jpg)"
+  >
+  <div class="mouse-scroll">
+    <img src="/assets/images/design/icon-mouse-scroll.png" alt="mouse-scroll">
+  </div>
+</div>
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="4679806649">
+</ins>
+</div>
+
+<div id="post-content">
+  <div class="reponsive-content">
+    <div class="post-info">
+      <p class="post-date red">
+        <time datetime="2024-12-09T15:05:00+09:00">2024년 12월 09일</time>
+        
+        
+        
+        <span class="reading-time">· 1분 읽기</span>
+      </p>
+      <h1 class="post-title">한국이러닝 학습 진도율 100% 만들기</h1>
+    </div>
+    <div><ol>
+  <li>강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈</li>
+  <li>console에 스레드에 있는 코드 입력</li>
+  <li>붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행</li>
+  <li>마지막 챕터 끝에 5초 정도 듣기</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">no</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#no</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#num</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">log_num</span> <span class="o">=</span> <span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/max_num=</span><span class="se">([\d]</span><span class="sr">*</span><span class="se">)\&amp;</span><span class="sr">/</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">cl_start_time</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4020</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">cl_start_check</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#cl_start_check</span><span class="dl">"</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">user_id1</span> <span class="o">=</span> <span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/user_id1=</span><span class="se">([</span><span class="sr">a-zA-Z0-9</span><span class="se">]</span><span class="sr">*</span><span class="se">)</span><span class="sr">$/</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">allData</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="nx">no</span><span class="p">,</span>
+	<span class="nx">num</span><span class="p">,</span>
+	<span class="nx">log_num</span><span class="p">,</span>
+	<span class="nx">cl_start_time</span><span class="p">,</span>
+	<span class="nx">cl_start_check</span><span class="p">,</span>
+	<span class="nx">user_id1</span><span class="p">,</span>
+  <span class="na">page_time</span><span class="p">:</span> <span class="mf">147.146</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="kd">var</span> <span class="nx">allData2</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="nx">no</span><span class="p">,</span>
+	<span class="nx">num</span><span class="p">,</span>
+	<span class="na">cur_page</span><span class="p">:</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">log_num</span><span class="p">),</span>
+	<span class="na">max_num</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+	<span class="nx">user_id1</span><span class="p">,</span>
+	<span class="na">goyong_yn</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9</span><span class="dl">"</span>
+<span class="p">};</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jindo_check_cl.php</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="nx">allData</span>
+<span class="p">});</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">timestamp.php</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">cache</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ajax.jumsu2_update_page.php</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">data</span><span class="p">:</span> <span class="nx">allData2</span><span class="p">,</span>
+    <span class="na">async</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">});</span>
+
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#frame</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> 		<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#frame</span><span class="dl">'</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">src</span><span class="dl">'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[\d]{2}\.</span><span class="sr">html$/</span><span class="p">,</span> <span class="s2">`</span><span class="p">${</span><span class="nx">pad</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)}</span><span class="s2">.html`</span><span class="p">)</span>
+<span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
+</code></pre></div></div>
+</div>
+  </div>
+</div>
+<div id="post-links">
+  <div class="reponsive-content">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      
+        
+        <li>
+  <a href="/2026/03/03/project-notion-widgets">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/projects/notion-widgets/hero.png)"
+      
+      role="img" aria-label="Notion Widgets — 가입 없이 URL 하나로 완성하는 위젯 서비스"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2026-03-03T18:00:00+09:00">2026년 03월 03일</time>
+      </div>
+      <h3 class="post-title">Notion Widgets — 가입 없이 URL 하나로 완성하는 위젯 서비스</h3>
+      <p class="post-excerpt">Notion을 사용하면서 대시보드에 시계나 진행률 같은 위젯을 넣고 싶었는데, 기존 서비스들은 가입을 요구하거나 커스터마이징이 제한적이었다. 가입 없이 URL 쿼리 파라미터만으로 위젯을 커스터마이즈하고, Notion에 바로 임베드할 수 있는 서비스를 직접 만들기로 했다. ## 핵심 컨셉 **"URL = Single Source of Truth"** — 모든 위젯 설정이 URL 쿼리 파라미터에 저장된다. 별도의 가입이나 DB 저장 없이 URL 하나만 공유하면 누구든 같은 위젯을 볼 수 있다. 사용 흐름은 단순하다: 1. 갤러리에서 위젯을 고른다 2. 색상, 언어, 표시 옵션을 커스터마이즈한다 3. 생성된 URL을 Notion의 `/embed` 블록에 붙여넣는다 ## 기술 스택 - **Framework**: Next.js 16 (App Router) - **Language**: TypeScript 5 - **Styling**: Tailwind CSS 4 - **Monorepo**: Turborepo + pnpm - **Deploy**: Vercel (한국 리전) - **i18n**: 딕셔너리 패턴 (ko/en) ## 아키텍처 `Turborepo` 모노레포로 패키지를 분리하여 관리한다. - `apps/web` — Next.js 앱 (랜딩, 갤러리, 커스터마이저, 임베드) - `packages/widget-core` — 위젯 타입, 레지스트리, 파라미터 파싱, 공용 프리셋 - `packages/widgets` — 개별 위젯 구현체 (6종) 위젯 추가...</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2026/02/22/project-kakao-together-extension">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/github.png)"
+      
+      role="img" aria-label="카카오같이가치 자동 참여 크롬 익스텐션"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2026-02-22T18:00:00+09:00">2026년 02월 22일</time>
+      </div>
+      <h3 class="post-title">카카오같이가치 자동 참여 크롬 익스텐션</h3>
+      <p class="post-excerpt">카카오같이가치는 카카오가 운영하는 사회공헌 플랫폼으로, 좋아요와 댓글만으로도 기부에 참여할 수 있는 서비스다. 매일 접속해서 참여하면 좋겠지만, 수백 개에 달하는 기부 항목을 매번 수동으로 처리하는 것은 현실적으로 어렵다. 자동화 기술을 활용하면 꾸준하게 참여할 수 있겠다는 생각에 크롬 익스텐션으로 개발하게 됐다. ## 기술 스택 - **Extension**: Chrome Manifest V3, Service Worker - **Frontend**: React 18 - **Build**: Vite 5 ## CORS 문제 해결 크롬 익스텐션 환경에서 카카오 API를 직접 호출하면 CORS 오류가 발생한다. Extension의 Origin이 `chrome-extension://...` 형태이기 때문에 카카오 서버에서 요청을 거부한다. 이를 해결하기 위해 `declarativeNetRequest API`를 활용하여 요청 헤더를 자동으로 교체했다. ```json { "action": { "type": "modifyHeaders", "requestHeaders": [ { "header": "Origin", "operation": "set", "value": "https://together.kakao.com" } ] }, "condition": { "urlFilter": "*together*kakao.com*", "resourceTypes": ["xmlhttprequest"] } } ``` `rules.json`을 통해 글로벌 규칙을 적용하니 fetch 호출 코드에서 헤더를 별도로 관리할 필요가 없어졌다. ## 자동화 로직 핵심 자동화는 Service Worker(`background.js`)에서 처리한다. **실행 흐름:** 1. **기부 목록 수집**: 전체 페이지를 순회하며 진행 중인(`STATUS_FUNDING`) 항목...</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2024/10/08/vscode-search-transition">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      role="img" aria-label="vscode 검색 결과 텍스트 변경 시 정규식 처리"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2024-10-08T20:05:00+09:00">2024년 10월 08일</time>
+      </div>
+      <h3 class="post-title">vscode 검색 결과 텍스트 변경 시 정규식 처리</h3>
+      <p class="post-excerpt">vscode에서 검색 후 방향키를 누르면 검색어에 대한 일괄 변경 기능이 지원된다.
+
+
+
+작업 중 .hideOverlay 함수에 대한 일괄 변경을 처리하려는데,
+a.hideOverlay, b.hideOverlay… 와 같이 앞에 붙어있는 문자가 모두 다른 상황에서는 단순 검색으로는 변경이 불가능하여 정규식 검색 후 그룹화하여 일괄 변경 처리를 진행했다.
+
+우측위에 .* 아이콘을 클릭하여 정규식 검색을 활성화 후 검색어 및 수정단어에 정규식 처리하여 완료
+
+// 검색어 : (this\.[a-zA-Z]*)\.hideOverlay\(\);
+// this부터 hideOverlay 앞의 값까지 모두 그룹화 지정
+this.aaa.hideOverlay();
+this.bbb.hideOverlay();
+
+// 수정단어 : if($1) { $1.hideOverlay(); }
+// 일괄 변경된 결과
+if(this.aaa) { this.aaa.hideOverlay(); };
+if(this.bbb) { this.bbb.hideOverlay(); };
+
+
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="3807925718">
+</ins>
+</div>
+
+<div id="disqus-wrap">
+  <div id="disqus_thread"></div>
+</div>
+    </div>
+  </div>
+  
+<script>
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>

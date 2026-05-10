@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>SSH 접근 오류</title>
+<meta name="title" content="SSH 접근 오류" />
+<meta name="author" content="minhyeong.jang"/>
+<meta name="description" content="REMOTE HOST IDENTIFICATION HAS CHANGED!
+
+"/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="SSH 접근 오류"/>
+<meta property="og:description" content="REMOTE HOST IDENTIFICATION HAS CHANGED!
+
+"/>
+<meta property="og:url" content="http://localhost:4000/2022/05/07/ssh-error"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000/2022/05/07/ssh-error" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="SSH 접근 오류"/>
+<meta name="twitter:description" content="REMOTE HOST IDENTIFICATION HAS CHANGED!
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="minhyeong.jang"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="develop,dev-etc"/>
+
+<meta property="article:tag" content="develop"/>
+
+<meta property="article:tag" content="dev-etc"/>
+
+
+
+<meta property="article:published_time" content="2022-05-07T12:00:00+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/minhyeong.jang"/>
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SSH 접근 오류",
+  "description": "REMOTE HOST IDENTIFICATION HAS CHANGED!\n\n",
+  "image": "http://localhost:4000/assets/images/covers/algorithm.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "minhyeong.jang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doriri Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/design/favicon.ico"
+    }
+  },
+  "datePublished": "2022-05-07T12:00:00+09:00",
+  "url": "http://localhost:4000/2022/05/07/ssh-error"
+}
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+        ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=""
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=""
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=""
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=" active "
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div id="cover"
+  
+    style="background-image: url(/assets/images/covers/algorithm.jpg)"
+  >
+  <div class="mouse-scroll">
+    <img src="/assets/images/design/icon-mouse-scroll.png" alt="mouse-scroll">
+  </div>
+</div>
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="4679806649">
+</ins>
+</div>
+
+<div id="post-content">
+  <div class="reponsive-content">
+    <div class="post-info">
+      <p class="post-date red">
+        <time datetime="2022-05-07T12:00:00+09:00">2022년 05월 07일</time>
+        
+        
+        
+        <span class="reading-time">· 1분 읽기</span>
+      </p>
+      <h1 class="post-title">SSH 접근 오류</h1>
+    </div>
+    <div><p><code class="language-plaintext highlighter-rouge">REMOTE HOST IDENTIFICATION HAS CHANGED!</code></p>
+
+<p>인스턴스 사양을 늘리기 위해 스냅샷으로 새로운 서버를 생성, 다시 접근하는데 다음과 같은 오류가 났다.</p>
+
+<p>현재 PC에서 SSH로 접근하는 서버의 인증 정보를 가지고 있는데, 동일한 IP 서버 인증키가 달라졌기 때문에 경고를 주는 것.</p>
+
+<h2 id="해결방법">해결방법</h2>
+
+<p>해당 서버의 키만 제거하려다가 그냥.. 다 지워버렸다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-r</span> /var/root/.ssh/known_hos
+</code></pre></div></div>
+</div>
+  </div>
+</div>
+<div id="post-links">
+  <div class="reponsive-content">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      
+        
+        <li>
+  <a href="/2022/10/01/incremental-rollout">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react-native.jpeg)"
+      
+      role="img" aria-label="애플리케이션의 점진적 배포, 도달율"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-10-01T14:04:00+09:00">2022년 10월 01일</time>
+      </div>
+      <h3 class="post-title">애플리케이션의 점진적 배포, 도달율</h3>
+      <p class="post-excerpt">만약 특정 날짜에 동작해야하는 기능이라면 앱은 최소 몇일 전까지 배포되어야 유저가 사용할 수 있을까? 앱 스토어에 심사를 거치고 유저에게 도달하기까지 얼마나 걸릴 지 궁금하였다. 유저가 업데이트 버전에 도달하기까지는 `심사 / 점진적 배포(선택사항) / 앱 업데이트`를 거쳐야한다. 가장 먼저 점진적 배포에 대해서 설명하고 ## 심사기간 스토어 정책에 위반되는 사항, 보안적인 이슈 등의 여부를 확인한다. ### 구글 스토어 약 2~3시간 정도로 심사가 끝나기에 크게 의미가 없다. ### 앱 스토어 기존에는 3~4일 정도로 심사기간이 오래 걸렸으나, 최근에는 1~2일만에 처리되고 있다. - 긴급심사를 통해 심사기간을 줄일 수 있으나 현재 심사기간이 짧아서 의미가 없을 수 있다. ## 점진적 배포 구글 스토어 / 앱 스토어에서는 기본적으로 점진적(단계적) 배포라는 기능을 제공하고 있다. `특정 기간동안 일정 비율에게만 새로운 버전의 업데이트를 제공`하도록 설정하는 기능이며, `자동 업데이트를 활성화`한 유저에게만 적용된다. ( 만일 해당 기능을 설정하지 않았다면 모든 유저가 업데이트가 가능해진다. ) 해당 기능은 일정 유저에게만 신규 버전을 오픈함으로써 `앱 크래시와 같은 치명적인 버그 발생 시 최소한의 유저만 경험`하고 대응 가능하도록...</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2022/05/08/linux-puppeteer">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      role="img" aria-label="Linux Puppeteer 오류"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-05-08T21:00:00+09:00">2022년 05월 08일</time>
+      </div>
+      <h3 class="post-title">Linux Puppeteer 오류</h3>
+      <p class="post-excerpt">Puppeteer를 사용하는 nodejs를 linux 서버에 띄었는데 작업하니 다음과 같은 오류가 났다.
+
+```bash
+Error: Failed to launch the browser process!
+/home/ubuntu/slack-bot-groupware/node_modules/puppeteer/.local-chromium/linux-938248/chrome-linux/chrome: error while loading shared libraries: libnss3.so: cannot open shared object file: No such file or directory
+```
+
+## 해결방법
+
+아래 명령어를 실행하여 추가 패키지를 설치한다.
+
+```bash
+sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev
+sudo apt-get install libgconf-2-4 libnss3 libxss1
+```
+</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2022/05/07/lightsail-server">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/nextjs.png)"
+      
+      role="img" aria-label="AWS Lightsail Nextjs, Nodejs 셋팅"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-05-07T12:00:00+09:00">2022년 05월 07일</time>
+      </div>
+      <h3 class="post-title">AWS Lightsail Nextjs, Nodejs 셋팅</h3>
+      <p class="post-excerpt">출퇴근 페이지를 개선하면서 도메인을 변경했고, 서버를 이전하기로 했다. 프로젝트 사이즈, 서버 비용을 감안하여 EC2보다는 Lightsail으로 작업을 진행했다. Lightsail 설정 Instance 생성 인스턴스 이미지는 OS만 설치하도록 설정했다. ( Ubuntu 20.04 LTS ) nginx가 설치된 형태도 진행해봤는데, 다른 패키지 설치 과정에서 충돌나거나 nginx.conf 파일에서 추가적인 작업을 하는 등의 이슈로 그냥 OS만 설치하는게 마음이 편했다. Static IP / DNS 생성 도메인을 가비아에서 구매했고, Lightsail 서버에 연동이 필요했다. Network 탭에서 Static IP, DNS zone을 클릭하여 IP, DNS를 발급받았다. 발급받은 후 모습이며, Static IP는 생성한 인스턴스에 연결해야하고 DNS에서는 records를 생성하여 도메인을 추가해야한다. 가비아에서 도메인 설정 방법 도메인 정보 변경 -&gt; 네임서버 설정 DNS 정보 -&gt; DNS 관리 -&gt; A 레코드, IP 입력 서버 설정 서버 접근 Lightsail에서 Connect하면 브라우저 콘솔로 서버에 접근할 수 있지만, iterm이 편하다 보니 ssh key 파일을 다운받아 진행했다. ( pem 파일은 계정 Account 또는 인스턴스 Connect 탭에서 설치 가능하다.) sudo ssh -i "key.pem" [StaticIP] -l ubuntu # Warning이 뜨는 경우, 권한...</p>
+    </div>
+  </a>
+</li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="3807925718">
+</ins>
+</div>
+
+<div id="disqus-wrap">
+  <div id="disqus_thread"></div>
+</div>
+    </div>
+  </div>
+  
+<script>
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>

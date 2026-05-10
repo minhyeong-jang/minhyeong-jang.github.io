@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>Doriri Blog</title>
+<meta name="title" content="Doriri Blog" />
+<meta name="author" content=""/>
+<meta name="description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Doriri Blog"/>
+<meta property="og:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Doriri Blog"/>
+<meta name="twitter:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content=""/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+         active ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=""
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=""
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=""
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=""
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <ul id="post-list">
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+</ul>
+<ul id="pagination" role="navigation" aria-label="Pagination">
+	
+</ul>
+
+    </div>
+  </div>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>

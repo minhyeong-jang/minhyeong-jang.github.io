@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-05-10T22:42:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Doriri Blog</title><subtitle>더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다.</subtitle><entry><title type="html">2026 1분기 회고 — 많이 만들었지만, 그래서 뭐가 달라졌나</title><link href="http://localhost:4000/2026/04/01/2026-q1-retrospective" rel="alternate" type="text/html" title="2026 1분기 회고 — 많이 만들었지만, 그래서 뭐가 달라졌나" /><published>2026-04-01T18:00:00+09:00</published><updated>2026-04-01T18:00:00+09:00</updated><id>http://localhost:4000/2026/04/01/2026-q1-retrospective</id><content type="html" xml:base="http://localhost:4000/2026/04/01/2026-q1-retrospective">&lt;p&gt;1분기가 끝났다. GitHub 정리해보니 3개월 동안 3개 레포에서 152건 정도 작업했더라.&lt;/p&gt;
+
+&lt;p&gt;많이 만들긴 했다. 성과도 나오고 있고, D2C 퍼널 데이터도 잘 나오고 있다. 그런데 이 글을 쓰면서 계속 드는 생각이 있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;OKR 목표를 바라보고 달렸나?&apos;&lt;/code&gt; 이 질문에는 자신 있게 답하기 어렵다.&lt;/p&gt;
+
+&lt;h2 id=&quot;무엇을-했나&quot;&gt;무엇을 했나&lt;/h2&gt;
+
+&lt;h3 id=&quot;d2c--0에서-1로-만든-제품&quot;&gt;D2C — 0에서 1로 만든 제품&lt;/h3&gt;
+
+&lt;p&gt;1분기에서 가장 큰 작업은 D2C 서비스를 처음부터 만들어서 런칭한 거다.&lt;/p&gt;
+
+&lt;p&gt;1월 말부터 근무지 선택, 월급일 입력 같은 초기 플로우를 만들기 시작했고, 2월 초~중순에 온보딩, CMS 자동이체, 본인인증, 상환 페이지, 급여계좌 R2 업로드 같은 핵심 기능을 완성했다. 2월 중순부터는 QA에 집중하고 바로 오픈할 정도로 촉박한 일정이었다.&lt;/p&gt;
+
+&lt;p&gt;런칭 후에는 Amplitude, PostHog 기반으로 퍼널 데이터 수집하고, 전환율 떨어지는 구간 잡아서 개선하고, 성과 측정까지 진행했다. 데이터는 잘 나오고 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;신분증-ocr&quot;&gt;신분증 OCR&lt;/h3&gt;
+
+&lt;p&gt;원래 Tesseract로 OCR을 붙였는데 인식률이 좋지 않았다. 코드에프, 네이버 클로바 등 여러 솔루션을 찾아봤는데, 문득 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;그냥 AI로 해볼까?&apos;&lt;/code&gt; 싶어서 Claude Vision을 붙여봤다. 프롬프트에 따라 인식률이 꽤 높아서 그대로 진행했다. 여러 선택지 중에서 가장 합리적인 걸 골랐을 뿐인데, 결과적으로 잘 작동하고 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;www-전면-리뉴얼--ai-기반-빠른-구현&quot;&gt;WWW 전면 리뉴얼 — AI 기반 빠른 구현&lt;/h3&gt;
+
+&lt;p&gt;3월에 마케팅 웹사이트를 전면 리뉴얼했다. 이번에는 작업 방식이 좀 달랐다.&lt;/p&gt;
+
+&lt;p&gt;Figma MCP를 연동해서 초기 디자인을 잡고, AI로 디테일을 빠르게 구현했다. 소개페이지, 도입문의, 고객센터를 새로 만들고 B2B/B2C 디자인 시스템을 통합했다. Claude 마케팅 스킬 기반으로 GEO, SEO 최적화도 진행해서 JSON-LD 구조화 데이터, 영문 번역까지 붙였다.&lt;/p&gt;
+
+&lt;h3 id=&quot;sales-crm--saas-안-쓰고-직접-만든-이유&quot;&gt;Sales CRM — SaaS 안 쓰고 직접 만든 이유&lt;/h3&gt;
+
+&lt;p&gt;외부 CRM 툴을 쓰면 비용이 꽤 나온다. 그래서 세일즈팀이랑 같이 요구사항 정리하고 직접 만들어봤다. SQLite에서 PostgreSQL로 마이그레이션하고, JWT 인증, shadcn/ui 디자인 시스템, AI 리드 파인더까지 1주일 만에 구축했다.&lt;/p&gt;
+
+&lt;p&gt;해보면서 느낀 건, SaaS 서비스가 왜 어려운지 이해가 됐다는 거다. 원하는 기능부터 AI 활용, 리드 수집까지 — 팀의 요청사항에 맞춰 넣으면 빠르게 구축할 수 있다. 범용 SaaS보다 우리 워크플로우에 딱 맞는 도구가 나온다.&lt;/p&gt;
+
+&lt;h3 id=&quot;slack-bot--2시간-만에-만든-미팅룸-예약봇&quot;&gt;Slack Bot — 2시간 만에 만든 미팅룸 예약봇&lt;/h3&gt;
+
+&lt;p&gt;미팅룸 예약이 번거로워서 슬랙봇을 만들었다. Claude가 Playwright로 오렌지플래닛 사이트를 열어서 동작 방식이랑 API를 알아서 파악하고 구현했다. 나는 우리 사용성에 맞게 개선하는 정도만 했다. 크롤링부터 구현까지 2시간이면 됐다.&lt;/p&gt;
+
+&lt;h3 id=&quot;그-밖에&quot;&gt;그 밖에&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;모바일 인프라&lt;/strong&gt;: OneSignal 푸시 알림 SDK 연동, 푸시 제너레이터 구축, Android 백버튼 처리, iOS safe area 개선&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;애널리틱스&lt;/strong&gt;: Amplitude 페이지뷰/UTM/referrer 추적, PostHog 세션 레코딩 설정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;인증/보안&lt;/strong&gt;: Apple 로그인 웹 지원, B2B 라우트 접근 제어 강화, Docker localhost 유출 방지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;월별로-보면&quot;&gt;월별로 보면&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;1월&lt;/th&gt;
+      &lt;th&gt;2월&lt;/th&gt;
+      &lt;th&gt;3월&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;작업 건수&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;62&lt;/td&gt;
+      &lt;td&gt;65&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;주요 테마&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;홈 리뉴얼, D2C 초기 구축&lt;/td&gt;
+      &lt;td&gt;D2C 완성·런칭, 설날 이벤트&lt;/td&gt;
+      &lt;td&gt;OCR, WWW 리뉴얼, CRM, 슬랙봇&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;1월에 25건으로 시작해서 3월에 65건까지 올라갔다. 1~2월에 D2C라는 큰 제품을 만들면서 기존 서비스도 유지하고, 3월에는 새 레포 2개까지 추가된 거다.&lt;/p&gt;
+
+&lt;h2 id=&quot;경주마처럼-달렸지만&quot;&gt;경주마처럼 달렸지만&lt;/h2&gt;
+
+&lt;p&gt;성과는 나오고 있다. D2C 퍼널 데이터도 잘 나오고, 데이터 수집하고 개선하는 사이클도 돌리고 있다. 돈이 되는 것도 알고, 방향이 맞다는 것도 안다.&lt;/p&gt;
+
+&lt;p&gt;다만 아쉬운 부분은, 이 모든 걸 하면서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;이전 분기에 세운 OKR 목표를 바라보고 달렸느냐&apos;&lt;/code&gt;라는 거다. 솔직히 목표를 의식하면서 일하기보다는 요청이 들어오면 빠르게 쳐내고, 기능이 필요하면 바로 만들고, 런칭 날짜가 다가오면 QA를 밀어 넣는 식이었다. 경주마처럼 달렸다.&lt;/p&gt;
+
+&lt;p&gt;결과가 나쁜 건 아니다. 근데 OKR이라는 게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;결과가 나왔으니 됐다&apos;&lt;/code&gt;가 아니라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;목표를 의식하면서 그 방향으로 움직였느냐&apos;&lt;/code&gt;의 문제다. 매출 기반으로 어떻게 성장할지를 깊이 고민하면서 달렸어야 했는데, 그 부분이 부족했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;돌아보기&quot;&gt;돌아보기&lt;/h2&gt;
+
+&lt;h3 id=&quot;ai를-도구로-쓰는-방식이-달라졌다&quot;&gt;AI를 도구로 쓰는 방식이 달라졌다&lt;/h3&gt;
+
+&lt;p&gt;이번 분기에 확실히 느낀 건, AI를 활용하는 방식이 많이 바뀌었다는 거다.&lt;/p&gt;
+
+&lt;p&gt;WWW 리뉴얼은 Figma MCP + Claude로 초기 디자인부터 SEO 최적화까지 빠르게 돌렸고, 슬랙봇은 Playwright로 사이트 분석부터 구현까지 AI가 처리했고, OCR도 결국 AI 솔루션이 제일 나았다. CRM도 AI 리드 파인더를 넣으면서 세일즈팀의 워크플로우 자체가 바뀌었다.&lt;/p&gt;
+
+&lt;p&gt;거기에 더해서, 개발 프로세스 자체를 AI로 자동화하는 시도도 했다. 핀테크 특성상 유저 분기가 많아서 다양한 케이스를 일일이 테스트하는 데 시간이 많이 들었는데, DB에 테스트 seed 유저 정보를 넣고 Playwright로 스크린샷을 캡처해서 비주얼 테스트를 자동화했다. e2e 테스트까지 확장하는 방향도 고민 중이다.&lt;/p&gt;
+
+&lt;p&gt;이 캡처 기반 위에 AI 에이전트팀이 개발자/디자이너 역할로 구현한 뒤, PM 역할의 에이전트가 11개 항목(정보 계층, 액션 배치, 시각적 일관성, 인지 부하 등)으로 채점하고, 기준 미달인 부분을 자동으로 수정하는 루프를 만들었다. 구현 → 캡처 → 채점 → 수정을 모든 항목이 통과할 때까지 반복하는 구조다. 다만 비주얼적으로는 AI가 한계가 있기 때문에, Mobbin에서 다른 앱의 레퍼런스를 참고해서 주요 영역의 디자인 퀄리티를 높이는 과정을 주입하는 방식도 시도하고 있다.&lt;/p&gt;
+
+&lt;p&gt;단순히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;코드 작성을 도와주는 도구&apos;&lt;/code&gt;가 아니라, 기획부터 구현, 검수까지 전체 사이클에서 AI를 쓰는 방식이 자리잡아가고 있다. 2인 팀이라 리소스가 한정되어 있는데, 이런 자동화를 얼마나 잘 만드느냐가 곧 업무량을 줄이는 핵심이라는 걸 체감한 분기다.&lt;/p&gt;
+
+&lt;h3 id=&quot;속도와-지속-가능성&quot;&gt;속도와 지속 가능성&lt;/h3&gt;
+
+&lt;p&gt;2월 D2C 런칭 전 2주, 3월의 65건 — 지속 가능한 페이스는 아니었다. 빠르게 만드는 건 확인됐는데, 그 대가로 fix PR이 35%나 나왔다. 빨리 만들고 빨리 고치는 패턴이 습관이 되면 안 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;팀&quot;&gt;팀&lt;/h3&gt;
+
+&lt;p&gt;2인 팀에서 서로 빠르게 치고 나가다 보니 리뷰를 충분히 주고받지 못한 부분이 있다. 의도적으로 리뷰를 요청하고 받는 습관이 필요하다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2분기에-챙길-것&quot;&gt;2분기에 챙길 것&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;OKR 목표를 의식하면서 달리기&lt;/strong&gt;. 결과가 나오는 것과 목표를 향해 달리는 건 다른 거다. 매출 기반 성장을 고민하는 시간을 의도적으로 만들자.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;만들기 전에 생각하기&lt;/strong&gt;. 요청이 들어왔을 때 바로 키보드에 손을 올리지 말자. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;이 기능이 정말 필요한가&apos;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;더 적은 코드로 같은 효과를 낼 수 있는가&apos;&lt;/code&gt;를 5분만 고민하자.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;엣지 케이스 체크리스트&lt;/strong&gt;. 모바일 웹뷰, iOS safe area, Android 백버튼, 리다이렉트, 인증 상태 — 매번 fix PR로 잡지 말고 구현 전에 확인 항목을 만들자.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;디자인 합의를 먼저&lt;/strong&gt;. Figma에서 모바일 대응이랑 인터랙션까지 확정하고 개발 시작하자.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;마무리&quot;&gt;마무리&lt;/h2&gt;
+
+&lt;p&gt;2022년에 카페 코딩 회고를 쓸 때는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&apos;공부해서 발전해야 하는 순간&apos;&lt;/code&gt;이라고 적었다.
+4년이 지난 지금은 상황이 달라졌다. 그때는 기술 스택을 넓히는 게 성장이었다면, 지금은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;만든 것이 비즈니스에 어떤 의미가 있는지 설명할 수 있는 것&lt;/code&gt;이 성장인 상황이다.&lt;/p&gt;
+
+&lt;p&gt;많이 만들었고, 성과도 나오고 있다. 다만 2분기에는 경주마가 아니라 방향을 보면서 달리는 사람이 되자.&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="daily" /><category term="essay" /><summary type="html">1분기가 끝났다. GitHub 정리해보니 3개월 동안 3개 레포에서 152건 정도 작업했더라.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/cafe.png" /><media:content medium="image" url="http://localhost:4000/covers/cafe.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Notion Widgets — 가입 없이 URL 하나로 완성하는 위젯 서비스</title><link href="http://localhost:4000/2026/03/03/project-notion-widgets" rel="alternate" type="text/html" title="Notion Widgets — 가입 없이 URL 하나로 완성하는 위젯 서비스" /><published>2026-03-03T18:00:00+09:00</published><updated>2026-03-03T18:00:00+09:00</updated><id>http://localhost:4000/2026/03/03/project-notion-widgets</id><content type="html" xml:base="http://localhost:4000/2026/03/03/project-notion-widgets">&lt;p&gt;Notion을 사용하면서 대시보드에 시계나 진행률 같은 위젯을 넣고 싶었는데, 기존 서비스들은 가입을 요구하거나 커스터마이징이 제한적이었다.&lt;/p&gt;
+
+&lt;p&gt;가입 없이 URL 쿼리 파라미터만으로 위젯을 커스터마이즈하고, Notion에 바로 임베드할 수 있는 서비스를 직접 만들기로 했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;핵심-컨셉&quot;&gt;핵심 컨셉&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;“URL = Single Source of Truth”&lt;/strong&gt; — 모든 위젯 설정이 URL 쿼리 파라미터에 저장된다. 별도의 가입이나 DB 저장 없이 URL 하나만 공유하면 누구든 같은 위젯을 볼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;사용 흐름은 단순하다:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;갤러리에서 위젯을 고른다&lt;/li&gt;
+  &lt;li&gt;색상, 언어, 표시 옵션을 커스터마이즈한다&lt;/li&gt;
+  &lt;li&gt;생성된 URL을 Notion의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/embed&lt;/code&gt; 블록에 붙여넣는다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;기술-스택&quot;&gt;기술 스택&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Framework&lt;/strong&gt;: Next.js 16 (App Router)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Language&lt;/strong&gt;: TypeScript 5&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Styling&lt;/strong&gt;: Tailwind CSS 4&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Monorepo&lt;/strong&gt;: Turborepo + pnpm&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Deploy&lt;/strong&gt;: Vercel (한국 리전)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;i18n&lt;/strong&gt;: 딕셔너리 패턴 (ko/en)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;아키텍처&quot;&gt;아키텍처&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Turborepo&lt;/code&gt; 모노레포로 패키지를 분리하여 관리한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;apps/web&lt;/code&gt; — Next.js 앱 (랜딩, 갤러리, 커스터마이저, 임베드)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;packages/widget-core&lt;/code&gt; — 위젯 타입, 레지스트리, 파라미터 파싱, 공용 프리셋&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;packages/widgets&lt;/code&gt; — 개별 위젯 구현체 (6종)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위젯 추가 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;registerWidget()&lt;/code&gt;으로 등록하면 갤러리, 커스터마이저, 임베드 라우트가 자동 생성된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;위젯-갤러리&quot;&gt;위젯 갤러리&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/projects/notion-widgets/gallery.png&quot; alt=&quot;위젯 갤러리&quot; style=&quot;width: 100%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;현재 6종의 위젯을 제공한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;플립 시계&lt;/strong&gt; — 레트로 감성의 플립 스타일 시계&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;라이프 프로그레스&lt;/strong&gt; — 연도, 월, 분기, 사용자 목표의 진행률&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;D-Day 카운트다운&lt;/strong&gt; — 목표 날짜까지 남은 일수&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;아날로그 시계&lt;/strong&gt; — 클래식 아날로그 시계&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;포모도로 타이머&lt;/strong&gt; — 집중/휴식 타이머&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;오늘의 명언&lt;/strong&gt; — 매일 바뀌는 명언&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;카테고리 필터(시간, 생산성, 라이프스타일, 유틸리티)로 원하는 위젯을 빠르게 찾을 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;커스터마이저&quot;&gt;커스터마이저&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/projects/notion-widgets/customizer.png&quot; alt=&quot;커스터마이저&quot; style=&quot;width: 100%;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;좌측 패널에서 색상, 언어, 시간 형식 등을 변경하면 우측의 실시간 미리보기에 즉시 반영된다.&lt;/p&gt;
+
+&lt;p&gt;컨트롤은 위젯별로 다르게 구성되며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;color&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;select&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toggle&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;text&lt;/code&gt; 등 6종의 컨트롤 타입을 지원한다.&lt;/p&gt;
+
+&lt;p&gt;언어와 날짜 형식은 공용 프리셋(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;widget-core/presets.ts&lt;/code&gt;)으로 관리하여 7개 언어(한국어, English, 日本語, 中文, Deutsch, Français, Español)를 모든 위젯에서 일관되게 지원한다.&lt;/p&gt;
+
+&lt;p&gt;하단의 임베드 URL을 복사해 Notion에 붙여넣으면 끝이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;i18n과-seo&quot;&gt;i18n과 SEO&lt;/h2&gt;
+
+&lt;p&gt;한국어/영어 2개 언어를 딕셔너리 패턴으로 지원한다. 외부 라이브러리 없이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dictionary&lt;/code&gt; 타입과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getDictionary()&lt;/code&gt; 함수만으로 구현했다.&lt;/p&gt;
+
+&lt;p&gt;SEO는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sitemap.xml&lt;/code&gt;(hreflang), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;robots.txt&lt;/code&gt;, OG 메타태그, JSON-LD를 포함하며 각 라우트별로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;next/og&lt;/code&gt; ImageResponse를 활용한 동적 OG 이미지를 생성한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;수익-모델&quot;&gt;수익 모델&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;“기능은 무료, 미학은 유료”&lt;/strong&gt; — 모든 위젯 기능은 무료로 제공하고, 워터마크 제거와 프리미엄 테마/폰트를 Pro(일회성 결제)로 제공할 예정이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;결과&quot;&gt;결과&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://widgets.doriri.dev&quot;&gt;widgets.doriri.dev&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Turborepo&lt;/code&gt; 모노레포 + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Next.js 16&lt;/code&gt; 정적 생성으로 28개 페이지를 빌드하며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vercel&lt;/code&gt; 한국 리전에 배포하여 국내 사용자에게 빠른 응답 속도를 제공한다.&lt;/p&gt;
+
+&lt;p&gt;현재 Phase 0(제품화)이 완료된 상태이며, 위젯 추가와 기능 개선을 진행 중이다.&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="project" /><summary type="html">Notion을 사용하면서 대시보드에 시계나 진행률 같은 위젯을 넣고 싶었는데, 기존 서비스들은 가입을 요구하거나 커스터마이징이 제한적이었다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/projects/notion-widgets/hero.png" /><media:content medium="image" url="http://localhost:4000/projects/notion-widgets/hero.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">카카오같이가치 자동 참여 크롬 익스텐션</title><link href="http://localhost:4000/2026/02/22/project-kakao-together-extension" rel="alternate" type="text/html" title="카카오같이가치 자동 참여 크롬 익스텐션" /><published>2026-02-22T18:00:00+09:00</published><updated>2026-02-22T18:00:00+09:00</updated><id>http://localhost:4000/2026/02/22/project-kakao-together-extension</id><content type="html" xml:base="http://localhost:4000/2026/02/22/project-kakao-together-extension">&lt;p&gt;카카오같이가치는 카카오가 운영하는 사회공헌 플랫폼으로, 좋아요와 댓글만으로도 기부에 참여할 수 있는 서비스다.&lt;/p&gt;
+
+&lt;p&gt;매일 접속해서 참여하면 좋겠지만, 수백 개에 달하는 기부 항목을 매번 수동으로 처리하는 것은 현실적으로 어렵다.&lt;br /&gt;
+자동화 기술을 활용하면 꾸준하게 참여할 수 있겠다는 생각에 크롬 익스텐션으로 개발하게 됐다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기술-스택&quot;&gt;기술 스택&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Extension&lt;/strong&gt;: Chrome Manifest V3, Service Worker&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Frontend&lt;/strong&gt;: React 18&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Build&lt;/strong&gt;: Vite 5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cors-문제-해결&quot;&gt;CORS 문제 해결&lt;/h2&gt;
+
+&lt;p&gt;크롬 익스텐션 환경에서 카카오 API를 직접 호출하면 CORS 오류가 발생한다.&lt;br /&gt;
+Extension의 Origin이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome-extension://...&lt;/code&gt; 형태이기 때문에 카카오 서버에서 요청을 거부한다.&lt;/p&gt;
+
+&lt;p&gt;이를 해결하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;declarativeNetRequest API&lt;/code&gt;를 활용하여 요청 헤더를 자동으로 교체했다.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;action&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;modifyHeaders&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;requestHeaders&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Origin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;operation&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;set&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://together.kakao.com&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;condition&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;urlFilter&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*together*kakao.com*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;resourceTypes&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xmlhttprequest&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rules.json&lt;/code&gt;을 통해 글로벌 규칙을 적용하니 fetch 호출 코드에서 헤더를 별도로 관리할 필요가 없어졌다.&lt;/p&gt;
+
+&lt;h2 id=&quot;자동화-로직&quot;&gt;자동화 로직&lt;/h2&gt;
+
+&lt;p&gt;핵심 자동화는 Service Worker(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;background.js&lt;/code&gt;)에서 처리한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;실행 흐름:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;기부 목록 수집&lt;/strong&gt;: 전체 페이지를 순회하며 진행 중인(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;STATUS_FUNDING&lt;/code&gt;) 항목 수집&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;중복 필터링&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome.storage&lt;/code&gt;에 저장된 참여 기록과 비교하여 미참여 항목만 선별&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;순차 처리&lt;/strong&gt;: 좋아요 → 댓글 순으로 처리, 항목 간 1~2초 랜덤 지연 적용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;기록 저장&lt;/strong&gt;: 완료된 항목 ID를 영구 저장소에 기록&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;스케줄링은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;chrome.alarms API&lt;/code&gt;를 사용해 6시간마다 자동 실행되도록 설정했다.&lt;/p&gt;
+
+&lt;p&gt;이미 참여한 항목을 만나면 이후 항목들은 모두 처리된 것으로 판단하고 수집을 중단하는 &lt;strong&gt;최적화 로직&lt;/strong&gt;도 넣었다.&lt;br /&gt;
+이 덕분에 매 실행마다 22페이지를 모두 순회하지 않아도 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;ui-구성&quot;&gt;UI 구성&lt;/h2&gt;
+
+&lt;p&gt;팝업과 옵션 페이지를 각각 React 컴포넌트로 분리하여 개발했다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;팝업&lt;/strong&gt;: 현재 실행 상태, 마지막 실행 시간, 수동 즉시 실행 버튼&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;옵션 페이지&lt;/strong&gt;: 자동화 활성화 토글, 댓글 메시지 커스터마이징, 실행 로그 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;댓글은 기본 5가지 메시지에서 랜덤 선택되며, 옵션 페이지에서 추가/삭제가 가능하다.&lt;/p&gt;
+
+&lt;h2 id=&quot;결과&quot;&gt;결과&lt;/h2&gt;
+
+&lt;p&gt;총 200개 이상의 기부 항목에 자동 참여할 수 있게 됐다.&lt;br /&gt;
+처음 실행 시 전체 항목 처리에 약 10~15분이 소요되며, 이후 실행부터는 신규 항목만 처리해 훨씬 빠르게 동작한다.&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="project" /><summary type="html">카카오같이가치는 카카오가 운영하는 사회공헌 플랫폼으로, 좋아요와 댓글만으로도 기부에 참여할 수 있는 서비스다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/github.png" /><media:content medium="image" url="http://localhost:4000/covers/github.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">한국이러닝 학습 진도율 100% 만들기</title><link href="http://localhost:4000/2024/12/09/learning-automation" rel="alternate" type="text/html" title="한국이러닝 학습 진도율 100% 만들기" /><published>2024-12-09T15:05:00+09:00</published><updated>2024-12-09T15:05:00+09:00</updated><id>http://localhost:4000/2024/12/09/learning-automation</id><content type="html" xml:base="http://localhost:4000/2024/12/09/learning-automation">&lt;ol&gt;
+  &lt;li&gt;강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈&lt;/li&gt;
+  &lt;li&gt;console에 스레드에 있는 코드 입력&lt;/li&gt;
+  &lt;li&gt;붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행&lt;/li&gt;
+  &lt;li&gt;마지막 챕터 끝에 5초 정도 듣기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;no&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#no&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#num&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;log_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/max_num=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;([\d]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)\&amp;amp;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cl_start_time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4020&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cl_start_check&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#cl_start_check&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user_id1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/user_id1=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;a-zA-Z0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;allData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;log_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;cl_start_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;cl_start_check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;user_id1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;page_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;147.146&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;allData2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;cur_page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;max_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;user_id1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;goyong_yn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;jindo_check_cl.php&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;allData&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;timestamp.php&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ajax.jumsu2_update_page.php&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;allData2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#frame&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 		&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#frame&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[\d]{2}\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;html$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.html`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minhyeong.jang</name></author><category term="develop" /><category term="dev-etc" /><summary type="html">강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈 console에 스레드에 있는 코드 입력 붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행 마지막 챕터 끝에 5초 정도 듣기</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/algorithm.jpg" /><media:content medium="image" url="http://localhost:4000/covers/algorithm.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">vscode 검색 결과 텍스트 변경 시 정규식 처리</title><link href="http://localhost:4000/2024/10/08/vscode-search-transition" rel="alternate" type="text/html" title="vscode 검색 결과 텍스트 변경 시 정규식 처리" /><published>2024-10-08T20:05:00+09:00</published><updated>2024-10-08T20:05:00+09:00</updated><id>http://localhost:4000/2024/10/08/vscode-search-transition</id><content type="html" xml:base="http://localhost:4000/2024/10/08/vscode-search-transition">&lt;p&gt;vscode에서 검색 후 방향키를 누르면 검색어에 대한 일괄 변경 기능이 지원된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2024/vscode-search-transition-1.png&quot; alt=&quot;vscode Image&quot; title=&quot;vscode Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;작업 중 .hideOverlay 함수에 대한 일괄 변경을 처리하려는데,&lt;br /&gt;
+a.hideOverlay, b.hideOverlay… 와 같이 앞에 붙어있는 문자가 모두 다른 상황에서는 단순 검색으로는 변경이 불가능하여 정규식 검색 후 그룹화하여 일괄 변경 처리를 진행했다.&lt;/p&gt;
+
+&lt;p&gt;우측위에 .* 아이콘을 클릭하여 정규식 검색을 활성화 후 검색어 및 수정단어에 정규식 처리하여 완료&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 검색어 : (this\.[a-zA-Z]*)\.hideOverlay\(\);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// this부터 hideOverlay 앞의 값까지 모두 그룹화 지정&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;aaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hideOverlay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bbb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hideOverlay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 수정단어 : if($1) { $1.hideOverlay(); }&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 일괄 변경된 결과&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;aaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;aaa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hideOverlay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bbb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bbb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hideOverlay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2024/vscode-search-transition-1.png&quot; alt=&quot;vscode Image&quot; title=&quot;vscode Image&quot; /&gt;&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="develop" /><category term="dev-etc" /><summary type="html">vscode에서 검색 후 방향키를 누르면 검색어에 대한 일괄 변경 기능이 지원된다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/algorithm.jpg" /><media:content medium="image" url="http://localhost:4000/covers/algorithm.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Lerna 모노레포 환경 구성</title><link href="http://localhost:4000/2024/03/09/lerna-monorepo" rel="alternate" type="text/html" title="Lerna 모노레포 환경 구성" /><published>2024-03-09T20:05:00+09:00</published><updated>2024-03-09T20:05:00+09:00</updated><id>http://localhost:4000/2024/03/09/lerna-monorepo</id><content type="html" xml:base="http://localhost:4000/2024/03/09/lerna-monorepo">&lt;p&gt;lerna를 사용한 간단한 모노레포 설정&lt;/p&gt;
+
+&lt;h3 id=&quot;1-lerna-환경-구성&quot;&gt;1. lerna 환경 구성&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npx lerna init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;2-lernajson-수정&quot;&gt;2. lerna.json 수정&lt;/h3&gt;
+&lt;p&gt;yarn workspace 기반으로 작업하기 위해 useWorkspaces 사용&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;independent&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;npmClient&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;yarn&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;useWorkspaces&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;packages&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;packages/*&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3-packagejson에-workspaces-추가&quot;&gt;3. package.json에 workspaces 추가&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;workspaces&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;packages/*&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;4-각-패키지-생성&quot;&gt;4. 각 패키지 생성&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lerna create &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PACKAGE_NAME]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5-공통-패키지-설치&quot;&gt;5. 공통 패키지 설치&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn add eslint prettier typescript &lt;span class=&quot;nt&quot;&gt;--dev&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--ignore-workspace-root-check&lt;/span&gt;
+yarn add dayjs &lt;span class=&quot;nt&quot;&gt;--ignore-workspace-root-check&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;개별 패키지에 설치방식&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn workspace frontend add dayjs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6-각-workspace에-패키지-설치&quot;&gt;6. 각 workspace에 패키지 설치&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npx lerna bootstrap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;7-workspace-명령어-실행&quot;&gt;7. workspace 명령어 실행&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lerna run dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minhyeong.jang</name></author><category term="develop" /><category term="dev-etc" /><summary type="html">lerna를 사용한 간단한 모노레포 설정</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/algorithm.jpg" /><media:content medium="image" url="http://localhost:4000/covers/algorithm.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">일을 잘한다는 것</title><link href="http://localhost:4000/2023/01/23/read-self-dev" rel="alternate" type="text/html" title="일을 잘한다는 것" /><published>2023-01-23T18:05:00+09:00</published><updated>2023-01-23T18:05:00+09:00</updated><id>http://localhost:4000/2023/01/23/read-self-dev</id><content type="html" xml:base="http://localhost:4000/2023/01/23/read-self-dev">&lt;p&gt;일을 잘하는 법을 배운다기보다, 일을 잘하는 사람들을 관찰하고 평가하는 내용이다.&lt;br /&gt;
+내용에 100% 동의하지 않지만, 여러 사례를 통해 다시 한번 생각해보고 배울 부분들이 존재한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;리뷰&quot;&gt;리뷰&lt;/h2&gt;
+
+&lt;p&gt;나를 어필하는 자리나 프론트엔드 개발자에게 가장 중요한 것을 무엇이냐는 질문이 항상 어려웠다.&lt;br /&gt;
+당장 생각나는 건 ‘이해관계자들과 커뮤니케이션을 잘해야 하고 미리 캐치할 수 있는 오류를 잡아내야 하며, UI 영역을 담당하기에 사용성을 생각하면서 기획 의견을 내야 한다.’ 정도인데, 실제 업무를 하다 보면 이 정도는 작은 파편이라고 느껴진다.&lt;/p&gt;
+
+&lt;p&gt;그러다 보니 어느 순간부터 “프론트엔드 개발자에게 ‘센스’가 가장 중요하다”라고 얘기하고 다녔는데, 책의 도입부부터 일을 잘한다는 것을 ‘감각(sense)’으로 표현하여 놀라움과 함께 공감하면서 읽을 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;“오늘날 시대가 요구하는 인재상은 자신의 눈으로 세상을 똑바로 바라보면서, 무엇을 해야 하고 하지 말아야 할지 스스로 판단해 실천할 수 있는 리더십을 지닌 인물이다.”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;책에서는 ‘감각’있는 사람에 대해서 설명하면서, 두 명의 컨설턴트가 만담하는 형태로 이어간다.&lt;br /&gt;
+중점은 기술적인 부분이 높아진 요즘 감각적으로 상황에 대응하고 있는지와 그에 대한 사례를 설명하는 구조이다.&lt;br /&gt;
+예시로 프로그래밍에 대해서도 나오는데, 프로그래밍 기술이 뛰어난데도 실적 향상으로 이어지지 않는 사람들이 존재하는데 ‘직접’은 잘할지 몰라도 ‘일’은 잘하지 못한다고 표현한다.&lt;/p&gt;
+
+&lt;p&gt;일의 우선순위나 맥도날드와 넷플릭스 사례에서 보는 비즈니스에 대한 사고방식 등 흥미로운 영역들과 참고할 수 있는 영역들이 책에 많이 포함되어있었다.&lt;/p&gt;
+
+&lt;p&gt;다만, 동의하지 않는 부분은 일을 잘한다는 예시를 높이기 위해 다른 한쪽을 너무 내리는 형태가 있고 야구를 중심으로 서술하는 부분들이 반복해서 나오는데 몰입감이 떨어지거나 동의하지 못하는 영역들이 많았다.&lt;/p&gt;
+
+&lt;p&gt;인사이드 아웃과 아웃사이드 인이 그런 형태였다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;인사이드 아웃 - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자신의 논리에서 답을 찾고, 자신이 세운 목표를 따르며 우선 실행하고 계획을 수정한다.&lt;/code&gt;&lt;br /&gt;
+아웃사이드 인 - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;외부 정보에서 답을 찾고, 업무지시를 따르며 계획이 완성되어야 실행한다.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;인사이드 아웃과 아웃사이드 인을 설명하는 과정에서 아웃사이드 인을 ‘이렇게 행동해서는 안 된다’ 방식으로 얘기하고 인사이드 아웃이 완벽한 것처럼 풀어간다.&lt;/p&gt;
+
+&lt;p&gt;책에서는 콜트레인에 대한 일화를 좋아한다고 소개하는데, 밴드라는 팀에서 독자적 욕심으로 팀원과 관객이 불만을 가지고 떠났는데도 욕심을 버리지 못한 행동에 대해서 궁극의 인사이드 아웃 사례라고 좋아하는 부분에서 이해가 되지 않았다.&lt;/p&gt;
+
+&lt;p&gt;‘세미나를 찾아 다니는 것도 좋지만 자신에게 어떤 지식이 부족한지 파악하고 공부하는게 아웃사이드 인을 벗어나는 길이다’처럼 참고할 수 있는 부분들도 중간중간 섞여있지만 결국 장단점이 존재하는 영역이라고 생각한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;결론&quot;&gt;결론&lt;/h2&gt;
+
+&lt;p&gt;여러 사례에서 참고하기 좋은 흥미로운 내용들이 많이 존재했다.&lt;br /&gt;
+다음에 나를 판매한다면, 어떤 영역에서 ‘감각’있는지 고민해 보고 얘기할 수 있는 바탕이 될 것 같다.&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="daily" /><category term="essay" /><summary type="html">일을 잘하는 법을 배운다기보다, 일을 잘하는 사람들을 관찰하고 평가하는 내용이다. 내용에 100% 동의하지 않지만, 여러 사례를 통해 다시 한번 생각해보고 배울 부분들이 존재한다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/reading.png" /><media:content medium="image" url="http://localhost:4000/covers/reading.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">React Native HTML Render</title><link href="http://localhost:4000/2022/11/20/rn-html-render" rel="alternate" type="text/html" title="React Native HTML Render" /><published>2022-11-20T23:52:00+09:00</published><updated>2022-11-20T23:52:00+09:00</updated><id>http://localhost:4000/2022/11/20/rn-html-render</id><content type="html" xml:base="http://localhost:4000/2022/11/20/rn-html-render">&lt;p&gt;React Native에서 텍스트 에디터로 제작된 공지사항을 그대로 보여주기 위해 html을 렌더링하려고한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;시행착오&quot;&gt;시행착오&lt;/h2&gt;
+
+&lt;p&gt;처음에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;react-native-htmlview&lt;/code&gt;를 사용하여 html을 출력했다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn add react-native-htmlview
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLView&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;react-native-htmlview&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;StyledContentWrap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HTMLView&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/StyledContentWrap&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;StyledContentWrap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;styled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`
+  h1 {
+    font-size: xxx;
+  }
+  h2 {
+    font-size: xxx;
+  }
+`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;html 태그에 맞는 css를 보여주기 위해 styled-components에 태그에 맞는 스타일링을 적용했는데, 여기서 문제가 발생했다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node of type rule not supported as an inline style StyledNativeComponent&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;react-native에서는 html 태그를 지원하지 않기 때문에 styledComponent 영역에서 작성이 불가능하다고 warning이 계속 뜨는 것이였다.&lt;br /&gt;
+사용은 가능하지만 다른 방법으로 변경하기로 했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;react-native-render-html&quot;&gt;react-native-render-html&lt;/h2&gt;
+
+&lt;p&gt;npm trends에서도 react-native-htmlview과는 엄청난 차이를 보이는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;react-native-render-html&lt;/code&gt;를 사용하기로 했다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn add react-native-render-html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTML&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;react-native-render-html&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useWindowDimensions&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react-native&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;contentWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useWindowDimensions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HTML&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;source&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;tagsStyles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;htmlTagsStyles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;contentWidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;contentWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/View&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;contentWidth&lt;/code&gt;를 주지 않으면 warn이 뜬다. 라이브러리 Readme를 보니 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;useWindowDimensions&lt;/code&gt;로 width를 가져와 채워주는 코드가 있어서 그대로 가져왔다.&lt;/p&gt;
+
+&lt;p&gt;스타일은 아래와 같이 StyleSheet처럼 스타일링하여 tagsStyles로 넣어주면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;htmlTagsStyles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;marginTop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;paddingLeft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;marginBottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;marginTop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;marginBottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#0d6efd&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;textDecoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;기본적으로 native 코드를 따라가기 때문에, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listStyle&lt;/code&gt;와 같은 스타일링이 불가능하다. 대신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;customRenderers&lt;/code&gt;를 사용하여 ul, li 등 앞에 prefix를 붙이는 등 커스텀이 가능한데, &lt;a href=&quot;https://www.npmjs.com/package/react-native-render-html/v/5.0.1#creating-custom-renderers&quot;&gt;Document&lt;/a&gt;를 참고하면 된다.&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="develop" /><category term="react-native" /><summary type="html">React Native에서 텍스트 에디터로 제작된 공지사항을 그대로 보여주기 위해 html을 렌더링하려고한다.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/react-native.jpeg" /><media:content medium="image" url="http://localhost:4000/covers/react-native.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">programmers - 추석트래픽</title><link href="http://localhost:4000/2022/10/25/programmers-traffic" rel="alternate" type="text/html" title="programmers - 추석트래픽" /><published>2022-10-25T20:52:00+09:00</published><updated>2022-10-25T20:52:00+09:00</updated><id>http://localhost:4000/2022/10/25/programmers-traffic</id><content type="html" xml:base="http://localhost:4000/2022/10/25/programmers-traffic">&lt;h2 id=&quot;level3-문제&quot;&gt;Level3 문제&lt;/h2&gt;
+
+&lt;p&gt;이번 추석에도 시스템 장애가 없는 명절을 보내고 싶은 어피치는 서버를 증설해야 할지 고민이다. 장애 대비용 서버 증설 여부를 결정하기 위해 작년 추석 기간인 9월 15일 로그 데이터를 분석한 후 초당 최대 처리량을 계산해보기로 했다. 초당 최대 처리량은 요청의 응답 완료 여부에 관계없이 임의 시간부터 1초(=1,000밀리초)간 처리하는 요청의 최대 개수를 의미한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;해결방법&quot;&gt;해결방법&lt;/h2&gt;
+
+&lt;p&gt;임의의 한 구간을 선택해서 1s안에 몇 개의 타임라인이 지나가는지 구하는 문제이다.&lt;br /&gt;
+임의라는게 가장 헷갈리는 부분인데, 단순하게 생각해보면 이미 종료시점에 맞춰서 데이터가 정렬되어서 내려온다.&lt;/p&gt;
+
+&lt;p&gt;즉, 데이터를 반복문 돌렸을 때 다음 데이터의 종료시점은 무조건 나보다 뒤에 있다. 그렇다면 시작 시간이 현재 데이터 구간 안에 다음 데이터가 포함되는 지를 확인하면 되고 그게 1s가 된다.&lt;/p&gt;
+
+&lt;p&gt;이게 설명을 하려니까 어려운데, 소스코드 내에서 설명하는 편이 편할 것 같다.&lt;/p&gt;
+
+&lt;h2 id=&quot;소스코드&quot;&gt;소스코드&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시작, 종료, 작업시간을 구하는데 split으로 작성하기에는 코드가 길어져서 정규식으로 진행했다.&lt;/li&gt;
+  &lt;li&gt;종료시간을 기준으로 반복문을 돌리며 그 다음 index의 데이터들의 시작시간을 확인한다. 이때, 포함해야하는 기준이 1000ms이기에 해당 값을 빼서 종료시간보다 이전이였는지 체크한다.&lt;/li&gt;
+  &lt;li&gt;일치한다면 개수를 체크한다. 해당 방식으로 모든 반복문을 돌린다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;maxCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;workingTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(\d{2})\:(\d{2})\:([\d\.]{6})\s(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;.*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;s$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;endTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;parseFloat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;startTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;endTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;endTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;workingTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;endTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;workingTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;endTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;workingTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;maxCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;maxCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;maxCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 01:00:04.001 2.0s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 01:00:07.000 2s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 20:59:57.421 0.351s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 20:59:58.233 1.181s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 20:59:58.299 0.8s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 20:59:58.688 1.041s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 20:59:59.591 1.412s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 21:00:00.464 1.466s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 21:00:00.741 1.581s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 21:00:00.748 2.31s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 21:00:00.966 0.381s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2016-09-15 21:00:02.066 2.62s&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;참고사항&quot;&gt;참고사항&lt;/h2&gt;
+
+&lt;p&gt;처음 작업하면서 3, 18번 테스트가 실패했는데, 반복문 내에서 다음 데이터가 조건에 일치하지 않는 경우 break문을 사용했다. 생각해보니 다음 데이터의 시작시간이 해당 안되더라도 그 뒤의 데이터 로딩이 더 길어서 시작시간이 조건에 맞을 수도 있다. 그래서 해당 조건을 삭제했다.&lt;/p&gt;
+
+&lt;p&gt;이후 3번 테스트가 계속 실패했는데, 처음에는 parseFloat 사용하고 부동소수점을 날리는 방식으로 진행했었다. 해당 부분에서 오차가 발생했는지 1000을 곱해서 자연수로만 연산하니 정상적으로 통과했다.&lt;/p&gt;</content><author><name>minhyeong.jang</name></author><category term="develop" /><category term="study" /><summary type="html">Level3 문제</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/programmers.jpg" /><media:content medium="image" url="http://localhost:4000/covers/programmers.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">programmers - 숫자게임</title><link href="http://localhost:4000/2022/10/25/programmers-number-game" rel="alternate" type="text/html" title="programmers - 숫자게임" /><published>2022-10-25T14:52:00+09:00</published><updated>2022-10-25T14:52:00+09:00</updated><id>http://localhost:4000/2022/10/25/programmers-number-game</id><content type="html" xml:base="http://localhost:4000/2022/10/25/programmers-number-game">&lt;h2 id=&quot;level3-문제&quot;&gt;Level3 문제&lt;/h2&gt;
+
+&lt;p&gt;2n명의 사원들을 두 팀으로 나누고 사원마다 무작위 자연수를 받았을 때, B팀이 승리하는 횟수&lt;/p&gt;
+
+&lt;h2 id=&quot;해결방법&quot;&gt;해결방법&lt;/h2&gt;
+
+&lt;p&gt;큰 수가 이기는 규칙이기에 내림차순으로 정렬하는게 효율적이다.&lt;br /&gt;
+게임으로 단순하게 생각하면 A팀의 가장 큰 숫자를 이기지 못하는 상황일 때, B팀의 가장 작은 숫자를 버리는 방향으로 진행하면 된다.
+ex) A팀 [11, 9, 8, 7], B팀 [10, 9, 8, 7]이라면 B팀에서 11을 이길 수 있는 카드가 없으니까 가장 작은 수를 버리면서 B팀의 가장 큰 수를 유지할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;해당 방식으로 tail이라는 변수를 놓고 B팀이 뒤에서 카드를 몇장 버렸는 지 체크하면서 값을 비교한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;소스코드&quot;&gt;소스코드&lt;/h2&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tail&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;sortA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sortB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;tail&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>minhyeong.jang</name></author><category term="develop" /><category term="study" /><summary type="html">Level3 문제</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/covers/programmers.jpg" /><media:content medium="image" url="http://localhost:4000/covers/programmers.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

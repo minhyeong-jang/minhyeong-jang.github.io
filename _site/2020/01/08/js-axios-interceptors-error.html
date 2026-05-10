@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>axios - interceptors error 처리와 refreshToken</title>
+<meta name="title" content="axios - interceptors error 처리와 refreshToken" />
+<meta name="author" content="minhyeong.jang"/>
+<meta name="description" content="axios로 개발할 때, API마다 try ~ catch문을 적용하여 에러 처리를 진행해왔습니다.
+이번 프로젝트에서는 Token을 관리하며, 서버에서 403에러가 오면 Token을 재발행해야하는 환경이라 더 나은 코드가 없을까 찾아보니 interceptors가 있었습니다.
+
+"/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="axios - interceptors error 처리와 refreshToken"/>
+<meta property="og:description" content="axios로 개발할 때, API마다 try ~ catch문을 적용하여 에러 처리를 진행해왔습니다.
+이번 프로젝트에서는 Token을 관리하며, 서버에서 403에러가 오면 Token을 재발행해야하는 환경이라 더 나은 코드가 없을까 찾아보니 interceptors가 있었습니다.
+
+"/>
+<meta property="og:url" content="http://localhost:4000/2020/01/08/js-axios-interceptors-error"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/js.png"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000/2020/01/08/js-axios-interceptors-error" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="axios - interceptors error 처리와 refreshToken"/>
+<meta name="twitter:description" content="axios로 개발할 때, API마다 try ~ catch문을 적용하여 에러 처리를 진행해왔습니다.
+이번 프로젝트에서는 Token을 관리하며, 서버에서 403에러가 오면 Token을 재발행해야하는 환경이라 더 나은 코드가 없을까 찾아보니 interceptors가 있었습니다.
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="minhyeong.jang"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/js.png"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="develop,javascript"/>
+
+<meta property="article:tag" content="develop"/>
+
+<meta property="article:tag" content="javascript"/>
+
+
+
+<meta property="article:published_time" content="2020-01-08T14:10:00+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/minhyeong.jang"/>
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "axios - interceptors error 처리와 refreshToken",
+  "description": "axios로 개발할 때, API마다 try ~ catch문을 적용하여 에러 처리를 진행해왔습니다.\n이번 프로젝트에서는 Token을 관리하며, 서버에서 403에러가 오면 Token을 재발행해야하는 환경이라 더 나은 코드가 없을까 찾아보니 interceptors가 있었습니다.\n\n",
+  "image": "http://localhost:4000/assets/images/covers/js.png",
+  "author": {
+    "@type": "Person",
+    "name": "minhyeong.jang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doriri Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/design/favicon.ico"
+    }
+  },
+  "datePublished": "2020-01-08T14:10:00+09:00",
+  "url": "http://localhost:4000/2020/01/08/js-axios-interceptors-error"
+}
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+        ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=""
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=" active "
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=""
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=""
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div id="cover"
+  
+    style="background-image: url(/assets/images/covers/js.png)"
+  >
+  <div class="mouse-scroll">
+    <img src="/assets/images/design/icon-mouse-scroll.png" alt="mouse-scroll">
+  </div>
+</div>
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="4679806649">
+</ins>
+</div>
+
+<div id="post-content">
+  <div class="reponsive-content">
+    <div class="post-info">
+      <p class="post-date red">
+        <time datetime="2020-01-08T14:10:00+09:00">2020년 01월 08일</time>
+        
+        
+        
+        <span class="reading-time">· 2분 읽기</span>
+      </p>
+      <h1 class="post-title">axios - interceptors error 처리와 refreshToken</h1>
+    </div>
+    <div><p>axios로 개발할 때, API마다 try ~ catch문을 적용하여 에러 처리를 진행해왔습니다.<br />
+이번 프로젝트에서는 Token을 관리하며, 서버에서 403에러가 오면 Token을 재발행해야하는 환경이라 더 나은 코드가 없을까 찾아보니 interceptors가 있었습니다.</p>
+
+<h2 id="axiosinterceptors">axios.interceptors</h2>
+
+<p>axios.interceptors 함수를 통해 request, response를 감지할 수 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// API 호출 전 해당 함수가 먼저 실행됩니다.</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">config</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="c1">// API 실행 후 response를 감지하여 데이터를 return 합니다.</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>위 예제처럼 <code class="language-plaintext highlighter-rouge">interceptors.response</code>를 통하여 에러를 감지할 수 있게됩니다.<br />
+그러면 다시 response에 에러처리를 위해 코드를 작성합니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">_axios</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="na">baseURL</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">REACT_APP_API_URL</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="nx">_axios</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">,</span>
+  <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span> <span class="o">&amp;&amp;</span> <span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">403</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">Auth</span><span class="p">.</span><span class="nx">refreshToken</span><span class="p">()</span> <span class="c1">// token 재발행 및 반환</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">token</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nx">originalRequest</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">token</span><span class="p">;</span>
+          <span class="k">return</span> <span class="nx">_axios</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">config</span><span class="p">);</span> <span class="c1">// error.config(origin API 정보)를 다시 요청</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/login</span><span class="dl">"</span><span class="p">;</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<ol>
+  <li>별도의 axios를 생성하고, <code class="language-plaintext highlighter-rouge">_axios</code>가 호출되면 403에러를 감지할 수 있도록 작성합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">refreshToken()</code>에서 token을 전달받아 header에 추가</li>
+  <li><code class="language-plaintext highlighter-rouge">origin API 정보가 들어있는 error.config</code>로 기존 API 재호출</li>
+  <li>결과를 return하게 되면, 기존 API 호출 부분의 Response 값으로 전달됩니다.</li>
+</ol>
+
+<p>예를 들면 아래와 같이 API를 호출했을 때 403에러가 나타나도 interceptors에서 정상적으로 값을 return하면 API 호출하는 부분에서는 정상적인 값이 들어옵니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">_axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span> <span class="c1">// 403에러가 나타나도 interceptors의 return 값을 가져옴</span>
+<span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>감사합니다.</p>
+</div>
+  </div>
+</div>
+<div id="post-links">
+  <div class="reponsive-content">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      
+        
+        <li>
+  <a href="/2021/02/04/react-native-error">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react-native.jpeg)"
+      
+      role="img" aria-label="React Native 설치 & 에러"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2021-02-04T17:39:00+09:00">2021년 02월 04일</time>
+      </div>
+      <h3 class="post-title">React Native 설치 & 에러</h3>
+      <p class="post-excerpt"># 공식문서 AOS/iOS 에뮬레이터 설치
+
+https://reactnative.dev/docs/environment-setup
+
+## error Failed to install the app
+
+> error Failed to install the app. Make sure you have an Android emulator running or a > device connected. Run CLI with --verbose flag for more details.
+
+1. `bash chmod 755 android/gradlew` 실행
+2. emulator -list-avds 리스트 뜨는지 확인
+3. ~/.bash_profile 또는 ~/.zshrc 에 path 정상 등록되어있는지 확인
+
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Compatible side by side NDK version was not found.
+
+> Task :app:installDebug FAILED
+
+Android Studio -> Configure -> SDK Manager -> SDK Tools -> NDK 설치
+
+## Failed to run jetifier
+
+```bash
+yarn
+yarn add -D jetifier
+npx jetify
+npx react-native run-android
+```
+
+or
+
+```bash
+react-native run-android --no-jetifier
+```
+</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2020/01/17/js-scroll-bottom">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/typescript.png)"
+      
+      role="img" aria-label="스크롤 맨 하단으로 이동"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2020-01-17T14:10:00+09:00">2020년 01월 17일</time>
+      </div>
+      <h3 class="post-title">스크롤 맨 하단으로 이동</h3>
+      <p class="post-excerpt">채팅과 같이 메시지가 도착하면 최하단으로 계속 이동해야하는 경우나 단순 최하단으로 이동하고 싶을 때 구현하는 방법입니다.
+
+## 자바스크립트에서 스크롤 하단으로 이동
+
+엘리먼트의 height만큼 scroll 위치를 이동합니다.
+
+```js
+// overflow 스크롤이 걸려있는 엘리먼트
+const ele = document.querySelector("ul");
+
+ele.scrollTop = ele.scrollHeight;
+```
+
+## React에서 응용하기
+
+React에서 채팅 레이아웃에서 메시지가 들어올 때마다 최하단으로 이동하는 코드입니다.
+
+```tsx
+import React, { useRef, useEffect } from 'react';
+import { useMessages } from 'Hooks';
+...
+const messagesRef = useRef(null); // 메시지 엘리먼트를 저장
+const { messages } = useMessages(); // Custom Hooks : 메시지 리스트
+
+useEffect(() => {
+  messagesRef.current!.scrollTop = messagesRef.current!.scrollHeight;
+}, [messages]);
+...
+return (
+  
+    {messages.map(message => {
+      return (
+        
+          ...
+        
+      );
+    })}
+  ;
+)
+```
+
+firebase를 사용하고 있으며, 메시지를 구독하면 useMessages에서 messages를 내려줍니다. 이후 messages가 업데이트될 때 마다, ul 엘리먼트를 최하단으로 이동합니다.
+
+만일 특별하게 최하단으로 이동하기 싫으시다면, useEffect 내에 if문으로 조건을 설정하시면 됩니다.
+</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2020/01/08/ts-use-tip">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/typescript.png)"
+      
+      role="img" aria-label="특정 모듈의 Typescript Props 정리"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2020-01-08T14:02:00+09:00">2020년 01월 08일</time>
+      </div>
+      <h3 class="post-title">특정 모듈의 Typescript Props 정리</h3>
+      <p class="post-excerpt">HTML
+
+Event
+
+키보드 관련 이벤트 ( keyup )
+
+document.addEventListener("keyup", (event: KeyboardEvent) =&gt; {
+  console.log(event.keyCode);
+});
+
+
+React
+
+React.cloneElement
+
+type ReactText = string | number;
+type ReactChild = ReactElement&lt;any&gt; | ReactText;
+
+
+return React.cloneElement(child as React.ReactElement&lt;any&gt;, {
+  width: this.props.width,
+  height: this.props.height,
+});
+
+
+react-router-dom
+
+history
+
+import { RouteComponentProps } from 'react-router-dom';
+interface Props extends RouteComponentProps&lt;any&gt; {}
+
+const Component : React.FC&lt;Props&gt; = ({ history }) =&gt; ();
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="3807925718">
+</ins>
+</div>
+
+<div id="disqus-wrap">
+  <div id="disqus_thread"></div>
+</div>
+    </div>
+  </div>
+  
+<script>
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>

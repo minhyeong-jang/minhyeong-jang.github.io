@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>Doriri Blog</title>
+<meta name="title" content="Doriri Blog" />
+<meta name="author" content=""/>
+<meta name="description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Doriri Blog"/>
+<meta property="og:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Doriri Blog"/>
+<meta name="twitter:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content=""/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2026-05-10T22:42:59+09:00"/>
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+        ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=""
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=""
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=""
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=""
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <ul id="post-list">
+  
+    
+      
+        <li>
+  <a href="/2026/04/01/2026-q1-retrospective">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/cafe.png)"
+      
+      role="img" aria-label="2026 1분기 회고 — 많이 만들었지만, 그래서 뭐가 달라졌나"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2026-04-01T18:00:00+09:00">2026년 04월 01일</time>
+      </div>
+      <h3 class="post-title">2026 1분기 회고 — 많이 만들었지만, 그래서 뭐가 달라졌나</h3>
+      <p class="post-excerpt">1분기가 끝났다. GitHub 정리해보니 3개월 동안 3개 레포에서 152건 정도 작업했더라. 많이 만들긴 했다. 성과도 나오고 있고, D2C 퍼널 데이터도 잘 나오고 있다. 그런데 이 글을 쓰면서 계속 드는 생각이 있다. 'OKR 목표를 바라보고 달렸나?' 이 질문에는 자신 있게 답하기 어렵다. 무엇을 했나 D2C — 0에서 1로 만든 제품 1분기에서 가장 큰 작업은 D2C 서비스를 처음부터 만들어서 런칭한 거다. 1월 말부터 근무지 선택, 월급일 입력 같은 초기 플로우를 만들기 시작했고, 2월 초~중순에 온보딩, CMS 자동이체, 본인인증, 상환 페이지, 급여계좌 R2 업로드 같은 핵심 기능을 완성했다. 2월 중순부터는 QA에 집중하고 바로 오픈할 정도로 촉박한 일정이었다. 런칭 후에는 Amplitude, PostHog 기반으로 퍼널 데이터 수집하고, 전환율 떨어지는 구간 잡아서 개선하고, 성과 측정까지 진행했다. 데이터는 잘 나오고 있다. 신분증 OCR 원래 Tesseract로 OCR을 붙였는데 인식률이 좋지 않았다. 코드에프, 네이버 클로바 등 여러 솔루션을 찾아봤는데, 문득 '그냥 AI로 해볼까?' 싶어서 Claude Vision을 붙여봤다. 프롬프트에 따라 인식률이 꽤 높아서 그대로 진행했다. 여러 선택지 중에서 가장 합리적인...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2023/01/23/read-self-dev">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/reading.png)"
+      
+      role="img" aria-label="일을 잘한다는 것"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2023-01-23T18:05:00+09:00">2023년 01월 23일</time>
+      </div>
+      <h3 class="post-title">일을 잘한다는 것</h3>
+      <p class="post-excerpt">일을 잘하는 법을 배운다기보다, 일을 잘하는 사람들을 관찰하고 평가하는 내용이다. 내용에 100% 동의하지 않지만, 여러 사례를 통해 다시 한번 생각해보고 배울 부분들이 존재한다. 리뷰 나를 어필하는 자리나 프론트엔드 개발자에게 가장 중요한 것을 무엇이냐는 질문이 항상 어려웠다. 당장 생각나는 건 ‘이해관계자들과 커뮤니케이션을 잘해야 하고 미리 캐치할 수 있는 오류를 잡아내야 하며, UI 영역을 담당하기에 사용성을 생각하면서 기획 의견을 내야 한다.’ 정도인데, 실제 업무를 하다 보면 이 정도는 작은 파편이라고 느껴진다. 그러다 보니 어느 순간부터 “프론트엔드 개발자에게 ‘센스’가 가장 중요하다”라고 얘기하고 다녔는데, 책의 도입부부터 일을 잘한다는 것을 ‘감각(sense)’으로 표현하여 놀라움과 함께 공감하면서 읽을 수 있었다. “오늘날 시대가 요구하는 인재상은 자신의 눈으로 세상을 똑바로 바라보면서, 무엇을 해야 하고 하지 말아야 할지 스스로 판단해 실천할 수 있는 리더십을 지닌 인물이다.” 책에서는 ‘감각’있는 사람에 대해서 설명하면서, 두 명의 컨설턴트가 만담하는 형태로 이어간다. 중점은 기술적인 부분이 높아진 요즘 감각적으로 상황에 대응하고 있는지와 그에 대한 사례를 설명하는 구조이다. 예시로 프로그래밍에 대해서도 나오는데, 프로그래밍 기술이 뛰어난데도 실적 향상으로...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2022/10/23/retrospective-cafe">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/cafe.png)"
+      
+      role="img" aria-label="카페 코딩 회고"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-10-23T18:02:00+09:00">2022년 10월 23일</time>
+      </div>
+      <h3 class="post-title">카페 코딩 회고</h3>
+      <p class="post-excerpt">평소 주말에 따로 약속이 없다면 카페로 이동해서 노트북을 하는 편이다. 주말 동안 아무것도 하지 않고 하루를 보낸다는 게 '지금 내가 이렇게 시간을 버리는 게 맞나?'라는 생각으로 죄책감이 생기다 보니 늦은 저녁이라도 마감시간까지 최소 2~3시간은 작업하고 있다. 카페에 오면 블로그, 사이드 프로젝트, 외주, 독서 등 작업한다. 예전에는 회사 업무를 가장 우선적으로 처리했는데, 조직 개편 이후 프로젝트 배경지식도 부족하고 예전만큼 오너쉽이 생기지 않아 개인 작업에 모든 시간을 사용하고 있다. 이번 주말 동안 카페에서만 10시간을 작업했는데, 문득 내가 시간 대비 성장하고 있는 게 맞을까?, 내가 이 작업을 하고 있는 게 맞을까? 의심이 들었다. 매주 이렇게 개발하는데 성장하고 있다는 생각이 들지 않았고 고민해 보는 시간을 가져보았다. 회고 내가 카페에서 하는 일들은 공부보다는 코더에 가까웠다. 이미 아는 내용들로 빠르게 개발하다 보니 새로운 학습이 없었고 그나마 외주하면서 새로운 서버 환경과 라이브러리 밖에 없었다. 회사를 다니면서 비즈니스와 리소스에 맞춰 달려와서 그런건지 '새로운 것을 도입해 보자!'라는 생각보다 안정적이고 효율적으로 개발하는 방식이 익숙했다. 해당 방식이 틀리다는 생각은 아니지만, 사이드...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/05/30/eb-answer">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      role="img" aria-label="서류 전형 Q&A 답하기"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2019-05-30T08:05:00+09:00">2019년 05월 30일</time>
+      </div>
+      <h3 class="post-title">서류 전형 Q&A 답하기</h3>
+      <p class="post-excerpt">Q1. 프로그래밍을 시작한 경위와 본격적으로 투신하고 생업으로 삼기로 결정한 이야기를 해주세요. 어릴 때부터 컴퓨터와 무엇을 만든다는 것에 흥미가 많았습니다. 예를 들어 고무줄 총 만들기, 스타크래프트 유즈맵 만들기 등이 있습니다. 그러다 보니 프로그램을 만들어보자는 생각에 방과 후 수업 및 방학 동안 선린인터넷고등학교에서 교육을 받으며 프로그래밍을 시작했고, 자연스럽게 특성화 고등학교에 진학하게 되었습니다. 프로그래밍은 공부할수록 부족하다는 것을 알려주고 더 나은 방향을 제시해주어 끊임없이 발전할 수 있게 해줍니다. 이렇게 공부한 만큼 결과가 나온다는 것이 가장 매력이고 재미있는 부분이라고 생각합니다. 저는 이러한 프로그래밍을 계속 배우고 즐기기 위해 생업으로 삼았습니다. Q2. 좋은 개발자가 되기 위해 갖추어야 한다고 생각하는 덕목 셋을 고르고 그 이유를 말해주세요. (예를들어 책임감, 꼼꼼함, 유연성 등등) 학습, 경청, 책임감 좋은 개발자는 도태되지 않으며 다른 사람들의 의견에 귀 기울이고 자신의 코드에 책임감을 느껴야 한다고 생각합니다. 학습 개발이라는 분야는 빠르게 변화합니다. 하루 만에 라이브러리가 지원되거나 개선되고, 갑자기 지원하던 라이브러리가 갑자기 중단되기도 합니다. 이러한 상황에서 개발자는 ‘학습’을 통해 더 나은 방향으로 계속 나아가야 합니다. 물론 지속해서...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/03/22/uplus-compliment">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      role="img" aria-label="일상속에 사소한 부분을 칭찬한다는 것"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2019-03-22T18:06:00+09:00">2019년 03월 22일</time>
+      </div>
+      <h3 class="post-title">일상속에 사소한 부분을 칭찬한다는 것</h3>
+      <p class="post-excerpt">최근 유튜브나 방송에서 ‘사람들이 친절하게 행동했을 때 반응’을 몰래카메라로 방송하기도 합니다.
+대부분의 결과는 친절의 받은 사람은 보답을 하거나 감사하는 등 훈훈하게 마무리가 나타납니다.
+
+저에게도 최근 그런 일이 나타났습니다.
+단순 핸드폰 문의였지만, 상담사분의 노력하시는 모습과 상냥함은 제게 좋은 기분으로 다가왔고 저는 그에 대한 보답으로 문의사항에 ‘방금 전화주신 상담사 분을 칭찬드리고 싶어 문의 남깁니다.’로 글을 남겼습니다.
+
+시간이 얼마 지나지않아 상담사분께서 연락을 주셨고, 상담을 진행하면서 처음으로 칭찬 글을 받아보셨다고 좋아하셨습니다.
+
+비록 짧은 시간이였지만 서로에게 좋은 기분을 남기고 마무리 된 이야기였습니다.
+
+상대방의 배려와 정성이 느껴진다면 최소한이라도 보답을 해야 한다고 생각합니다.
+물질적인 것이 아니어도 간단한 메시지를 남기는 정도는 귀찮아서 안하는 것이지 누구나 할 수있는 부분입니다.
+
+그래서 언제나 상담을 진행할 때 그분의 정성이 느껴진다면 문의사항이나 칭찬페이지를 통하여 꼭 메시지를 남기고 있습니다.
+
+그런 저한테도 상담사분의 감사인사를 받은 것은 처음입니다.
+
+상담사분이 사소한 행동 하나로 다른 사람이 행복할 수 있다는 것과 그 모습에 내가 기분이 좋다는 것을 깨닫게 해주셨습니다.
+
+앞으로도 계속 상대방의 배려와 정성에 보답하려고 합니다.
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+</ul>
+<ul id="pagination" role="navigation" aria-label="Pagination">
+	
+</ul>
+
+    </div>
+  </div>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>

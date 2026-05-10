@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>Lerna 모노레포 환경 구성</title>
+<meta name="title" content="Lerna 모노레포 환경 구성" />
+<meta name="author" content="minhyeong.jang"/>
+<meta name="description" content="lerna를 사용한 간단한 모노레포 설정
+
+"/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Lerna 모노레포 환경 구성"/>
+<meta property="og:description" content="lerna를 사용한 간단한 모노레포 설정
+
+"/>
+<meta property="og:url" content="http://localhost:4000/2024/03/09/lerna-monorepo"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000/2024/03/09/lerna-monorepo" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Lerna 모노레포 환경 구성"/>
+<meta name="twitter:description" content="lerna를 사용한 간단한 모노레포 설정
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="minhyeong.jang"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="develop,dev-etc"/>
+
+<meta property="article:tag" content="develop"/>
+
+<meta property="article:tag" content="dev-etc"/>
+
+
+
+<meta property="article:published_time" content="2024-03-09T20:05:00+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/minhyeong.jang"/>
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Lerna 모노레포 환경 구성",
+  "description": "lerna를 사용한 간단한 모노레포 설정\n\n",
+  "image": "http://localhost:4000/assets/images/covers/algorithm.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "minhyeong.jang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doriri Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/design/favicon.ico"
+    }
+  },
+  "datePublished": "2024-03-09T20:05:00+09:00",
+  "url": "http://localhost:4000/2024/03/09/lerna-monorepo"
+}
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+        ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=""
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=""
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=""
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=" active "
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div id="cover"
+  
+    style="background-image: url(/assets/images/covers/algorithm.jpg)"
+  >
+  <div class="mouse-scroll">
+    <img src="/assets/images/design/icon-mouse-scroll.png" alt="mouse-scroll">
+  </div>
+</div>
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="4679806649">
+</ins>
+</div>
+
+<div id="post-content">
+  <div class="reponsive-content">
+    <div class="post-info">
+      <p class="post-date red">
+        <time datetime="2024-03-09T20:05:00+09:00">2024년 03월 09일</time>
+        
+        
+        
+        <span class="reading-time">· 1분 읽기</span>
+      </p>
+      <h1 class="post-title">Lerna 모노레포 환경 구성</h1>
+    </div>
+    <div><p>lerna를 사용한 간단한 모노레포 설정</p>
+
+<h3 id="1-lerna-환경-구성">1. lerna 환경 구성</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx lerna init
+</code></pre></div></div>
+
+<h3 id="2-lernajson-수정">2. lerna.json 수정</h3>
+<p>yarn workspace 기반으로 작업하기 위해 useWorkspaces 사용</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"independent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"npmClient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yarn"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"useWorkspaces"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"packages/*"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="3-packagejson에-workspaces-추가">3. package.json에 workspaces 추가</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"workspaces"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"packages/*"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="4-각-패키지-생성">4. 각 패키지 생성</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lerna create <span class="o">[</span>PACKAGE_NAME]
+</code></pre></div></div>
+
+<h3 id="5-공통-패키지-설치">5. 공통 패키지 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn add eslint prettier typescript <span class="nt">--dev</span> <span class="nt">--ignore-workspace-root-check</span>
+yarn add dayjs <span class="nt">--ignore-workspace-root-check</span>
+</code></pre></div></div>
+
+<p>개별 패키지에 설치방식</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yarn workspace frontend add dayjs
+</code></pre></div></div>
+
+<h3 id="6-각-workspace에-패키지-설치">6. 각 workspace에 패키지 설치</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx lerna bootstrap
+</code></pre></div></div>
+
+<h3 id="7-workspace-명령어-실행">7. workspace 명령어 실행</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lerna run dev
+</code></pre></div></div>
+</div>
+  </div>
+</div>
+<div id="post-links">
+  <div class="reponsive-content">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      
+        
+        <li>
+  <a href="/2024/12/09/learning-automation">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      role="img" aria-label="한국이러닝 학습 진도율 100% 만들기"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2024-12-09T15:05:00+09:00">2024년 12월 09일</time>
+      </div>
+      <h3 class="post-title">한국이러닝 학습 진도율 100% 만들기</h3>
+      <p class="post-excerpt">1. 강의 시청 화면에서 cmd + i 눌러서 개발자도구 오픈
+2. console에 스레드에 있는 코드 입력
+3. 붙여넣기 안되는 분들은 allow pasting 수기 입력 후 진행
+4. 마지막 챕터 끝에 5초 정도 듣기
+
+```js
+var no = $("#no").val();
+var num = $("#num").val();
+var log_num = location.search.match(/max_num=([\d]*)\&/)[1];
+var cl_start_time = Math.floor(new Date().getTime()/1000) - 4020;
+var cl_start_check = $("#cl_start_check").val();
+var user_id1 = location.search.match(/user_id1=([a-zA-Z0-9]*)$/)[1];
+var allData = {
+	no,
+	num,
+	log_num,
+	cl_start_time,
+	cl_start_check,
+	user_id1,
+  page_time: 147.146,
+};
+var allData2 = {
+	no,
+	num,
+	cur_page: Number(log_num),
+	max_num: 0,
+	user_id1,
+	goyong_yn: "9"
+};
+$.ajax({
+    url: "jindo_check_cl.php",
+    type:'POST',
+    data: allData
+});
+$.ajax({
+    url: "timestamp.php",
+    cache: false
+});
+$.ajax({
+    url: "ajax.jumsu2_update_page.php",
+    type:'POST',
+    data: allData2,
+    async: false
+});
+
+setTimeout(() => {
+	$('#frame')[0].src = 		$('#frame').attr('src').replace(/[\d]{2}\.html$/, `${pad(6, 2)}.html`)
+}, 500);
+```</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2024/10/08/vscode-search-transition">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      role="img" aria-label="vscode 검색 결과 텍스트 변경 시 정규식 처리"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2024-10-08T20:05:00+09:00">2024년 10월 08일</time>
+      </div>
+      <h3 class="post-title">vscode 검색 결과 텍스트 변경 시 정규식 처리</h3>
+      <p class="post-excerpt">vscode에서 검색 후 방향키를 누르면 검색어에 대한 일괄 변경 기능이 지원된다.
+
+
+![vscode Image]({{ site.image_post_url }}/2024/vscode-search-transition-1.png "vscode Image")
+
+작업 중 .hideOverlay 함수에 대한 일괄 변경을 처리하려는데,  
+a.hideOverlay, b.hideOverlay... 와 같이 앞에 붙어있는 문자가 모두 다른 상황에서는 단순 검색으로는 변경이 불가능하여 정규식 검색 후 그룹화하여 일괄 변경 처리를 진행했다.
+
+우측위에 .* 아이콘을 클릭하여 정규식 검색을 활성화 후 검색어 및 수정단어에 정규식 처리하여 완료
+
+```js
+// 검색어 : (this\.[a-zA-Z]*)\.hideOverlay\(\);
+// this부터 hideOverlay 앞의 값까지 모두 그룹화 지정
+this.aaa.hideOverlay();
+this.bbb.hideOverlay();
+
+// 수정단어 : if($1) { $1.hideOverlay(); }
+// 일괄 변경된 결과
+if(this.aaa) { this.aaa.hideOverlay(); };
+if(this.bbb) { this.bbb.hideOverlay(); };
+```
+
+
+![vscode Image]({{ site.image_post_url }}/2024/vscode-search-transition-1.png "vscode Image")</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2023/01/23/read-self-dev">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/reading.png)"
+      
+      role="img" aria-label="일을 잘한다는 것"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2023-01-23T18:05:00+09:00">2023년 01월 23일</time>
+      </div>
+      <h3 class="post-title">일을 잘한다는 것</h3>
+      <p class="post-excerpt">일을 잘하는 법을 배운다기보다, 일을 잘하는 사람들을 관찰하고 평가하는 내용이다. 내용에 100% 동의하지 않지만, 여러 사례를 통해 다시 한번 생각해보고 배울 부분들이 존재한다. 리뷰 나를 어필하는 자리나 프론트엔드 개발자에게 가장 중요한 것을 무엇이냐는 질문이 항상 어려웠다. 당장 생각나는 건 ‘이해관계자들과 커뮤니케이션을 잘해야 하고 미리 캐치할 수 있는 오류를 잡아내야 하며, UI 영역을 담당하기에 사용성을 생각하면서 기획 의견을 내야 한다.’ 정도인데, 실제 업무를 하다 보면 이 정도는 작은 파편이라고 느껴진다. 그러다 보니 어느 순간부터 “프론트엔드 개발자에게 ‘센스’가 가장 중요하다”라고 얘기하고 다녔는데, 책의 도입부부터 일을 잘한다는 것을 ‘감각(sense)’으로 표현하여 놀라움과 함께 공감하면서 읽을 수 있었다. “오늘날 시대가 요구하는 인재상은 자신의 눈으로 세상을 똑바로 바라보면서, 무엇을 해야 하고 하지 말아야 할지 스스로 판단해 실천할 수 있는 리더십을 지닌 인물이다.” 책에서는 ‘감각’있는 사람에 대해서 설명하면서, 두 명의 컨설턴트가 만담하는 형태로 이어간다. 중점은 기술적인 부분이 높아진 요즘 감각적으로 상황에 대응하고 있는지와 그에 대한 사례를 설명하는 구조이다. 예시로 프로그래밍에 대해서도 나오는데, 프로그래밍 기술이 뛰어난데도 실적 향상으로...</p>
+    </div>
+  </a>
+</li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="3807925718">
+</ins>
+</div>
+
+<div id="disqus-wrap">
+  <div id="disqus_thread"></div>
+</div>
+    </div>
+  </div>
+  
+<script>
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>

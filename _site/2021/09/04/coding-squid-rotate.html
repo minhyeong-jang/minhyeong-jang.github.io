@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>코딩테스트 - 2차원 배열 회전</title>
+<meta name="title" content="코딩테스트 - 2차원 배열 회전" />
+<meta name="author" content="minhyeong.jang"/>
+<meta name="description" content="N x N 크기의 2차원 배열을 시계방향으로 90도씩 회전하려 합니다. 다음은 2 x 2 크기의 2차원 배열을 시계방향으로 90도씩 회전하는 예시입니다.
+
+"/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="코딩테스트 - 2차원 배열 회전"/>
+<meta property="og:description" content="N x N 크기의 2차원 배열을 시계방향으로 90도씩 회전하려 합니다. 다음은 2 x 2 크기의 2차원 배열을 시계방향으로 90도씩 회전하는 예시입니다.
+
+"/>
+<meta property="og:url" content="http://localhost:4000/2021/09/04/coding-squid-rotate"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000/2021/09/04/coding-squid-rotate" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="코딩테스트 - 2차원 배열 회전"/>
+<meta name="twitter:description" content="N x N 크기의 2차원 배열을 시계방향으로 90도씩 회전하려 합니다. 다음은 2 x 2 크기의 2차원 배열을 시계방향으로 90도씩 회전하는 예시입니다.
+
+"/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content="minhyeong.jang"/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/algorithm.jpg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content="develop,study"/>
+
+<meta property="article:tag" content="develop"/>
+
+<meta property="article:tag" content="study"/>
+
+
+
+<meta property="article:published_time" content="2021-09-04T22:44:00+09:00"/>
+
+
+<meta property="article:author" content="http://localhost:4000/authors/minhyeong.jang"/>
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "코딩테스트 - 2차원 배열 회전",
+  "description": "N x N 크기의 2차원 배열을 시계방향으로 90도씩 회전하려 합니다. 다음은 2 x 2 크기의 2차원 배열을 시계방향으로 90도씩 회전하는 예시입니다.\n\n",
+  "image": "http://localhost:4000/assets/images/covers/algorithm.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "minhyeong.jang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doriri Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4000/assets/images/design/favicon.ico"
+    }
+  },
+  "datePublished": "2021-09-04T22:44:00+09:00",
+  "url": "http://localhost:4000/2021/09/04/coding-squid-rotate"
+}
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+        ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=""
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=""
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=" active "
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=""
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <div id="cover"
+  
+    style="background-image: url(/assets/images/covers/algorithm.jpg)"
+  >
+  <div class="mouse-scroll">
+    <img src="/assets/images/design/icon-mouse-scroll.png" alt="mouse-scroll">
+  </div>
+</div>
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="4679806649">
+</ins>
+</div>
+
+<div id="post-content">
+  <div class="reponsive-content">
+    <div class="post-info">
+      <p class="post-date red">
+        <time datetime="2021-09-04T22:44:00+09:00">2021년 09월 04일</time>
+        
+        
+        
+        <span class="reading-time">· 2분 읽기</span>
+      </p>
+      <h1 class="post-title">코딩테스트 - 2차원 배열 회전</h1>
+    </div>
+    <div><p>N x N 크기의 2차원 배열을 시계방향으로 90도씩 회전하려 합니다. 다음은 2 x 2 크기의 2차원 배열을 시계방향으로 90도씩 회전하는 예시입니다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example ( 2x2 )</span>
+<span class="p">[</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+<span class="p">][</span>
+  <span class="c1">// After ( 1회 회전 )</span>
+  <span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="p">][</span>
+  <span class="c1">// Example ( 2x2 )</span>
+  <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="p">][</span>
+  <span class="c1">// After ( 2회 회전 )</span>
+  <span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="p">][</span>
+  <span class="c1">// Example ( 3x3 )</span>
+  <span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="p">][</span>
+  <span class="c1">// After ( 3회 회전 )</span>
+  <span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h2 id="소스코드">소스코드</h2>
+
+<blockquote>
+  <p>!! 정답제출 후 업데이트하지 않은 코드여서 안돌아갈 수 있어요!</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">rotateMatrix</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="p">)</span> <span class="k">return</span> <span class="nx">matrix</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">map</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">])</span> <span class="p">{</span>
+        <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">temp</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">matrix</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="nx">i</span><span class="p">];</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">rotateMatrix</span><span class="p">(</span><span class="nx">temp</span><span class="p">,</span> <span class="nx">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="kd">const</span> <span class="nx">solution</span> <span class="o">=</span> <span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">r</span> <span class="o">%</span> <span class="mi">4</span> <span class="p">?</span> <span class="nx">rotateMatrix</span><span class="p">(</span><span class="nx">matrix</span><span class="p">,</span> <span class="nx">r</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="p">:</span> <span class="nx">matrix</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+</div>
+  </div>
+</div>
+<div id="post-links">
+  <div class="reponsive-content">
+    <div class="subject">이런 글은 어떠신가요?</div>
+    <ul>
+      
+        
+        <li>
+  <a href="/2022/03/11/project-ss-groupware-extension">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/projects/ss-groupware-extension/banner.png)"
+      
+      role="img" aria-label="그룹웨어 로그인 플러그인"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-03-11T18:05:00+09:00">2022년 03월 11일</time>
+      </div>
+      <h3 class="post-title">그룹웨어 로그인 플러그인</h3>
+      <p class="post-excerpt">출퇴근 서비스를 만들었지만, 그룹웨어의 다른 기능들을 사용하려면 결국 그룹웨어 페이지에서 QR코드를 인증해야했다.
+
+
+
+나는 console에 스크립트를 입력하여 로그인하다보니 상관 없었지만, 다른 사람들에게 개발자 도구 켜서 스크립트 입력하세요라고 알려주기에는 비개발자들이 접근하기 어려웠다.
+
+## 크롬 플러그인
+
+처음에는 출퇴근 페이지에서 한번에 처리하는게 편하다고 생각했지만, CORS 이슈와 쿠키 셋팅하는 부분에서 우회하는 처리가 까다로웠다.
+
+시간을 많이 소요하기에는 임펙트가 없다고 생각하기에 플러그인으로 CORS를 해결하고 API를 다이렉트로 호출하여 setCookie를 받으면 빠르게 작업 처리가 가능하다고 판단하여 크롬 플러그인 형태로 진행했다.
+
+## 결과물
+
+
+그룹웨어 로그인 플러그인
+</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2022/01/02/project-ss-groupware">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/projects/ss-groupware/4.png)"
+      
+      role="img" aria-label="그룹웨어 간편화 웹페이지"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-01-02T18:05:00+09:00">2022년 01월 02일</time>
+      </div>
+      <h3 class="post-title">그룹웨어 간편화 웹페이지</h3>
+      <p class="post-excerpt">회사 합병으로 기존 출퇴근과 법인카드 사용 방식이 변경되었고, 그룹웨어 페이지에 접속하여 수기 진행하는 방식으로 제공되었다. 그룹웨어의 출퇴근 방식은 PC로만 제공되어서 `모바일로 출퇴근이 불가능`했고, 노트북을 회사에 두고 다니는 사람들은 퇴근을 누르지않아 `회사로 복귀하는 상황이 지속적으로 발생`했다. 또한 법인카드 사용내역 등록 방식이 복잡해지면서 혼란이 가중되고 `직원들이 불편함을 호소`했다. 기존처럼 모바일로 출퇴근한다면 생산성이 올라가지 않을까하여 그룹웨어와 통신하는 웹페이지를 기획했다. ## 초기버전 프론트는 `Next.js로 Vercel로 배포`하였으며, 백엔드는 `Node.js`로 구성했다. 백엔드는 서버에 배포했는데, `AWS Lightsail + Ubuntu 환경에 nginx`를 붙였다. `SSH 셋팅`을 진행하고 `PM2`로 서비스를 관리했다. [( 참고 )](https://minhyeong-jang.github.io/2022/05/07/lightsail-server) 초기버전에서는 `출퇴근 기능과 법인카드 사용내역`을 포맷에 맞게 등록해주는 기능을 구현했다. 사이트에서는 항상 로그인 계정을 입력받고 그룹웨어와 통신하여 데이터를 가져온다. 출퇴근과 법인카드는 직원들이 `가장 많이 접근하는 메뉴`이기 때문에 채널에 오픈 당시 많은 환영을 받았다. ## 기능 업그레이드 5월 포괄임금제 정책이 변경되면서 출퇴근 기록이 중요해졌고, 유저에게 더 의미있는 정보를 제공해보았다. 다양한 `인사관리 프로그램을 참고`하여 어떤 정보를 제공하면 좋을까 고민하고 다음과 같이 UI를 변경했다. 메인화면에서는 `출퇴근 시간`을 UI로 명확하게...</p>
+    </div>
+  </a>
+</li>
+        
+        <li>
+  <a href="/2021/09/04/coding-grade">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/algorithm.jpg)"
+      
+      role="img" aria-label="평균 점수 구하기"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2021-09-04T22:44:00+09:00">2021년 09월 04일</time>
+      </div>
+      <h3 class="post-title">평균 점수 구하기</h3>
+      <p class="post-excerpt">학생정보와 과목 별 점수 데이터가 들어오는데, 해당 과목에서 최고 점수와 최소 점수를 제외하고 등급 순서로 나열한다.
+
+const grade = (arr) =&gt; {
+  const average =
+    arr.reduce((sum, currValue) =&gt; sum + currValue, 0) / arr.length;
+  if (average &gt;= 90) return "A";
+  if (average &gt;= 80) return "B";
+  if (average &gt;= 70) return "C";
+  if (average &gt;= 50) return "D";
+  return "F";
+};
+function solution(scores) {
+  const item = scores.map((_, arrIndex) =&gt; {
+    let group = scores.map((_, numIndex) =&gt; scores[numIndex][arrIndex]);
+    const personNum = group[arrIndex];
+    if (
+      personNum === Math.max.apply(null, group) ||
+      personNum === Math.min.apply(null, group)
+    ) {
+      group.filter((num) =&gt; num === personNum).length === 1 &amp;&amp;
+        group.splice(arrIndex, 1);
+    }
+    return grade(group);
+  });
+  return item.join("");
+}
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div class="adsense-wrap">
+  <ins
+  class="adsbygoogle"
+  style="display: block"
+  data-ad-layout="in-article"
+  data-ad-format="auto"
+  data-ad-client="ca-pub-6988376755693780"
+  data-ad-slot="3807925718">
+</ins>
+</div>
+
+<div id="disqus-wrap">
+  <div id="disqus_thread"></div>
+</div>
+    </div>
+  </div>
+  
+<script>
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minhyeong.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>

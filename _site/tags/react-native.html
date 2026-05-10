@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="naver-site-verification" content="e60487d95fce0f80a978de032cb56fc2de14aa65" />
+
+
+
+
+<title>Doriri Blog</title>
+<meta name="title" content="Doriri Blog" />
+<meta name="author" content=""/>
+<meta name="description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+
+<meta property="fb:app_id" content="481301675773678"/>
+
+<meta property="og:site_name" content="Doriri Blog"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Doriri Blog"/>
+<meta property="og:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta property="og:url" content="http://localhost:4000"/>
+<meta property="og:image" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta property="og:locale" content="ko_KR" />
+<link rel="canonical" href="http://localhost:4000" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Doriri Blog"/>
+<meta name="twitter:description" content="더 나은 미래를 위해 오늘도 코딩하는 Front-end 개발자입니다."/>
+<meta name="twitter:label1" content="Written by"/>
+<meta name="twitter:data1" content=""/>
+<meta name="twitter:image:src" content="http://localhost:4000/assets/images/covers/doriri.jpeg"/>
+
+<meta name="twitter:label2" content="Filed under"/>
+<meta name="twitter:data2" content=""/>
+
+
+
+<meta property="article:published_time" content="2026-05-10T22:42:59+09:00"/>
+
+
+<link rel="icon" type="image/x-icon" href="http://localhost:4000/assets/images/design/favicon.ico">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  important: '#post-content',
+  corePlugins: { preflight: false },
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        point: '#5e22e8'
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="http://localhost:4000/assets/css/index.css">
+<link rel="stylesheet" href="http://localhost:4000/assets/css/prism.css">
+
+<script src="http://localhost:4000/assets/js/main.js"></script>
+<script src="http://localhost:4000/assets/js/prism.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6988376755693780"
+crossorigin="anonymous"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-154757538-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154757538-1');
+</script>
+
+</head>
+
+<body>
+  <div id="header">
+  <div class="top">
+    <a href="/">Doriri</a>
+    <button type="button" class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false"></button>
+  </div>
+
+  <ul class="menu">
+    <li class="">
+      <a href="/">About</a>
+    </li>
+    
+    <li>
+      <a href="/category/daily">Daily Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/develop">Develop Blog</a>
+    </li>
+    
+    <li>
+      <a href="/category/project">Project</a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="body-wrap">
+    <div id="navbar">
+  <div class="fixed">
+    <div class="info-wrap">
+      <a href="/">
+        <p class="user-name">Doriri</p>
+        <p class="nick-name">Frontend Developer</p>
+      </a>
+    </div>
+    <ul class="menu-wrap">
+      <li class="">
+        <a href="/">About</a>
+      </li>
+      
+      
+      
+      
+      
+      <li class="
+        ">
+        <a href="/category/project">Project</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+      <li class="
+         active ">
+        <a href="/category/develop">Develop Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+                
+                  <li
+                    data-sort="0001"
+                    class=""
+                  >
+                    <a href="/tags/react">React</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0002"
+                    class=" active "
+                  >
+                    <a href="/tags/react-native">React Native</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0003"
+                    class=""
+                  >
+                    <a href="/tags/javascript">Typescript</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0004"
+                    class=""
+                  >
+                    <a href="/tags/style">CSS / Animation</a>
+                  </li>
+              
+            
+          <li
+                    data-sort="0006"
+                    class=""
+                  >
+                    <a href="/tags/study">Study</a>
+                  </li>
+              
+            
+              
+                
+                  <li
+                    data-sort="0007"
+                    class=""
+                  >
+                    <a href="/tags/dev-etc">Etc</a>
+                  </li>
+              
+            
+              
+            
+              
+                
+                  
+        </ul>
+      </li>
+      
+      <li class="
+        ">
+        <a href="/category/daily">Daily Blog</a>
+        <ul class="menu-sub">
+          
+          
+            
+              
+            
+              
+                
+                  <li
+                    data-sort=""
+                    class=""
+                  >
+                    <a href="/tags/essay">Essay</a>
+                  </li>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          
+        </ul>
+      </li>
+      
+    </ul>
+
+    <div class="contact">
+      <a href="//www.linkedin.com/in/minhyeong-jang-109b89116/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <span class="icon icon-linkedin" aria-hidden="true"></span>
+      </a>
+      <a href="//github.com/minhyeong-jang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <span class="icon icon-github" aria-hidden="true"></span>
+      </a>
+      <a href="mailto:public.doriri@gmail.com" aria-label="Email">
+        <span class="icon icon-mail3" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <div id="content-wrap">
+      <ul id="post-list">
+  
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2022/11/20/rn-html-render">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react-native.jpeg)"
+      
+      role="img" aria-label="React Native HTML Render"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-11-20T23:52:00+09:00">2022년 11월 20일</time>
+      </div>
+      <h3 class="post-title">React Native HTML Render</h3>
+      <p class="post-excerpt">React Native에서 텍스트 에디터로 제작된 공지사항을 그대로 보여주기 위해 html을 렌더링하려고한다. 시행착오 처음에는 react-native-htmlview를 사용하여 html을 출력했다. yarn add react-native-htmlview import HTMLView from 'react-native-htmlview'; ... &lt;StyledContentWrap&gt; &lt;HTMLView value={body} /&gt; &lt;/StyledContentWrap&gt; const StyledContentWrap = styled(View)` h1 { font-size: xxx; } h2 { font-size: xxx; } ` html 태그에 맞는 css를 보여주기 위해 styled-components에 태그에 맞는 스타일링을 적용했는데, 여기서 문제가 발생했다. Node of type rule not supported as an inline style StyledNativeComponent react-native에서는 html 태그를 지원하지 않기 때문에 styledComponent 영역에서 작성이 불가능하다고 warning이 계속 뜨는 것이였다. 사용은 가능하지만 다른 방법으로 변경하기로 했다. react-native-render-html npm trends에서도 react-native-htmlview과는 엄청난 차이를 보이는 react-native-render-html를 사용하기로 했다. yarn add react-native-render-html import HTML from 'react-native-render-html'; import { View, useWindowDimensions } from "react-native"; ... const contentWidth = useWindowDimensions().width; ... &lt;View&gt; &lt;HTML source= tagsStyles={htmlTagsStyles} contentWidth={contentWidth} /&gt; &lt;/View&gt; contentWidth를 주지 않으면 warn이 뜬다. 라이브러리 Readme를 보니 useWindowDimensions로 width를 가져와 채워주는 코드가 있어서 그대로 가져왔다. 스타일은 아래와 같이 StyleSheet처럼 스타일링하여 tagsStyles로 넣어주면...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2022/10/01/incremental-rollout">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react-native.jpeg)"
+      
+      role="img" aria-label="애플리케이션의 점진적 배포, 도달율"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2022-10-01T14:04:00+09:00">2022년 10월 01일</time>
+      </div>
+      <h3 class="post-title">애플리케이션의 점진적 배포, 도달율</h3>
+      <p class="post-excerpt">만약 특정 날짜에 동작해야하는 기능이라면 앱은 최소 몇일 전까지 배포되어야 유저가 사용할 수 있을까? 앱 스토어에 심사를 거치고 유저에게 도달하기까지 얼마나 걸릴 지 궁금하였다. 유저가 업데이트 버전에 도달하기까지는 심사 / 점진적 배포(선택사항) / 앱 업데이트를 거쳐야한다. 가장 먼저 점진적 배포에 대해서 설명하고 심사기간 스토어 정책에 위반되는 사항, 보안적인 이슈 등의 여부를 확인한다. 구글 스토어 약 2~3시간 정도로 심사가 끝나기에 크게 의미가 없다. 앱 스토어 기존에는 3~4일 정도로 심사기간이 오래 걸렸으나, 최근에는 1~2일만에 처리되고 있다. 긴급심사를 통해 심사기간을 줄일 수 있으나 현재 심사기간이 짧아서 의미가 없을 수 있다. 점진적 배포 구글 스토어 / 앱 스토어에서는 기본적으로 점진적(단계적) 배포라는 기능을 제공하고 있다. 특정 기간동안 일정 비율에게만 새로운 버전의 업데이트를 제공하도록 설정하는 기능이며, 자동 업데이트를 활성화한 유저에게만 적용된다. ( 만일 해당 기능을 설정하지 않았다면 모든 유저가 업데이트가 가능해진다. ) 해당 기능은 일정 유저에게만 신규 버전을 오픈함으로써 앱 크래시와 같은 치명적인 버그 발생 시 최소한의 유저만 경험하고 대응 가능하도록 만들어준다. 구글 스토어와 앱 스토어의...</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2021/02/04/react-native-error">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react-native.jpeg)"
+      
+      role="img" aria-label="React Native 설치 & 에러"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2021-02-04T17:39:00+09:00">2021년 02월 04일</time>
+      </div>
+      <h3 class="post-title">React Native 설치 & 에러</h3>
+      <p class="post-excerpt">공식문서 AOS/iOS 에뮬레이터 설치
+
+https://reactnative.dev/docs/environment-setup
+
+error Failed to install the app
+
+
+  error Failed to install the app. Make sure you have an Android emulator running or a &gt; device connected. Run CLI with –verbose flag for more details.
+
+
+
+  bash chmod 755 android/gradlew 실행
+  emulator -list-avds 리스트 뜨는지 확인
+  ~/.bash_profile 또는 ~/.zshrc 에 path 정상 등록되어있는지 확인
+
+
+
+  Task :app:stripDebugDebugSymbols UP-TO-DATE
+Compatible side by side NDK version was not found.
+
+
+
+  Task :app:installDebug FAILED
+
+
+Android Studio -&gt; Configure -&gt; SDK Manager -&gt; SDK Tools -&gt; NDK 설치
+
+Failed to run jetifier
+
+yarn
+yarn add -D jetifier
+npx jetify
+npx react-native run-android
+
+
+or
+
+react-native run-android --no-jetifier
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+  <a href="/2019/05/22/expo-library">
+    <div class="post-image"
+      
+        style="background-image:url(/assets/images/covers/react-native.jpeg)"
+      
+      role="img" aria-label="Expo 라이브러리 정리"></div>
+    <div class="post-info">
+      <div class="post-header">
+        <p class="author-name">minhyeong.jang</p>
+        <time class="post-date" datetime="2019-05-22T09:05:00+09:00">2019년 05월 22일</time>
+      </div>
+      <h3 class="post-title">Expo 라이브러리 정리</h3>
+      <p class="post-excerpt">
+  계속 업데이트 되는 문서입니다.
+
+
+LinearGradient
+
+배경색이 그라데이션으로 출력되는 View
+
+import { LinearGradient } from "expo";
+...
+&lt;LinearGradient colors={["red","blue"]} /&gt;
+
+
+Vector-Icons
+
+expo 에서 제공하는 여러 폰트의 아이콘 모음이다.
+아래 링크에서 아이콘 및 라이브러리를 확인하고 import하면 작동한다.
+vector-icons
+
+import { Ionicons, AntDesign } from "@expo/vector-icons";
+...
+&lt;Ionicons color="white" size={144} name="ios-rainy" /&gt;
+
+
+
+  Text 태그 내 사용 시 배경색을 투명으로 변경한다. {backgroundColor: "transparent"}
+
+</p>
+    </div>
+  </a>
+</li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+</ul>
+<ul id="pagination" role="navigation" aria-label="Pagination">
+	
+</ul>
+
+    </div>
+  </div>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var ads = document.querySelectorAll('.adsbygoogle:not(.adsbygoogle-noablate)');
+    for (var i = 0; i < ads.length; i++) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+</script>
+</body>
+</html>
