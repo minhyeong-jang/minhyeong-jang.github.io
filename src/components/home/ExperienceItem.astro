@@ -1,0 +1,29 @@
+---
+import Tag from '../Tag.astro';
+import type { Experience } from '../../data/experience';
+
+interface Props {
+  exp: Experience;
+}
+const { exp } = Astro.props;
+---
+<article class="exp">
+  <div class="exp-meta">
+    <div class="exp-period">{exp.period}</div>
+    <div class="exp-loc">{exp.location}</div>
+  </div>
+  <div class="exp-body">
+    <div class="exp-head">
+      <h3 class="exp-company">{exp.company}</h3>
+      <span class="exp-role">{exp.role}</span>
+    </div>
+    <ul class="exp-bullets">
+      {exp.bullets.map((b) => (
+        <li><span class="exp-bullet-mark">›</span><span>{b}</span></li>
+      ))}
+    </ul>
+    <div class="exp-stack">
+      {exp.stack.map(s => <Tag label={s} />)}
+    </div>
+  </div>
+</article>

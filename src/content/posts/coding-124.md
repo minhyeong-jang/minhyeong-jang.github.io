@@ -1,0 +1,16 @@
+---
+title: "위클리 챌린지 2주차 - 124 나라의 숫자"
+date: 2021-09-04 22:44
+tags: ["develop", "study"]
+image: /covers/programmers.jpg
+---
+
+LV2 문제
+
+```js
+function solution(n) {
+  if (n < 3) return `${n || ""}`;
+  if (!(n % 3)) return `${solution(Math.floor(n / 3) - 1)}4`;
+  else return `${solution(Math.floor(n / 3))}${n % 3}`;
+}
+```

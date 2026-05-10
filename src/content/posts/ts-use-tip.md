@@ -1,0 +1,45 @@
+---
+title: "특정 모듈의 Typescript Props 정리"
+date: 2020-01-08 14:02
+tags: ["develop", "dev-etc"]
+image: /covers/typescript.png
+---
+
+# HTML
+
+## Event
+
+키보드 관련 이벤트 ( keyup )
+
+```js
+document.addEventListener("keyup", (event: KeyboardEvent) => {
+  console.log(event.keyCode);
+});
+```
+
+# React
+
+## React.cloneElement
+
+```ts
+type ReactText = string | number;
+type ReactChild = ReactElement<any> | ReactText;
+```
+
+```tsx
+return React.cloneElement(child as React.ReactElement<any>, {
+  width: this.props.width,
+  height: this.props.height,
+});
+```
+
+## react-router-dom
+
+#### history
+
+```tsx
+import { RouteComponentProps } from 'react-router-dom';
+interface Props extends RouteComponentProps<any> {}
+
+const Component : React.FC<Props> = ({ history }) => ();
+```

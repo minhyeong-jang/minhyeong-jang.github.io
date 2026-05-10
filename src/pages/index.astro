@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/home/SectionTitle.astro';
+import ExperienceItem from '../components/home/ExperienceItem.astro';
+import ProjectCard from '../components/home/ProjectCard.astro';
+import { profile } from '../data/profile';
+import { experience } from '../data/experience';
+import { sideProjects, freelanceProjects } from '../data/projects';
+---
+<BaseLayout title="장민형 — 프로덕트 개발자">
+  <main class="page page-home">
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="hero-mono">// portfolio.jsx</div>
+      <h1 class="hero-h">
+        <span class="hero-name">{profile.name}</span>
+        <span class="hero-divider">—</span>
+        <span class="hero-role">{profile.tagline}</span>
+      </h1>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><span class="hm-k">handle</span> {profile.handle}</span>
+        <span class="hero-meta-item"><span class="hm-k">based</span> {profile.location}</span>
+        <span class="hero-meta-item"><span class="hm-k">since</span> {profile.since}</span>
+      </div>
+      <div class="hero-bio">
+        {profile.bio.map(line => <p>{line}</p>)}
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <SectionTitle index="01" title="Experience" count={experience.length} />
+      <div class="exp-list">
+        {experience.map((exp) => <ExperienceItem exp={exp} />)}
+      </div>
+    </section>
+
+    <!-- Side Projects -->
+    <section class="section">
+      <SectionTitle index="02" title="Side Projects" count={sideProjects.length} />
+      <div class="pc-grid pc-grid-minimal">
+        {sideProjects.map(p => <ProjectCard project={p} />)}
+      </div>
+    </section>
+
+    <!-- Freelance -->
+    <section class="section">
+      <SectionTitle index="03" title="Freelance" count={freelanceProjects.length} />
+      <div class="pc-grid pc-grid-minimal">
+        {freelanceProjects.map(p => <ProjectCard project={p} />)}
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-foot">
+      <SectionTitle index="04" title="Get in touch" />
+      <div class="contact-grid">
+        <a class="contact-row" href={`mailto:${profile.email}`}>
+          <span class="contact-k">email</span>
+          <span class="contact-v">{profile.email}</span>
+        </a>
+        <a class="contact-row" href={`https://${profile.github}`}>
+          <span class="contact-k">github</span>
+          <span class="contact-v">{profile.github}</span>
+        </a>
+        <a class="contact-row" href="/feed.xml">
+          <span class="contact-k">rss</span>
+          <span class="contact-v">/feed.xml</span>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

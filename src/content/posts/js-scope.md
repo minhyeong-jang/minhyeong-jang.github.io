@@ -1,0 +1,213 @@
+---
+title: "Javascript Scope 이해하기"
+date: 2020-01-07 23:39
+tags: ["develop", "javascript"]
+image: /covers/js.png
+---
+
+스코프(Scope, 유효범위)에 대해서는 여러분들은 이미 사용하고 있을 것 입니다. 다만, 정확한 정의와 상세한 정보에 대해서 글을 통해 상세하게 알고 넘어가겠습니다.
+
+## 스코프란?
+
+특정한 변수(identifier)에 접근이 가능한가에 대한 규칙(범위)입니다.
+
+```js
+var x = "global scope";
+
+function foo() {
+  var x = "function scope";
+  console.log(x);
+}
+
+foo(); // function scope
+console.log(x); // global scope
+```
+
+위 예제에서 함수 foo 내 선언된 변수 x에 대해서는 foo 내에서만 참조가 가능하고 외부에서는 참조가 불가능하다. 이와같은 규칙들을 스코프라고 합니다.
+
+## 스코프의 구분
+
+스코프는 전역 스코프와 지역 스코프로 나눠집니다.
+
+#### 전역 스코프(Global Scope)
+
+전역 변수(Global variable), 코드 어디에서든 참조할 수 있습니다.  
+var로 선언한 전역 변수는 `전역 객체(Global Object) window`의 프로퍼티가 됩니다.
+
+#### 지역 스코프 (Local scope or Function-level scope)
+
+지역 변수(Local variable), 지역(함수) 내에서 선언되어 함수 내에서 자신과 하위 함수에서만 참조 가능합니다.
+
+## 자바스크립트 스코프 특징
+
+자바스크립트는 `함수 레벨 스코프(function-level scope)`(함수 코드 블록 내에서 선언된 변수는 함수 코드 블록 내에서만 유효)를 따르고 있습니다.
+
+```js
+var x = 1; // 전역변수
+
+(function () {
+  var y = 2; // 지역변수
+})();
+
+console.log(x); // 1
+console.log(y); // Uncaught ReferenceError: y is not defined
+```
+
+또한, 블록 레벨 스코프를 사용하지 않기 때문에 `블록 레벨 스코프에서 선언된 변수들은 전역 스코프`를 갖게됩니다.
+
+다만, ES6 문법인 `let, const`를 사용하게 되면 블록 레벨 스코프가 적용됩니다.
+
+```js
+var x = 10;
+{
+  var x = 20;
+}
+console.log(x); // 20
+
+let y = 10;
+{
+  let y = 20;
+}
+console.log(y); // 10
+```
+
+## 내부 함수
+
+내부 함수가 있는 경우에 대해서 알아봅니다.
+
+```js
+var x = "global";
+
+function foo() {
+  var x = "local";
+  console.log(x);
+
+  function bar() {
+    // 내부함수
+    console.log(x); // local
+  }
+
+  bar();
+}
+foo();
+console.log(x); // global
+```
+
+내부 함수에서는 자신을 포함하고 있는 외부 함수의 변수에 접근이 가능합니다.  
+또한, 외부 함수에서 동일한 변수명을 사용하고 있으면 `가장 가까운 변수(위 예제에서는 함수 foo에 선언된 지역변수 x)를 참조`하게 됩니다.  
+이러한 이유는 `실행 컨텍스트의 스코프 체인`에 의하여 참조 순위가 밀려졌기 때문입니다.
+
+## 스코프 체인 이란?
+
+스코프 체인은 간단하게는 `현재 함수에 없는 변수/함수를 부모 함수에서 조회`한다고 정의할 수 있습니다. 그렇지만 `실행 컨텍스트`를 통하여 자세한 내용을 알아보겠습니다.  
+우선 내부 함수가 있는 예제를 다시 살펴보겠습니다.
+
+```js
+var x = "global";
+
+function foo() {
+  var x = "local";
+  console.log(x);
+
+  function bar() {
+    // 내부함수
+    console.log(x); // local
+  }
+
+  bar();
+}
+foo();
+console.log(x); // global
+```
+
+> 실행 컨텍스트는 자바스크립트의 실행에 필요한 정보를 형상화하고 구분하기 위해
+> 실행 컨텍스트는 함수를 만날 때 마다 새로운 컨텍스트를 생성하게 되고, `Execution Context의 구조`를 그리면 다음과 같습니다.
+
+```json
+{
+  "GlobalExecutionContext": {
+    "LexicalEnvironment": {
+      "EnvironmentRecords": {
+        "x": "global",
+        "foo": <func>
+      }
+    }
+  },
+  "FooExecutionContext": {
+    "LexicalEnvironment": {
+      "EnvironmentRecords": {
+        "x": "local",
+        "bar": <func>
+      },
+      "outer" : <GlobalLexicalEnvironment>
+    }
+  },
+  "BarExecutionContext": {
+    "LexicalEnvironment": {
+      "EnvironmentRecords": {
+      },
+      "outer" : <FooLexicalEnvironment>
+    }
+  }
+}
+```
+
+코드에서 bar() 함수 내에서 변수 x를 호출하지만, 변수 x가 존재하지 않습니다. 그렇기에 부모 함수에서 변수를 찾아보는데요, `BarExecutionContext 내에는 해당 변수를 가지고 있지 않기 때문에 outer(상위 컨텍스트의 주소)로 이동`하여 `FooExecutionContext에서 변수 x의 유무를 파악`합니다.  
+현재는 FooExecutionContext의 LexicalEnvironment 내에 변수 x가 존재하지만, 그렇지 않은 경우 GlobalExecutionContext까지 전체를 찾아보게 됩니다.  
+이렇게 서로가 연결되어 찾아가는 것을 스코프체인이라고 합니다.
+
+## 렉시컬 스코프
+
+```js
+var x = 1;
+
+function foo() {
+  var x = 10;
+  bar();
+}
+
+function bar() {
+  console.log(x);
+}
+
+foo(); // ?
+bar(); // ?
+```
+
+함수의 상위 스코프를 결정하는 방법에는 두가지가 있습니다.
+
+1. 어디서 호출하였는지
+2. 어디에 선언하였는지
+
+이러한 두가지 방법을 프로그래밍 언어에서는 다음과 같이 정의합니다.
+
+1. 어디서 호출하였는지 (`동적 스코프(Dynamic scope)`)
+2. 어디에 선언하였는지 (`렉시컬 스코프(Lexical scope), 정적 스코프(Static scope)`)
+
+자바스크립트를 비롯한 대부분의 프로그래밍 언어는 렉시컬 스코프를 따르고있습니다.  
+따라서 위 예제에서 bar 함수의 상위 스코프는 전역 스코프이며, 전역 변수 x의 값을 참조하여 1을 두번 출력하게 됩니다.
+
+## 암묵적 전역
+
+자바스크립트에서는 변수를 선언하지 않아도 식별이 가능합니다.
+
+```js
+function foo() {
+  x = 20;
+  console.log(x + 10);
+}
+foo(); // 30
+```
+
+foo 함수가 호출됐을 때, 스코프 체인을 통하여 선언된 변수인지 확인하고 만일 없다면 자바스크립트에서는 `window.x = 20`으로 저장하게됩니다. 이러한 현상을 `암묵적 전역(implicit global)`이라고 부릅니다.  
+또한 몇가지의 특징이 있습니다.
+
+- 선언하지 않았기 떄문에 호이스팅이 발생하지 않는다.
+- window의 프로퍼티로 선언되어있어 delete 연산자로 삭제가 가능하다.
+
+## 참고자료
+
+[스코프](https://tyle.io/blog/54)  
+[[JS] 스코프 체인 이란?](https://tyle.io/blog/54)
+
+참고자료의 내용을 거의 똑같다 할 정도로 많이 참고하였고, 제 개인적인 생각을 추가하였습니다.

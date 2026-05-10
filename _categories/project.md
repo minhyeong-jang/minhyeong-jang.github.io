@@ -1,4 +1,0 @@
----
-name: project
-title: "Project"
----

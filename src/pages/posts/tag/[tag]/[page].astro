@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PostRow from '../../../../components/blog/PostRow.astro';
+import TagChips from '../../../../components/blog/TagChips.astro';
+import Pager from '../../../../components/blog/Pager.astro';
+import { getSortedPosts, getAllTags } from '../../../../lib/posts';
+
+export async function getStaticPaths() {
+  const allPosts = await getSortedPosts();
+  const tags = getAllTags(allPosts);
+  const PER_PAGE = 15;
+  const paths: { params: { tag: string; page: string } }[] = [];
+
+  for (const [tag] of tags) {
+    const filtered = allPosts.filter(p => p.data.tags.includes(tag));
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    for (let i = 2; i <= totalPages; i++) {
+      paths.push({ params: { tag, page: String(i) } });
+    }
+  }
+
+  return paths;
+}
+
+const PER_PAGE = 15;
+const tag = Astro.params.tag!;
+const page = Number(Astro.params.page);
+const allPosts = await getSortedPosts();
+const tags = getAllTags(allPosts);
+const filtered = allPosts.filter(p => p.data.tags.includes(tag));
+const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+const posts = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+const byYear = new Map<string, typeof posts>();
+posts.forEach(p => {
+  const y = String(p.data.date.getFullYear());
+  if (!byYear.has(y)) byYear.set(y, []);
+  byYear.get(y)!.push(p);
+});
+---
+<BaseLayout title={`#${tag} — Page ${page}`}>
+  <main class="page page-blog">
+    <header class="blog-header">
+      <div class="blog-header-mono">// posts/tag/{tag}</div>
+      <h1 class="blog-h">Writing</h1>
+      <p class="blog-sub">
+        프론트엔드, 도구, 그리고 가끔 회고. <span class="blog-sub-mono">{filtered.length} posts tagged #{tag}</span>
+      </p>
+    </header>
+
+    <TagChips tags={tags} activeTag={tag} totalCount={allPosts.length} />
+
+    <div class="post-timeline">
+      {[...byYear.entries()].map(([year, yearPosts]) => (
+        <section class="post-year">
+          <div class="post-year-mark">{year}</div>
+          <ul class="post-year-list">
+            {yearPosts.map(p => <PostRow post={p} />)}
+          </ul>
+        </section>
+      ))}
+    </div>
+
+    <Pager currentPage={page} totalPages={totalPages} baseUrl={`/posts/tag/${tag}`} />
+  </main>
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+import Tag from '../Tag.astro';
+import type { Project } from '../../data/projects';
+
+interface Props {
+  project: Project;
+}
+const { project: p } = Astro.props;
+const href = p.detailUrl || `/projects/${p.id}`;
+const hasThumb = !!p.thumbnail;
+---
+{p.hasDetail ? (
+  <a class={`pc pc-min pc-link${hasThumb ? ' pc-min-with-thumb' : ''}`} href={href}>
+    {hasThumb && (
+      <div class="pc-min-thumb">
+        <img src={p.thumbnail} alt={p.name} loading="lazy" />
+      </div>
+    )}
+    <div class="pc-min-content">
+      <div class="pc-min-top">
+        <span class="pc-min-name">{p.name}</span>
+        <span class="pc-min-period">{p.period}</span>
+      </div>
+      <p class="pc-min-desc">{p.desc}</p>
+      <div class="pc-min-stack">
+        {p.stack.map(s => <Tag label={s} />)}
+        <span class="pc-min-arrow">→</span>
+      </div>
+    </div>
+  </a>
+) : (
+  <div class={`pc pc-min${hasThumb ? ' pc-min-with-thumb' : ''}`}>
+    {hasThumb && (
+      <div class="pc-min-thumb">
+        <img src={p.thumbnail} alt={p.name} loading="lazy" />
+      </div>
+    )}
+    <div class="pc-min-content">
+      <div class="pc-min-top">
+        <span class="pc-min-name">{p.name}</span>
+        <span class="pc-min-period">{p.period}</span>
+      </div>
+      <p class="pc-min-desc">{p.desc}</p>
+      <div class="pc-min-stack">
+        {p.stack.map(s => <Tag label={s} />)}
+      </div>
+    </div>
+  </div>
+)}

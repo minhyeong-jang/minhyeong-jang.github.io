@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/home/ProjectCard.astro';
+import { sideProjects, freelanceProjects } from '../../data/projects';
+
+const allProjects = [...sideProjects, ...freelanceProjects];
+---
+<BaseLayout title="Projects — Doriri">
+  <main class="page page-blog">
+    <header class="blog-header">
+      <div class="blog-header-mono">// projects/index.tsx</div>
+      <h1 class="blog-h">Projects</h1>
+      <p class="blog-sub">
+        사이드 프로젝트와 프리랜스 작업 모음. <span class="blog-sub-mono">{allProjects.length} projects</span>
+      </p>
+    </header>
+
+    <div class="sect-title" style="margin-bottom: 28px;">
+      <span class="sect-title-mono">01</span>
+      <h2 class="sect-title-h">Side Projects</h2>
+      <span class="sect-title-count">[{sideProjects.length}]</span>
+      <span class="sect-title-rule"></span>
+    </div>
+
+    <div class="pc-grid pc-grid-minimal" style="margin-bottom: 64px;">
+      {sideProjects.map(p => <ProjectCard project={p} />)}
+    </div>
+
+    <div class="sect-title" style="margin-bottom: 28px;">
+      <span class="sect-title-mono">02</span>
+      <h2 class="sect-title-h">Freelance</h2>
+      <span class="sect-title-count">[{freelanceProjects.length}]</span>
+      <span class="sect-title-rule"></span>
+    </div>
+
+    <div class="pc-grid pc-grid-minimal">
+      {freelanceProjects.map(p => <ProjectCard project={p} />)}
+    </div>
+  </main>
+</BaseLayout>

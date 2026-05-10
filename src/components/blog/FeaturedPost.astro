@@ -1,0 +1,18 @@
+---
+import { getPostUrl } from '../../lib/posts';
+interface Props { post: any }
+const { post } = Astro.props;
+const url = getPostUrl(post);
+---
+<a class="post-feat" href={url}>
+  <div class="post-feat-tag-row">
+    <span class="post-feat-mono">latest</span>
+    {post.data.tags.map((t: string) => <span class="post-row-tag">#{t}</span>)}
+  </div>
+  <h2 class="post-feat-title">{post.data.title}</h2>
+  {post.data.excerpt && <p class="post-feat-excerpt">{post.data.excerpt}</p>}
+  <div class="post-feat-foot">
+    <span>{post.data.date.toISOString().slice(0, 10)}</span>
+    <span class="post-feat-read">read →</span>
+  </div>
+</a>
