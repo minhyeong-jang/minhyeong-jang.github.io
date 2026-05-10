@@ -83,16 +83,6 @@ export const sideProjects: Project[] = [
     hasDetail: false,
   },
   {
-    id: "interv",
-    name: "Interv",
-    period: "2021.12",
-    desc: "코로나 시대, 마음과 생각을 행성에 띄우는 감정 공유 서비스. 사용자의 이야기가 우주 공간의 행성이 되어 서로의 감정을 나눈다",
-    stack: ["React", "Node.js"],
-    type: "side",
-    hasDetail: true,
-    detailUrl: "/2021/12/01/project-interv",
-    thumbnail: "/projects/interv/thumbnail.png",
-  },
   {
     id: "doriri-blog",
     name: "Doriri Blog",
@@ -119,6 +109,17 @@ export const sideProjects: Project[] = [
 ];
 
 export const freelanceProjects: Project[] = [
+  {
+    id: "interv",
+    name: "Interv",
+    period: "2021.12",
+    desc: "코로나 시대, 마음과 생각을 행성에 띄우는 감정 공유 서비스. 사용자의 이야기가 우주 공간의 행성이 되어 서로의 감정을 나눈다",
+    stack: ["React", "Node.js"],
+    type: "freelance",
+    hasDetail: true,
+    detailUrl: "/2021/12/01/project-interv",
+    thumbnail: "/projects/interv/thumbnail.png",
+  },
   {
     id: "artist-fan-sns",
     name: "아티스트-팬 소통 SNS",
