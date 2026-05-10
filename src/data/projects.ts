@@ -83,7 +83,6 @@ export const sideProjects: Project[] = [
     hasDetail: false,
   },
   {
-  {
     id: "doriri-blog",
     name: "Doriri Blog",
     period: "2017.12 — current",
