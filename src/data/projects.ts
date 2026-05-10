@@ -7,6 +7,7 @@ export interface Project {
   type: "side" | "freelance";
   hasDetail: boolean;
   detailUrl?: string;
+  siteUrl?: string;
   thumbnail?: string;
 }
 
@@ -20,6 +21,7 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2026/05/01/project-akkida",
+    siteUrl: "akkida.doriri.dev",
   },
   {
     id: "naran",
@@ -39,6 +41,7 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2026/03/03/project-notion-widgets",
+    siteUrl: "notion-widgets.doriri.dev",
   },
   {
     id: "kakao-together-extension",
@@ -97,7 +100,8 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2017/12/05/project-doriri-blog",
-    thumbnail: "/favicon.svg",
+    siteUrl: "minhyeong-jang.github.io",
+    thumbnail: "/projects/doriri-blog/thumbnail.png",
   },
   {
     id: "lunch-menu",

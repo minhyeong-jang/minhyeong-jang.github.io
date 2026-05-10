@@ -2,7 +2,7 @@
 title: "Doriri Blog — Jekyll에서 Astro로, 9년간 운영한 개인 기술 블로그 마이그레이션"
 date: 2017-12-05 11:27
 tags: ["project"]
-image: /favicon.svg
+image: /posts/2026/jekyll-home.png
 published: true
 ---
 

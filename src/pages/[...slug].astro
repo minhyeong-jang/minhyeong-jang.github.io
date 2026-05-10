@@ -6,6 +6,7 @@ import ReadingProgress from '../components/post/ReadingProgress.tsx';
 import PostNav from '../components/post/PostNav.astro';
 import Tag from '../components/Tag.astro';
 import { getSortedPosts, getPostUrl } from '../lib/posts';
+import { sideProjects, freelanceProjects } from '../data/projects';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => data.published !== false);
@@ -51,6 +52,8 @@ if (!isProject) {
 }
 
 const postDescription = entry.body?.slice(0, 160).replace(/[#*\n\r]/g, '').trim() + '...';
+const allProjects = [...sideProjects, ...freelanceProjects];
+const projectData = isProject ? allProjects.find(p => entry.id === `project-${p.id}`) : null;
 const ogImage = entry.data.image || '/covers/doriri.jpeg';
 ---
 {isProject ? (
@@ -70,7 +73,7 @@ const ogImage = entry.data.image || '/covers/doriri.jpeg';
         <div class="proj-shot">
           <div class="proj-shot-bar">
             <span class="proj-shot-dot"></span><span class="proj-shot-dot"></span><span class="proj-shot-dot"></span>
-            <span class="proj-shot-url">{entry.id === 'project-doriri-blog' ? 'minhyeong-jang.github.io' : `${entry.id.replace('project-', '')}.doriri.dev`}</span>
+            <span class="proj-shot-url">{projectData?.siteUrl || `${entry.id.replace('project-', '')}.doriri.dev`}</span>
           </div>
           <div class="proj-shot-canvas">
             <img src={entry.data.image} alt={entry.data.title} style="width:100%;height:auto;display:block;" />
