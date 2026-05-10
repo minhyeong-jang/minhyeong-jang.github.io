@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # old Jekyll posts backup
 _posts/
+_site/
+Gemfile.lock

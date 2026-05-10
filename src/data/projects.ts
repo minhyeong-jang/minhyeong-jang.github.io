@@ -7,6 +7,7 @@ export interface Project {
   type: "side" | "freelance";
   hasDetail: boolean;
   detailUrl?: string;
+  siteUrl?: string;
   thumbnail?: string;
 }
 
@@ -20,6 +21,7 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2026/05/01/project-akkida",
+    siteUrl: "akkida.doriri.dev",
   },
   {
     id: "naran",
@@ -39,6 +41,7 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2026/03/03/project-notion-widgets",
+    siteUrl: "notion-widgets.doriri.dev",
   },
   {
     id: "kakao-together-extension",
@@ -80,22 +83,17 @@ export const sideProjects: Project[] = [
     hasDetail: false,
   },
   {
-    id: "interv",
-    name: "Interv",
-    period: "2021.00",
-    desc: "면접 준비를 위한 질문 관리 및 모의 면접 서비스. 직무별 예상 질문을 정리하고 답변을 연습할 수 있는 웹 앱",
-    stack: ["React"],
-    type: "side",
-    hasDetail: false,
-  },
   {
     id: "doriri-blog",
     name: "Doriri Blog",
-    period: "2019.00 — current",
-    desc: "Jekyll 기반 기술 블로그. 카카오 기술 블로그를 참고하여 직접 설계 및 구축하고, 서버 비용 없이 GitHub Pages로 운영 중",
-    stack: ["Jekyll", "GitHub Pages"],
+    period: "2017.12 — current",
+    desc: "개인 기술 블로그. 카카오 기술 블로그를 참고해 Jekyll로 구축하고, 2026년 Astro로 전면 마이그레이션. 현재 AI 기반 자동화 중",
+    stack: ["Astro", "React", "Tailwind CSS", "GitHub Pages"],
     type: "side",
-    hasDetail: false,
+    hasDetail: true,
+    detailUrl: "/2017/12/05/project-doriri-blog",
+    siteUrl: "minhyeong-jang.github.io",
+    thumbnail: "/projects/doriri-blog/thumbnail.png",
   },
   {
     id: "lunch-menu",
@@ -106,10 +104,22 @@ export const sideProjects: Project[] = [
     type: "side",
     hasDetail: true,
     detailUrl: "/2017/11/10/project-lunchbox-jandi",
+    thumbnail: "/projects/lunchbox/thumbnail.png",
   },
 ];
 
 export const freelanceProjects: Project[] = [
+  {
+    id: "interv",
+    name: "Interv",
+    period: "2021.12",
+    desc: "코로나 시대, 마음과 생각을 행성에 띄우는 감정 공유 서비스. 사용자의 이야기가 우주 공간의 행성이 되어 서로의 감정을 나눈다",
+    stack: ["React", "Node.js"],
+    type: "freelance",
+    hasDetail: true,
+    detailUrl: "/2021/12/01/project-interv",
+    thumbnail: "/projects/interv/thumbnail.png",
+  },
   {
     id: "artist-fan-sns",
     name: "아티스트-팬 소통 SNS",
@@ -122,7 +132,7 @@ export const freelanceProjects: Project[] = [
   {
     id: "time-management-app",
     name: "시간관리 앱",
-    period: "0000.00",
+    period: "—",
     desc: "일정 및 시간 추적 앱의 웹뷰 연동 개발 및 서비스 유지보수. 네이티브-웹 간 브릿지 통신 처리",
     stack: ["Next.js", "React Native"],
     type: "freelance",
@@ -131,7 +141,7 @@ export const freelanceProjects: Project[] = [
   {
     id: "nurse-sns-community",
     name: "간호사 SNS 커뮤니티",
-    period: "0000.00",
+    period: "—",
     desc: "간호사 대상 정보 공유 및 네트워킹 커뮤니티 서비스. 게시판, 프로필, 알림 기능 유지보수",
     stack: ["React", "React Native"],
     type: "freelance",
@@ -140,7 +150,7 @@ export const freelanceProjects: Project[] = [
   {
     id: "x-gen-commerce",
     name: "X세대 커머스 플랫폼",
-    period: "0000.00",
+    period: "—",
     desc: "중장년층 타겟 커머스 서비스의 웹앱 유지보수. Capacitor 기반 하이브리드 앱으로 네이티브 배포",
     stack: ["React", "Capacitor"],
     type: "freelance",
@@ -149,7 +159,7 @@ export const freelanceProjects: Project[] = [
   {
     id: "remote-education",
     name: "학생 원격교육 서비스",
-    period: "0000.00",
+    period: "—",
     desc: "학생 대상 원격 수업 플랫폼의 프론트엔드 유지보수. 실시간 강의, 과제 제출, 출석 관리 기능",
     stack: ["React", "React Native"],
     type: "freelance",
@@ -158,7 +168,7 @@ export const freelanceProjects: Project[] = [
   {
     id: "covid-emotion-sns",
     name: "코로나 감정 공유 SNS",
-    period: "0000.00",
+    period: "—",
     desc: "코로나 시기 사람들의 일상과 감정을 기록하고 공유하는 SNS 서비스. 피드 및 감정 태깅 기능을 구축",
     stack: ["React", "Node.js"],
     type: "freelance",
