@@ -245,7 +245,6 @@ button { font-family: inherit; }
   border-radius: 6px;
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid var(--rule);
 }
 .pc-min-thumb img {
   width: 100%;

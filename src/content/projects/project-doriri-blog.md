@@ -20,12 +20,12 @@ Tistory에서 블로그를 운영하다가 커스텀의 한계를 느꼈다. Wor
 
 ![Jekyll 블로그 목록 — 카드 레이아웃과 카테고리 사이드바](/posts/2026/jekyll-blog-list.png)
 
-7년간 React, TypeScript, JavaScript, DevOps, 회고 등 다양한 주제로 글을 작성했다. 하지만 시간이 지나면서 기술적 한계가 드러났다.
+7년간 React, TypeScript, JavaScript, DevOps, 회고 등 다양한 주제로 글을 작성하며 잘 써왔다. 하지만 Claude Design의 퀄리티가 높아지면서 상황이 달라졌다. 머릿속 구상을 즉시 디자인으로 반영할 수 있게 되었고, 많은 시간을 할애하지 않아도 높은 퀄리티의 결과물을 만들 수 있다는 걸 체감했다. Jekyll 위에서는 이 속도를 따라갈 수 없었다.
 
+- **디자인 반영 속도**: AI로 설계한 디자인을 Liquid + SCSS로 구현하는 데 과도한 시간 소요
 - **페이지네이션**: `jekyll-paginate`가 카테고리별 페이지네이션을 지원하지 않아 구현을 포기
-- **Ruby 호환성**: Ruby 3.2에서 삭제된 API 때문에 Gemfile에 monkey-patch 필요
 - **npm 생태계 단절**: 프론트엔드 개발자임에도 npm 패키지를 전혀 활용할 수 없는 구조
-- **디자인 제약**: Liquid 템플릿 + SCSS 조합으로 원하는 디자인을 만드는 데 과도한 시간 소요
+- **Ruby 호환성**: Ruby 3.2에서 삭제된 API 때문에 Gemfile에 monkey-patch 필요
 
 ## Astro로 마이그레이션 (2026)
 
