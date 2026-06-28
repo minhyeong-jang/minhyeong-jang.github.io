@@ -22,6 +22,7 @@ export const sideProjects: Project[] = [
     hasDetail: true,
     detailUrl: "/2026/05/01/project-akkida",
     siteUrl: "akkida.doriri.dev",
+    thumbnail: "/projects/akkida/thumbnail.png",
   },
   {
     id: "naran",
