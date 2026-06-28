@@ -51,7 +51,7 @@ if (!isProject) {
   readTime = Math.max(2, Math.round(entry.body.length / 1000));
 }
 
-const postDescription = entry.body?.slice(0, 160).replace(/[#*\n\r]/g, '').trim() + '...';
+const postDescription = entry.data.description || (entry.body?.slice(0, 160).replace(/[#*\n\r]/g, '').trim() + '...');
 const allProjects = [...sideProjects, ...freelanceProjects];
 const projectData = isProject ? allProjects.find(p => entry.id === `project-${p.id}`) : null;
 const ogImage = entry.data.image || '/covers/doriri.jpeg';
