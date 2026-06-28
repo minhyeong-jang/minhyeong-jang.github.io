@@ -42,6 +42,7 @@ export const sideProjects: Project[] = [
     hasDetail: true,
     detailUrl: "/2026/03/03/project-notion-widgets",
     siteUrl: "widgets.doriri.dev",
+    thumbnail: "/projects/notion-widgets/thumbnail.png",
   },
   {
     id: "kakao-together-extension",
