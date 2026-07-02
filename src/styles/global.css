@@ -125,6 +125,16 @@ button { font-family: inherit; }
 }
 .nav-theme:hover { border-color: var(--rule-strong); color: var(--ink); }
 
+@media (max-width: 720px) {
+  .nav-inner { padding: 11px 16px; gap: 10px; }
+  .nav-brand { font-size: 12.5px; gap: 5px; }
+  .nav-brand-cursor { width: 6px; height: 12px; }
+  .nav-items { gap: 1px; }
+  .nav-item { padding: 6px 8px; font-size: 13px; }
+  .nav-item-mono { display: none; }
+  .nav-theme { padding: 5px 8px; font-size: 11px; margin-left: 4px; }
+}
+
 /* ───────── page shell ───────── */
 .page { max-width: var(--content-w); margin: 0 auto; padding: 72px 28px 96px; }
 .page-home { max-width: var(--content-w-wide); }
