@@ -213,6 +213,11 @@ button { font-family: inherit; }
 .exp-bullets li { display: flex; gap: 10px; color: var(--ink-2); font-size: 14.5px; line-height: 1.65; }
 .exp-bullet-mark { color: var(--accent-ink); font-family: var(--font-mono); font-weight: 600; }
 .exp-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+@media (max-width: 720px) {
+  .exp { grid-template-columns: 1fr; gap: 10px; padding: 22px 0; }
+  .exp-meta { padding-top: 0; display: flex; gap: 10px; align-items: baseline; }
+  .exp-period { margin-bottom: 0; }
+}
 
 /* ───────── project cards — grid wrappers ───────── */
 .pc-grid { display: grid; gap: 16px; }
